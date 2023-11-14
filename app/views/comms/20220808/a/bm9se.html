@@ -1,0 +1,403 @@
+{% extends "layout.html" %}
+
+{% set claimantName = 'Mrs J Doe' %}
+{% set claimantFullName = 'Jane Doe' %}
+{% set claimantNino = 'XX123456X' %}
+{% set claimantAddress1 = '1 Address Street' %}
+{% set claimantTown = 'Newcastle' %}
+{% set claimantPostCode = 'NE1 EBR' %}
+{% set claimLetterDate = '08 August 2022' %}
+{% set claimDate = '01 February 2022' %}
+{% set claimRate = '£27.00' %}
+{% set claimStartDate = '27 June 2022' %}
+{% set claimInterimDate = '12 July 2022' %}
+{% set claimEndDate = '26 March 2023' %}
+{% set claimFirstPayment = '£57.86' %}
+{% set claimTimeToPaymentStart = '5' %}
+{% set claimTimeToPaymentEnd = '10' %}
+{% set claimPayFrequency = '4 weeks' %}
+{% set claimPayDay = 'Tuesday' %}
+{% set claimPayStart = '09 August 2022' %}
+{% set claimTestPeriodStart = '23 May 2021' %}
+{% set claimTestPeriodEnd = '27 August 22' %}
+
+
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div id="contentToTest" class="content-letter colour-distinction taller-lines">
+
+              <div class="govuk-!-margin-top-4">
+
+
+
+              </div>
+
+              <div class="address-row">
+                <div class="address-row-item">
+                  <p>
+                    {{ claimantName }} <br><br>
+                    {{ claimantAddress1 }} <br>
+                    {{ claimantTown }} <br>
+                    {{ claimantPostCode }}
+                  </p>
+                </div>
+                <div class="address-row-item">
+                  <p>
+                    Maternity Allowance<br>
+                    Mail Handling Site A<br>
+                    Wolverhampton<br>
+                    WV98 1SU<br>
+
+                  </p>
+                  <p><strong>www.gov.uk</strong></p>
+                  <p>
+                    Telephone: 0800 169 0283<br>
+                    Textphone: 0800 169 0286<br>
+                  </p>
+                  <p>Your reference:<br>
+                    {{ claimantNino }}</p>
+
+                </div>
+              </div>
+
+
+
+              <div class="letter-content-row">
+
+                <div class="letter-content-primary">
+
+                                <h2 class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-0">Your claim for Maternity Allowance</h2>
+
+                                <h3 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">We have looked at your claim and decided to award you Maternity Allowance</h3>
+
+                                <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                  <p>
+                    Dear {{ claimantFullName }}
+                  </p>
+
+                  <p>
+                    Your first payment of Maternity Allowance will be {{ claimRate }} for the period from {{ claimStartDate }} to {{ claimInterimDate }}.
+                  </p>
+                  <p>You will recieve this payment within {{ claimTimeToPaymentStart }} to {{ claimTimeToPaymentEnd }} days.</p>
+                  <p>
+                    You will then be paid every {{ claimPayFrequency }} on a {{ claimPayDay }} starting from {{ claimPayStart }}.
+                  </p>
+                  <p>
+                    We will pay you into the account you have told us about.
+                  </p>
+
+
+                  <p>Thank you for claiming Maternity Allowance (MA).</p>
+
+                  <p>Your award is {{ claimRate }} per week from {{ claimStartDate }} to {{ claimEndDate }}. </p>
+
+                  <h4 class="govuk-heading-s">How your award was made </h4>
+                  <p>Your MA award is based on the level of National Insurance (NI) contributions in your test period {{ claimTestPeriodStart }} to {{ claimTestPeriodEnd }}. </p>
+                  <p>From 6 April 2015, HMRC changed the way it collects Class 2 NI contributions from self-employed people. This means you may not have paid the required Class 2 NI contributions in your test period to receive the maximum MA rate.</p>
+
+                  <p class="govuk-!-font-weight-bold">As you have been self-employed</p>
+
+                  <p class="govuk-!-font-weight-bold">You may be able to get the higher award of MA if you pay the required NI contributions early. </p>
+                  <p>Her Majesty’s Revenue and Customs (HMRC) will write to you within the next 10 working days to give you the chance to pay the contributions early.</p>
+
+
+
+
+
+
+                </div>
+
+                <div class="letter-content-secondary">
+                  <p>{{ claimLetterDate }}</p>
+                  <div class="alt-format-text">
+
+                    <p class="govuk-body govuk-!-font-weight-bold">
+                      Please read this letter carefully, it tells you about your award and how it was made.
+                    </p>
+                    <p class="govuk-body">
+                      If the account details you have told us about change, please let us know straightaway. </p>
+                    <p class="govuk-body">
+                      We have many different ways we can communicate with you.
+                    </p>
+                    <p class="govuk-body">
+                      If you would like Braille, British Sign Language, a hearing loop, translations, large print, audio or something else please tell us using the phone number at the top of this letter.
+                    </p>
+
+
+                  </div>
+
+                  <!--div class="govuk-!-margin-top-9 grey-box-text">
+                    <p class="govuk-body">
+                      {{ carerName }} has made a Carer’s Allowance claim. This may affect some benefits you may get.
+                    </p>
+
+                  </div-->
+
+                </div>
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 1 of 5
+                      </p>
+                  </div>
+
+              </div>
+
+              </div>
+
+
+
+
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+
+                    <h4 class="govuk-heading-s">What to do now </h4>
+                    <p>Wait for your letter from HMRC which will be with you within 10 working days from the date of this letter. <strong>Please do not contact HMRC unless you have not received it within that time.</strong></p>
+
+
+
+                    <p>Once you have received your letter from HMRC and paid the NI Contributions, we will look at your MA again.</p>
+
+
+
+                    <p>This can take up to 22 working days after you have paid the NI contributions. <strong>You do not need to contact us about this.</strong> We will write to you to let you know about your new award.</p>
+
+
+
+                    <h4 class="govuk-heading-s">Your MA payments </h4>
+                    <p>Your first payment of MA will be {{ claimFirstPayment }} for the period  {{ claimStartDate }} to {{ claimInterimDate }}.
+                    <p>  You will then be paid every {{ claimPayFrequency }} on a {{ claimPayDay }} from {{ claimPayStart }}.</p> 
+                    <p>Your MA payments will be paid into the account you told us about.</p>
+
+
+
+                    <h4 class="govuk-heading-s">If you have a Budget Payment Plan with HMRC  </h4>
+                    <p>HMRC may allocate money you have paid into your Budget Payment Plan towards your Class 2 contributions record. If this happens, HMRC will contact you. </p>
+                    <p>If you decide not to use money from your Budget Payment plan to pay your Class 2 contributions, you must let us know straightaway because you may have to repay some of your MA.</p>
+
+
+
+                    <h4 class="govuk-heading-s">While you are getting MA</h4>
+                    <p>  We will usually credit your NI account with contributions for each week you are getting MA. These contributions are called credits. They may help you get State Pension and other social security benefits in the future.</p> 
+
+
+                    <p>If you are self-employed, you do not have to pay the self-employed NI contributions for each week you are getting MA. </p>
+                    <p>A week runs from Sunday to Saturday.</p>
+
+
+
+
+
+
+                  </div>
+
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 2 of 5
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+
+                    <p class="govuk-!-font-weight-bold">If you need more information </p>
+                    <p>For more information about this letter or about your claim in general, please call us. Our phone number and address are on the front page of this letter.</p>
+
+                    <p>Yours sincerely,  </p>
+                    <p>Operations Manager</p>
+
+                    <h4 class="govuk-heading-s">Changes you should tell us about</h4>
+
+                    <p><strong>Please tell us if your baby is born more than 11 weeks before the baby is due.</strong> You will still be able to get the same amount of MA, but you will get it from the day after your baby is born.</p>
+
+                    <p><strong>Please tell us if your baby is born less than 11 weeks before the baby is due.</strong> If your baby is born</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>less than 11 weeks before the baby is due, and</li>
+                      <li>before your MA Period has started</li>
+                    </ul>
+                    <p>You will still get the same amount of MA. But you will get it from the day after your baby is born.</p>
+
+                  <h4 class="govuk-heading-s">Working in your MA period</h4>
+
+                  <p>You will be able to work as an employed or self-employed person for up to 10 days without losing any MA. These days are called ‘Keeping in Touch’ days and will help you stay in touch with your employer or with your business without losing your MA. Any amount of work that you do in a day will be counted as one ‘day’, even if you work just an hour or half a day.</p>
+
+                  <p>You must tell us about any work you do as an employed or self-employed person, including Keeping in Touch days.</p>
+
+                  <h4 class="govuk-heading-s">Shared Parental Leave and Statutory Shared Parental Pay</h4>
+
+                  <p>You and your partner or the other parent of the child may be able to get Shared Parental Leave or Statutory Shared Parental Pay after the baby is born.</p>
+
+                  <p>If you are eligible and decide to take Shared Parental Leave or Statutory Shared Parental Pay, you must give us at least 8 weeks notice that you want to end your MA early, unless you have already returned to work. If you have already returned to work, your MA will end in the week in which your notice is given. The end date must be the last date of your benefit week. For example, if your MA began on a Tuesday, the benefit week will end on a Monday. </p>
+
+                  <p>For more information go to <strong>www.gov.uk/shared-parental-leave-and-pay</strong></p>
+
+                <h4 class="govuk-heading-s">If you are sick</h4>
+
+                <p>If you were sick before your MA began, or if you are still sick when your MA ends, you may be able to get Employment and Support Allowance (ESA) from Jobcentre Plus.</p>
+
+                <p>You cannot get ESA while you are getting MA.</p>
+
+                    <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+                  </div>
+
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 3 of 5
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+          <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+            <div class="letter-content-row">
+
+              <div class="letter-content-primary">
+
+
+                <h4 class="govuk-heading-s">Other changes you must tell us about</h4>
+
+                <p>You or someone who acts for you must also tell us if you:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>do any work as an employed or self-employed person</li>
+                  <li>take part in the business of your self-employed spouse or civil partner</li>
+                  <li>go abroad outside the European Economic Area or Switzerland</li>
+                  <li>go to the Isle of Man or Channel Isles and want to get your money while there</li>
+                  <li>go into prison or are held in legal custody. By legal custody we mean being in prison or being held by the police</li>
+                  <li>claim or get Statutory Adoption Pay</li>
+                  <li>move to a new address</li>
+                  <li>start to get an occupational pension from an employer or get an increase in an occupational pension</li>
+                  <li>or your spouse, civil partner or anyone else claims any money for you or gets money added to their benefit for you</li>
+                </ul>
+
+                <p>Your representative must also contact us if you die.</p>
+
+                <p>If any of these things happen, or any other changes you think we should know about happen, please tell us straightaway. Please tell us about the change and when it happened.</p>
+
+                <p>If you do not tell us about a change and we pay you too much MA we have the right to take back that money.</p>
+
+                <p>We will contact you before we take back any money.</p>
+
+
+
+                <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+              </div>
+
+
+            <div class="app-page-number-row">
+                  <p>
+                      Page 4 of 5
+                  </p>
+              </div>
+
+          </div>
+
+      </div>
+
+
+
+      <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+        <div class="letter-content-row">
+
+          <div class="letter-content-primary">
+
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+            <h4 class="govuk-heading-s">If you disagree with a decision</h4>
+
+            <p class="govuk-!-font-weight-bold">You can ask us to explain why</p>
+
+            <p>You, or someone who has the authority to act for you, can phone or write to us within one month of the date on this letter to ask us to explain our decision in writing.</p>
+
+            <p class="govuk-!-font-weight-bold">You can also ask us to reconsider a decision</p>
+
+            <p>Tell us if you have more information, or if you think we have overlooked something which might change the decision. Do this within one month of the date on this letter.</p>
+
+            <p>We will look at what you tell us and send you a letter to tell you what we have decided, and why. We call this letter a Mandatory Reconsideration Notice.</p>
+
+            <p class="govuk-!-font-weight-bold">When you have done this you can appeal</p>
+
+            <p>If you disagree with the Mandatory Reconsideration Notice, you can appeal to a tribunal.</p>
+
+            <p>You must wait for the Mandatory Reconsideration Notice before you start an appeal.</p>
+
+
+
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+            <h4 class="govuk-heading-s">Equality and Diversity</h4>
+
+            <p>We treat people fairly, regardless of their disability, ethnicity, gender, sexual orientation, transgender status, marital or civil partnership status, age, religion or beliefs.</p>
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+            <h4 class="govuk-heading-s">Call charges</h4>
+
+            <p>Calls to 0800 numbers are free from personal mobiles and landlines.</p>
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+            <h4 class="govuk-heading-s">Why DWP needs personal information and how we treat it</h4>
+
+            <p>We treat personal information carefully. We may use it for any of our purposes. To learn more about information rights and how we use information, please see our DWP Personal Information Charter at <strong>www.gov.uk/dwp/personal-information-charter</strong></p>
+
+
+          </div>
+
+
+        <div class="app-page-number-row">
+              <p>
+                  Page 5 of 5
+              </p>
+          </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+        </div>
+
+
+      {% endblock %}

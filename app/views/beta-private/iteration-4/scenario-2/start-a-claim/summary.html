@@ -1,0 +1,527 @@
+
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+
+<!-- here -->
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+  <section class="key-details-bar-white govuk-!-margin-bottom-0" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">Lana Pietrov</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">ZZ112233Z</dt>
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>4 December 1994</dd>
+          <dt>Postcode:</dt>
+          <dd>HR4 7GN</dd>
+          <dt>Contact number:</dt>
+          <dd>07525 252101</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="dwp-sub-navigation govuk-!-margin-top-6" aria-label="Sub navigation">
+
+    <ul class="dwp-sub-navigation__list">
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link decision" aria-current="page" href="#decision">Decision</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#test-period-dates">Test Period dates</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#map-dates">Maternity Allowance Period dates</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#employment-and-earnings">Employment and earnings</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item float-right">
+        <a class="dwp-sub-navigation__link top" href="#">
+          Top
+           <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg></a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="decision" class="govuk-!-padding-top-6">
+<h2 class="govuk-heading-m">Decision</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Decision
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{govukTag({
+        text: "Pending"
+      })}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Claim created
+    </dt>
+    <dd class="govuk-summary-list__value">
+      19 May 2022
+    </dd>
+  </div>
+</dl>
+</section>
+
+
+<section id="test-period-dates" class="govuk-!-padding-top-9">
+<h2 class="govuk-heading-m">Test Period dates</h2>
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-0',
+  rows: [
+    {
+      key: {
+        text: "Baby due date",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "8 April 2022"
+      }
+    },
+    {
+      key: {
+        text: "First day of Test Period"
+      },
+      value: {
+        text: "27 December 2020"
+      }
+    },
+    {
+      key: {
+        text: "Last day of Test Period"
+      },
+      value: {
+        text: "2 April 2022"
+      }
+    },
+    {
+      key: {
+        text: "15th week before the baby due date"
+      },
+      value: {
+        text: "19 December 2021"
+      }
+    }
+  ]
+}) }}
+</section>
+
+
+<section id="map-dates" class="govuk-!-padding-top-9">
+<h2 class="govuk-heading-m">Maternity Allowance Period dates</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Date the claim was received
+    </dt>
+    <dd class="govuk-summary-list__value">
+      15 April 2022
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date the claimant stopped work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      11 March 2022
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Expected week of confinement
+    </dt>
+    <dd class="govuk-summary-list__value">
+      3 April 2022
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      11th week before the baby due date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      16 January 2022
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      4th week before the baby due date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      6 March 2022
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Start date requested by the claimant
+    </dt>
+    <dd class="govuk-summary-list__value">
+      7 April 2022
+    </dd>
+  </div>
+</dl>
+</section>
+
+
+<section id="employment-and-earnings" class="govuk-!-padding-top-9">
+<h2 class="govuk-heading-m" id="employment-and-earnings">Employment and earnings</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+    {
+      key: {
+        text: "Employment test",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "Met"
+      }
+    },
+    {
+      key: {
+        text: "Employer 1"
+      },
+      value: {
+        text: "BOOTS UK LIMITED"
+      }
+    },
+    {
+      key: {
+        text: "Employer 2"
+      },
+      value: {
+        text: "WATERSTONES BOOKSELLERS LIMITED"
+      }
+    },
+    {
+      key: {
+        text: "Earnings test"
+      },
+      value: {
+        text: "Met"
+      }
+    },
+    {
+      key: {
+        text: "Average weekly earnings for earnings test"
+      },
+      value: {
+        text: "£187.31"
+      }
+    }
+  ]
+}) }}
+
+
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+caption: "Highest earning weeks",
+classes: 'no-padding-right',
+captionClasses: "govuk-table__caption--m",
+firstCellIsHeader: true,
+head: [
+{
+text: "Start date"
+},
+{
+text: "BOOTS UK LIMITED",
+      format: "numeric",
+      classes: 'govuk-!-width-one-quarter'
+},
+{
+text: "WATERSTONES BOOKSELLERS LIMITED",
+      format: "numeric",
+      classes: 'govuk-!-width-one-quarter'
+},
+{
+text: "Total",
+      format: "numeric",
+      classes: 'govuk-!-width-one-quarter'
+}
+],
+rows: [
+[
+{
+text: "27 December 2020"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "3 January 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "10 January 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "17 January 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "24 January 2021"
+},
+{
+text: "£100.00",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£175.00",
+      format: "numeric"
+}
+],
+[
+{
+text: "31 January 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "7 February 2021"
+},
+{
+text: "£105.00",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£180.00",
+      format: "numeric"
+}
+],
+[
+{
+text: "14 February 2021"
+},
+{
+text: "£105.00",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£180.00",
+      format: "numeric"
+}
+],
+[
+{
+text: "21 February 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "28 February 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "7 March 2021"
+},
+{
+text: "£117.50",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£192.50",
+      format: "numeric"
+}
+],
+[
+{
+text: "14 March 2021"
+},
+{
+text: "£105.00",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£180.00",
+      format: "numeric"
+}
+],
+[
+{
+text: "21 March 2021"
+},
+{
+text: "£105.00",
+      format: "numeric"
+},
+{
+text: "£75.00",
+      format: "numeric"
+},
+{
+text: "£180.00",
+      format: "numeric"
+}
+]
+]
+}) }}
+</section>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  {% endblock %}

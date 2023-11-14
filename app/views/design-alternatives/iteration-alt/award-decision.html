@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+  {% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Claim summary</h1>
+
+
+        <h2 class="govuk-heading-m">Maternity Allowance decision</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-6',
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Alice Crowther"
+              }
+            },
+            {
+              key: {
+                text: "Decision"
+              },
+              value: {
+                text: "Allowed"
+              }
+            },
+            {
+              key: {
+                text: "Rate"
+              },
+              value: {
+                text: "Standard rate at £151.97 per week"
+              }
+            }
+          ]
+        }) }}
+
+<p><a href="claim-summary.html">Claim details</a></p>
+
+
+
+
+
+
+
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  {% endblock %}

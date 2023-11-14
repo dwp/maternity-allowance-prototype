@@ -1,0 +1,1305 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+  <section class="key-details-bar-white govuk-!-margin-bottom-0" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">{{ data['claimant-name'] }}</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">{{ data['claimant-nino'] }}</dt>
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>{{ data['claimant-dob'] }}</dd>
+        <dt>Postcode:</dt>
+        <dd>{{ data['claimant-postcode'] }}</dd>
+        <dt>UK telephone number:</dt>
+        <dd>{{ data['claimant-contact-number'] }}</dd>
+      </div>
+    </dl>
+  </section>
+
+
+
+  <nav class="dwp-sub-navigation govuk-!-margin-top-6" aria-label="Sub navigation">
+
+    <ul class="dwp-sub-navigation__list">
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link decision" aria-current="page" href="#decision">Decision</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#test-period-dates">Test Period dates</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#map-dates">Maternity Allowance Period dates</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item">
+        <a class="dwp-sub-navigation__link" href="#employment-and-earnings">Employment and earnings</a>
+      </li>
+
+      <li class="dwp-sub-navigation__item float-right">
+        <a class="dwp-sub-navigation__link top" href="#">
+          Top
+           <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg></a>
+      </li>
+    </ul>
+
+  </nav>
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="decision" class="govuk-!-padding-top-6">
+<h2 class="govuk-heading-m">Decision</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Decision
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{govukTag({
+        text: data['ma-decision']
+      })}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <!--div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      !!!!!!!!!!!Missing information!!!!!!!!!!!
+    </dt>
+    <dd class="govuk-summary-list__value">
+      !!!!!!!!!!!Employment and earnings!!!!!!!!!!!
+    </dd>
+  </div -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Claim created
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-claim-creation-date'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Decision date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-claim-decision-date'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Rate
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-rate'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Maternity Allowance Period start date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-start'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Maternity Allowance Period end date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-end'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+</dl>
+</section>
+
+
+<section id="test-period-dates" class="govuk-!-padding-top-9">
+<h2 class="govuk-heading-m">Test Period dates</h2>
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-0',
+  rows: [
+    {
+      key: {
+        text: "Baby due date",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: data['ma-baby-due-date']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "baby due date"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "First day of Test Period"
+      },
+      value: {
+        text: data['ma-test-period-first-day']
+      }
+    },
+    {
+      key: {
+        text: "Last day of Test Period"
+      },
+      value: {
+        text: data['ma-test-period-last-day']
+      }
+    },
+    {
+      key: {
+        text: "15th week before the baby due date"
+      },
+      value: {
+        text: data['ma-test-period-week-fifteen']
+      }
+    }
+  ]
+}) }}
+</section>
+
+
+<section id="map-dates" class="govuk-!-padding-top-9">
+<h2 class="govuk-heading-m">Maternity Allowance Period dates</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Date the claim was received
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-claim-date-received'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="../claim-date?change=true">
+        Change<span class="govuk-visually-hidden"> date the claim was received</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date the claimant stopped work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-claimant-stopped-work-date-last-worked'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="../date-last-worked?change=true">
+        Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reason for stopping work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-claimant-stopped-work-reason'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="../date-last-worked?change=true">
+        Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Expected week of confinement
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-expected-week-of-confinement'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Baby's date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-baby-birth-date'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="../baby-born.html?change=true">
+        Change<span class="govuk-visually-hidden"> baby birth date</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      11th week before the baby due date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-week-eleventh'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      4th week before the baby due date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-week-fourth'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Start date requested by the claimant
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-start-date-requested'] }}
+      {{govukTag({
+        text: data['ma-start-date-requested-status'],
+        classes: "govuk-!-margin-left-2"
+      })}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Maternity Allowance Period rule
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-rule'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Maternity Allowance Period start date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-start'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Maternity Allowance Period end date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ma-map-end'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+</dl>
+</section>
+
+
+
+<section id="employment-and-earnings" class="govuk-!-padding-top-9">
+
+  <h2 class="govuk-heading-m" id="employment-and-earnings">Employment</h2>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Employment type
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employment-type'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Employment test
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employment-test'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Employer 1
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-1'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Employer 2
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-2'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Employer 3
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-3'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="../payslip/summary.html"><span aria-hidden="true">Manage</span><span class="govuk-visually-hidden">Change Michael Cain</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="../employers/remove-employer-3.html"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Michael Cain from the list</span></a></li>
+        </ul>
+      </dd>
+    </div>
+  </dl>
+  
+  <p class="govuk-!-padding-top-2 govuk-!-margin-bottom-8">
+    <a href="../employers/add-employer.html">Add employer</a>
+  </p>
+  
+  <h2 class="govuk-heading-m" id="employment-and-earnings">Earnings</h2>
+  
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Earnings test
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employment-test'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       &nbsp;
+      </dd>
+    </div>
+    <!--
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Earnings test weeks used
+      </dt>
+      <dd class="govuk-summary-list__value">
+        7 February 2021 to 9 May 2021
+      </dd>
+    </div>
+    -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Average weekly earnings for earnings test
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ '£' + data['ma-average-earnings'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+      </div>
+    </div>
+    
+<section class="transactions">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+  <h2 class="govuk-heading-m" id="employment-and-earnings">Highest Earning Weeks</h2>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-1-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../rti/change.html">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-1-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-1-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-1-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-1-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-1-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-1-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-2-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-2-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-2-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-2-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-2-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-2-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-2-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-3-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-3-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-3-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-3-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-3-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-3-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-3-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-4'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-4-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-4-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-4-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-4-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-4-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-4-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-4-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-5'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-5-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../rti/change.html">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-5-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-5-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-5-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-5-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-5-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-5-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-6'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-6-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-6-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-6-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-6-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-6-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-6-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-6-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-7'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-7-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-7-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-7-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-7-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-7-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-7-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-7-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-8'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-8-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-8-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-8-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-8-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-8-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-8-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-8-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-9'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-9-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-9-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-9-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-9-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-9-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-9-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-9-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-10'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-10-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-10-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-10-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-10-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-10-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-10-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-10-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-11'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-11-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-11-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-11-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-11-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-11-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-11-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-11-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-12'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-12-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-12-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-12-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-12-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-12-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-12-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-12-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        {{ data['ma-week-13'] }}
+      </dt>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        &nbsp;
+      </dd>
+      <dd class="govuk-summary-list__value govuk-table__cell--numeric">
+        <strong>{{ '£' + data['ma-week-13-total-amount'].toFixed(2) }}</strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-1'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-13-employer-1-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-13-employer-1-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key nobordery">
+        {{ data['ma-employer-2'] }}
+      </dt>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{ data['ma-week-13-employer-2-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value nobordery govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-13-employer-2-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions nobordery">
+        &nbsp;
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key doubleborder">
+        {{ data['ma-employer-3'] }}
+      </dt>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{ data['ma-week-13-employer-3-source'] }}
+      </dd>
+      <dd class="govuk-summary-list__value doubleborder govuk-table__cell--numeric">
+        {{  '£' + data['ma-week-13-employer-3-amount'].toFixed(2) }}
+      </dd>
+      <dd class="govuk-summary-list__actions doubleborder">
+        &nbsp;
+      </dd>
+    </div>
+  </dl>
+
+
+
+<form action="/form-handler" method="post" novalidate>
+
+  <input type="hidden" name="answers-checked" value="true">
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+</form>
+  
+  </div>
+</div>
+</section>
+
+
+</section>
+{% endblock %}

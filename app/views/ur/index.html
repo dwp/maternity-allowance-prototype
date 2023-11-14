@@ -1,0 +1,509 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        User Research Private Beta
+      </h1>
+
+      <h2 class="govuk-heading-m">Round 7: XX XX 2022</h2>
+
+      <p><a href="/beta-private/iteration-7/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 7</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+          text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li></li>
+              <li></li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li></li>
+              <li></li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+              <li>Number of participants: </li>
+              <li></li>
+
+            </ul>'
+          }
+        }
+      ]
+      }) }}
+
+      <!--
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      -->
+
+      <h2 class="govuk-heading-m">Round 6: 12 July 2022</h2>
+
+      <p><a href="/beta-private/iteration-6/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 6</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+          text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li></li>
+              <li></li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li></li>
+              <li></li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+              <li>Number of participants: </li>
+
+              <li>MAST-398 – No earnings information held in RTI (to iterate)
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Agents understood that no earnings information was showing here, however they were not sure why this was the case and their next action would be to check RTI data in Searchlight which would duplicate the search just carried out by the service.</li>
+                </ul>
+              </li>
+
+              <li>MAST- 520 – Changing DLW from summary screen (to iterate)
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>There was still difficulty with this scenario despite changing it to a find rather than a new claim. Agents recognised that the DLW had not been provided, and that was therefore likely the reason that the claimant was contacting the department. However, there was uncertainty about how to add this information to the summary screen once provided. Agents understood that they would need to, and that the claimant could have the MAP that they had requested, but the change link recognition was low.</li>
+                </ul>
+              </li>
+
+              <li>MAST-484 – Matching API failed (validated)
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Agents were confident here that the error being presented was due to a system issue rather than anything that they had caused themselves. The content used here is similar to the content displayed when there is a technical issue with Searchlight, so it is something the agents are familiar with.</li>
+                  <li>Agents in this round would tend to try again straight away and then if issues still persisted, they would check with colleagues and DWP Place to see if there were any widespread issues reported.</li>
+                </ul>
+              </li>
+
+              <li>MAST-403 – No match found (validated)
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Agents understood that there were issues with the personal information that the claimant had provided. Previous behaviour of navigating back to the data entry screens was not repeated as with the first round.</li>
+                  <li>Next actions would be to determine which piece or pieces of information were incorrect by tracing the claimant to see if the information could be corrected or whether it would require further claimant interaction.</li>
+                </ul>
+              </li>
+
+            </ul>'
+          }
+        }
+      ]
+      }) }}
+
+      <!--
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      -->
+
+      <h2 class="govuk-heading-m">Round 5: 30 June 2022</h2>
+
+      <p><a href="/beta-private/iteration-5/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 5</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+          text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>Added change links for:
+              <ul >
+                <li>Baby Due date</li>
+                <li>Date Claim received</li>
+                <li>Baby Birth date</li>
+                <li>Date Claimant Stopped Work</li>
+                <li>Start Date Requested by Claimant</li>
+              </ul>
+              </li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+            <li>We believe users will see the \'Change\' when there are more \'Change\' links on the page.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+              <li>Number of participants: 3</li>
+              <li>The date capture questions are not causing any issues. Some agents were assuming that the claimant would have finished work, and almost answered yes to whether they had finished working, but this was due to current assumption and behaviour rather than a misinterpretation of what the questions were asking.</li>
+              <li>Some agents struggled to find the change link. The addition of the other change elements did not seem to make this clearer. One user was unable to complete the change journey despite extensive prompting.</li>
+              <li>The addition of the claimant details when matching has been unable to find a match did prevent the behaviour seen in the previous round whereby agents were immediately navigating back through the journey to check what they had entered. The only extra insight here is that agents do not use the term manually in general.</li>
+
+            </ul>'
+          }
+        }
+      ]
+      }) }}
+
+      <!--
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      -->
+
+      <h2 class="govuk-heading-m">Round 4: 14 June 2022</h2>
+
+      <p><a href="/beta-private/iteration-4/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 4</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+          text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>Aligned the \'Yes/No\' radio buttons to be side by side rather than stacked, to match Gov UK styling standards.</li>
+              <li>Removed the \'Maternity Leave\' question as it isn\'t necessary to the journey.</li>
+              <li>Added a \'Change\' link to the date last worked answer on the summary screen.</li>
+              <li>For date last worked answer when the claimant hasn\'t provided a date, we chose to say \'Claimant has not stopped work\' as it makes sense to answer the first question.</li>
+              <li>Removed statement on the date last worked screen heading and replaced it with the question because there was inconsistency between page headings throughout the journey. All single question screens now revert back to question headings, as before, and multi question screens have statements that summarise the questions at hand.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+            <li>We believe users will see the \'Change\' link or the \'Back\' button in order to change the date last worked.</li>
+            <li>We believe users will be able to easier navigate through the questions and it will aid their understanding by removing the \'Maternity Leave\' question.</li>
+            <li>We believe users will easier understand questions by reverting headings on single question pages to questions rather than statements.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+            <li>Number of participants: 4</li>
+            <li>The removal of the maternity leave question seems to have solved the issues users were experiencing with the date gather questions. Agents were able to follow this journey and provide the Maternity Allowance start date without confusion.</li>
+            <li>The DLW change link on the summary page was not immediately noticed by agents when they were asked to enter the date into the service. Some agents needed to be prompted to find the option to change from the summary screen. We anticipate that following the pattern, and adding the additional change links where appropriate may solve this issue.</li>
+            <li>The prototype behaved in the way that users would expect once they had provided that date last worked, and there were no obvious pieces of information missing from the summary.</li>
+            <li>\‘Claim created\’ and \‘incomplete\’ worked well.</li>
+            <li>For scenario 2, where no match could be found, feedback was mixed. Some agents were aware that this was because some personal information entered must not match what is held as a department, but some agents immediately went back to see if there was information they’d entered that had caused the error. This mirrored the initial behaviour seen in previous rounds where the service could not connect to RTI.</li>
+            </ul>'
+          }
+        }
+      ]
+      }) }}
+
+      <!--
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      *******************************************************************************************************************************
+      -->
+
+        <h2 class="govuk-heading-m">Round 3: 26 May 2022</h2>
+
+        <p><a href="/beta-private/iteration-3/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 3</a></p>
+
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+            text: "Design decisions"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+                <li>Scenario 1 The Pending tag did not draw a response from agents so we have changed this tag to Incomplete.</li>
+                <li>We have reinstated the lines in the table where information cannot yet be determined.</li>
+                <li>Scenario 2 Agents demonstrated a need for a little additional context when an error has occured. They need reassurance that the error is not due to something they have done. They need to know what to do next.</li>
+                <li>We have amended the body text to reassure agents that it is a system error, not a user error.</li>
+                <li>We will explore what they believe next steps will be if this were to occur.</li>
+              </ul>'
+            }
+          },
+          {
+            heading: {
+              text: "Hypotheses"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+              <li>We believe the Incomplete tag will draw agents attention to the fact the claim cannot be decided at this point.</li>
+              <li>We believe agents will understand why some fields in the table are empty, and will understand that the system will update them when it has sufficient data to make a decision assessment.</li>
+              <li>We believe agents will be reassured that the service error is a technical one, and not caused by something in the case or something they have done.</li>
+              </ul>'
+            }
+          },
+          {
+            heading: {
+              text: "Research notes"
+            },
+            content: {
+              html: "<p class='govuk-body'>Number of participants: </p>"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+
+              <li>Number of participants: 4</li>
+              <li>The date capture caused issues again this round. Agents got confused and tripped up on the maternity leave start date question. Not all agents were able to go back and enter the DLW once they\’d received it and this date confusion took up a large portion of the overall session for one user.</li>
+              <li>Scenario 1 (partial RTI data available) agents did recognise that this user did not meet the earnings test as there were not 13 weeks of earnings available. 3/4 agents recognised and verbalised that the employment test had also not been met. They understood that their next actions would be to gather and check the additional evidence needed. \‘claim created\’ caused some confusion this time, some agents believed that this was the date the claim was received and did not recognise that the date was already listed elsewhere. </li>
+              <li>Scenario 2 (error – RTI unavailable) whilst there were some differing options discussed, all agents mentioned the service being unavailable could be responsible for the error message presented. The current message seems to reassure the agents that the error is not as a result of their own actions.</li>
+              </ul>'
+            }
+          }
+        ]
+        }) }}
+
+
+        <h2 class="govuk-heading-m">Round 2: 19 May 2022</h2>
+
+        <p><a href="/beta-private/iteration-2/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 2</a></p>
+
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+              text: "Design decisions"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+                <li>In this round of UR we wanted to start exploring non happy path scenarios which agents may encounter with the new service i.e. Partial RTI data and an RTI error.</li>
+                <li>Scenario 1 enables an agent to start processing a claim, however, there is only 10 weeks of employment and earnings information available from RTI.</li>
+                <li>This could be due to the claimant only having a short spell of employment, or being employed by another employer who does not declare their payroll to HMRC. This applies to some small employers.</li>
+                <li>As a result of the 10 weeks information, the system cannot assess the employment and earnings tests, and cannot make a decision whether to award the claim. This also prevents the determination of the MAP start and end dates, which we could work out, but should not be displayed without a decision.</li>
+                <li>We chose to use the Pending tag to reflect the status of the case, we show a Claim created date, we removed any line in the table where we do not have a response to display.</li>
+                <li>As we cannot confidently assess the employment and earnings tests we provided details that only 10 weeks of data was provided by RTI.</li>
+                <li>In the table of highest earning weeks it was not obvious that only 10 weeks were listed, so we expanded the table heading to state this.</li>
+                <li>Scenario 2 explores agent response when there is an error with the RTI API.</li>
+                <li>The dates gather questions did not test well in the last round of testing, but we decided not to change them yet as we had mixed results in the sessions, and there was not a consistent way of interacting with them.</li>
+                <li>We have started with the There is a problem with the service pages pattern, which is in an Experimental state in the Design System. We will use this to explore what agents need in a service-error situation, and what they understand about what might have happened. This insight will help to inform further iterations.</li>
+              </ul>'
+            }
+          },
+          {
+            heading: {
+              text: "Hypotheses"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+              <li>We believe agents will understand the Pending state of the case means a decision cannot be made at this time.</li>
+              <li>We believe agents will explore the case further to understand why it is Pending.</li>
+              <li>We believe agents will understand that the 10 weeks of employment and earnings could be supplemented by further information from the claimant. We hope to understand what they would expect to do next to move the case into a Decision state.</li>
+              <li>We believe agents will need some more information when the service has a problem. We will use exploratory questions to understand what sort of information this might be.</li>
+              </ul>'
+            }
+          },
+            {
+            heading: {
+              text: "Research notes"
+            },
+            content: {
+              html: "<p class='govuk-body'>Number of participants: </p>"
+            },
+            content: {
+              html:
+              '<ul class="govuk-list govuk-list--bullet">
+
+              <li>Number of participants: 4</li>
+              <li>The date capture went well this round, agents answered all of the questions about DLW, mat leave start date and MA start date correctly and behaved as expected in the service compared to the claim form.</li>
+              <li>Scenario 1 (partial RTI data available) agents did not recognise that this claim did not have all of the relevant evidence available to process and allow the claim. 1 agent flagged that they would not be able to decide and pay at this point. Agents did make reference to the employment and earnings section, but they thought their next steps would be to decide and pay this claim, not to gather any additional evidence. Agents understood the term \‘claim created\’ but \‘pending\’ was not translating to what we expected.</li>
+              <li>Scenario 2 (error – RTI unavailable) agents did not immediately recognise that the service was unavailable or that the error was technical rather than something that they had caused. They thought that the system \‘didn\’t like\’ the dates that they had entered about the DLW and the MA start date. Some agents went back to change the dates to see if the error would still occur, which it did. Agents were not sure what had happened, or what they should do as a result.</li>
+              </ul>'
+            }
+          }
+        ]
+        }) }}
+      <h2 class="govuk-heading-m">Round 1: 5 May 2022</h2>
+
+      <p><a href="/beta-private/iteration-1/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 1</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>As we move into the Private Beta phase we have reorganised the prototype to group iterations tested in Alpha phase together. Private Beta iterations will sit in a new folder.</li>
+              <li>At the start of the journey we have created a simple landing page from which the agent will choose the type of activity they need to complete: Start a claim or Find a claim.</li>
+              <li>We were unable to find any established patterns from other agent-facing services, so have created something new.</li>
+              <li>We considered radio buttons but felt this created additional effort for the user. We also considered plain links on the page but this looked aesthetically odd. We have used Gov Blue and created a large target area for each option which we believe will be easy for agents to use as they progress through their workload.</li>
+              <li>We also considered having a default state for agents such as Start a claim, and an option for agents to move from that default state to Find a claim if they needed to, but this felt complicated, and there is no clear indication of what a default selection should be.</li>
+              <li>The data gather questions have been changed from conditional reveals to radio questions with date input on a following page. This removes Accessibility concerns raised around the conditional reveal.</li>
+              <li>We have changed the format of the pages to have a short H1 and a following question - we hope that this will help users to enter the correct dates on each page.</li>
+              <li>On the Summary we have changed our tags to be blue and lowercase to see if this aids readability and removes any potential bias or assumptions related to the colour of tags.</li>
+              <li>We have added the name of the employer as we can gather this from RTI. We have used the name registered with Companies House as this is what HMRC can provide to us.</li>
+              <li>As we have built a good level of trust among agents and a longer period of time has lapsed since we last tested with them, we want to explore whether we can remove some information from the Summary page and maintain that agent trust and confidence. The first thing we have decided to remove is the dates used for the Employment and Earnings tests.</li>
+              <li>Research has shown that agents expect to find a claim using the claimant&rsquo;s National Insurance Number so we have used that for the Find a claim search.</li>
+              <li>At this time we have not included anything for a security check, as agents have indicated there may be enough information on the summary page to confirm the claimant&rsquo;s identity through standard questions. We may need to amend this if additional ID&V requirements are exposed.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+            <li>We believe the new H1 and subsequent question will help agents to enter the required dates in the right places.</li>
+            <li>We believe that we can remove the dates used for the Employment and Earnings tests because the highest earning weeks are detailed further down the page, and that the agent will trust the system has worked out the correct number of weeks for the Employment test.</li>
+            <li>NOTE: For scenarios where the Employment test is NOT met, we believe we will need to provide additional information such as the number of weeks they were employed, by whom, and when.</li>
+            </ul>'
+          }
+        },
+          {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+            <li>Participants: 4</li>
+            <li>The landing page tested well for the first iteration, agents understood what they would use each option for and how to process the new claim in front of them.</li>
+            <li>Scenario 1 (date capture &amp; interruption) the date last worked, and the MA start date questions were generally okay, but the maternity leave start date caused agents to make errors. Some self-corrected these errors the second time they saw the questions following the interruption.</li>
+            <li>Scenario 2 (find – multiple employers) the employer’s name didn\’t cause any issues. Agents commented on the addition of this as being something they don’t usually see or get now in legacy.</li>
+            <li>The earnings and employment test weeks were removed from the table, this did not seem to cause any problems for the agents and this information was not flagged as being missing.</li>
+            <li>Some agents did mention employment dates as being missing, but this was in reference to the date the claimant started their employment rather than the employment test weeks.</li>
+            </ul>'
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+      </div>
+
+      <p>
+        <a href="alpha.html" class="govuk-body">Alpha User Research</a>
+      </p>
+{% endblock %}

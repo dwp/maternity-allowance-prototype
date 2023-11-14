@@ -1,0 +1,307 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="dwp-key-details-bar" aria-label="Key details">
+    <div class="dwp-key-details-bar__key-details">
+    <dl class="dwp-key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dd class="key-details-bar__nino">{{ data['claimant-nino'] }}</dd>
+    </dl>
+    <dl class="dwp-key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>{{ data['claimant-dob'] }}</dd>
+        <dt>Postcode:</dt>
+        <dd>{{ data['claimant-postcode'] }}</dd>
+    </dl>
+    </div>
+    </section>
+
+          {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }} 
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+  
+      <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+        <nav class="moj-side-navigation" aria-label="Side navigation">
+          <ul class="moj-side-navigation__list">
+            <li class="moj-side-navigation__item">
+              <a href="index1" aria-current="location">Decision and dates</a>
+            </li>
+    
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="earnings1">Employment and earnings</a>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+      <p> 
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
+      </p>
+  
+    </div>
+  
+ 
+   
+
+    <div class="govuk-grid-column-three-quarters">
+              
+
+
+
+    <section id="employment-and-earnings" class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m" id="employment-and-earnings">Employment</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Employment test
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {{ data['ma-employment-test'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        &nbsp;
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Employer
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-1'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        &nbsp;
+        </dd>
+        <br>
+    </div>
+    </dl> 
+    </section>
+
+
+    <section id="Earnings" class="govuk-!-padding-top-0">
+    <h2 class="govuk-heading-m" id="Earnings">Earnings</h2>
+    
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Earnings test
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['ma-employment-test'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            &nbsp;
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Average weekly earnings for earnings test
+        </dt>
+        <dd class="govuk-summary-list__value">
+            £181.53
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        &nbsp;
+        </dd>
+        </div>
+        
+    </dl>
+    </section>
+
+
+        
+        {{ govukTable({
+        caption: "Highest earning weeks",
+        captionClasses: "govuk-table__caption--m",
+        classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: true,
+        head: [
+        {
+        text: "Start date",
+        classes: 'govuk-!-width-one-half'
+        },
+        {
+        text: data['ma-employer-1']
+        },
+        {
+        text: "Total"
+        }
+        ],
+        rows: [
+        [
+        {
+        text: data['ma-week-1']
+        },
+        {
+        text: data['ma-week-1-employer-1-amount']
+        },
+        {
+        text: data['ma-week-1-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-2']
+        },
+        {
+        text: data['ma-week-2-employer-1-amount']
+        },
+        {
+        text: data['ma-week-2-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-3']
+        },
+        {
+        text: data['ma-week-3-employer-1-amount']
+        },
+        {
+        text: data['ma-week-3-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-4']
+        },
+        {
+        text: data['ma-week-4-employer-1-amount']
+        },
+        {
+        text: data['ma-week-4-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-5']
+        },
+        {
+        text: data['ma-week-5-employer-1-amount']
+        },
+        {
+        text: data['ma-week-5-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-6']
+        },
+        {
+        text: data['ma-week-6-employer-1-amount']
+        },
+        {
+        text: data['ma-week-6-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-7']
+        },
+        {
+        text: data['ma-week-7-employer-1-amount']
+        },
+        {
+        text: data['ma-week-7-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-8']
+        },
+        {
+        text: data['ma-week-8-employer-1-amount']
+        },
+        {
+        text: data['ma-week-8-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-9']
+        },
+        {
+        text: data['ma-week-9-employer-1-amount']
+        },
+        {
+        text: data['ma-week-9-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-10']
+        },
+        {
+        text: data['ma-week-10-employer-1-amount']
+        },
+        {
+        text: data['ma-week-10-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-11']
+        },
+        {
+        text: data['ma-week-11-employer-1-amount']
+        },
+        {
+        text: data['ma-week-11-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-12']
+        },
+        {
+        text: data['ma-week-12-employer-1-amount']
+        },
+        {
+        text: data['ma-week-12-employer-1-total']
+        }
+        ],
+        [
+        {
+        text: data['ma-week-13']
+        },
+        {
+        text: data['ma-week-13-employer-1-amount']
+        },
+        {
+        text: data['ma-week-13-employer-1-total']
+        }
+        ]
+        ]
+        }) }}
+
+
+        </section>
+
+{% endblock %}
+
+  

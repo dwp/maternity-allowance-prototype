@@ -1,0 +1,218 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+@import "custom/key-details";
+@import "custom/key-details-old";
+@import "custom/key-details-white-old";
+@import "custom/dwp-sub-navigation";
+@import "custom/letters";
+@import "custom/content-highlight";
+@import "custom/navbuttons";
+@import "custom/hidden";
+@import "custom/tags";
+@import "custom/navigation";
+@import "custom/statement-view";
+@import "custom/summary-action-list";
+@import "custom/nav";
+
+.govuk-details__noborder {
+  padding-top: 10px;
+}
+
+#no-border .govuk-header__container { border-bottom:0; margin-bottom:0; }
+#no-border .govuk-header { border-bottom:0; }
+
+.key-details-bar {
+  margin: -50px 0 0;
+  .govuk-tag--white {
+      color: #005ea5;
+      background: #FFF;
+      float: right;
+  }
+  .govuk-tag--green {
+      float: right;
+      margin: 10px 0 0 0
+  }
+}
+
+.key-details-bar-white {
+  margin: -30px 0 0;
+  .govuk-tag--white {
+      color: #005ea5;
+      background: #FFF;
+      float: right;
+  }
+  .govuk-tag--green {
+      float: right;
+      margin: 10px 0 0 0
+  }
+}
+
+.key-details-bar-white-old {
+  margin: -30px 0 0;
+  .govuk-tag--white {
+      color: #005ea5;
+      background: #FFF;
+      float: right;
+  }
+  .govuk-tag--green {
+      float: right;
+      margin: 10px 0 0 0
+  }
+}
+
+.govuk-header__content {
+  padding-left: 0;
+}
+
+.no-padding-right {
+  .govuk-table__header:last-child, .govuk-table__cell:last-child {
+      padding-right: 20px;
+  }
+}
+
+.float-right { float: right; margin-right: 0; display: none;}
+.govuk-button--secondary { float: right; margin-right: 0; margin: 20px 0 0 0;}
+
+.dwp-key-details-bar {
+  background-color: #1d70b8;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin-right: -70%;
+  margin-left: -70%;
+  margin-top: -10px !important;
+  }
+  
+  .dwp-key-details-bar dt,
+  .dwp-key-details-bar dd {
+  border: none;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px 30px;
+  position: relative;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__top-block::after,
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__bottom-block::after {
+  clear: both;
+  content: ' ';
+  display: block;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__bottom-block {
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  content: ' ';
+  padding-top: 10px;
+  margin-top: 6px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dd,
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dt {
+  float: left;
+  font-size: 19px;
+  margin-right: 5px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dd {
+  margin-right: 20px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__name {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11111;
+  margin-right: 10px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__nino {
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 12px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__status {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 5px 8px 0;
+  color: #005ea5;
+  background-color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  margin: 5px 0 0;
+  }
+  
+  @media (max-width: 40.0525em) {
+  .dwp-key-details-bar .dwp-key-details-bar__key-details {
+  padding: 20px 15px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__bottom-block {
+  border: 0;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dd,
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dt {
+  float: none;
+  font-size: 16px;
+  margin: 0;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dd {
+  margin-bottom: 20px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details dd:last-of-type {
+  margin-bottom: 20px;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__name {
+  font-size: 24px;
+  line-height: 1.04167;
+  float: left;
+  margin: 0 5px 0 0;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__nino {
+  font-size: 18px;
+  float: left;
+  margin: 5px 0 0 0;
+  }
+  
+  .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__status {
+  font-size: 14px;
+  float: left;
+  clear: both;
+  margin-top: 5px;
+  }
+  } 
+
+  .moj-side-navigation{ position: sticky; }
+
+  .payslips-table .govuk-form-group  {
+    margin-bottom: 0px !important;
+}
+

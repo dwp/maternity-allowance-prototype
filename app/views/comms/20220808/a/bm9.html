@@ -1,0 +1,448 @@
+{% extends "layout.html" %}
+
+{% set claimantName = 'Mrs J Doe' %}
+{% set claimantFullName = 'Jane Doe' %}
+{% set claimantNino = 'XX123456X' %}
+{% set claimantAddress1 = '1 Address Street' %}
+{% set claimantTown = 'Newcastle' %}
+{% set claimantPostCode = 'NE1 EBR' %}
+{% set claimLetterDate = '08 August 2022' %}
+{% set claimDate = '01 February 2022' %}
+{% set claimRate = '£156.66' %}
+{% set claimStartDate = '10 August 2022' %}
+{% set claimInterimDate = '22 August 2022' %}
+{% set claimEndDate = '09 May 2023' %}
+{% set claimFirstPayment = '£290.94' %}
+{% set claimTimeToPaymentStart = '5' %}
+{% set claimTimeToPaymentEnd = '10' %}
+{% set claimPayFrequency = '4 weeks' %}
+{% set claimPayDay = 'Monday' %}
+{% set claimPayStart = '19 September 2022' %}
+
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div id="contentToTest" class="content-letter colour-distinction taller-lines">
+
+              <div class="govuk-!-margin-top-4">
+
+
+
+              </div>
+
+              <div class="address-row">
+                <div class="address-row-item">
+                  <p>
+                    {{ claimantName }} <br><br>
+                    {{ claimantAddress1 }} <br>
+                    {{ claimantTown }} <br>
+                    {{ claimantPostCode }}
+                  </p>
+                </div>
+                <div class="address-row-item">
+                  <p>
+                    Maternity Allowance<br>
+                    Mail Handling Site A<br>
+                    Wolverhampton<br>
+                    WV98 1SU<br>
+
+                  </p>
+                  <p><strong>www.gov.uk</strong></p>
+                  <p>
+                    Telephone: 0800 169 0283<br>
+                    Textphone: 0800 169 0286<br>
+                  </p>
+                  <p>Your reference:<br>
+                    {{ claimantNino }}</p>
+
+                </div>
+              </div>
+
+
+
+              <div class="letter-content-row">
+
+                <div class="letter-content-primary">
+
+                                <h2 class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-0">Your claim for Maternity Allowance</h2>
+
+                                <h3 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">We will pay you Maternity Allowance</h3>
+
+                                <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                  <p>
+                    Dear {{ claimantFullName }}
+                  </p>
+
+                  <p>
+                  We will pay you {{ claimRate }} a week from {{ claimStartDate }} to {{ claimEndDate }}.
+                  </p>
+                  <p>
+                    Your first payment of Maternity Allowance will be {{ claimFirstPayment }} for the period from {{ claimStartDate }} to {{ claimInterimDate }}.
+                  </p>
+                  <p>You will recieve this payment within {{ claimTimeToPaymentStart }} to {{ claimTimeToPaymentEnd }} days.</p>
+                  <p>
+                    You will then be paid every {{ claimPayFrequency }} on a {{ claimPayDay }} starting from {{ claimPayStart }}.
+                  </p>
+                  <p>
+                    We will pay you into the account you have told us about.
+                  </p>
+
+
+
+
+
+                </div>
+
+                <div class="letter-content-secondary">
+                  <p>{{ claimLetterDate }}</p>
+                  <div class="alt-format-text">
+
+                    <p class="govuk-body govuk-!-font-weight-bold">
+                      You will be getting Maternity Allowance. The amount and how we calculate it, is shown in this letter.
+                    </p>
+                    <p class="govuk-body">
+                      You do not need to take any further action but if you do not agree with this amount, then please contact us to request a Mandatory Reconsideration.</p>
+                    <p class="govuk-body">
+                      We have many different ways we can communicate with you.
+                    </p>
+                    <p class="govuk-body">
+                      If you would like Braille, British Sign Language, a hearing loop, translations, large print, audio or something else please tell us using the phone number at the top of this letter.
+                    </p>
+
+                  </div>
+
+                  <!--div class="govuk-!-margin-top-9 grey-box-text">
+                    <p class="govuk-body">
+                      {{ carerName }} has made a Carer’s Allowance claim. This may affect some benefits you may get.
+                    </p>
+
+                  </div-->
+
+                </div>
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 1 of 7
+                      </p>
+                  </div>
+
+              </div>
+
+              </div>
+
+
+
+
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+
+                    <p>&#9744; If we have ticked this box, we have contacted HM Revenue & Customs (HMRC) about your Class 2 National Insurance contributions. Please read the section About National Insurance (NI) contributions.  </p>
+
+  
+ 
+
+
+
+
+
+
+                    <h4 class="govuk-heading-s">How we calculate Maternity Allowance</h4>
+
+                    <p>
+  Maternity Allowance is worked out on the highest 13 weeks of earnings from your test period. The test period is the 66 weeks before the week you expect to have your baby.  </p>
+                    <p>The amount may be based, either in part or in full, on earnings information that your employer has given to HMRC or from the payslips you have sent us.
+                    </p>
+                    <h4 class="govuk-heading-s">More information</h4>
+                    <p>
+                      For more information about this letter or about your claim in general, please get in touch with us. Our phone number and address are at the start of this letter.</p>
+                    <p>  If you need to get in touch with us, please remember to tell us the reference number shown at the start of this letter.
+                    </p>
+                    <p>Yours sincerely,</p>
+                    <p>  Office manager</p>
+
+
+                  </div>
+
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 2 of 7
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+
+                  <h4 class="govuk-heading-s">About National Insurance (NI) contributions</h4>
+                  <p>From 6 April 2015, HMRC changed the way it collects Class 2 NI contributions from self-employed people. There is more information at <strong>www.gov.uk</strong></p>
+ <p> You can pay your Class 2 NI contribution early to help you qualify for the standard rate of Maternity Allowance if you are self-employed and</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>your baby was due on or after 12 July 2015</li>
+                    <li>you have not yet filed your self-assessment, and</li>
+                    <li>you have not paid your Class 2 NI contributions due to the change</li>
+                  </ul>
+
+                  <p>If we have ticked the box on page 2, we have contacted HMRC to tell them you have claimed Maternity Allowance. They will write to you to give you the chance to pay your Class 2 NI contributions early. <strong>Paying your contributions earlier means we can look at your Maternity Allowance again to see if we can increase it to the standard rate.</strong></p>
+                  <p>  If you pay the contributions later than one month after the date of this letter, please contact us because we may not know about this payment yet.  <p>
+                  <p>If you are self-employed with a budgeting account, HMRC may allocate money you have paid them towards your Class 2 contributions record. If this happens, HMRC will contact you. If you decide not to use money from your budgeting account to pay your Class 2 contributions, you must let us know straight away because you may have to repay some of your Maternity Allowance.  </p>
+                  <p>Our telephone number and address are at the start of this letter.  </p>
+                  <p class="govuk-!-font-weight-bold">While you are getting Maternity Allowance  .</p>
+                  <p>We will usually credit your National Insurance account with contributions for each week you are getting Maternity Allowance. These contributions are called credits. They may help you get State Pension and other social security benefits in the future.  </p>
+
+                  <p>If you are self-employed, you do not have to pay the self-employed NI contributions for each week you are getting Maternity Allowance.</p>
+                  <p>  A week runs from Sunday to Saturday.</p>
+
+                    <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+                  </div>
+
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 3 of 7
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+          <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+            <div class="letter-content-row">
+
+              <div class="letter-content-primary">
+
+
+              <h4 class="govuk-heading-s">Payment into an account  </h4>
+              <p>Please tell us straight away if any details of your account change. Tell us</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>what has changed</li>
+                <li>when it changed</li>
+                <li>what the new details are</li>
+              </ul>
+
+              <h4 class="govuk-heading-s">Finding out how much we have paid into the account  </h4>
+             <p>You can check your payments on account statements. The statements may show your National Insurance (NI) number next to any payments we have made. If you think a payment is wrong, get in touch with the office that pays you straight away. We will tell you if the amount we pay into the account is going to change.  </p>
+              <h4 class="govuk-heading-s">If we pay you too much money</h4>
+              <p>  We have the right to take back any money we pay that you are not entitled to. This may be because of the way the system works for payments into an account.</p>
+              <p>For example, you may give us some information, which means you are entitled to less money. Sometimes we may not be able to change the amount we have already paid you. This means we will have paid you money that you are not entitled to. <strong>We will contact you before we take back any money.</strong></p>  
+              <h4 class="govuk-heading-s">If you are sick  </h4>
+              <p>  If you were sick before your Maternity Allowance began, or if you are still sick when your Maternity Allowance ends, you may be able to get</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Statutory Sick Pay (SSP) from your employer or</li>
+                <li>Employment and Support Allowance from Jobcentre Plus</li>
+              </ul>
+             <p>You cannot get SSP while you are getting Maternity Allowance.  <p>
+              <h4 class="govuk-heading-s">Help and advice</h4>
+              <p>  If you live in England or Wales you can get free, independent and confidential advice about Maternity Allowance and other benefits. Call Civil Legal Advice on <strong>0345 345 4345</strong>. You can visit their website at <strong>www.gov.uk/civil-legal-advice  </strong></p>
+              <p>Calls to <strong>0345</strong> numbers cost no more than a standard geographic call, and count towards any free or inclusive minutes in your landline or mobile phone contract.</p>
+
+
+                <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+              </div>
+
+
+            <div class="app-page-number-row">
+                  <p>
+                      Page 4 of 7
+                  </p>
+              </div>
+
+          </div>
+
+      </div>
+
+
+
+      <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+        <div class="letter-content-row">
+
+          <div class="letter-content-primary">
+
+
+          <p>Please tell us straight away if any details of your account change. Tell us</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>what has changed</li>
+            <li>when it changed</li>
+            <li>what the new details are</li>
+          </ul>
+
+          <h4 class="govuk-heading-s">Changes you must tell us about</h4>
+            <p class="govuk-!-font-weight-bold">If your baby is born more than 11 weeks before the expected week of childbirth  </p>
+          <p>You will still be able to get the same amount of Maternity Allowance, but you will get it from the day after your baby is born. Please tell us when your baby was born.</p>  
+          <h4 class="govuk-heading-s">If your baby is born less than 11 weeks before the expected week of childbirth</h4>
+          <p>  If your baby is born</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>less than 11 weeks before the expected week of childbirth, and</li>
+            <li>before your Maternity Allowance Period has started</li>
+          </ul>
+          <p>you will still get the amount of Maternity Allowance. But you will get it from the day after your baby is born. Please tell us when your baby is born.</p>
+          <h4 class="govuk-heading-s">Working in your Maternity Allowance Period  </h4>
+          <p>You will be able to work as an employed or self-employed person for up to 10 days without losing any Maternity Allowance. These days are called ‘Keeping in Touch’ days and will help you stay in touch with your employer or with your business without losing your Maternity Allowance. Any amount of work that you do in a day will be counted as one ‘day’, even if you work just an hour or half a day. </p>
+          <p> If you work for an employer, they cannot demand that you use a ‘Keeping in Touch’ day. It is your choice.</p>
+          <p>  You must tell us about any work you do as an employed or self-employed person, including Keeping in Touch days.  </p>
+          <h4 class="govuk-heading-s">Shared Parental Leave and Statutory Shared Parental Pay  </h4>
+          <p>You and your partner or the other parent of the child may be able to get Shared Parental Leave or Statutory Shared Parental Pay after the baby is born.  </p>
+          <p>If you are eligible and decide to take Shared Parental Leave or Statutory Shared Parental Pay, you must give us at least 8 weeks’ notice that you want to end your Maternity Allowance early, unless you have already returned to work. If you have already returned to work, your Maternity Allowance will end in the week in which your notice is given. The end date must be the last date of your benefit week. For example, if your Maternity Allowance began on a Tuesday, the benfit week will end on a Monday. If your Maternity Allowance began on a Wednesday, it will end on a Tuesday.</p>
+
+            <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+          </div>
+
+
+        <div class="app-page-number-row">
+              <p>
+                  Page 5 of 7
+              </p>
+          </div>
+
+      </div>
+    </div>
+
+
+    <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+      <div class="letter-content-row">
+
+        <div class="letter-content-primary">
+
+
+        <p>For more information visit <strong>www.gov.uk/shared-parental-leave-and-pay</strong>  </p>
+        <p>Other changes that affect your benefit  You or your representative must also tell us if you
+        <ul class="govuk-list govuk-list--bullet">
+          <li>do any work as an employed or self-employed person</li>
+          <li>take part in the business of your self-employed spouse or civil partner</li>
+          <li>go abroad outside the European Economic Area or Switzerland</li>
+          <li>go to the Isle of Man or Channel Isles and want to get your money while there</li>
+          <li>go into prison or are held in legal custody. By legal custody we mean being in prison or being held by the police</li>
+          <li>claim or get Statutory Maternity Pay (SMP), Statutory Paternity Pay (SPP) or Statutory Adoption Pay (SAP)</li>
+          <li>move to a different address</li>
+          <li>start to get an occupational pension from an employer or get an increase in an occupational pension</li>
+          <li>or your spouse, civil partner or anyone else claims any money for you or gets money added to their benefit for you</li>
+        </ul>
+        <p>Your representative must also contact us if you die.  </p>
+        <p>If any of the things listed above happen, or any other changes you think we should know about happen, please tell us straight away. Please tell us the change that has happened and when it happened.</p>
+  <h4 class="govuk-heading-s">How to tell us about changes  </h4>
+        <p>You can tell us about changes by phoning us or writing to us. Our phone number and address are at the start of this letter. When you get in touch with us, please tell us your full name and your National Insurance number.  </p>
+  <h4 class="govuk-heading-s">If you act for someone who gets Maternity Allowance  </h4>
+        <p>You must tell us about any changes that affect them.  </p>
+  <h4 class="govuk-heading-s">Remember</h4>
+        <p>  If you give us information that is incorrect or incomplete, action may be taken against you. </p>
+
+
+          <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+        </div>
+
+
+      <div class="app-page-number-row">
+            <p>
+                Page 6 of 7
+            </p>
+        </div>
+
+    </div>
+  </div>
+
+
+
+  <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+    <div class="letter-content-row">
+
+      <div class="letter-content-primary">
+
+
+
+      <h4 class="govuk-heading-s">If you disagree with a decision</h4>
+
+<p class="govuk-!-font-weight-bold">You can ask us to explain why </p>
+
+<p>You, or someone who has the authority to act for you, can phone or write to us within one month of the date on this letter to ask us to explain our decision in writing.</p>
+
+<h4 class="govuk-heading-s">You can also ask us to reconsider a decision</h4>
+
+<p>Tell us if you have more information, or if you think we have overlooked something which might change the decision. Do this within one month of the date on this letter.</p>
+
+<p>We will look at what you tell us and send you a letter to tell you what we have decided, and why. We call this letter a Mandatory Reconsideration Notice.</p>
+
+<h4 class="govuk-heading-s">When you have done this you can appeal</h4>
+
+<p>If you disagree with the Mandatory Reconsideration Notice, you can appeal to a tribunal.</p>
+
+<p>You must wait for the Mandatory Reconsideration Notice before you start an appeal.</p>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+<h4 class="govuk-heading-s">Equality and Diversity</h4>
+
+<p>We treat people fairly, regardless of their disability, ethnicity, gender, sexual orientation, transgender status, marital or civil partnership status, age, religion or beliefs.</p>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+<h4 class="govuk-heading-s">Call charges</h4>
+
+<p>Calls to 0800 numbers are free from personal mobiles and landlines.</p>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9">
+
+<h4 class="govuk-heading-s">Why DWP needs personal information and how we treat it</h4>
+
+<p>We treat personal information carefully. We may use it for any of our purposes. To learn more about information rights and how we use information, please see our DWP Personal Information Charter at <strong>www.gov.uk/dwp/personal-information-charter</strong></p>
+
+
+
+
+        <!--hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-9" -->
+
+
+      </div>
+
+
+    <div class="app-page-number-row">
+          <p>
+              Page 7 of 7
+          </p>
+      </div>
+
+  </div>
+</div>
+
+
+
+        </div>
+
+
+      {% endblock %}

@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Service pages
+      </h1>
+
+      <ul class="govuk-list govuk-!-margin-bottom-6">
+        <li>
+          <a href="/beta-private/iteration-3/scenario-2/start-a-claim/problem-with-service" class="govuk-body govuk-!-font-weight-bold">RTI: API unavailable</a> (Iteration 3/Scenario 2)
+        </li>
+        <li>
+          <a href="/beta-private/iteration-3/scenario-1/start-a-claim/summary" class="govuk-body govuk-!-font-weight-bold">RTI: Fewer than 13 weeks available</a> (Iteration 3/Scenario 1)
+        </li>
+        <li>
+          <a href="/beta-private/iteration-6/scenario-1/start-a-claim/summary" class="govuk-body govuk-!-font-weight-bold">RTI: No RTI data available</a> (Iteration 6/Scenario 1)
+        </li>
+        <li>
+          <a href="/beta-private/iteration-6/scenario-3/start-a-claim/problem-with-service" class="govuk-body govuk-!-font-weight-bold">Matching: API unavailable</a> (Iteration 6/Scenario 3)
+        </li>
+        <li>
+          <a href="/beta-private/iteration-6/scenario-4/start-a-claim/no-match-found" class="govuk-body govuk-!-font-weight-bold">Matching: No match found</a> (Iteration 6/Scenario 4)
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

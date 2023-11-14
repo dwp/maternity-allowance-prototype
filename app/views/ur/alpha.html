@@ -1,0 +1,623 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        User Research Alpha
+      </h1>
+
+      <h2 class="govuk-heading-m">Round 1: 20 October 2021</h2>
+
+      <p><a href="/iteration-1/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 1</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>We went for the simplest option of playing back all of the information we expected would be needed by agents in a flat summary list.</li>
+              <li>We avoided change links until a point where users tell us that they&rsquo;re necessary.</li>
+              <li>To interact with the &lsquo;Matching&rsquo; GZ we need to gather full name, date of birth and postcode.</li>
+              <li>We will use DWP standard pattern for full name input. Not using &ldquo;(excluding titles)&rdquo; in iteration 1 - explore through UR.</li>
+              <li>For the data gather, we&rsquo;ve put three (related) things on one page, as opposed to putting them on separate pages, in the interests of speed of input, because this is an agent facing service.</li>
+              <li>When on separate pages, it allows users to digest the content easier, but this is for quick, speedy, input and doesn&rsquo;t need to be digested as it&rsquo;ll be used many times per day.</li>
+              <li>We have re-used patterns from the Bereavement Support Payment agent-facing service as these data-gather elements have been tested with DWP agents.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+            <li>We believe the award details are the most important thing to see, and that some agents will not need to look at the rest of the information on the screen.</li>
+            <li>We believe that some agents will need to see more information to support the claim and decision, and will get that from the rest of the page.</li>
+            <li>We can measure (through UR) how many agents look at the rest of the page, and observe how they view and interact with the content and information available.</li>
+            </ul>'
+          }
+        },
+          {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: 5</p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+            <li>Number of participants: 5</li>
+            <li>Overall this was well received by agents. They understood that this was a service that was intended for their use, just not exactly what it would do.</li>
+            <li>There were no issues with the data capture.</li>
+            <li>There was an expectation that this information would be saved if they needed to leave the claim or BF it at any point.</li>
+            <li>Some agents did notice that the date last worked was not shown on the summary page.</li>
+            <li>Agents did not understand where the information on the summary page had come from to form the decision.</li>
+            <li>However, it did seem like there was a greater level of trust in this information than there was during the previous scenario-based research.</li>
+            <li>The MAP was something agents expected to see as part of this decision, or as the next step in the process.</li>
+            <li class ="govuk-!-font-weight-bold">Some future areas to consider: call to action, date last worked, MAP, earnings test.</li>
+            </ul>'
+          }
+        }
+      ]
+    }) }}
+
+
+
+    <h2 class="govuk-heading-m">Round 2: 26, 27 October 2021</h2>
+
+    <p><a href="/iteration-2/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 2</a></p>
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+  {{ govukAccordion({
+    id: "accordion-default",
+    items: [
+      {
+        heading: {
+          text: "Design decisions"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+            <li>We added details of the Highest earning weeks as some agents stated they needed to know what figures had been used.</li>
+            <li>We put the Highest 13 weeks inside a details toggle, because not all agents stated that they needed to see the full details, and adding the full list to the summary page made it cluttered and difficult to navigate.</li>
+          </ul>'
+        }
+      },
+      {
+        heading: {
+          text: "Hypotheses"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+            <li>We believe that agents who need to see the details of the highest earning weeks will find the information they need, and understand that the highest earning weeks have been selected for use in the calculation.</li>
+            <li>We believe agents will feel more confidence in the calculation when they can see the weekly earnings used.</li>
+            <li>We will know if this is true by observing agents in user research sessions and discussing their understanding and level of trust in the information displayed.</li>
+          </ul>'
+        }
+      },
+        {
+        heading: {
+          text: "Research notes"
+        },
+        content: {
+          html: "<p class='govuk-body'>Number of participants: </p>"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+          <li>Number of participants: 4</li>
+          <li>There was confusion amongst agents as to who the intended audience of the service was. Some thought that it was for citizens and still believed this upon completion.</li>
+          <li>Some agents entered a title into the full name field, this did not happen on the previous round so this is an area to observe moving forwards.</li>
+          <li>As with the previous round, agents weren’t sure where this information was from, there was slightly less recognition that it could be form a source such as RTI.</li>
+          <li>The highest earning weeks was noticed by some agents without the need for prompting. The information contained was reassuring to agents as it is similar to how the information is entered and displayed in legacy. This was described as being useful if someone was entitled to a variable rate so that the wages used could be checked.</li>
+          <li>The MAP was mentioned again as a missing or expected element as with the previous round.</li>
+          </ul>'
+        }
+      }
+    ]
+  }) }}
+
+  <h2 class="govuk-heading-m">Round 3: 4 November 2021</h2>
+
+  <p><a href="/iteration-3/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 3</a></p>
+
+  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Design decisions"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We updated the labels on question fields to adhere to GDS patterns and guidance for pages with multiple questions.</li>
+          <li>We added a question to capture the date the claim was received into DWP, as this can impact the MAP.</li>
+          <li>We used radio options for Today, Yesterday, and Another date as we believe most claims would be processed within 2 days of receipt.</li>
+          <li>This can save agents inputting the same dates over and over again as they work through multiple cases each day.</li>
+          <li>We added a question to collect the claimant&rsquo;s chosen MAP start date. We believe it is possible to automatically calculate whether the claimant is entitled to choose their MAP start date in the background, and display or not display the question dynamically, depending on the results of that calculation.</li>
+          <li>We added a blue &lsquo;key details&rsquo; banner to the summary page which is very similar to the Searchlight banner, as we believe this will help the agents feel more trust in the information displayed.</li>
+          <li>We took the summary page to full-width to make better use of the space available on the desktop screens used by agents, to allow space for intuitive labels and values, and to stop text falling onto multiple lines, which can be difficult to digest.</li>
+        </ul>'
+      }
+    },
+    {
+      heading: {
+        text: "Hypotheses"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We believe agents will feel more trust in the information displayed when the screen looks like something they are used to interacting with.</li>
+          <li>**FUTURE SCENARIO TO TEST: We believe that agents will understand why the claimant&rsquo;s chosen date and the actual MAP start date differ, if they are not the same.</li>
+          <li>We believe the agents will notice the difference between the MAP start dates without a visual cue on the summary page.</li>
+          <li>We&rsquo;ll know this is true through observation of users in user research sessions.</li>
+        </ul>'
+      }
+    },
+      {
+      heading: {
+        text: "Research notes"
+      },
+      content: {
+        html: "<p class='govuk-body'>Number of participants: 5</p>"
+      },
+      content: {
+        html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>Number of participants: 5</li>
+        <li>The introduction of the MAP was received positively. Agents believed that this would be calculated based on some of the information we had asked them to enter during the data capture. The type of MAP rule applied could potentially be a missing feature.</li>
+        <li>The introduction of the MAP did also seem to create a need to know the 14th and 20th weeks for eligibility purposes.</li>
+        <li>Agents didn&rsquo;t notice the Key Details bar.</li>
+        <li>Date claim received didn&rsquo;t cause any issues, but it was highlighted that it&rsquo;s very unlikely that agents would be working on claims from today or yesterday, so they would always need to enter a different date.</li>
+        <li>Employer name was highlighted as being needed. This has been heard in previous rounds of research. Currently this cannot be pulled through by the Finances team.</li>
+        <li>Some future areas to consider: alternative version, date of claim, non-flexi MAP scenarios.</li>
+      </ul>'
+      }
+    }
+  ]
+}) }}
+<h2 class="govuk-heading-m">Round 4: 10 November 2021</h2>
+
+<p><a href="/iteration-4/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 4</a></p>
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+id: "accordion-default",
+items: [
+  {
+    heading: {
+      text: "Design decisions"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>To break up the long page of claim summary information, we decided to use tabs to break the content into more manageable sections.</li>
+        <li>Tabs are an experimental pattern in the Design System, and require further research.</li>
+        <li>Users have not struggled with the long page in testing, but we are keen to try alternative ways of presenting the information, to see how users respond and interact with them.</li>
+        <li>We changed the input for the date the claim was received by DWP, because agents rarely process claims that quickly. It is possible that we will revisit our previous approach in the future, when claims are hopefully processed much more rapidly.</li>
+        <li>To further our understanding of the MAP rules and the information agents require for cases which fall into each rule group, we created 2 scenarios for testing in this round of research.</li>
+        <li>Scenario 1 – The claimant&rsquo;s baby has been born between the 11th and 4th week. The claimant&rsquo;s chosen MAP start date is too far in the future. The MAP starts the day after the baby is born.</li>
+        <li>Scenario 2 – The claimant&rsquo;s employment ended before the 11th week. Their MAP starts on the 11th week.</li>
+      </ul>'
+    }
+  },
+  {
+    heading: {
+      text: "Hypotheses"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>We believe that grouping the information into manageable sections, displayed in tabs, will enable the agent to easily digest the information displayed, and help them to respond to queries from claimants.</li>
+        <li>We believe that the tab headings, which are all displayed above the fold, will reassure agents that all the information they need to see is available. They will not need to scroll to check that it is all there.</li>
+        <li>We will observe user behaviour through usability testing to see if this is the case.</li>
+      </ul>'
+    }
+  },
+    {
+    heading: {
+      text: "Research notes"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>Number of participants: 5</li>
+        <li>The iterations to create ‘about the baby’, a separate page for date last worked, and a date input field for date of claim worked well without issue.</li>
+        <li>3/5 agents noticed and interacted with the tabs without prompting. Currently we aren’t sure whether some are missing them due to how their screens are split so we will continue to explore this in the next round.</li>
+        <li>The MAP scenarios received positive feedback and agents were confident in the information that was provided.</li>
+        <li>Highest earning weeks wasn’t noticed in all sessions, this is something to explore in a future round of research as we’ve seen this be missed in previous rounds.
+        <li>The MAP rule and the employer name were mentioned as pieces of information that are missing currently.</li>
+        <li>There is still some confusion as to who the intended audience of this service are, this mirrors previous feedback.</li>
+        <li>The 14th & 20th week need that arose in the previous round was not raised here, we will continue to monitor this to establish whether it is a genuine need.</li>
+      </ul>'
+    }
+  }
+]
+}) }}
+<h2 class="govuk-heading-m">Round 5: 17 November 2021</h2>
+
+<p><a href="/iteration-5/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 5</a></p>
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+id: "accordion-default",
+items: [
+  {
+    heading: {
+      text: "Design decisions"
+    },
+    content: {
+      html:
+
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We added (excluding title) to the Full name label, because some agents have entered a title in this field, which we don’t need to collect, and which is difficult for us to handle technically. </li>
+          <li>We added a question to find out if the claimant has chosen a date when they would like their MA payments to start. Not every claimant provides this answer, so we needed a way to make it optional. If they have provided a preferred start date, the agent will be able to input it in the conditional reveal.</li>
+          <li>To add more value to the blue banner, and reduce the number of tabs on the screen, we moved claimant details to the blue banner.</li>
+          <li>We added a tag to reflect the status of the claim to the blue banner. We think it might also be useful to have tags for disallowed claims, and claims awaiting specific pieces of information – we will explore what these might be through UR.</li>
+          <li>We added the MAP rule to the Decision tab, because it influences the MAP start date. We need to explore, through UR, if this is the best place for this rule information to be located.</li>
+	<li>We expanded the MAP acronym to be written out in full.</li>
+        </ul>'
+      }
+    },
+    {
+      heading: {
+        text: "Hypotheses"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We believe that agents will read the full label on the name field, and stop entering the title of the claimant.</li>
+          <li>We believe that the additional information within the blue banner will give it more value, and agents will be able to quickly find the information they require within it.</li>
+          <li>We believe that agents will be able to understand the status of a case quickly because of the tag in the blue banner.</li>
+          <li>We believe the presence of the MAP rule on the decision tab will reassure agents that the claim has been worked out accurately.</li>
+          <li>We will test these hypotheses through observation and discussion in usability testing.</li>
+        </ul>'
+    }
+  },
+    {
+    heading: {
+      text: "Research notes"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>Number of participants: 4</li>
+        <li>Hint text on the full name field was successful, there were no questions as to what should be entered into this field.</li>
+        <li>Agents were more confident that this service was something for them, this may be due to the removal of the gov.uk branding.</li>
+        <li>The tabs and highest earning weeks were more successful this round. There was still some hesitation to click the tabs though.</li>
+        <li>The MAP rule applied was recognised by agents, but once they had navigated away from the decision tab they couldn&rsquo;t remember where they&rsquo;d seen this piece of information.</li>
+        </ul>'
+    }
+  }
+]
+}) }}
+<h2 class="govuk-heading-m">Round 6: 24 November 2021</h2>
+
+<p><a href="/iteration-6/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 6</a></p>
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+id: "accordion-default",
+items: [
+  {
+    heading: {
+      text: "Design decisions"
+    },
+    content: {
+      html:
+
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We added a flag to make it clear which MAP rule applies to the case to reduce the amount of thinking an agent needs to do, and enable them to quickly recognise why a claimant&rsquo;s preferred start date has not been allowed.</li>
+          <li>We moved the MAP rule information to the MAP dates tab, because agents in usability testing couldn&rsquo;t remember where they had seen the rule, and expected it to be with the date information.</li>
+          <li>We changed the styling at the top of the page to remove the blue banner but keep important claimant information at the top, because agents in usability testing haven&rsquo;t noticed the blue banner, and have missed information within it.</li>
+          <li>We moved the 13 weeks of earnings into flat content, because a lot of agents haven&rsquo;t accessed the details drop-down without being prompted.</li>
+          <li>We have created 2 scenarios so we can cover more ground.</li>
+	        <li>Scenario 1 is a 4-week non-flexible MAP with a Variable rate award. Their employment has been broken up, but they have only had 1 employer.</li>
+          <li>Scenario 2 is a Flexible MAP with a Standard rate award. Their employment dates cover 2 employers, and they have weekly earnings from 2 employers.</li>
+          <li>We know that claimants sometimes contact us to question which weekly earnings have been used, so we have included a breakdown of the earnings by employer, and a total weekly amount.</li>
+          <li>We have not included employer details in the Employment and Earnings tab because we cannot currently get this information from Finance GZ. We will explore with users what details they need here, and use this information to make additional requests to Finance GZ where appropriate.</li>
+        </ul>'
+      }
+    },
+    {
+      heading: {
+        text: "Hypotheses"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+        <li>We believe agents will need to see more information from the highest earning weeks, especially when the case is a variable rate.</li>
+        <li>We believe agents are more likely to notice the claimant details now they have been taken out of the blue banner, which we observed was not seen by most users.</li>
+        <li>We believe the MAP rule flag will reassure users that the system has accurately worked out the claimant&rsquo;s start date, and they will be able to explain why, should a claimant call us.</li>
+        <li>We will test these hypotheses through observation and discussion in usability testing.</li>
+        </ul>'
+    }
+  },
+    {
+    heading: {
+      text: "Research notes"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>Number of participants: 5</li>
+        <li>The status tag on the claimant requested MAP start date received really positive feedback. It was quick and easy for agents to see whether that date has been used which is helpful, especially for answering queries.</li>
+        <li>The highest earning weeks flat content worked well, agents commented that the highest weeks had been used and they were actively looking at the information contained here.</li>
+        <li>Variable rate and multiple employers didn’t highlight any big issues. Both were expected to be tricky, but agents responded well.</li>
+        <li>Missing information highlighted this round were the employer name and whether the figure presented is gross/net income. We have heard these comments previously, but the description of the earnings figure appeared to be more important for the scenarios that were tested here.</li>
+        <li>There was still apprehension about clicking into the tabs, some completely missed them without prompting.</li>
+        <li>The white key details bar seems to have been more successful this round, we will continue to explore this.</li>
+      </ul>'
+    }
+  }
+]
+}) }}
+
+<h2 class="govuk-heading-m">Round 7: 2 December 2021</h2>
+
+<p><a href="/iteration-7/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 7</a></p>
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+id: "accordion-default",
+items: [
+  {
+    heading: {
+      text: "Design decisions"
+    },
+    content: {
+      html:
+
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We introduced a new journey to explore how agents would find a case, for example if a claimant was on the phone and needed to ask questions about their case.</li>
+          <li>In order to explore what agents would expect to be searching with, we kept the search box very minimal.</li>
+          <li>We are testing new navigation for the summary page. We believe this is a strong middle ground between tabs and a long page of information.</li>
+          <li>We have moved the Allowed tag to sit next to the Decision as it was not providing value in the claimant details banner.</li>
+          <li>We will continue to explore how agents notice and interact with the white key details bar.</li>
+        </ul>'
+      }
+    },
+    {
+      heading: {
+        text: "Hypotheses"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>We believe agents will expect to find a case using the claimant&rsquo;s National Insurance number.</li>
+          <li>We believe agents will navigate easily around the summary page to answer questions a claimant might ask.</li>
+          <li>We believe agents are more likely to notice the claimant details now they have been taken out of the blue banner.</li>
+          <li>We will test these hypotheses through observation and discussion in usability testing.</li>
+        </ul>'
+    }
+  },
+    {
+    heading: {
+      text: "Research notes"
+    },
+    content: {
+      html:
+      '<ul class="govuk-list govuk-list--bullet">
+        <li>Number of participants: 5</li>
+        <li>The iterated navigation worked well in this first round of research. The navigation bar wasn&rsquo;t noticed by all, but those who did used it quickly upon seeing the page. Those who didn&rsquo;t were able to scroll through the content without any problems. There was no prompting required to find other information as with the tabs previously.</li>
+        <li>The white details bar reassured agents that they were looking at the right record and they were referencing the details here when asked this question.</li>
+        <li>Employer name was highlighted again as a piece of information that is missing that they would need.</li>
+        <li>There was some uncertainty around the highest earning weeks. In previous rounds we&rsquo;ve heard people state that they must be the highest, but during this round there were some doubts as to whether these were the highest the claimant provided and whether there could potentially be any higher ones we&rsquo;re unaware of.</li>
+        <li>In terms of where the information was from and the trust they would have in it, there wasn&rsquo;t as much recognition that this information was from trusted sources. Agents presumed it was from the MA1, and their trust was based on how much they would trust that particular MA1 rather than the information presented.</li>
+      </ul>'
+    }
+  }
+]
+}) }}
+
+  <h2 class="govuk-heading-m">Round 8: 26 January 2022</h2>
+
+  <p><a href="/iteration-8/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 8</a></p>
+
+  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+  {{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Design decisions"
+      },
+      content: {
+        html:
+
+          '<ul class="govuk-list govuk-list--bullet">
+            <li>No changes were made to the design for iteration 8.</li>
+            <li>We used the sessions this round to explore more complex and niche circumstances to inform our future iterations.</li>
+            <li>We also revisited changes to the navigation which were introduced in iteration 7 to see how a wider group of users responded to them.</li>
+          </ul>'
+        }
+      },
+      {
+        heading: {
+          text: "Hypotheses"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+            <li></li>
+          </ul>'
+      }
+    },
+      {
+      heading: {
+        text: "Research notes"
+      },
+      content: {
+        html:
+        '<ul class="govuk-list govuk-list--bullet">
+          <li>Number of participants: 5</li>
+          <li>Agents were comfortable using a NINO for find and this was expected from other systems used.</li>
+          <li>Generally agents found that most of the information that they would need to answer queries was available to them.</li>
+          <li>Some users did navigate with the bar rather than by scrolling on the summary page.</li>
+          <li>If a DLW has not been provided, agents will process as much of the claim as possible. Usually when that date is provided, other elements don’t need to be reassessed.</li>
+          <li>Employer name was highlighted again as something that was missing here. It was also highlighted that the MA1 questions about maternity leave don&rsquo;t cover some areas that are needed such as annual leave.</li>
+          </ul>'
+      }
+    }
+  ]
+  }) }}
+
+    <h2 class="govuk-heading-m">Round 9: 3 February 2022</h2>
+
+    <p><a href="/iteration-9/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 9</a></p>
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+    id: "accordion-default",
+    items: [
+      {
+        heading: {
+          text: "Design decisions"
+        },
+        content: {
+          html:
+
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>We know that some claimants do not provide a Date Last Worked (DLW), or provide a provisional one.</li>
+              <li>We split the date input onto a new page, and added new questions to gather a confirmed DLW, a provisional DLW, and no DLW provided.</li>
+              <li>Where a provisional or no DLW is provided, we cannot display a decision on the claim summary page.</li>
+              <li>We used the blue PENDING tag from the design system to indicate that the claim is awaiting information for a decision to be made.</li>
+              <li>We will explore through UR what agents understand in this situation, and what they would do next.</li>
+              <li>We removed the tag next to the claimaint&rsquo;s chosen MAP start date, to maintain the value of the remaining tags on the page, and because we cannot allow or decline their selected date without a confirmed DLW.</li>
+              <li>Other dates have been left blank because we cannot calculate them without a confirmed DLW.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>We believe that agents will rapidly understand that the case has some outstanding work to do through the PENDING tag, and will expect to provide a new piece of information to move the claim to a decision.</li>
+              <li>We believe that agents will expect to navigate through the Change link to enter a confirmed DLW provided by the claimant.</li>
+              <li>We believe that agents will expect the summary page to update with confirmed dates and calculations when they have provided the final DLW.</li>
+            </ul>'
+        }
+      },
+        {
+        heading: {
+          text: "Research notes"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+            <li>Number of participants: 3</li>
+            <li>Agents were comfortable using a NINO with find but as with previous rounds, there was an expectation that there may be some confirmation of who the claimant was before proceeding to their claim record as is the case with other systems used currently.</li>
+            <li>Agents were able to see that the DLW had not been provided and answered this question correctly. 2/3 agents incorrectly provided the &lsquo;claimant requested MA start date&rsquo; as the &lsquo;date maternity leave will start&rsquo;. They then entered this date again on the correct page of the prototype without recognition that this had already been used for a previous answer.</li>
+            <li>2/3 agents noticed the change link on the summary page for DLW and would expect to follow this journey once they’d received that piece of information. Agents are still confident that no other information would need to be reassessed at this point.</li>
+            <li>The status of &lsquo;pending&rsquo; was understood by agents.</li>
+            </ul>'
+        }
+      }
+    ]
+    }) }}
+
+
+    <h2 class="govuk-heading-m">Round 10:</h2>
+
+    <p><a href="/iteration-10/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 10</a></p>
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+    id: "accordion-default",
+    items: [
+      {
+        heading: {
+          text: "Design decisions"
+        },
+        content: {
+          html:
+
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>We have assumed that when users user the change link on the check your answers screen, that they will change information pertaining only to that item and should return to the summary screen without the need to change anything else on the form. This was concluded to be true from past user research but will need testing.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>&nbsp;</li>
+            </ul>'
+        }
+      },
+        {
+        heading: {
+          text: "Research notes"
+        },
+        content: {
+          html:
+          '<ul class="govuk-list govuk-list--bullet">
+            <li>Number of participants: 5</li>
+            <li>Again it was flagged by agents that they&rsquo;d expect some form of confirmation of who the claimant was before accessing the record, but that the information shown would be okay to perform some basic security, but not high value security questions/checks.</li>
+            <li>Agents were able to see that the DLW had not been provided and answered this question correctly. 3/5 agents answered the question about maternity leave start date correctly and selected no. 2/5 agents answered this incorrectly and said yes and used the MA start date as the maternity leave start date. 4/5 agents answered the MA start date question correctly, but without recognition that some had previously used that date as the maternity leave start date.</li>
+            <li>2/5 agents noticed the change link on the summary page for DLW and would expect to follow this journey once they&rsquo;d received that piece of information.</li>
+            <li>The term &lsquo;pending&rsquo; was understood by agents although some alternatives were also suggested.</li>
+            </ul>'
+        }
+      }
+    ]
+    }) }}
+
+    </div>
+      </div>
+{% endblock %}

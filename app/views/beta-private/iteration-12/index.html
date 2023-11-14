@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" method="post" novalidate>
+        
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "scenario",
+        fieldset: {
+          legend: {
+            text: "Maternity Allowance Private Beta",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "scenario-1",
+            text: "Scenario 1"
+          },
+          {
+            value: "scenario-2",
+            text: "Scenario 2"
+          },
+          {
+            value: "scenario-3",
+            text: "Scenario 3"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

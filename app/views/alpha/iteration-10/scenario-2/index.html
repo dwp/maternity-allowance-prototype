@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Find a claim
+      </h1>
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Search"
+        },
+        classes: "govuk-!-width-one-half",
+        id: "full-name",
+        name: "full-name",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="decision" class="govuk-!-margin-bottom-6">
+<h1 class="govuk-heading-l">Employer details</h1>
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Employer name"
+      },
+      value: {
+        text: "GRAINGERS WHOLESALE LTD"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "payslip frequency"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Payslip frequency"
+      },
+      value: {
+        text: "Every 4 weeks"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "payslip frequency"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Payslip details</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Payment date</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Payment amount</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{ data['ma-payslip-1-date'] }}</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;{{ data['ma-payslip-1-amount'] }}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Michael Cain</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Michael Cain from the list</span></a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</section>
+
+  <form class="form" method="post" novalidate>
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "ma-payslip-details-conf",
+      name: "ma-payslip-details-conf",
+      fieldset: {
+        legend: {
+          text: "Do you need to add another payslip?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+  </form>
+
+  </div>
+</div>
+{% endblock %}

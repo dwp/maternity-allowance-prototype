@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% set claimantName = 'Mrs J Doe' %}
+{% set claimantFullName = 'Jane Doe' %}
+{% set claimantNino = 'XX123456X' %}
+{% set claimantAddress1 = '1 Address Street' %}
+{% set claimantTown = 'Newcastle' %}
+{% set claimantPostCode = 'NE1 EBR' %}
+{% set claimLetterDate = '08 August 2022' %}
+{% set claimDate = '01 February 2022' %}
+{% set claimRate = '£27.00' %}
+{% set claimStartDate = '27 June 2022' %}
+{% set claimInterimDate = '12 July 2022' %}
+{% set claimEndDate = '26 March 2023' %}
+{% set claimFirstPayment = '£57.86' %}
+{% set claimTimeToPaymentStart = '5' %}
+{% set claimTimeToPaymentEnd = '10' %}
+{% set claimPayFrequency = '4 weeks' %}
+{% set claimPayDay = 'Tuesday' %}
+{% set claimPayStart = '09 August 2022' %}
+{% set claimTestPeriodStart = '23 May 2021' %}
+{% set claimTestPeriodEnd = '27 August 22' %}
+
+
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div id="contentToTest" class="content-letter colour-distinction taller-lines">
+
+              <div class="govuk-!-margin-top-4">
+
+
+
+              </div>
+
+              <div class="address-row">
+                <div class="address-row-item">
+                  <p>
+                    {{ claimantName }} <br><br>
+                    {{ claimantAddress1 }} <br>
+                    {{ claimantTown }} <br>
+                    {{ claimantPostCode }}
+                  </p>
+                </div>
+                <div class="address-row-item">
+                  <p>
+                    Maternity Allowance<br>
+                    Mail Handling Site A<br>
+                    Wolverhampton<br>
+                    WV98 1SU<br>
+
+                  </p>
+                  <p><strong>www.gov.uk</strong></p>
+                  <p>
+                    Telephone: 0800 169 0283<br>
+                    Textphone: 0800 169 0286<br>
+                  </p>
+                  <p>Your reference:<br>
+                    {{ claimantNino }}</p>
+
+                </div>
+              </div>
+
+
+
+              <div class="letter-content-row">
+
+                <div class="letter-content-primary">
+
+                                <h2 class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-0">About your Maternity Allowance </h2>
+
+                                <h3 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">We will pay you Maternity Allowance</h3>
+
+                                <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                  <p>
+                    Dear {{ claimantFullName }}
+                  </p>
+
+                  <p>
+                    Thank you for claiming Maternity Allowance.  </p>
+
+                    <p>Your first payment will be £129.26 for the period from 24 April 2023 to 4 May 2023. You will get this payment within 5 working days.  </p>
+
+                    <p> We will then pay you £101.08 for each week from 1 June 2023 to 22 January 2024. You will receive a payment every 2 weeks on a Thursday, starting 1 June 2023. </p> 
+
+                    <p> We will send payments to the account you requested. </p>
+                    
+                    <p> Your MA award is based on the level of National Insurance (NI) contributions in your test period from 20 February 2022 to 27 May 2023.  </p>
+                    
+                    <p> We may be able to pay you more Maternity Allowance if your earnings increase while you are still working or if you make more National Insurance contributions. </p>
+                  </p>
+
+
+                </div>
+
+                <div class="letter-content-secondary">
+                  <p>10 April 2023</p>
+                  <div class="alt-format-text">
+                    <p class="govuk-body">
+                      We have many different ways we can communicate with you.
+                    </p>
+                    <p class="govuk-body">
+                      If you would like Braille, British Sign Language, a hearing loop, translations, large print, audio or something else please tell us using the phone number at the top of this letter.
+                    </p>
+
+
+                  </div>
+
+                  <!--div class="govuk-!-margin-top-9 grey-box-text">
+                    <p class="govuk-body">
+                      {{ carerName }} has made a Carer’s Allowance claim. This may affect some benefits you may get.
+                    </p>
+
+                  </div-->
+
+                </div>
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 1 of 3
+                      </p>
+                  </div>
+
+              </div>
+
+              </div>
+
+
+
+ 
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+                    <h4 class="govuk-heading-m">Paying National Insurance contributions</h4>
+                      <p>We will tell HMRC that you have claimed Maternity Allowance. They may ask you to make voluntary Class 2 National Insurance contributions. If you do this, we may be able to increase your Maternity Allowance to the standard rate. </p>
+                     <p>If you are self-employed with a Budget Payment Plan, HMRC may allocate money you have paid towards your Class 2 National Insurance contributions. HMRC will contact you if this happens. If you decide not to use money from your Budget Payment Plan to pay your Class 2 National Insurance contributions, tell us immediately. You may have to repay some of your Maternity Allowance. </p> 
+
+
+                    <h4 class="govuk-heading-m">Changes you need to report</h4>
+                    <p>You need to report changes in your circumstances that happen while you’re getting Maternity Allowance, for example if you go back to work. </p>
+                    <p>To learn more about the changes you need to report, visit <b>www.gov.uk/report-benefits-change-circumstances.</b></p>
+                    <p>Your Maternity Allowance could be stopped or reduced if you do not report a change straight away. If you’re paid too much you might have to pay some of the money back.  </p>
+                    <p>Deliberately not reporting changes is benefit fraud and you may face action. </p>
+
+                    <br>
+                    <h4 class="govuk-heading-m">If you disagree with a decision </h4>
+            
+                    
+                    <h4 class="govuk-heading-s">You can ask us to explain why</h4>
+                    <p>You, or someone who has the authority to act for you, can phone or write to us within one month of the date on this letter to ask us to explain our decision in writing. </p>
+                    
+                    <h4 class="govuk-heading-s">You can also ask us to reconsider a decision </h4>
+                    <p>Tell us if you have more information, or if you think we have overlooked something which might change the decision. Do this within one month of the date on this letter.</p> 
+                    <p>We will look at what you tell us and send you a letter to tell you what we have decided, and why. We call this letter a Mandatory Reconsideration Notice. </p>
+                    
+
+                    <h4 class="govuk-heading-s">When you have done this you can appeal </h4>
+                    <p>If you disagree with the Mandatory Reconsideration Notice, you can appeal to a tribunal. </p>
+                    <p> You must wait for the Mandatory Reconsideration Notice before you start an appeal. </p>
+                      
+                  </div>
+
+
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 2 of 3
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+              <div id="contentToTest" class="content-letter colour-distinction taller-lines govuk-!-margin-top-9">
+
+                <div class="letter-content-row">
+
+                  <div class="letter-content-primary">
+
+
+                    <h4 class="govuk-heading-s">More information</h4>
+                    <p>For more information about Maternity Allowance, visit <b>www.gov.uk/maternity-allowance.</b>  </p>
+                    <p>For information about other benefits that may affect your Maternity Allowance, visit <b>www.gov.uk/maternity-allowance/what-youll-get.</b> </p>
+                    <br>
+                    <h4 class="govuk-heading-s">Equality and Diversity </h4>
+                    <p>We treat people fairly, regardless of their disability, ethnicity, gender, sexual orientation, transgender status, marital or civil partnership status, age, religion or beliefs. </p>
+                    <br>
+                    <h4 class="govuk-heading-s">Why DWP needs personal information and how we treat it </h4>
+                    <p>We treat personal information carefully. We may use it for any of our purposes. To learn more about information rights and how we use information, please see our DWP Personal Information Charter at<b> www.gov.uk/dwp/personal-information-charter. </b> </p>
+
+                  <br><br>
+                    <p>Yours sincerely,<br>
+                    <p>Operations Manager</p>
+
+                    
+
+                <div class="app-page-number-row">
+                      <p>
+                          Page 3 of 3
+                      </p>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+      {% endblock %}

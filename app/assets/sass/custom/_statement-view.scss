@@ -1,0 +1,22 @@
+
+.nobordery {
+  border-bottom: 0px;
+  font-weight: normal;
+}
+
+.doubleborder {
+  border-bottom: 2px solid $govuk-input-border-colour;
+  font-weight: normal;
+}
+
+.transactions {
+  .govuk-\!-width-one-half {
+    width: 90% !important;
+  }
+  .govuk-summary-list__value {
+    width: 25%;
+  }
+  .govuk-summary-list__actions {
+    width: 20%;
+  }
+}

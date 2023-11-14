@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+      {% set mainClasses = "govuk-main-wrapper--l" %}
+
+      {% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Cannot find a record for this claimant</h1>
+            <p class="govuk-body">If you cannot find the claimant elsewhere, create a claim manually.</p>
+            <ul class="govuk-list">
+              <li>
+                <span class="govuk-body govuk-!-font-weight-bold">Name: </span>{{ data['claimant-name'] }}
+              </li>
+              <li>
+                <span class="govuk-body govuk-!-font-weight-bold">Date of birth: </span>{{ data['claimant-dob'] }}
+              </li>
+              <li>
+                <span class="govuk-body govuk-!-font-weight-bold">National Insurance Number: </span>{{ data['claimant-nino'] }}
+              </li>
+              <li>
+                <span class="govuk-body govuk-!-font-weight-bold">Contact number: </span>{{ data['claimant-contact-number'] }}
+              </li>
+              <li>
+                <span class="govuk-body govuk-!-font-weight-bold">Address: </span>{{ data['claimant-address'] }}, {{ data['claimant-postcode'] }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endblock %}

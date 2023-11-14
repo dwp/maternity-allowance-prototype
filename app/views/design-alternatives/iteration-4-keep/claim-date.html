@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set dlwHtml %}
+      {{ govukDateInput({
+        id: "date-last-worked",
+        namePrefix: "date-last-worked",
+        fieldset: {
+          legend: {
+            text: "Date the claim was received"
+          }
+        }
+      }) }}
+      {% endset -%}
+
+      {% set todayText %}
+        Today, {{ '' | todayGovuk }}
+      {% endset -%}
+
+      {% set yesterdayText %}
+        Yesterday, {{ '' | yesterdayGovuk }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "contact",
+        name: "contact",
+        fieldset: {
+          legend: {
+            text: "When was the claim received?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: todayText
+          },
+          {
+            value: "no",
+            text: yesterdayText
+          },
+          {
+            value: "no",
+            text: "A different date",
+            conditional: {
+              html: dlwHtml
+            }
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

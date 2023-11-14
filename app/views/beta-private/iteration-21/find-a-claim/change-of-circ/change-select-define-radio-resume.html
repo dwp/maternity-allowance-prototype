@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {{ govukRadios({
+          name: "changeReason",
+          value: data['changeReason'],
+          fieldset: {
+            legend: {
+              text: "Select the reason to restart this claim",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "shpp",
+              text: "Shared Parental Pay"
+            },
+            {
+              value: "kit",
+              text: "KIT days"
+            },
+            {
+              value: "reduced",
+              text: "Reduced working hours"
+            },
+            {
+              value: "notWorking",
+              text: "No longer working"
+            },
+            {
+              value: "abroadReturn",
+              text: "Return from abroad"
+            }
+
+          ]
+        }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

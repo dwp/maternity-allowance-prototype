@@ -1,0 +1,69 @@
+// Based on https://github.com/dwp/design-system-community-backlog/issues/63
+// Note - this code for prototype purposes only. It is not production code.
+
+.key-details-bar-white {
+    // background-color: #005ea5;
+}
+
+.key-details-bar-white .key-details-bar__key-details {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 20px 0 0 0;
+    position: relative;
+    font-family: "GDS Transport";
+}
+
+.key-details-bar-white .key-details-bar__key-details * {
+    // color: #fff;
+}
+
+.key-details-bar-white .key-details-bar__key-details .key-details-bar__name {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11111;
+    margin-right: 10px;
+}
+
+.key-details-bar-white .key-details-bar__key-details .key-details-bar__nino {
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.key-details-bar-white .key-details-bar__key-details .key-details-bar__status {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 5px 8px 0;
+    // color: #005ea5;
+    // background-color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    float: right;
+    margin: 5px 0 0;
+}
+
+.key-details-bar-white .key-details-bar__key-details .key-details-bar__bottom-block {
+    //border-top: 1px solid $govuk-border-colour;
+    content: ' ';
+    padding-top: 10px;
+    margin-top: 6px;
+}
+
+.key-details-bar-white .key-details-bar__key-details dd, .key-details-bar-white .key-details-bar__key-details dt {
+    float: left;
+    font-size: 19px;
+    margin-right: 5px;
+}
+
+.key-details-bar-white .key-details-bar__key-details dd {
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.key-details-bar-white .key-details-bar__key-details .key-details-bar__top-block::after, .key-details-bar-white .key-details-bar__key-details .key-details-bar__bottom-block::after {
+    clear: both;
+    content: ' ';
+    display: block;
+}

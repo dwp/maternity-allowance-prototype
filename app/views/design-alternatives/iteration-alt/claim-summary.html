@@ -1,0 +1,202 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+  {% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Claim summary</h1>
+
+
+        <h2 class="govuk-heading-m">Maternity Allowance decision</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-6',
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Alice Crowther"
+              }
+            },
+            {
+              key: {
+                text: "Decision"
+              },
+              value: {
+                text: "Allowed"
+              }
+            },
+            {
+              key: {
+                text: "Rate"
+              },
+              value: {
+                text: "Standard rate at £151.97 per week"
+              }
+            }
+          ]
+        }) }}
+
+
+            <h2 class="govuk-heading-m">Claimant details</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Name"
+                  },
+                  value: {
+                    text: "Alice Crowther"
+                  }
+                },
+                {
+                  key: {
+                    text: "National Insurance Number"
+                  },
+                  value: {
+                    text: "XX123456X"
+                  }
+                },
+                {
+                  key: {
+                    text: "Date of birth"
+                  },
+                  value: {
+                    text: "16 September 1989"
+                  }
+                },
+                {
+                  key: {
+                    text: "Postcode"
+                  },
+                  value: {
+                    html: "SR5 6JW"
+                  }
+                },
+                {
+                  key: {
+                    text: "Contact number"
+                  },
+                  value: {
+                    html: '07858 787560'
+                  }
+                }
+              ]
+            }) }}
+
+
+            <h2 class="govuk-heading-m">Claim dates</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Baby due date"
+                  },
+                  value: {
+                    text: "21 November 2021"
+                  }
+                },
+                {
+                  key: {
+                    text: "First day of Test Period"
+                  },
+                  value: {
+                    text: "16 August 2020"
+                  }
+                },
+                {
+                  key: {
+                    text: "Last day of Test Period"
+                  },
+                  value: {
+                    text: "20 November 2021"
+                  }
+                },
+                {
+                  key: {
+                    text: "15th week before the baby due date"
+                  },
+                  value: {
+                    text: "8 August 2021"
+                  }
+                }
+              ]
+            }) }}
+
+
+            <h2 class="govuk-heading-m">Employment and earnings</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Employment test"
+                  },
+                  value: {
+                    text: "Met"
+                  }
+                },
+                {
+                  key: {
+                    text: "Employment test weeks used"
+                  },
+                  value: {
+                    text: "28 March 2021 to 19 September 2021"
+                  }
+                },
+                {
+                  key: {
+                    text: "Earnings test"
+                  },
+                  value: {
+                    text: "Met"
+                  }
+                },
+                {
+                  key: {
+                    text: "Earnings test weeks used"
+                  },
+                  value: {
+                    text: "27 June 2021 to 19 September 2021"
+                  }
+                },
+                {
+                  key: {
+                    text: "Average weekly earnings for earnings test"
+                  },
+                  value: {
+                    text: "£200.35"
+                  }
+                }
+              ]
+            }) }}
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  {% endblock %}

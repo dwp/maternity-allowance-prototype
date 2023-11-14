@@ -1,0 +1,128 @@
+.content-letter {
+  font-family: 'Arial', sans-serif !important;
+  border: 2px solid #505a5f;
+  box-shadow: 4px 4px 0 rgba(#505a5f, 0.4);
+  padding: 30px 15px 50px 15px;
+  min-height: 90em;
+  position: relative;
+  * {
+    font-family: 'Arial', sans-serif !important;
+  }
+  @media (min-width: 40.0625em) {
+    .main-container {
+      padding-right: 20%;
+    }
+  }
+}
+
+
+.page-number {
+  position: absolute;
+  right: 45px;
+  bottom: 15px;
+}
+
+.address-row {
+  display: flex;
+  width: 150%;
+  padding: 0;
+  padding-top: 80px;
+  @media (max-width: 40.0625em) {
+    flex-direction: column;
+  }
+  .address-row-item {
+    flex-grow: 1;
+  }
+}
+
+.letter-content-row {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  padding-top: 20px;
+  @media (max-width: 40.0625em) {
+    flex-direction: column;
+  }
+  @media (min-width: 40.0625em) {
+    .letter-content-primary {
+      width: 70%;
+      padding-right: 40px;
+    }
+    .letter-content-clerical {
+      width: 100%;
+      padding-right: 40px;
+    }
+    .letter-content-secondary {
+      width: 30%;
+    }
+  }
+}
+
+.colour-distinction.taller-lines {
+  * {
+    //line-height: 2.2 !important;
+  }
+}
+
+//*****
+
+.instructions img {
+  display: block;
+  max-width: 100%;
+  width: 400px;
+  border: 2px solid #505a5f;
+  box-shadow: 4px 4px 0 rgba(#505a5f, 0.4);
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+.alt-format-text {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.grey-box-text {
+  background-color: govuk-colour('light-grey');
+  padding: 10px;
+}
+
+.app-actions-force-inline {
+  width: 50%;
+}
+
+.govuk-summary-list__actions-list-item:not(:last-child) {
+  border-right: none;
+}
+
+.app-type-force-normal {
+  font-weight: normal !important;
+}
+
+.app-dwp-logo {
+  svg {
+    max-width: 8em;
+    height: auto;
+  }
+}
+
+.app-ni-logo {
+  svg {
+    max-width: 18em;
+    height: auto;
+  }
+}
+
+.app-content-letter-table {
+  .govuk-table__cell,
+  .govuk-table__header {
+    border-bottom: none;
+  }
+}
+
+.app-page-number-row,
+.app-page-number-row p {
+  width: calc(100% - 30px);
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+}

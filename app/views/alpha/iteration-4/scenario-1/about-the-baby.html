@@ -1,0 +1,79 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        About the baby
+      </h1>
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "due-date",
+        namePrefix: "due-date",
+        fieldset: {
+          legend: {
+            text: "When is the claimant’s baby due?"
+          }
+        }
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set birthDateHtml %}
+      {{ govukDateInput({
+        id: "birth-date",
+        namePrefix: "birth-date",
+        fieldset: {
+          legend: {
+            text: "Baby's date of birth"
+          }
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "baby-born",
+        name: "baby-born",
+        fieldset: {
+          legend: {
+            text: "Has the baby been born?"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: birthDateHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

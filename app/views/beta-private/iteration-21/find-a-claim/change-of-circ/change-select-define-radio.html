@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/change-reason" method="post">
+
+        {{ govukRadios({
+          name: "changeReason",
+          value: data['changeReason'],
+          fieldset: {
+            legend: {
+              text: "Select the reason to end this claim",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "end",
+              text: "End claim"
+            },
+            {
+              value: "kit",
+              text: "KIT days"
+            },
+            {
+              value: "fraud",
+              text: "Fraudulent claim"
+            },
+            {
+              value: "ShPP",
+              text: "Shared Parental Pay"
+            },
+            {
+              value: "abroad",
+              text: "Move abroad"
+            },
+            {
+              value: "prison",
+              text: "Prison/Detention"
+            },
+            {
+              value: "death",
+              text: "Claimant death"
+            }
+
+          ]
+        }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+.sticky-nav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.anchor-links {
+  border-top: 2px solid $govuk-link-colour;
+  margin-bottom: 60px;
+}

@@ -1,0 +1,14 @@
+.govuk-summary-list__actions-list-item:not(:first-child) {
+  border-left: 1px solid $govuk-border-colour;
+}
+.govuk-summary-list__actions-list-item {
+  margin-right: 0;
+  padding-right: 0;
+}
+.govuk-summary-list__actions-list-item:last-child {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.govuk-summary-list__actions {
+  width: 25%;
+}
