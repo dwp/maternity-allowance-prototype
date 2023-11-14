@@ -1,15 +1,9 @@
 /* global $ */
 
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
-
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
-
+// Warn about using the kit in production
+if (window.console && window.console.info) {
+  window.console.info('GOV.UK Prototype Kit - do not use for production')
+}
 
 $(document).ready(function () {
   $('ul.dwp-sub-navigation__list li a').on('click', function(){
@@ -31,4 +25,5 @@ $(document).ready(function () {
     }
   });
 
+  window.GOVUKFrontend.initAll()
 })

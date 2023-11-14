@@ -1,7 +1,6 @@
 <style>
 
   .govuk-warning-text__icon_Maternity{right: 5px; top: 0px;}
-  .govuk-summary-list__value{width:250px !important;}
 
 </style>
 {% extends "layout-summary.html" %}
@@ -111,7 +110,9 @@
         text: data['ma-decision']
       })}}
     </dd>
-
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
   </div>
   <!--div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -128,7 +129,9 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-creation-date'] }}
     </dd>
-
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -137,7 +140,9 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-decision-date'] }}
     </dd>
-
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -146,9 +151,16 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-rate'] }}
 
-
+      <dd class="govuk-summary-list__actions">
+            
+     
+      
     </dd>
-
+    </dd>
+    
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
   </div>
 
 

@@ -17,11 +17,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/stop-Claim" method="post">
+      <form class="form" action="/change-type" method="post">
 
         {{ govukRadios({
-          name: "stopClaim",
-          value: data['stopClaim'],
+          name: "changeType",
+          value: data['changeType'],
           fieldset: {
             legend: {
               text: "Select the change of circumstance you want to add to this claim",

@@ -233,7 +233,7 @@ module.exports = router => {
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '23 June 2023';
-      req.session.data['ma-map-end'] = '21 March 2024';
+      req.session.data['ma-map-end'] = '25 October 2023';
       req.session.data['ma-map-end-summary'] = '21 March 2024';
 
       // Test period dates
@@ -451,7 +451,7 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-selec
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers');
+  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confirm-answers');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confirm-answers', function (req, res) {
@@ -460,11 +460,11 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confi
 
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio');
+  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date');
+  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-fraud-entire-claim', function (req, res) {
@@ -476,7 +476,7 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-fraud
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date-resume');
+  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date-resume');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date-resume', function (req, res) {
@@ -487,29 +487,16 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-25/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-type26', function(request, response) {
+router.post('/change-type25', function(request, response) {
 
-  var changeType = request.session.data['changeType26']
+  var changeType = request.session.data['changeType25']
   if (changeType == "stop"){
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
+      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio")
   } 
   if (changeType == "reduce"){
-    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
+    response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
-  }
-})
-
-router.post('/change-type27', function(request, response) {
-
-  var changeType = request.session.data['changeType27']
-  if (changeType == "stop-resume"){
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
-  } 
-  if (changeType == "reduce-resume"){
-    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
-} else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
+      response.redirect("beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 

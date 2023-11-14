@@ -487,38 +487,27 @@ router.post('/beta-private/iteration-24/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-24/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/stop-Claim', function(request, response) {
+router.post('/change-type', function(request, response) {
 
-  var stopClaim = request.session.data['stopClaim']
-  if (stopClaim == "stop"){
+  var changeType = request.session.data['changeType']
+  if (changeType == "stop"){
       response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio")
   } 
-  if (stopClaim == "reduce"){
+  if (changeType == "reduce"){
     response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
       response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
-router.post('/change-reason24', function(request, response) {
+router.post('/change-reason', function(request, response) {
 
-  var changeReason24 = request.session.data['changeReason24']
-  if (changeReason24 == "fraud"){
-      response.redirect("beta-private/iteration-24/find-a-claim/change-odf-circ/change-fraud-entire-claim")
+  var changeReason = request.session.data['changeReason']
+  if (changeReason == "fraud"){
+      response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-fraud-entire-claim")
   } 
  else {
       response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-MA-end-date")
-  }
-})
-
-router.post('/change-reason-resume24', function(request, response) {
-
-  var changeReasonResume24 = request.session.data['changeReasonResume24']
-  if (changeReasonResume24 == "restart"){
-      response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
-  } 
- else {
-      response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
