@@ -233,7 +233,7 @@ module.exports = router => {
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '23 June 2023';
-      req.session.data['ma-map-end'] = '25 October 2023';
+      req.session.data['ma-map-end'] = '21 March 2024';
       req.session.data['ma-map-end-summary'] = '21 March 2024';
 
       // Test period dates
