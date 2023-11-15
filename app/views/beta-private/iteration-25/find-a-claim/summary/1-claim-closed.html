@@ -79,7 +79,7 @@
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-claim-closed">Change of circumstance</a>
+                  <a href="1-change-summary">Change of circumstance</a>
                 </li>
 
 
@@ -100,7 +100,78 @@
 <section id="decision" class="govuk-!-padding-top-6">
 <h2 class="govuk-heading-m">Decision</h2>
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-0',
+  rows: [
+    {
+      key: {
+        text: "Decision",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        html: govukTag({
+          text: data['ma-decision']
+        })
+      }
+    }, 
+    {
+      key: {
+        text: "Claim status",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        html: govukTag({
+          text: 'Closed' ,
+          classes: "govuk-tag--grey"
+        })
+      }
+    },
+    {
+      key: {
+        text: "Claim created"
+      },
+      value: {
+        text: data['ma-claim-creation-date']
+      }
+    },
+    {
+      key: {
+        text: "Decision date"
+      },
+      value: {
+        text: data['ma-claim-decision-date']
+      }
+    },
+    {
+      key: {
+        text: "Rate"
+      },
+      value: {
+        text: data['ma-rate']
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period start date"
+      },
+      value: {
+        text: data['ma-map-start']
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period end date"
+      },
+      value: {
+        text: data['ma-map-end']
+      }
+    }
+
+    ]
+  })
+}}
+
+<!--<dl class="govuk-summary-list govuk-!-margin-bottom-0">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Decision
@@ -132,7 +203,7 @@
     <dd class="govuk-summary-list__value">
       !!!!!!!!!!!Employment and earnings!!!!!!!!!!!
     </dd>
-  </div -->
+  </div 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Claim created
@@ -198,7 +269,7 @@
      &nbsp;
     </dd>
   </div>
-</dl>
+</dl>-->
 </section>
 
 
