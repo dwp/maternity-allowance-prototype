@@ -1,0 +1,66 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "closure-type",
+        fieldset: {
+          legend: {
+            text: "Select the type of closure you want to add to this claim",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "end-claim",
+            text: "End claim"
+          },
+          {
+            value: "claimant-death",
+            text: "Claimant death"
+          },
+          {
+            value: "prison-detention",
+            text: "Prison/Detention"
+          },
+          {
+            value: "move-abroad",
+            text: "Move abroad"
+          },
+          {
+            value: "move-abroad",
+            text: "Fraudulent claim"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

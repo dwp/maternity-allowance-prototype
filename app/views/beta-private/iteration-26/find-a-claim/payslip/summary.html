@@ -1,0 +1,151 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="decision" class="govuk-!-margin-bottom-9">
+<h1 class="govuk-heading-l">Employer details</h1>
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Employer name"
+      },
+      value: {
+        text: "ASDA LTD"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "payslip frequency"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+</section>
+
+<section id="payslips" class="govuk-!-margin-bottom-9">
+  <h2 class="govuk-heading-m">Payslip details</h2>
+  <p>Adding payslip details for a week with RTI data will replace the existing data.</p>
+  
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class">Date (Day/Month/Year)</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Payment amount</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Payment frequency</th>
+        <!-- <td scope="col" class="govuk-table__cell"> <a class="govuk-link" href="../summary/change.html">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a> </td> -->
+
+
+  
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['ma-week-9'] }}</td>
+        <td class="govuk-table__cell">£450.00</td>
+        <td class="govuk-table__cell">Weekly</td>
+         <td class="govuk-table__cell"> </td>
+      </tr>
+
+
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['ma-week-10'] }}</td>
+        <td class="govuk-table__cell">£450.00</td>
+        <td class="govuk-table__cell">Weekly</td>
+         <td class="govuk-table__cell"> </td>
+      </tr>
+  </tbody>
+  
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['ma-week-11'] }}</td>
+      <td class="govuk-table__cell">£450.00</td>
+      <td class="govuk-table__cell">Weekly</td>
+       <td class="govuk-table__cell"> </td>
+    </tr>
+</tbody>
+
+
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">{{ data['ma-week-12'] }}</td>
+    <td class="govuk-table__cell">£250.00</td>
+    <td class="govuk-table__cell">Weekly</td>
+     <td class="govuk-table__cell"> </td>
+  </tr>
+</tbody>
+
+
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">{{ data['ma-week-13'] }}</td>
+    <td class="govuk-table__cell">£450.00</td>
+    <td class="govuk-table__cell">Weekly</td>
+     <td class="govuk-table__cell"> </td>
+  </tr>
+</tbody>
+
+
+
+    
+   </table>
+
+   <p class="govuk-body"><a href="javascript:history.go(-1)" class="govuk-link">Edit payslips</a></p>
+
+
+
+</section>
+
+  <form class="form" method="post" novalidate>
+
+  
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    <a href="../summary/1-payslips-edited-employment-and-earnings.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Confirm and Continue
+    </a>
+
+  </form>
+
+  </div>
+</div>
+{% endblock %}

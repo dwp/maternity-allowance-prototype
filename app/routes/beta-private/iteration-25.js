@@ -487,16 +487,29 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-25/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-type25', function(request, response) {
+router.post('/change-type26', function(request, response) {
 
-  var changeType = request.session.data['changeType25']
+  var changeType = request.session.data['changeType26']
   if (changeType == "stop"){
       response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio")
   } 
   if (changeType == "reduce"){
     response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
-      response.redirect("beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
+      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
+  }
+})
+
+router.post('/change-type27', function(request, response) {
+
+  var changeType = request.session.data['changeType27']
+  if (changeType == "stop-resume"){
+      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio")
+  } 
+  if (changeType == "reduce-resume"){
+    response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/reduce-claim-weeks")
+} else {
+      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
