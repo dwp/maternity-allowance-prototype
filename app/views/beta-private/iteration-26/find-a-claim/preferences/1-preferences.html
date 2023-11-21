@@ -94,61 +94,84 @@
             <h2 class="govuk-heading-m" id="employment-and-earnings">Contact preferences</h2>
 
 
-            <table class="govuk-table">
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
 
-              <th scope="row" class="govuk-table__header">National insurance number</th>
-              <td class="govuk-table__cell">XX123456X</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Contact number</th>
-              <td class="govuk-table__cell">07777777777</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Address line 1</th>
-              <td class="govuk-table__cell">Quarry House</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Address line 2</th>
-              <td class="govuk-table__cell">Quarry Hill</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Town or city</th>
-              <td class="govuk-table__cell">Leeds</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Postcode</th>
-              <td class="govuk-table__cell">LS2 7UA</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-        
-        </tbody>
-        </table>
+              {
+                key: {
+                  text: "Address line 1",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "Quarry House"
+                },
+                actions: {
+                  items: [
+       
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Address line 2",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "Quarry Hill"
+                },
+                actions: {
+                  items: [
+            
+                  ]
+                }
+              },              {
+                key: {
+                  text: "Town or city",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "Leeds"
+                },
+                actions: {
+                  items: [
+      
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Postcode",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "LS2 7UA"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "../preferences/claimant-details.html",
+                      text: "Change",
+                      visuallyHiddenText: "date claimant stopped work"
+                    }
+                  ]
+                }
+              }
+
+            
+            
+                ]
+              })
+            }}
 
 
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
+            <h2 class="govuk-heading-m govuk-!-padding-top-9" id="employment-and-earnings">Reasonable adjustments</h2>
 
             <div class="govuk-hint">
               There are no reasonable adjustments for this claim.
             </div>
 
-            <a href="../preferences/contact-options"><button class="govuk-button" data-module="govuk-button">
+            <a href="../preferences/contact-options-type"><button class="govuk-button" data-module="govuk-button">
               Add reasonable adjustment
             </button></a>
 

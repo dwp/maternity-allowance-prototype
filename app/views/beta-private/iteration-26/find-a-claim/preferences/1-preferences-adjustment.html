@@ -93,81 +93,157 @@
 
             <h2 class="govuk-heading-m" id="employment-and-earnings">Contact preferences</h2>
 
+              
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
 
-            <table class="govuk-table">
-
-              <th scope="row" class="govuk-table__header">National Insurance number</th>
-              <td class="govuk-table__cell">XX123456X</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Contact number</th>
-              <td class="govuk-table__cell">07777777777</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Address line 1</th>
-              <td class="govuk-table__cell">Quarry House</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Address line 2</th>
-              <td class="govuk-table__cell">Quarry Hill</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Town or city</th>
-              <td class="govuk-table__cell">Leeds</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Postcode</th>
-              <td class="govuk-table__cell">LS2 7UA</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/claimant-details.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
+                {
+                  key: {
+                    text: "Address line 1",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "Quarry House"
+                  },
+                  actions: {
+                    items: [
         
-        </tbody>
-        </table>
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Address line 2",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "Quarry Hill"
+                  },
+                  actions: {
+                    items: [
+
+                    ]
+                  }
+                },              {
+                  key: {
+                    text: "Town or city",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "Leeds"
+                  },
+                  actions: {
+                    items: [
+
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Postcode",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "LS2 7UA"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "../preferences/claimant-details.html",
+                        text: "Change",
+                        visuallyHiddenText: "date claimant stopped work"
+                      }
+                    ]
+                  }
+                }
+
+              
+              
+                  ]
+                })
+              }}
+            
+            
 
 
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
-
-            <table class="govuk-table">
-
-              <th scope="row" class="govuk-table__header">How should we contact you</th>
-              <td class="govuk-table__cell">Large print</td>
-              <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/font-size.html">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a></td>
-            </tr>
-
-            <th scope="row" class="govuk-table__header">Required font size</th>
-            <td class="govuk-table__cell">18</td>
-            <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/font-size.html">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-          </tr>
-
-        </tbody>
-        </table>
 
 
-            <a href="../change-of-circ/change-select-radio"><button class="govuk-button" data-module="govuk-button">
+            <h2 class="govuk-heading-m govuk-!-padding-top-9" id="employment-and-earnings">Reasonable adjustments</h2>
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
+
+              {
+                key: {
+                  text: "Type of communication",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "Written communications"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "../preferences/contact-options-type.html",
+                      text: "Change",
+                      visuallyHiddenText: "date claim received"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Letter format",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "Large print"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "../preferences/contact-options.html",
+                      text: "Change",
+                      visuallyHiddenText: "date claim received"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Font size",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "18"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "../preferences/font-size",
+                      text: "Change",
+                      visuallyHiddenText: "date claimant stopped work"
+                    }
+                  ]
+                }
+              }
+
+            
+            
+                ]
+              })
+            }}
+
+
+
+<div class="govuk-heading-m govuk-!-padding-top-6">
+            <a href="../change-of-circ/change-select-radio" class=""><button class="govuk-button" data-module="govuk-button">
               Add reasonable adjustment
             </button></a>
-
+          </div>
             </section>
 </div>
 {% from "govuk/components/table/macro.njk" import govukTable %}

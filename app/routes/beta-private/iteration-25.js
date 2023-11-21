@@ -451,7 +451,7 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-selec
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date', function (req, res) {
-  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confirm-answers');
+  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confirm-answers', function (req, res) {
@@ -460,11 +460,11 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-confi
 
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio');
+  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date');
+  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-fraud-entire-claim', function (req, res) {
@@ -476,7 +476,7 @@ router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-fraud
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume', function (req, res) {
-  res.redirect('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date-resume');
+  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date-resume');
 });
 
 router.post('/beta-private/iteration-25/find-a-claim/change-of-circ/change-MA-end-date-resume', function (req, res) {
@@ -491,12 +491,12 @@ router.post('/change-type26', function(request, response) {
 
   var changeType = request.session.data['changeType26']
   if (changeType == "stop"){
-      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio")
+      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
   } 
   if (changeType == "reduce"){
-    response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/reduce-claim-weeks")
+    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
-      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
+      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
@@ -504,12 +504,12 @@ router.post('/change-type27', function(request, response) {
 
   var changeType = request.session.data['changeType27']
   if (changeType == "stop-resume"){
-      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio")
+      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
   } 
   if (changeType == "reduce-resume"){
-    response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/reduce-claim-weeks")
+    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
-      response.redirect("/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-define-radio-resume")
+      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
