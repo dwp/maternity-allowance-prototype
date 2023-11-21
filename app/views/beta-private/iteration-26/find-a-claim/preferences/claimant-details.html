@@ -25,29 +25,13 @@
   
   {% call govukFieldset({
     legend: {
-      text: "Claimant details",
+      text: "What is the claimant's correspondence address?",
       classes: "govuk-fieldset__legend--l",
       isPageHeading: true
     }
   }) %}
   
-    {{ govukInput({
-      label: {
-        text: "National Insurance number"
-      },
-      id: "nino",
-      name: "nino",
-      autocomplete: "nino"
-    }) }}
-  
-    {{ govukInput({
-      label: {
-        text: "Contact number"
-      },
-      id: "contact-number",
-      name: "contact-number",
-      autocomplete: "contact-number"
-    }) }}
+
   
     {{ govukInput({
       label: {
