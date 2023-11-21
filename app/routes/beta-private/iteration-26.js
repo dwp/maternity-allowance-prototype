@@ -489,8 +489,8 @@ router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confi
 
 router.post('/change-type26', function(request, response) {
 
-  var changeType = request.session.data['changeType26']
-  if (changeType == "stop"){
+  var changeType26 = request.session.data['changeType26']
+  if (changeType26 == "stop"){
       response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
   } 
   if (changeType == "reduce"){
@@ -596,6 +596,14 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/font-size', fun
 
 router.post('/beta-private/iteration-26/find-a-claim/preferences/font-confirm-answers', function (req, res) {
   res.redirect('/beta-private/iteration-26/find-a-claim/preferences/1-preferences-adjustment');
+});
+
+router.post('/beta-private/iteration-26/find-a-claim/preferences/claimant-details-type', function (req, res) {
+  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/claimant-details');
+});
+
+router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options-type', function (req, res) {
+  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/contact-options');
 });
 
   // *** Scenario 1 ***************************************************************************************************************** //
