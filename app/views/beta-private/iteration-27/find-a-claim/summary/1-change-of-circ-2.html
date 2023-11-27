@@ -52,28 +52,29 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-closed" aria-current="location">Decision and dates</a>
+                  <a href="1-2" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-2">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-2">Bank details and payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-2-employers">Evidence</a>
+                  <a href="1-evidence-2-employers-2">Evidence</a>
                 </li>
 
-                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-                  <a href="1-claim-history">Claim history</a>
-                </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ.html">Change of circumstance</a>
+                  <a href="1-claim-history-2">Claim history</a>
                 </li>
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-change-of-circ-2">Change of circumstance</a>
+                </li>
+
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences.html">Preferences</a>
+                  <a href="/beta-private/iteration-26/find-a-claim/preferences/1-preferences-adjustment">Preferences</a>
                 </li>
 
               </ul>
@@ -88,45 +89,21 @@
 
         <div class="govuk-grid-column-three-quarters">
 
+          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
+
+            <h2 class="govuk-heading-m" id="employment-and-earnings">Change of circumstance</h2>
+
+            <div class="govuk-hint">
+              There are no reported changes for this claim.
+            </div>
+
+            <a href="../change-of-circ/change-select-radio"><button class="govuk-button" data-module="govuk-button">
+              Add change of circumstance
+            </button></a>
+
+            </section>
+</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
-<section id="decision" class="govuk-!-padding-top-6">
-<h2 class="govuk-heading-m">Claim history</h2>
 
-<div class="dwp-timeline">
-
-  <ol class="dwp-timeline__events">
-
-  <li class="dwp-timeline__events--entry">
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision changed</h2>
-    <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
-    <p class="govuk-caption-m">21 September 2023</p>
-</li>
-
-
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Mike Ehrmantraut</p>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Hank Schrader</p>
-  <p class="govuk-caption-m">10 June 2023</p>
-</li>
-  </ol>
-  </div>
-
-
-</section>
 {% endblock %}
