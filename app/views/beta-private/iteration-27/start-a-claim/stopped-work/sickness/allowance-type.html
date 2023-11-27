@@ -1,0 +1,63 @@
+classes: "govuk-radios--inline",
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "allowance-type",
+        name: "allowance-type",
+        fieldset: {
+          legend: {
+            text: "Does the claimant receive Statutory Sick Pay or Employment and Support Allowance?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "statutory-sick-pay",
+            text: "Statutory Sick Pay"
+          },
+          {
+            value: "employment-and-support-allowance",
+            text: "Employment and Support Allowance"
+          },
+          {
+            value: "none",
+            text: "None"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

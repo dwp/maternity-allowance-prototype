@@ -3,7 +3,7 @@ module.exports = router => {
 
   // Add your routes here - above the module.exports line
 
-  router.post('/beta-private/iteration-26/', function (req, res) {
+  router.post('/beta-private/iteration-27/', function (req, res) {
 
     // clear data
     req.session.data['change'] = null;
@@ -367,11 +367,11 @@ module.exports = router => {
       req.session.data['ma-week-13-employer-2-source'] = 'RTI';
     }
 
-    res.redirect('/beta-private/iteration-26/landing');
+    res.redirect('/beta-private/iteration-27/landing');
   });
 
 
-  router.post('/beta-private/iteration-26/find-a-claim/matb1-details-add', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/matb1-details-add', function (req, res) {
 
     // Make data changes here
     req.session.data['mat-provided'] = 'Yes';
@@ -381,18 +381,18 @@ module.exports = router => {
     req.session.data['mat-verified-by'] = 'Serena van der Woodsen';
     req.session.data['mat-date-verified'] = '05 July 2023';
 
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-evidence-matb1');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-evidence-matb1');
   });
 
 
 
 
-  router.post('/beta-private/iteration-26/find-a-claim/smp1-details-add', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/smp1-details-add-2');
+  router.post('/beta-private/iteration-27/find-a-claim/smp1-details-add', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/smp1-details-add-2');
   });
 
 
-  router.post('/beta-private/iteration-26/find-a-claim/smp1-details-add-2', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/smp1-details-add-2', function (req, res) {
 
     // Make data changes here
     req.session.data['smp1-provided'] = 'Yes';
@@ -404,243 +404,217 @@ module.exports = router => {
     req.session.data['smp1-date-verified'] = '05 July 2023';
     req.session.data['ma-decision'] = 'Allowed';
 
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-evidence-2-employers');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-evidence-2-employers');
   });
 
 
   // Payslip start claim
-  router.post('/beta-private/iteration-26/start-a-claim/employers/add-employer', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/payslip/frequency');
+  router.post('/beta-private/iteration-27/start-a-claim/employers/add-employer', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/payslip/frequency');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/mat-add', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/matb1-details-add');
+  router.post('/beta-private/iteration-27/find-a-claim/mat-add', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/matb1-details-add');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/smp1-add', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/smp1-details-add');
+  router.post('/beta-private/iteration-27/find-a-claim/smp1-add', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/smp1-details-add');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/payslip/frequency', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/payslip/add');
+  router.post('/beta-private/iteration-27/start-a-claim/payslip/frequency', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/payslip/add');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/payslip/add', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/payslip/summary');
+  router.post('/beta-private/iteration-27/start-a-claim/payslip/add', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/payslip/summary');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/payslip/summary', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/payslip/summary', function (req, res) {
     if (req.session.data['ma-payslip-details-conf'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/payslip/add');
+      res.redirect('/beta-private/iteration-27/start-a-claim/payslip/add');
     } else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/2-2-employers-employment-and-earnings.html');
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/2-2-employers-employment-and-earnings.html');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/summary/2-bank-details-and-payments', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments/');
+  router.post('/beta-private/iteration-27/start-a-claim/summary/2-bank-details-and-payments', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments/');
   });
 
 // *** Change of Circs ************************************************************************************************************** //
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-MA-end-date');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-MA-end-date', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-confirm-answers');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-change-summary');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-change-summary');
 });
 
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-radio', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-v2', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-MA-end-date');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-fraud-entire-claim', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-fraud-confirm-answers');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-fraud-entire-claim', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-fraud-confirm-answers');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-fraud-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-change-summary-fraud');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-fraud-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-change-summary-fraud');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date-resume');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-resume', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-MA-end-date-resume');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date-resume', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers-resume');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-MA-end-date-resume', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/change-of-circ/change-confirm-answers-resume');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/change-of-circ/change-confirm-answers-resume', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-change-summary-resume');
+router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-confirm-answers-resume', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-type26', function(request, response) {
+router.post('/change-answer', function(request, response) {
 
-  var changeType26 = request.session.data['changeType26']
-  if (changeType26 == "stop"){
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
-  } 
-  if (changeType == "reduce"){
-    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
-} else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
+  var country = request.session.data['change-type']
+  if (country == "claimStop"){
+      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-v2")
   }
-})
-
-router.post('/change-type27', function(request, response) {
-
-  var changeType = request.session.data['changeType27']
-  if (changeType == "stop-resume"){
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio")
-  } 
-  if (changeType == "reduce-resume"){
-    response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/reduce-claim-weeks")
-} else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-select-define-radio-resume")
-  }
-})
-
-
-router.post('/change-reason25', function(request, response) {
-
-  var changeReason = request.session.data['changeReason25']
-  if (changeReason == "fraud"){
-      response.redirect("beta-private/iteration-26/find-a-claim/change-of-circ/change-fraud-entire-claim")
-  } 
+  else if (country == "claimRestart"){
+    response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-resume")
+} 
  else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/change-of-circ/change-MA-end-date")
+      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio")
   }
 })
-
-
 
 
 // *** Unallocated earnings ************************************************************************************************************** //
 
-router.post('/beta-private/iteration-26/find-a-claim/unallocated/unallocated-start', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/unallocated/unallocated-end');
+router.post('/beta-private/iteration-27/find-a-claim/unallocated/unallocated-start', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/unallocated/unallocated-end');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/unallocated/unallocated-end', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/unallocated/unallocated-confirm-answers');
+router.post('/beta-private/iteration-27/find-a-claim/unallocated/unallocated-end', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/unallocated/unallocated-confirm-answers');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/unallocated/unallocated-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-unallocated');
+router.post('/beta-private/iteration-27/find-a-claim/unallocated/unallocated-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-unallocated');
 });
 
 
 // *** Payment Override ************************************************************************************************************** //
 
-router.post('/beta-private/iteration-26/find-a-claim/payment-override/employment-start', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/payment-override/still-with-employer');
+router.post('/beta-private/iteration-27/find-a-claim/payment-override/employment-start', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/payment-override/still-with-employer');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/payment-override/still-with-employer', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/payment-override/employment-end');
+router.post('/beta-private/iteration-27/find-a-claim/payment-override/still-with-employer', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/payment-override/employment-end');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/payment-override/employment-end', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/payment-override/override-confirm-answers');
+router.post('/beta-private/iteration-27/find-a-claim/payment-override/employment-end', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/payment-override/override-confirm-answers');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/payment-override/override-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/payment-override/1-employment-and-earnings');
+router.post('/beta-private/iteration-27/find-a-claim/payment-override/override-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/payment-override/1-employment-and-earnings');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/payment-override/override-confirm-answers-employed', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/payment-override/1-employment-and-earnings');
+router.post('/beta-private/iteration-27/find-a-claim/payment-override/override-confirm-answers-employed', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/payment-override/1-employment-and-earnings');
 });
 
 router.post('/employer', function(request, response) {
 
   var employed = request.session.data['employed']
   if (employed == "yes"){
-      response.redirect("beta-private/iteration-26/find-a-claim/payment-override/override-confirm-answers-employed")
+      response.redirect("beta-private/iteration-27/find-a-claim/payment-override/override-confirm-answers-employed")
   } 
  else {
-      response.redirect("/beta-private/iteration-26/find-a-claim/payment-override/employment-end")
+      response.redirect("/beta-private/iteration-27/find-a-claim/payment-override/employment-end")
   }
 })
 
 // *** Preferences ************************************************************************************************************** //
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/claimant-details', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/claimant-details-confirm');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/claimant-details', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/claimant-details-confirm');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/claimant-details-confirm', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/1-preferences');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/claimant-details-confirm', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/1-preferences');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/font-size');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/contact-options', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/font-size');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/font-size', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/font-confirm-answers');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/font-size', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/font-confirm-answers');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/font-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/1-preferences-adjustment');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/font-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/1-preferences-adjustment');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/claimant-details-type', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/claimant-details');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/claimant-details-type', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/claimant-details');
 });
 
-router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options-type', function (req, res) {
-  res.redirect('/beta-private/iteration-26/find-a-claim/preferences/contact-options');
+router.post('/beta-private/iteration-27/find-a-claim/preferences/contact-options-type', function (req, res) {
+  res.redirect('/beta-private/iteration-27/find-a-claim/preferences/contact-options');
 });
 
   // *** Scenario 1 ***************************************************************************************************************** //
 
-  router.post('/beta-private/iteration-26/start-a-claim/index', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/claimant-confirm');
+  router.post('/beta-private/iteration-27/start-a-claim/index', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/claimant-confirm');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/summary/1-bank-details-and-payments', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments/prepopulated-account-details');
+  router.post('/beta-private/iteration-27/find-a-claim/summary/1-bank-details-and-payments', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments/prepopulated-account-details');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/claimant-confirm', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/claimant-confirm', function (req, res) {
 
     if (req.session.data['claimant-confirm'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/claim-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/claim-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/more-claimant-information');
+      res.redirect('/beta-private/iteration-27/start-a-claim/more-claimant-information');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/more-claimant-information', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/more-claimant-information', function (req, res) {
     // Has a match been made, in this scenario?
     var match = true;
 
     if (match == false) {
       var match = null;
-      res.redirect('/beta-private/iteration-26/start-a-claim/no-match-found');
+      res.redirect('/beta-private/iteration-27/start-a-claim/no-match-found');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/claim-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/claim-date');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/claim-date', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/claim-date', function (req, res) {
 
     if (req.session.data['change'] == null) { // no 'change' clicked, therefore, going through the journey for the first time.
       req.session.data['change'] = false;
@@ -655,21 +629,21 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
       // Changes listed here
       req.session.data['ma-map-claim-date-received'] = '2 January 2023';
 
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/'); // Goes back to summary
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/'); // Goes back to summary
     }
     else {
       // Regular journey
       req.session.data['change'] = null;
-      res.redirect('/beta-private/iteration-26/start-a-claim/baby-due-date'); // Goes to next screen in the journey
+      res.redirect('/beta-private/iteration-27/start-a-claim/baby-due-date'); // Goes to next screen in the journey
     }
 
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/baby-due-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/baby-born');
+  router.post('/beta-private/iteration-27/start-a-claim/baby-due-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/baby-born');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/baby-born', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/baby-born', function (req, res) {
 
     if (req.session.data['change'] == null) {
       req.session.data['change'] = false;
@@ -678,18 +652,18 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
     }
 
     if (req.session.data['baby-born'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/baby-birth-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/baby-birth-date');
     }
     else {
 
       if (req.session.data['change'] == true ) {
         req.session.data['change'] = null;
         // No change
-        res.redirect('/beta-private/iteration-26/start-a-claim/summary/'); // Goes back to unchanged summary
+        res.redirect('/beta-private/iteration-27/start-a-claim/summary/'); // Goes back to unchanged summary
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-26/start-a-claim/mat');
+        res.redirect('/beta-private/iteration-27/start-a-claim/mat');
       }
 
     }
@@ -697,7 +671,7 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
   });
 
 
-  router.post('/beta-private/iteration-26/start-a-claim/mat', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/mat', function (req, res) {
 
     if (req.session.data['change'] == null) {
       req.session.data['change'] = false;
@@ -706,30 +680,30 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
     }
 
     if (req.session.data['mat'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/matb1-details');
+      res.redirect('/beta-private/iteration-27/start-a-claim/matb1-details');
     }
     else {
 
       if (req.session.data['change'] == true ) {
         req.session.data['change'] = null;
         // No change
-        res.redirect('/beta-private/iteration-26/start-a-claim/summary/'); // Goes back to unchanged summary
+        res.redirect('/beta-private/iteration-27/start-a-claim/summary/'); // Goes back to unchanged summary
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-26/start-a-claim/employment');
+        res.redirect('/beta-private/iteration-27/start-a-claim/employment');
       }
 
     }
 
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/matb1-details', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/smp1');
+  router.post('/beta-private/iteration-27/start-a-claim/matb1-details', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/smp1');
   });
 
 
-  router.post('/beta-private/iteration-26/start-a-claim/smp1', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/smp1', function (req, res) {
 
     if (req.session.data['change'] == null) {
       req.session.data['change'] = false;
@@ -738,18 +712,18 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
     }
 
     if (req.session.data['mat'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/smp1-details');
+      res.redirect('/beta-private/iteration-27/start-a-claim/smp1-details');
     }
     else {
 
       if (req.session.data['change'] == true ) {
         req.session.data['change'] = null;
         // No change
-        res.redirect('/beta-private/iteration-26/start-a-claim/employment'); // Goes back to unchanged summary
+        res.redirect('/beta-private/iteration-27/start-a-claim/employment'); // Goes back to unchanged summary
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-26/start-a-claim/employment');
+        res.redirect('/beta-private/iteration-27/start-a-claim/employment');
       }
 
     }
@@ -759,11 +733,11 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
 
 
 
-  router.post('/beta-private/iteration-26/start-a-claim/smp1-details', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/employment');
+  router.post('/beta-private/iteration-27/start-a-claim/smp1-details', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/employment');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/baby-birth-date', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/baby-birth-date', function (req, res) {
     if (req.session.data['change'] == true ) {
       req.session.data['change'] = null;
       // Change made - GO TO CHANGED SUMMARY
@@ -773,51 +747,51 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
       req.session.data['ma-map-start'] = '2 October 2022';
       req.session.data['ma-map-end'] = '1 July 2023';
 
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/change-baby-birth-date'); // NEEDS TO BE CHANGED TO CHANGED SUMMARY
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/change-baby-birth-date'); // NEEDS TO BE CHANGED TO CHANGED SUMMARY
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/mat');
+      res.redirect('/beta-private/iteration-27/start-a-claim/mat');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/employment/', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/employment/', function (req, res) {
     if (req.session.data['employment-type'] == 'agency') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/employment/agency-employment-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/employment/agency-employment-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/');
     }
   });
 
-  // router.post('/beta-private/iteration-26/start-a-claim/employment/test-period-agency', function (req, res) {
+  // router.post('/beta-private/iteration-27/start-a-claim/employment/test-period-agency', function (req, res) {
   //  if (req.session.data['test-period-agency'] == 'yes') {
-  //    res.redirect('/beta-private/iteration-26/start-a-claim/employment/agency-employment-date');
+  //    res.redirect('/beta-private/iteration-27/start-a-claim/employment/agency-employment-date');
   //  }
   //  else {
-  //    res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/');
+  //    res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/');
   //  }
   // });
 
-  router.post('/beta-private/iteration-26/start-a-claim/employment/agency-employment-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/employment/agency-employed');
+  router.post('/beta-private/iteration-27/start-a-claim/employment/agency-employment-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/employment/agency-employed');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/employment/agency-employed', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/employment/agency-employed', function (req, res) {
     if (req.session.data['agency-employed'] == 'no') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/employment/agency-employment-end-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/employment/agency-employment-end-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/employment/agency-employment-end-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/chosen-map-date');
+  router.post('/beta-private/iteration-27/start-a-claim/employment/agency-employment-end-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/chosen-map-date');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/', function (req, res) {
     if (req.session.data['stopped-work'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/reason');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/reason');
     }
     else {
       // For Private Beta testing for Iteration 4, we will set the change scenario
@@ -825,106 +799,106 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
       // so that when they click change on the summary, the next time they run through this screen
       // it will return directly to summary after they enter the date on the next screen 'dlw-date'.
       // req.session.data['change'] = true;
-      res.redirect('/beta-private/iteration-26/start-a-claim/chosen-map-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/chosen-map-date');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/reason', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/reason', function (req, res) {
     if (req.session.data['stopped-work-reason'] == 'sick') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/allowance-type');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/allowance-type');
     } else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/date-last-worked');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/date-last-worked');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/allowance-type', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/allowance-type', function (req, res) {
     if (req.session.data['allowance-type'] == 'employment-and-support-allowance') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/benefit-start-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/benefit-start-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/pregnancy-related');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/pregnancy-related');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/pregnancy-related', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/pregnancy-related', function (req, res) {
     if (req.session.data['allowance-type'] == 'statutory-sick-pay') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/benefit-end-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/benefit-end-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/date-last-worked');
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/date-last-worked');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/benefit-end-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/date-last-worked');
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/benefit-end-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/date-last-worked');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/sickness/benefit-start-date', function (req, res) {
-      res.redirect('/beta-private/iteration-26/start-a-claim/stopped-work/date-last-worked');
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/sickness/benefit-start-date', function (req, res) {
+      res.redirect('/beta-private/iteration-27/start-a-claim/stopped-work/date-last-worked');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/stopped-work/date-last-worked', function (req, res) {
-      res.redirect('/beta-private/iteration-26/start-a-claim/chosen-map-date');
+  router.post('/beta-private/iteration-27/start-a-claim/stopped-work/date-last-worked', function (req, res) {
+      res.redirect('/beta-private/iteration-27/start-a-claim/chosen-map-date');
   });
 
   // Removed maternity leave question
-  // router.post('/beta-private/iteration-26/start-a-claim/ma-start-date-provided', function (req, res) {
+  // router.post('/beta-private/iteration-27/start-a-claim/ma-start-date-provided', function (req, res) {
   //  if (req.session.data['ma-start-date-provided'] == 'yes') {
-  //    res.redirect('/beta-private/iteration-26/start-a-claim/planned-dlw-date');
+  //    res.redirect('/beta-private/iteration-27/start-a-claim/planned-dlw-date');
   //  }
   //  else {
-  //    res.redirect('/beta-private/iteration-26/start-a-claim/chosen-map-date');
+  //    res.redirect('/beta-private/iteration-27/start-a-claim/chosen-map-date');
   //  }
   // });
 
-  router.post('/beta-private/iteration-26/start-a-claim/planned-dlw-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/chosen-map-date');
+  router.post('/beta-private/iteration-27/start-a-claim/planned-dlw-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/chosen-map-date');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/chosen-map-date', function (req, res) {
+  router.post('/beta-private/iteration-27/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/requested-start-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/requested-start-date');
     }
     else {
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/');
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/');
     }
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/requested-start-date', function (req, res) {
-    res.redirect('/beta-private/iteration-26/start-a-claim/summary/');
+  router.post('/beta-private/iteration-27/start-a-claim/requested-start-date', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/summary/');
   });
 
-  router.get('/beta-private/iteration-26/start-a-claim/summary/', function (req, res) {
+  router.get('/beta-private/iteration-27/start-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/2');
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/2');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     } else {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     }
   });
 
   // *** Find a claim *** //
 
-  router.post('/beta-private/iteration-26/find-a-claim/', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary');
+  router.post('/beta-private/iteration-27/find-a-claim/', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/select-claim', function (req, res) {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/');
+  router.post('/beta-private/iteration-27/find-a-claim/select-claim', function (req, res) {
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/');
   });
 
-  router.get('/beta-private/iteration-26/find-a-claim/summary/', function (req, res) {
+  router.get('/beta-private/iteration-27/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     } else {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     }
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/rti/change', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/rti/change', function (req, res) {
 
     // Make data changes here
     req.session.data['ma-claim-decision-date'] = '22 February 2023';
@@ -937,11 +911,11 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
     req.session.data['ma-total-earnings'] = req.session.data['ma-week-1-total-amount'] + req.session.data['ma-week-2-total-amount'] + req.session.data['ma-week-3-total-amount'] + req.session.data['ma-week-4-total-amount'] + req.session.data['ma-week-5-total-amount'] + req.session.data['ma-week-6-total-amount'] + req.session.data['ma-week-7-total-amount'] + req.session.data['ma-week-8-total-amount'] + req.session.data['ma-week-9-total-amount'] + req.session.data['ma-week-10-total-amount'] + req.session.data['ma-week-11-total-amount'] + req.session.data['ma-week-12-total-amount'] + req.session.data['ma-week-13-total-amount'];
     req.session.data['ma-average-earnings'] = req.session.data['ma-total-earnings'] / 13;
 
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-employment-and-earnings');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-employment-and-earnings');
   });
 
 
-  router.post('/beta-private/iteration-26/payments/prepopulated-account-details', function (req, res) {
+  router.post('/beta-private/iteration-27/payments/prepopulated-account-details', function (req, res) {
 
     // Make data changes here
     req.session.data['ma-claim-decision-date'] = '22 February 2023';
@@ -954,29 +928,29 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
     req.session.data['ma-total-earnings'] = req.session.data['ma-week-1-total-amount'] + req.session.data['ma-week-2-total-amount'] + req.session.data['ma-week-3-total-amount'] + req.session.data['ma-week-4-total-amount'] + req.session.data['ma-week-5-total-amount'] + req.session.data['ma-week-6-total-amount'] + req.session.data['ma-week-7-total-amount'] + req.session.data['ma-week-8-total-amount'] + req.session.data['ma-week-9-total-amount'] + req.session.data['ma-week-10-total-amount'] + req.session.data['ma-week-11-total-amount'] + req.session.data['ma-week-12-total-amount'] + req.session.data['ma-week-13-total-amount'];
     req.session.data['ma-average-earnings'] = req.session.data['ma-total-earnings'] / 13;
 
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/');
   });
 
 
-  router.post('/beta-private/iteration-26/find-a-claim/employers/change-employer-1', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/employers/change-employer-1', function (req, res) {
     req.session.data['ma-employer-1'] = 'CHANGE EMP 1 LTD';
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/employers/change-employer-2', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/employers/change-employer-2', function (req, res) {
     req.session.data['ma-employer-2'] = 'CHANGE EMP 2 LTD';
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/employers/change-employer-3', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/employers/change-employer-3', function (req, res) {
     req.session.data['ma-employer-3'] = 'CHANGE EMP 3 LTD';
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-three-employers');
+    res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-three-employers');
   });
 
   // Payslip
   // Payslip find claim
 
-  router.post('/beta-private/iteration-26/find-a-claim/employers/add-employer', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/employers/add-employer', function (req, res) {
 
 
     // Change decision date
@@ -1039,75 +1013,75 @@ router.post('/beta-private/iteration-26/find-a-claim/preferences/contact-options
 
     req.session.data['ma-average-earnings'] = req.session.data['ma-total-earnings'] / 13; // total earnings for E1 + E2 per week = week total - add up all weeks / 13 to get average weekly earnings
 
-    res.redirect('/beta-private/iteration-26/find-a-claim/payslip/frequency');
+    res.redirect('/beta-private/iteration-27/find-a-claim/payslip/frequency');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/payslip/frequency', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/payslip/add');
+  router.post('/beta-private/iteration-27/find-a-claim/payslip/frequency', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/payslip/add');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/payslip/add', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/payslip/summary');
+  router.post('/beta-private/iteration-27/find-a-claim/payslip/add', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/payslip/summary');
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/payslip/summary', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/payslip/summary', function (req, res) {
     if (req.session.data['ma-payslip-details-conf'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/find-a-claim/payslip/add');
+      res.redirect('/beta-private/iteration-27/find-a-claim/payslip/add');
     } else {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-three-employers');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-three-employers');
     }
   });
 
-  router.post('/beta-private/iteration-26/find-a-claim/employers/remove-employer-3', function (req, res) {
+  router.post('/beta-private/iteration-27/find-a-claim/employers/remove-employer-3', function (req, res) {
     if (req.session.data['remove-employer-3'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1');
     } else {
-      res.redirect('/beta-private/iteration-26/find-a-claim/summary/1-three-employers');
+      res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-three-employers');
     }
   });
 
   // Payments
 
-  router.post('/beta-private/iteration-26/start-a-claim/summary/2', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments/');
+  router.post('/beta-private/iteration-27/start-a-claim/summary/2', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments/');
   });
 
-  router.post('/beta-private/iteration-26/payments/', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments/summary');
+  router.post('/beta-private/iteration-27/payments/', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments/summary');
   });
 
-  router.post('/beta-private/iteration-26/payments/payment-frequency', function (req, res) {
+  router.post('/beta-private/iteration-27/payments/payment-frequency', function (req, res) {
     if (req.session.data['payment-frequency'] == '2-weeks') {
       req.session.data['payment-frequency'] = 'Every 2 weeks';
     } else {
       req.session.data['payment-frequency'] = 'Every 4 weeks';
     }
-    res.redirect('/beta-private/iteration-26/start-a-claim/summary/2-bank-details-and-payments');
+    res.redirect('/beta-private/iteration-27/start-a-claim/summary/2-bank-details-and-payments');
   });
 
-  router.post('/beta-private/iteration-26/payments/summary', function (req, res) {
+  router.post('/beta-private/iteration-27/payments/summary', function (req, res) {
     if (req.session.data['ma-payment-details-conf'] == 'yes') {
-      res.redirect('/beta-private/iteration-26/start-a-claim/summary/2-bank-details-and-payments');
+      res.redirect('/beta-private/iteration-27/start-a-claim/summary/2-bank-details-and-payments');
     } else {
-      res.redirect('/beta-private/iteration-26/payments/prepopulated-account-details');
+      res.redirect('/beta-private/iteration-27/payments/prepopulated-account-details');
     }
   });
 
-  router.post('/beta-private/iteration-26/payments/prepopulated-account-details', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments/prepopulated-payment-frequency');
+  router.post('/beta-private/iteration-27/payments/prepopulated-account-details', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments/prepopulated-payment-frequency');
   });
 
-  router.post('/beta-private/iteration-26/payments/prepopulated-payment-frequency', function (req, res) {
+  router.post('/beta-private/iteration-27/payments/prepopulated-payment-frequency', function (req, res) {
     if (req.session.data['payment-frequency'] == '2-weeks') {
       req.session.data['payment-frequency'] = 'Every 2 weeks';
     } else {
       req.session.data['payment-frequency'] = 'Every 4 weeks';
     }
-    res.redirect('/beta-private/iteration-26/start-a-claim/summary/2-bank-details-and-payments');
+    res.redirect('/beta-private/iteration-27/start-a-claim/summary/2-bank-details-and-payments');
   });
 
-  router.post('/beta-private/iteration-26/start-a-claim/summary/2-rti-changed', function (req, res) {
-    res.redirect('/beta-private/iteration-26/payments');
+  router.post('/beta-private/iteration-27/start-a-claim/summary/2-rti-changed', function (req, res) {
+    res.redirect('/beta-private/iteration-27/payments');
   });
 
   }
