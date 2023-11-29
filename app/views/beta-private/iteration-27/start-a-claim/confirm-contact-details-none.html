@@ -24,21 +24,21 @@
     <table class="govuk-table">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Correspondence address</th>
-      <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">25 Park Avenue,</p><p class="govuk-body govuk-!-margin-bottom-2">Newcastle</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE5 8KR</p></td>
-      <td class="govuk-table__cell">   <a class="govuk-link" href="#">
+      <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">None</p></td>
+      <td class="govuk-table__cell">   <!--<a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
-      </a></td>
+      </a>--></td>
     </tr>
       <th scope="row" class="govuk-table__header">Telephone number</th>
-      <td class="govuk-table__cell">07847171740</td>
-      <td class="govuk-table__cell">  <!-- <a class="govuk-link" href="#">
+      <td class="govuk-table__cell">None</td>
+      <td class="govuk-table__cell">   <!--<a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a>--></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Email address</th>
-      <td class="govuk-table__cell">lucindadavies@gmail.com</td>
-      <td class="govuk-table__cell">  <!-- <a class="govuk-link" href="#">
+      <td class="govuk-table__cell">None</td>
+      <td class="govuk-table__cell">  <!--<a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a>--></td>
     </tr>
@@ -47,6 +47,35 @@
 </tbody>
 </table>
 
+<form class="form" method="post" novalidate>
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    name: "claimant-confirm",
+    fieldset: {
+      legend: {
+        text: "Are these the correct contact details?",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+  </form>
   
   </section>
 

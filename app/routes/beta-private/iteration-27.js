@@ -857,11 +857,15 @@ router.post('/beta-private/iteration-27/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-27/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/iteration-27/start-a-claim/claimant-preferences');
+      res.redirect('/beta-private/iteration-27/start-a-claim/confirm-contact-details-none');
     }
     else {
       res.redirect('/beta-private/iteration-27/start-a-claim/summary/');
     }
+  });
+
+  router.post('/beta-private/iteration-27/start-a-claim/confirm-contact-details-none', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/claimant-preferences');
   });
 
   router.post('/beta-private/iteration-27/start-a-claim/requested-start-date', function (req, res) {
