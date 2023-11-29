@@ -20,37 +20,38 @@
       <form class="form" action="/change-answer" method="post">
 
         {{ govukRadios({
-          name: "changeType26",
-          value: data['changeType26'],
+          name: "change-type",
+          value: data['change-type'],
           fieldset: {
             legend: {
-              text: "Select the change of circumstance you want to add to this claim",
+              text: "Select the change of circumstance you want to add to this claim
+              ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "stopClaim",
-              text: "Stop a claim"
+              value: "claimStop",
+              text: "Stop a claim
+              "
             },
             {
-              value: "reduce",
+              value: "claimReduce",
               text: "Reduce a claim"
             },
             {
-              value: "restartClaim",
+              value: "claimRestart",
               text: "Restart a claim"
             }
-
           ]
         }) }}
-
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-
-      </form>
+        
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+        
+        </form>
 
     </div>
   </div>
