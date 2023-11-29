@@ -229,8 +229,8 @@ module.exports = router => {
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '05 July 2023';
-      req.session.data['ma-claim-decision-date'] = '05 July 2023';
+      req.session.data['ma-claim-creation-date'] = '11 October 2023';
+      req.session.data['ma-claim-decision-date'] = '11 October 2023';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '23 June 2023';
@@ -245,7 +245,7 @@ module.exports = router => {
       req.session.data['ma-test-period-week-fifteen'] = '9 April 2023';
 
       // Maternity Allowance period dates
-      req.session.data['ma-map-claim-date-received'] = '10 June 2023';
+      req.session.data['ma-map-claim-date-received'] = '10 October 2023';
       req.session.data['ma-map-expected-week-of-confinement'] = '23 July 2023';
       req.session.data['ma-week-eleventh'] = '7 May 2023';
       req.session.data['ma-week-fourth'] = '25 June 2023';
@@ -492,7 +492,7 @@ router.post('/change-answer', function(request, response) {
 
   var country = request.session.data['change-type']
   if (country == "claimStop"){
-      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio")
+      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-v2")
   }
   else if (country == "claimRestart"){
     response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-resume")
@@ -857,7 +857,7 @@ router.post('/beta-private/iteration-27/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-27/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/iteration-27/start-a-claim/requested-start-date');
+      res.redirect('/beta-private/iteration-27/start-a-claim/claimant-preferences');
     }
     else {
       res.redirect('/beta-private/iteration-27/start-a-claim/summary/');
@@ -866,6 +866,18 @@ router.post('/beta-private/iteration-27/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-27/start-a-claim/requested-start-date', function (req, res) {
     res.redirect('/beta-private/iteration-27/start-a-claim/summary/');
+  });
+
+    router.post('/beta-private/iteration-27/start-a-claim/claimant-preferences', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/confirm-contact-details');
+  });
+
+  router.post('/beta-private/iteration-27/start-a-claim/confirm-contact-details/', function (req, res) {
+    res.redirect('/beta-private/iteration-27/start-a-claim/reasonable-adjustment');
+  });
+
+  router.post('/beta-private/iteration-27/start-a-claim/reasonable-adjustment', function (req, res) {
+    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
   });
 
   router.get('/beta-private/iteration-27/start-a-claim/summary/', function (req, res) {
