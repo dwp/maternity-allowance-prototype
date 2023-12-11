@@ -488,19 +488,6 @@ router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-27/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-answer', function(request, response) {
-
-  var country = request.session.data['change-type']
-  if (country == "claimStop"){
-      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-v2")
-  }
-  else if (country == "claimRestart"){
-    response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio-resume")
-} 
- else {
-      response.redirect("/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-define-radio")
-  }
-})
 
 
 // *** Unallocated earnings ************************************************************************************************************** //

@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {{ govukRadios({
+          name: "changeReason",
+          value: data['changeReason'],
+          fieldset: {
+            legend: {
+              text: "Select the type of restart you want to add to this claim",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+          {
+            value: "VolRes",
+            text: "Voluntary restart"
+          },
+          {
+            value: "endSMP",
+            text: "Statutory Maternity Pay ended"
+          },
+            {
+              value: "shpp",
+              text: "Shared parental pay"
+            },
+
+            {
+              value: "reduced",
+              text: "Reduced days"
+            },
+            {
+              value: "notWorking",
+              text: "No longer working"
+            },
+            {
+              value: "abroadReturn",
+              text: "Return from abroad"
+            }
+
+          ]
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          
+        }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
