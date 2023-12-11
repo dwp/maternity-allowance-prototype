@@ -488,19 +488,6 @@ router.post('/beta-private/iteration-28/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-28/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-answer', function(request, response) {
-
-  var country = request.session.data['change-type']
-  if (country == "claimStop"){
-      response.redirect("/beta-private/iteration-28/find-a-claim/change-of-circ/change-select-define-radio-v2")
-  }
-  else if (country == "claimRestart"){
-    response.redirect("/beta-private/iteration-28/find-a-claim/change-of-circ/change-select-define-radio-resume")
-} 
- else {
-      response.redirect("/beta-private/iteration-28/find-a-claim/change-of-circ/change-select-define-radio")
-  }
-})
 
 
 // *** Unallocated earnings ************************************************************************************************************** //
@@ -594,7 +581,7 @@ router.post('/beta-private/iteration-28/find-a-claim/preferences/contact-options
   router.post('/beta-private/iteration-28/start-a-claim/claimant-confirm', function (req, res) {
 
     if (req.session.data['claimant-confirm'] == 'yes') {
-      res.redirect('/beta-private/iteration-28/start-a-claim/claim-date');
+      res.redirect('/beta-private/iteration-28/start-a-claim/claimant-preferences');
     }
     else {
       res.redirect('/beta-private/iteration-28/start-a-claim/more-claimant-information');
@@ -857,7 +844,7 @@ router.post('/beta-private/iteration-28/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-28/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/iteration-28/start-a-claim/confirm-contact-details-none');
+      res.redirect('/beta-private/iteration-28/find-a-claim/summary/1');
     }
     else {
       res.redirect('/beta-private/iteration-28/start-a-claim/summary/');
@@ -881,7 +868,7 @@ router.post('/beta-private/iteration-28/find-a-claim/preferences/contact-options
   });
 
   router.post('/beta-private/iteration-28/start-a-claim/reasonable-adjustment', function (req, res) {
-    res.redirect('/beta-private/iteration-26/find-a-claim/summary/1');
+    res.redirect('/beta-private/iteration-28/start-a-claim/claim-date');
   });
 
   router.get('/beta-private/iteration-28/start-a-claim/summary/', function (req, res) {
