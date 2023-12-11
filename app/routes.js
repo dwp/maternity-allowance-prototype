@@ -31,6 +31,7 @@ require('./routes/beta-private/iteration-25')(router)
 require('./routes/beta-private/iteration-26')(router)
 require('./routes/beta-private/iteration-27')(router)
 require('./routes/beta-private/iteration-27-b')(router)
+require('./routes/beta-private/iteration-28')(router)
 
 // releases
 require('./routes/releases/1-0-3')(router)
