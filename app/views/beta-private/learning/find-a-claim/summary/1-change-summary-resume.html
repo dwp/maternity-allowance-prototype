@@ -1,0 +1,204 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+<section class="dwp-key-details-bar" aria-label="Key details">
+  <div class="dwp-key-details-bar__key-details">
+  <dl class="dwp-key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
+      <dt class="govuk-visually-hidden">Claim status:</dt>
+
+  </dl>
+  <dl class="dwp-key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>{{ data['claimant-dob'] }}</dd>
+      <dt>Postcode:</dt>
+      <dd>{{ data['claimant-postcode'] }}</dd>
+      <dt>UK telephone number:</dt>
+      <dd>{{ data['claimant-contact-number'] }}</dd>
+
+  </dl>
+  </div>
+  </section>
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-resume" aria-current="location">Decision and dates</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-claim-resume">Employment and earnings</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-claim-resume">Bank details and payments</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-evidence-2-employers-claim-resume">Evidence</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-claim-resume">Claim history</a>
+                </li>
+
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-change-summary-resume">Change of circumstance</a>
+                </li>
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+</section>
+
+
+<section id="Payments overview" class="govuk-!-padding-top-9">
+  <h2 class="govuk-heading-l">Change of circumstance</h2>
+
+<p>Each change of circumstance creates a new award. The Maternity Allowance Period will include all awards.</p>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Award History</caption>
+    <caption class="govuk-table__caption govuk-table__caption--s govuk-body govuk-!-margin-bottom-4">Current Award</caption><thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Start date</th>
+        
+            
+            <td class="govuk-table__cell">26 October 2023</td>
+          
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">End date</th>
+            <td class="govuk-table__cell">21 March 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Estimated total</th>
+            <td class="govuk-table__cell">£6726.72</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rate</th>
+            <td class="govuk-table__cell">£172.48</td>
+          </tr>
+    <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Change type</th>
+            <td class="govuk-table__cell">Restart a claim</td>
+          </tr><tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Restart reason</th>
+            <td class="govuk-table__cell">Voluntary restart</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date reported</th>
+            <td class="govuk-table__cell">30 November</td>
+          </tr></tbody>
+  </table>
+
+<a href="/beta-private/iteration-25/find-a-claim/change-of-circ/change-select-radio" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate="">Add change of circumstance
+</a>
+
+<h2 class="govuk-heading-m">Previous awards</h2>
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__open-all" style="display: none;"></div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button govuk-table__caption--s" id="accordion-default-heading-1">
+          Previous award 1
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <table class="govuk-table">
+     
+      
+<thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Start date</th>
+            
+                
+                <td class="govuk-table__cell">23 June 2023</td>
+              
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">End date</th>
+                <td class="govuk-table__cell">30 November 2023</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Paid total</th>
+                <td class="govuk-table__cell">£2365.44</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Rate</th>
+                <td class="govuk-table__cell">£172.48</td>
+              </tr>
+        <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Change type</th>
+                <td class="govuk-table__cell">Stop a claim</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Stop reason</th>
+                <td class="govuk-table__cell">Voluntary relinquishment</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date reported</th>
+                <td class="govuk-table__cell">30 November</td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+    </section>
+
+
+
+
+ 
+
+      </div>
+    </div>
+  {% endblock %}
