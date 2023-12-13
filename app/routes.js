@@ -3,6 +3,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 require('./routes/beta-private/sandbox')(router)
 require('./routes/alpha')(router)
+require('./routes/beta-private/learning')(router)
 require('./routes/beta-private/iteration-1')(router)
 require('./routes/beta-private/iteration-2')(router)
 require('./routes/beta-private/iteration-3')(router)
