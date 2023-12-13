@@ -56,6 +56,7 @@ module.exports = router => {
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '10 July 2023';
       req.session.data['ma-map-end'] = '7 April 2024';
+      req.session.data['ma-map-end-summary'] = '7 April 2024';
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '15 August 2023';
@@ -235,7 +236,7 @@ module.exports = router => {
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '23 June 2023';
       req.session.data['ma-map-end'] = '21 March 2024';
-      req.session.data['ma-map-end-summary'] = '21 March 2024';
+      req.session.data['ma-map-end-summary'] = '7 April 2024';
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '25 July 2023';
@@ -508,6 +509,10 @@ router.post('/beta-private/iteration-28-c/find-a-claim/change-of-circ/change-con
   res.redirect('/beta-private/iteration-28-c/find-a-claim/summary/1-change-summary');
 });
 
+router.post('/beta-private/iteration-28-c/find-a-claim/summary/more-claimant-information-new', function (req, res) {
+  res.redirect('/beta-private/iteration-28-c/find-a-claim/summary/claimant-confirm');
+});
+
 router.post('/change-answer', function(request, response) {
 
   var country = request.session.data['change-type']
@@ -617,20 +622,7 @@ router.post('/beta-private/iteration-28-c/find-a-claim/preferences/contact-optio
       res.redirect('/beta-private/iteration-28-c/start-a-claim/claimant-preferences');
     }
     else {
-      res.redirect('/beta-private/iteration-28-c/start-a-claim/more-claimant-information');
-    }
-  });
-
-  router.post('/beta-private/iteration-28-c/start-a-claim/more-claimant-information', function (req, res) {
-    // Has a match been made, in this scenario?
-    var match = true;
-
-    if (match == false) {
-      var match = null;
-      res.redirect('/beta-private/iteration-28-c/start-a-claim/no-match-found');
-    }
-    else {
-      res.redirect('/beta-private/iteration-28-c/start-a-claim/claim-date');
+      res.redirect('/beta-private/iteration-28-c/start-a-claim/more-claimant-information-new');
     }
   });
 
