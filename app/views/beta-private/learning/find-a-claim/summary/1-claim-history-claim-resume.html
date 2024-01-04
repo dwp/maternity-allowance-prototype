@@ -15,19 +15,19 @@
   <div class="dwp-key-details-bar__key-details">
   <dl class="dwp-key-details-bar__top-block">
       <dt class="govuk-visually-hidden">Name:</dt>
-      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+      <dd class="dwp-key-details-bar__primary">Amira Radcliff</dd>
       <dt class="govuk-visually-hidden">National Insurance Number:</dt>
-      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
+      <dd class="dwp-key-details-bar__secondary">XX123456X</dd>
       <dt class="govuk-visually-hidden">Claim status:</dt>
 
   </dl>
   <dl class="dwp-key-details-bar__bottom-block">
       <dt>Date of birth:</dt>
-      <dd>{{ data['claimant-dob'] }}</dd>
+      <dd>15 September 1996</dd>
       <dt>Postcode:</dt>
-      <dd>{{ data['claimant-postcode'] }}</dd>
+      <dd>SW7 3CP</dd>
       <dt>UK telephone number:</dt>
-      <dd>{{ data['claimant-contact-number'] }}</dd>
+      <dd>07895467510</dd>
 
   </dl>
   </div>
@@ -72,6 +72,9 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-change-summary-resume">Change of circumstance</a>
                 </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-claim-resume">Preferences</a>
+                </li>
 
               </ul>
             </nav>
@@ -85,54 +88,50 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-
-<section id="decision" class="govuk-!-padding-top-6">
-<h2 class="govuk-heading-m">Claim history</h2>
-
-<div class="dwp-timeline">
-
-  <ol class="dwp-timeline__events">
-
-    <li class="dwp-timeline__events--entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Maternity Allowance Period restarted</h2>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">Voluntary restart</p>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
-      <p class="govuk-caption-m">16 November 2023</p>
-  </li>
-  
-
-  <li class="dwp-timeline__events--entry">
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Maternity Allowance Period end date changed</h2>
-    <p class="govuk-caption-m govuk-!-margin-bottom-1">Voluntary relinquishment</p>
-    <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
-    <p class="govuk-caption-m">16 November 2023</p>
-</li>
-
-
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Mike Ehrmantraut</p>
-  <p class="govuk-caption-m">5 July 2023</p>
-</li>
-<li class="dwp-timeline__events--entry">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Hank Schrader</p>
-  <p class="govuk-caption-m">10 June 2023</p>
-</li>
-  </ol>
-  </div>
-
+          {% from "govuk/components/table/macro.njk" import govukTable %}
+          
+          <section id="decision" class="govuk-!-padding-top-6">
+          <h2 class="govuk-heading-m">Claim history</h2>
+          
+          <div class="dwp-timeline">
+            <ol class="dwp-timeline__events">
+          
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Maternity Allowance Period restarted</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">Reduced days</p>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">by Andrew Jameson</p>
+                <p class="govuk-caption-m">21 December 2023</p>
+            </li>
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Maternity Allowance Period end date changed</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">Voluntary relinquishment</p>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">by Ian Campbell</p>
+                <p class="govuk-caption-m">16 December 2023</p>
+            </li>
+            
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">by Jane Archer</p>
+                <p class="govuk-caption-m">5 July 2023</p>
+              </li>
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
+                <p class="govuk-caption-m">5 July 20233</p>
+              </li>
+              
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">by Jane Archer</p>
+                <p class="govuk-caption-m">5 July 2023</p>
+              </li>
+              <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">by Jane Archer</p>
+                <p class="govuk-caption-m">10 June 2023</p>
+              </li>
+                </ol>
+            </div>
+          </div>
 
 </section>
 {% endblock %}

@@ -9,54 +9,46 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="hidden">
+        Maternity Allowance Learning & Development
+      </h1>
+
+        <ul class="govuk-list">
+          <li class="bigbox">
+            <a href="../beta-private/learning/landing.html" class="govuk-heading-l govuk-!-font-weight-bold">Scenario 1</a>
+          </li>
+          <li class="bigbox">
+            <a href="../beta-private/learning/S2-landing.html" class="govuk-heading-l govuk-!-font-weight-bold">Scenario 2</a>
+          </li>
+          <li class="bigbox">
+            <a href="../beta-private/learning/S3-landing.html" class="govuk-heading-l govuk-!-font-weight-bold">Scenario 3</a>
+          </li>
+          <li class="bigbox">
+            <a href="../beta-private/learning/S4-landing.html" class="govuk-heading-l govuk-!-font-weight-bold">Scenario 4</a>
+          </li>
+        </ul>
 
 
-      <form class="form" method="post" novalidate>
-        
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Complete journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list">
+              <li class="bigbox">
+                <a href="/beta-private/iteration-17/start-a-claim/" class="govuk-heading-l govuk-!-font-weight-bold">Start a claim</a>
+              </li>
+              <li class="bigbox">
+                <a href="/beta-private/iteration-17/find-a-claim/" class="govuk-heading-l govuk-!-font-weight-bold">Find a claim</a>
+              </li>
+            </ul>
+          </div>
+        </details> -->
 
-      {{ govukRadios({
-        name: "scenario",
-        fieldset: {
-          legend: {
-            text: "Maternity Allowance Private Beta",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "scenario-1",
-            text: "Scenario 1"
-          },
-          {
-            value: "scenario-2",
-            text: "Scenario 2"
-          }
-        ]
-      }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Descriptions
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ol class="govuk-list govuk-list--number">
-            <li>MAST-1066 Override employment dates</li>
-          </ol>
-          <p><a href="../sandbox/">Sandbox</a></p>
-        </div>
-      </details>
-
-    </form>
 
     </div>
   </div>

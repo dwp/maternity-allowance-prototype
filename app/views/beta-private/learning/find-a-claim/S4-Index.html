@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Find a claim
+      </h1>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label" for="event-name">
+            National Insurance number
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input govuk-input--width-10" id="event-name" name="eventName" type="text">
+      </div>
+
+
+      <a href="/beta-private/learning/find-a-claim/summary/S4-1"><button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button></a>
+    </div>
+  </div>
+
+{% endblock %}
