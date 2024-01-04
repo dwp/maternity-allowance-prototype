@@ -17,11 +17,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/change-answer" method="post">
+      <form class="form" method="post">
 
         {{ govukRadios({
-          name: "change-type",
-          value: data['change-type'],
           fieldset: {
             legend: {
               text: "Select the change of circumstance you want to add to this claim
@@ -42,12 +40,12 @@
           ]
         }) }}
         
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
+
         
         </form>
-
+        <a href="/beta-private/learning/find-a-claim/change-of-circ/change-select-define-radio-resume"><button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button></a>
     </div>
   </div>
 

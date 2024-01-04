@@ -19,19 +19,19 @@
   <div class="dwp-key-details-bar__key-details">
   <dl class="dwp-key-details-bar__top-block">
       <dt class="govuk-visually-hidden">Name:</dt>
-      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+      <dd class="dwp-key-details-bar__primary">Amira Radcliff</dd>
       <dt class="govuk-visually-hidden">National Insurance Number:</dt>
-      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
+      <dd class="dwp-key-details-bar__secondary">XX123456X</dd>
       <dt class="govuk-visually-hidden">Claim status:</dt>
 
   </dl>
   <dl class="dwp-key-details-bar__bottom-block">
       <dt>Date of birth:</dt>
-      <dd>{{ data['claimant-dob'] }}</dd>
+      <dd>15 September 1996</dd>
       <dt>Postcode:</dt>
-      <dd>{{ data['claimant-postcode'] }}</dd>
+      <dd>SW7 3CP</dd>
       <dt>UK telephone number:</dt>
-      <dd>{{ data['claimant-contact-number'] }}</dd>
+      <dd>07895467510</dd>
 
   </dl>
   </div>
@@ -113,7 +113,7 @@
       },
       value: {
         html: govukTag({
-          text: data['ma-decision']
+          text: 'Allowed'
         })
       }
     }, 
@@ -129,40 +129,13 @@
         })
       }
     },
-    {
-      key: {
-        text: "Late status",
-        classes: 'govuk-!-width-one-half'
-      },
-      value: {
-        html: govukTag({
-          text: 'Late' ,
-          classes: "govuk-tag--red"
-        })
-      }
-    },
-    {
-      key: {
-        text: "Unpaid period start date"
-      },
-      value: {
-        text: '12 June 2023'
-      }
-    },
-    {
-      key: {
-        text: "Unpaid period end date"
-      },
-      value: {
-        text: '23 August 2023'
-      }
-    },
+
     {
       key: {
         text: "Claim created"
       },
       value: {
-        text: data['ma-claim-creation-date']
+        text: '13 November 2023'
       }
     },
     {
@@ -170,7 +143,7 @@
         text: "Decision date"
       },
       value: {
-        text: data['ma-claim-decision-date']
+        text: '13 November 2023'
       }
     },
     {
@@ -178,7 +151,7 @@
         text: "Rate"
       },
       value: {
-        text: data['ma-rate']
+        text: 'Standard rate at £172.48 per week'
       }
     },
     {
@@ -186,7 +159,7 @@
         text: "Maternity Allowance Period start date"
       },
       value: {
-        text: data['ma-map-start']
+        text: '25 November 2023'
       }
     },
     {
@@ -194,7 +167,7 @@
         text: "Maternity Allowance Period end date"
       },
       value: {
-        text: data['ma-map-end-summary']
+        text: '23 August 2024'
       }
     }
 
@@ -313,7 +286,7 @@ div class="govuk-summary-list__row">
         classes: 'govuk-!-width-one-half'
       },
       value: {
-        text: data['ma-baby-due-date']
+        text: '5 January 2024'
       },
       actions: {
         items: [
@@ -330,7 +303,7 @@ div class="govuk-summary-list__row">
         text: "First day of Test Period"
       },
       value: {
-        text: data['ma-test-period-first-day']
+        text: '25 September 2022'
       }
     },
     {
@@ -338,7 +311,7 @@ div class="govuk-summary-list__row">
         text: "Last day of Test Period"
       },
       value: {
-        text: data['ma-test-period-last-day']
+        text: '30 December 2023'
       }
     },
     {
@@ -346,7 +319,7 @@ div class="govuk-summary-list__row">
         text: "15th week before the baby due date"
       },
       value: {
-        text: data['ma-test-period-week-fifteen']
+        text: '17 September 2023'
       }
     }
   ]
@@ -366,7 +339,7 @@ div class="govuk-summary-list__row">
       classes: 'govuk-!-width-one-half'
     },
     value: {
-      text: data['ma-map-claim-date-received']
+      text: '11 October 2023'
     },
     actions: {
       items: [
@@ -384,7 +357,7 @@ div class="govuk-summary-list__row">
       classes: 'govuk-!-width-one-half'
     },
     value: {
-      text: data['ma-map-claimant-stopped-work-date-last-worked']
+      text: '23 November 2023'
     },
     actions: {
       items: [
@@ -402,7 +375,7 @@ div class="govuk-summary-list__row">
       classes: 'govuk-!-width-one-half'
     },
     value: {
-      text: data['ma-map-claimant-stopped-work-reason']
+      text: 'Maternity Leave'
     },
     actions: {
       items: [
@@ -419,7 +392,7 @@ div class="govuk-summary-list__row">
       text: "Expected week of confinement	"
     },
     value: {
-      text: data['ma-map-expected-week-of-confinement']
+      text: '31 December 2023'
     }
   },
   {
@@ -428,7 +401,7 @@ div class="govuk-summary-list__row">
       classes: 'govuk-!-width-one-half'
     },
     value: {
-      text: data['ma-baby-birth-date']
+      text: 'Baby not born yet'
     },
     actions: {
       items: [
@@ -446,7 +419,7 @@ div class="govuk-summary-list__row">
       classes: 'govuk-!-width-one-half'
     },
     value: {
-      text: data['ma-week-eleventh']
+      text: '15 October 2023'
     }
   },
   {
@@ -456,7 +429,7 @@ div class="govuk-summary-list__row">
     },
 
     value: {
-      text: data['ma-week-fourth']
+      text: '3 December 2023'
     }
   },
   {
@@ -468,7 +441,7 @@ div class="govuk-summary-list__row">
 
 
     
-        text: data['ma-start-date-requested']
+        text: '25 November 2023'
   
 
 
@@ -489,7 +462,7 @@ div class="govuk-summary-list__row">
         text: "Maternity Allowance Period rule"
       },
       value: {
-        text: data['ma-map-rule']
+        text: 'Flexible Maternity Allowance Period'
       }
     },
     {
@@ -497,7 +470,7 @@ div class="govuk-summary-list__row">
         text: "Maternity Allowance Period start date"
       },
       value: {
-        text: data['ma-map-start']
+        text: '25 November 2023'
       }
     },
     {
@@ -505,7 +478,7 @@ div class="govuk-summary-list__row">
         text: "Maternity Allowance Period end date"
       },
       value: {
-        text: data['ma-map-end']
+        text: '23 August 2024'
       }
     }
 
