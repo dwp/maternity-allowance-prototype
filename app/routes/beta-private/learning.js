@@ -878,7 +878,7 @@ router.post('/beta-private/learning/find-a-claim/preferences/contact-options-typ
 
   router.post('/beta-private/learning/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/learning/find-a-claim/summary/1');
+      res.redirect('/beta-private/learning/start-a-claim/requested-start-date');
     }
     else {
       res.redirect('/beta-private/learning/find-a-claim/summary/1');
@@ -890,7 +890,7 @@ router.post('/beta-private/learning/find-a-claim/preferences/contact-options-typ
   });
 
   router.post('/beta-private/learning/start-a-claim/requested-start-date', function (req, res) {
-    res.redirect('/beta-private/learning/start-a-claim/summary/');
+    res.redirect('/beta-private/learning/find-a-claim/summary/');
   });
 
     router.post('/beta-private/learning/start-a-claim/claimant-preferences', function (req, res) {
