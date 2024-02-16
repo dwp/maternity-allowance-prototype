@@ -37,22 +37,21 @@
       {% endset -%}
 
       {{ govukRadios({
-        name: "whereDoYouLive",
         fieldset: {
           legend: {
-            text: "Does the claimant need a reasonable adjustment for phone calls or letters?",
+            text: "Does the claimant need a reasonable adjustment?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "phone",
-            text: "Phone calls"
+            value: "yes",
+            text: "Yes"
           },
           {
-            value: "letters",
-            text: "Letters"
+            value: "no",
+            text: "No"
           }
         ]
       }) }}

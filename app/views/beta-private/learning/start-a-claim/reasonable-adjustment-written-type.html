@@ -24,19 +24,12 @@
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% set chosenDateHtml %}
-      {{ govukDateInput({
-        id: "reasonable-adjustment",
-        namePrefix: "chosen-map-date",
-        fieldset: {
-          legend: {
-            text: "What reasonable adjustment does the claimant need for letters?"
-          }
-        }
-      }) }}
-      {% endset -%}
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
+        name: "whereDoYouLive",
         fieldset: {
           legend: {
             text: "What reasonable adjustment does the claimant need for letters?",
@@ -50,8 +43,8 @@
             text: "Large print"
           },
           {
-            value: "anotherText",
-            text: "Another text style"
+            value: "anotherFont",
+            text: "Another font"
           },
           {
             value: "braille",
@@ -66,12 +59,12 @@
             text: "British Sign Language"
           },
           {
-            value: "lip",
-            text: "Lipspeaking"
-          },
-          {
             value: "anotherPaper",
             text: "Another paper colour"
+          },
+          {
+            value: "easyRead",
+            text: "Easy Read"
           },
           {
             value: "email",
@@ -84,13 +77,10 @@
           {
             value: "PDF",
             text: "Accessible PDF with selectable text"
-          },
-          {
-            value: "somethingElse",
-            text: "Something else"
           }
         ]
       }) }}
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
