@@ -52,25 +52,28 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item  ">
-                  <a href="1-claim-resume" aria-current="location">Decision and dates</a>
+                  <a href="1" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-employment-and-earnings-claim-resume">Employment and earnings</a>
+                  <a href="1-employment-and-earnings">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-claim-resume">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments">Bank details and payments</a>
                 </li>
 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-2-employers-claim-resume">Evidence</a>
+                  <a href="1-evidence-2-employers">Evidence</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-claim-resume">Claim history</a>
+                  <a href="1-claim-history">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-summary-resume">Change of circumstance</a>
+                  <a href="1-change-of-circ.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences.html">Preferences</a>
                 </li>
 
 
@@ -94,7 +97,7 @@
   <h2 class="govuk-heading-m" id="employment-and-earnings">Employment</h2>
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-0">
-    <div class="govuk-summary-list__row">
+   <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
         Employment type
       </dt>
@@ -104,7 +107,7 @@
       <dd class="govuk-summary-list__actions">
         &nbsp;
       </dd>
-    </div>
+    </div>-->
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
         Employment test
@@ -128,6 +131,28 @@
     </dd>
     </div>
     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__value">
+        Employment start date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-1-start'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__value">
+        Employment end date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-1-end'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Employer 2
       </dt>
@@ -136,6 +161,28 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="../payslip/frequency-blank.html"><span aria-hidden="true">Manage</span><span class="govuk-visually-hidden">Change Michael Cain</span></a></li>
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__value">
+        Employment start date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-2-start'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__value">
+        Employment end date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['ma-employer-2-end'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        
     </dd>
     </div>
   </dl>
@@ -150,7 +197,7 @@
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-    <!--<div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
         Earnings test
       </dt>
@@ -161,7 +208,7 @@
        &nbsp;
       </dd>
     </div>
-    
+    <!--
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Earnings test weeks used
@@ -187,10 +234,32 @@
     </div>
 
 
-
   </dl>
 
 </section>
+
+
+<!--<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">Unassigned earnings details</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Payslip date</th>
+      <th scope="col" class="govuk-table__header">Amount</th>
+      <th scope="col" class="govuk-table__header">Frequency</th>
+      <th scope="col" class="govuk-table__header">Assigned payslip period</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">21 October 2023</th>
+      <td class="govuk-table__cell">£5000.00</td>
+      <td class="govuk-table__cell">IR - Irregular</td>
+      <td class="govuk-table__cell">1 January 2023 -<br> 31 December 2023</td>
+      <td class="govuk-table__cell">Change</td>
+      </tr>
+  </tbody>
+</table>-->
 
 <section class="transactions">
 

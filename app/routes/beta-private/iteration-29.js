@@ -501,9 +501,20 @@ router.post('/beta-private/iteration-29/find-a-claim/unallocated/unallocated-end
 });
 
 router.post('/beta-private/iteration-29/find-a-claim/unallocated/unallocated-confirm-answers', function (req, res) {
-  res.redirect('/beta-private/iteration-29/find-a-claim/summary/1-unallocated');
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/allocated/1');
 });
 
+router.post('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-start', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-end');
+});
+
+router.post('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-end', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-confirm-answers');
+});
+
+router.post('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/reallocated/1');
+});
 
 // *** Payment Override ************************************************************************************************************** //
 
