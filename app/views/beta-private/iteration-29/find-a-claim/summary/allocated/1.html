@@ -81,6 +81,9 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ.html">Change of circumstance</a>
                 </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences">Preferences</a>
+                </li>
 
 
               </ul>
@@ -114,6 +117,21 @@
      &nbsp;
     </dd>
   </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Claim status
+    </dt>
+    <dd class="govuk-summary-list__value">
+   
+      <strong class="govuk-tag govuk-tag--green">
+        Active
+      </strong>
+   
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
   <!--div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       !!!!!!!!!!!Missing information!!!!!!!!!!!
@@ -129,9 +147,7 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-creation-date'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -140,9 +156,7 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-decision-date'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -158,9 +172,7 @@
     </dd>
     </dd>
     
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+ 
   </div>
 
 
@@ -171,9 +183,7 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-map-start'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+ 
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -182,9 +192,7 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-map-end'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
 </dl>
 </section>
@@ -342,7 +350,7 @@
         classes: "govuk-!-margin-left-2"
       })}}
     </dd>
-    <dd class="govuk-summary-list__actions">
+    <dd class="govuk-summary-list__actions ">
       <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
       </a>

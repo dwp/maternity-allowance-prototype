@@ -489,11 +489,11 @@ router.post('/beta-private/iteration-24/find-a-claim/change-of-circ/change-confi
 
 router.post('/change-type', function(request, response) {
 
-  var changeType = request.session.data['changeType']
-  if (changeType == "stop"){
+  var changeType24 = request.session.data['changeType-24']
+  if (changeType24 == "stop"){
       response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio")
   } 
-  if (changeType == "reduce"){
+  if (changeType24 == "reduce"){
     response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
       response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
