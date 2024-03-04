@@ -56,30 +56,33 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-                  <a href="1-claim-closed" aria-current="location">Decision and dates</a>
+                  <a href="1" aria-current="location">Decision and dates</a>
            
                     
         
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-claim-closed-fraud">Employment and earnings</a>
+                  <a href="1-employment-and-earnings">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-claim-closed-fraud">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments">Bank details and payments</a>
                 </li>
 
                 <li class="moj-side-navigation__item ">
-                  <a href="1-evidence-2-employers-claim-closed-fraud">Evidence</a>
+                  <a href="1-evidence-2-employers">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-claim-closed-fraud">Claim history</a>
+                  <a href="1-claim-history">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-summary-fraud">Change of circumstance</a>
+                  <a href="1-change-of-circ.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences">Preferences</a>
                 </li>
 
 
@@ -98,23 +101,6 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 <section id="decision" class="govuk-!-padding-top-6">
-
-  <div class="govuk-notification-banner" role="region"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      This claim is confirmed as fraudulent. All details have been frozen for auditing.
-      
-    </p>
-  </div>
-</div>
-
 <h2 class="govuk-heading-m">Decision</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-0">
@@ -126,6 +112,21 @@
       {{govukTag({
         text: data['ma-decision']
       })}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Claim status
+    </dt>
+    <dd class="govuk-summary-list__value">
+   
+      <strong class="govuk-tag govuk-tag--green">
+        Active
+      </strong>
+   
     </dd>
     <dd class="govuk-summary-list__actions">
      &nbsp;
@@ -146,9 +147,7 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-creation-date'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -157,16 +156,14 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-decision-date'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Rate
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-rate'] }}
+      {{ data['ma-rate-2'] }}
 
       <dd class="govuk-summary-list__actions">
             
@@ -175,9 +172,7 @@
     </dd>
     </dd>
     
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+ 
   </div>
 
 
@@ -188,31 +183,16 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-map-start'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+ 
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Maternity Allowance Period end date
     </dt>
     <dd class="govuk-summary-list__value">
-      21 March 2024
+      {{ data['ma-map-end'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Fraud confirmed
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Yes
-    </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
 </dl>
 </section>
@@ -370,7 +350,7 @@
         classes: "govuk-!-margin-left-2"
       })}}
     </dd>
-    <dd class="govuk-summary-list__actions">
+    <dd class="govuk-summary-list__actions ">
       <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
       </a>
