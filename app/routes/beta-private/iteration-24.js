@@ -487,23 +487,23 @@ router.post('/beta-private/iteration-24/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-24/find-a-claim/summary/1-change-summary-resume');
 });
 
-router.post('/change-type', function(request, response) {
+router.post('/stop-Claim', function(request, response) {
 
-  var changeType24 = request.session.data['changeType-24']
-  if (changeType24 == "stop"){
+  var stopClaim = request.session.data['stopClaim']
+  if (stopClaim == "stop"){
       response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio")
   } 
-  if (changeType24 == "reduce"){
+  if (stopClaim == "reduce"){
     response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/reduce-claim-weeks")
 } else {
       response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 
-router.post('/change-reason', function(request, response) {
+router.post('/change-reason24', function(request, response) {
 
-  var changeReason = request.session.data['changeReason']
-  if (changeReason == "fraud"){
+  var changeReason24 = request.session.data['changeReason24']
+  if (changeReason24 == "fraud"){
       response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-fraud-entire-claim")
   } 
  else {

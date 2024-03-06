@@ -513,6 +513,18 @@ router.post('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigne
 });
 
 router.post('/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-confirm-answers', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/allocated/1');
+});
+
+router.post('/beta-private/iteration-29/find-a-claim/summary/reallocated/reassigned-start', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/reallocated/reassigned-end');
+});
+
+router.post('/beta-private/iteration-29/find-a-claim/summary/reallocated/reassigned-end', function (req, res) {
+  res.redirect('/beta-private/iteration-29/find-a-claim/summary/reallocated/reassigned-confirm-answers');
+});
+
+router.post('/beta-private/iteration-29/find-a-claim/summary/reallocated/reassigned-confirm-answers', function (req, res) {
   res.redirect('/beta-private/iteration-29/find-a-claim/summary/reallocated/1');
 });
 
