@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      
+      
+<section id="decision" class="govuk-!-margin-bottom-6">
+  <h1 class="govuk-heading-l">New earnings details</h1>
+  
+    <table class="govuk-table">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payslip amount</th>
+      <td class="govuk-table__cell">£5000.00</td>
+      <td class="govuk-table__cell"> </td>
+    </tr>
+      <th scope="row" class="govuk-table__header">Payslip period start date</th>
+      <td class="govuk-table__cell">21 January 2024</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-start">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payslip period end date</th>
+      <td class="govuk-table__cell">31 December 2024</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="/beta-private/iteration-29/find-a-claim/summary/allocated/reassigned-end">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+
+
+
+</tbody>
+</table>
+
+  
+  </section>
+
+  <form class="form" method="post" novalidate>
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
