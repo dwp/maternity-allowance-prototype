@@ -26,30 +26,14 @@
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {{ govukInput({
-        label: {
-          text: "National Insurance number"
-        },
-        classes: "govuk-input--width-10",
-        id: "nino",
-        name: "nino"
-      }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Contact number"
-        },
-        classes: "govuk-input--width-10",
-        id: "contact-no",
-        name: "contact-no"
-      }) }}
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% call govukFieldset({
   legend: {
-    text: "Address",
+    text: "Correspondence address",
     classes: "govuk-fieldset__legend--s"
   }
 }) %}
@@ -93,16 +77,36 @@
     autocomplete: "postal-code"
   }) }}
 
+  {{ govukInput({
+    label: {
+      text: "Telephone number (optional)"
+    },
+    classes: "govuk-input--width-10",
+    id: "more-info-postcode",
+    name: "more-info-postcode",
+    value: data['address-postcode'],
+    autocomplete: "postal-code"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address (optional)"
+    },
+    classes: "govuk-input--width-10",
+    id: "more-info-postcode",
+    name: "more-info-postcode",
+    value: data['address-postcode'],
+    autocomplete: "postal-code"
+  }) }}
+
 {% endcall %}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
 
       </form>
-
+      <a href="/beta-private/iteration-29/start-a-claim/confirm-contact-details"><button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button></a>
     </div>
   </div>
 

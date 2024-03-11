@@ -504,10 +504,21 @@ router.post('/change-reason24', function(request, response) {
 
   var changeReason24 = request.session.data['changeReason24']
   if (changeReason24 == "fraud"){
-      response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-fraud-entire-claim")
+      response.redirect("beta-private/iteration-24/find-a-claim/change-odf-circ/change-fraud-entire-claim")
   } 
  else {
       response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-MA-end-date")
+  }
+})
+
+router.post('/change-reason-resume24', function(request, response) {
+
+  var changeReasonResume24 = request.session.data['changeReasonResume24']
+  if (changeReasonResume24 == "restart"){
+      response.redirect("beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
+  } 
+ else {
+      response.redirect("/beta-private/iteration-24/find-a-claim/change-of-circ/change-select-define-radio-resume")
   }
 })
 

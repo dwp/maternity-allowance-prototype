@@ -111,6 +111,28 @@ module.exports = router => {
       req.session.data['ma-week-11'] = '5 June 2022';
       req.session.data['ma-week-12'] = '12 June 2022';
       req.session.data['ma-week-13'] = '19 June 2022';
+      req.session.data['ma-week-14'] = '19 June 2022';
+      req.session.data['ma-week-15'] = '19 June 2022';
+      req.session.data['ma-week-16'] = '19 June 2022';
+
+
+            // Highest earning weeks - iteration 29
+            req.session.data['ma-week-1'] = '27 March 2022';
+            req.session.data['ma-week-2'] = '3 April 2022';
+            req.session.data['ma-week-3'] = '10 April 2022';
+            req.session.data['ma-week-4-2'] = '8 January 2023';
+            req.session.data['ma-week-5-2'] = '15 January 2023';
+            req.session.data['ma-week-6-2'] = '22 January 2023';
+            req.session.data['ma-week-7-2'] = '29 January 2023';
+            req.session.data['ma-week-8-2'] = '5 February 2023';
+            req.session.data['ma-week-9-2'] = '12 February 2023';
+            req.session.data['ma-week-10-2'] = '19 February 2023';
+            req.session.data['ma-week-11-2'] = '26 February 2023';
+            req.session.data['ma-week-12-2'] = '5 March 2023';
+            req.session.data['ma-week-13-2'] = '12 March 2023';
+            req.session.data['ma-week-14-2'] = '19 March 2023';
+            req.session.data['ma-week-15-2'] = '26 March 2023';
+            req.session.data['ma-week-16-2'] = '2 April 2023';
 
       req.session.data['ma-week-1-employer-1-amount'] = 400.00;
       req.session.data['ma-week-2-employer-1-amount'] = 400.00;
@@ -292,33 +314,51 @@ module.exports = router => {
       req.session.data['ma-week-12'] = '3 July 2022';
       req.session.data['ma-week-13'] = '10 July 2022';
 
-      req.session.data['ma-week-1-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-2-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-3-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-4-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-5-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-6-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-7-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-8-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-9-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-10-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-11-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-12-employer-1-amount'] = 100.00;
-      req.session.data['ma-week-13-employer-1-amount'] = 100.00;
+                // Highest earning weeks - iteration 29
+                req.session.data['ma-week-1'] = '27 March 2022';
+                req.session.data['ma-week-2'] = '3 April 2022';
+                req.session.data['ma-week-3'] = '10 April 2022';
+                req.session.data['ma-week-4-2'] = '8 January 2023';
+                req.session.data['ma-week-5-2'] = '15 January 2023';
+                req.session.data['ma-week-6-2'] = '22 January 2023';
+                req.session.data['ma-week-7-2'] = '29 January 2023';
+                req.session.data['ma-week-8-2'] = '5 February 2023';
+                req.session.data['ma-week-9-2'] = '12 February 2023';
+                req.session.data['ma-week-10-2'] = '19 February 2023';
+                req.session.data['ma-week-11-2'] = '26 February 2023';
+                req.session.data['ma-week-12-2'] = '5 March 2023';
+                req.session.data['ma-week-13-2'] = '12 March 2023';
+                req.session.data['ma-week-14-2'] = '19 March 2023';
+                req.session.data['ma-week-15-2'] = '26 March 2023';
+                req.session.data['ma-week-16-2'] = '2 April 2023';
 
-      req.session.data['ma-week-1-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-2-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-3-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-4-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-5-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-6-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-7-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-8-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-9-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-10-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-11-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-12-employer-2-amount'] = 150.00;
-      req.session.data['ma-week-13-employer-2-amount'] = 150.00;
+      req.session.data['ma-week-1-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-2-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-3-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-4-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-5-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-6-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-7-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-8-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-9-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-10-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-11-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-12-employer-1-amount'] = 296.15;
+      req.session.data['ma-week-13-employer-1-amount'] = 296.15;
+
+      req.session.data['ma-week-1-employer-2-amount'] = 00;
+      req.session.data['ma-week-2-employer-2-amount'] = 00;
+      req.session.data['ma-week-3-employer-2-amount'] = 00;
+      req.session.data['ma-week-4-employer-2-amount'] = 00;
+      req.session.data['ma-week-5-employer-2-amount'] = 00;
+      req.session.data['ma-week-6-employer-2-amount'] = 00;
+      req.session.data['ma-week-7-employer-2-amount'] = 00;
+      req.session.data['ma-week-8-employer-2-amount'] = 00;
+      req.session.data['ma-week-9-employer-2-amount'] = 00;
+      req.session.data['ma-week-10-employer-2-amount'] = 00;
+      req.session.data['ma-week-11-employer-2-amount'] = 00;
+      req.session.data['ma-week-12-employer-2-amount'] = 00;
+      req.session.data['ma-week-13-employer-2-amount'] = 00;
 
       req.session.data['ma-week-1-total-amount'] = req.session.data['ma-week-1-employer-1-amount'] + req.session.data['ma-week-1-employer-2-amount'];
       req.session.data['ma-week-2-total-amount'] = req.session.data['ma-week-2-employer-1-amount'] + req.session.data['ma-week-2-employer-2-amount'];
@@ -561,6 +601,34 @@ router.post('/employer', function(request, response) {
   }
 })
 
+// *** Reasonable Adjustment ************************************************************************************************************** //
+
+router.post('/require-RA', function(request, response) {
+
+  var ReasonableAdjustment = request.session.data['ReasonableAdjustment']
+  if (ReasonableAdjustment == "Yes"){
+      response.redirect("/beta-private/iteration-29/start-a-claim/reasonable-adjustment-type")
+  } else {
+      response.redirect("/beta-private/iteration-29/start-a-claim/claim-date")
+  }
+})
+
+router.post('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-type', function (req, res) {
+  res.redirect('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-written-type');
+});
+
+router.post('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-written-type', function (req, res) {
+  res.redirect('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-font-size');
+});
+
+router.post('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-font-size', function (req, res) {
+  res.redirect('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-2');
+});
+
+router.post('/beta-private/iteration-29/start-a-claim/reasonable-adjustment-2', function (req, res) {
+  res.redirect('/beta-private/iteration-29/start-a-claim/claim-date');
+});
+
 // *** Preferences ************************************************************************************************************** //
 
 router.post('/beta-private/iteration-29/find-a-claim/preferences/claimant-details', function (req, res) {
@@ -599,6 +667,10 @@ router.post('/beta-private/iteration-29/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-29/find-a-claim/summary/1-bank-details-and-payments', function (req, res) {
     res.redirect('/beta-private/iteration-29/payments/prepopulated-account-details');
+  });
+
+  router.post('/beta-private/iteration-29/start-a-claim/more-claimant-information', function (req, res) {
+    res.redirect('/beta-private/iteration-29/start-a-claim/confirm-contact-details');
   });
 
   router.post('/beta-private/iteration-29/start-a-claim/claimant-confirm', function (req, res) {
