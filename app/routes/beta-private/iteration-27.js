@@ -441,6 +441,18 @@ module.exports = router => {
     res.redirect('/beta-private/iteration-27/payments/');
   });
 
+  router.post('/beta-private/iteration-27/find-a-claim/preferences/more-claimant-information', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/preferences/welsh-language');
+  });
+
+  router.post('/beta-private/iteration-27/find-a-claim/preferences/welsh-language', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/preferences/confirm-contact-details');
+  });
+
+  router.post('/beta-private/iteration-27/find-a-claim/preferences/confirm-contact-details', function (req, res) {
+    res.redirect('/beta-private/iteration-27/find-a-claim/preferences/1-preferences');
+  });
+
 // *** Change of Circs ************************************************************************************************************** //
 
 router.post('/beta-private/iteration-27/find-a-claim/change-of-circ/change-select', function (req, res) {
