@@ -189,10 +189,10 @@ module.exports = router => {
       req.session.data['ma-week-7-employer-1-source'] = 'RTI';
       req.session.data['ma-week-8-employer-1-source'] = 'RTI';
       req.session.data['ma-week-9-employer-1-source'] = 'RTI';
-      req.session.data['ma-week-10-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-11-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-12-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-13-employer-1-source'] = 'Payslip';
+      req.session.data['ma-week-10-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-11-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-12-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-13-employer-1-source'] = 'RTI';
 
       req.session.data['ma-week-1-employer-2-source'] = 'RTI';
       req.session.data['ma-week-2-employer-2-source'] = 'RTI';
@@ -387,10 +387,10 @@ module.exports = router => {
       req.session.data['ma-week-7-employer-1-source'] = 'RTI';
       req.session.data['ma-week-8-employer-1-source'] = 'RTI';
       req.session.data['ma-week-9-employer-1-source'] = 'RTI';
-      req.session.data['ma-week-10-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-11-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-12-employer-1-source'] = 'Payslip';
-      req.session.data['ma-week-13-employer-1-source'] = 'Payslip';
+      req.session.data['ma-week-10-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-11-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-12-employer-1-source'] = 'RTI';
+      req.session.data['ma-week-13-employer-1-source'] = 'RTI';
 
       req.session.data['ma-week-1-employer-2-source'] = 'RTI';
       req.session.data['ma-week-2-employer-2-source'] = 'RTI';
