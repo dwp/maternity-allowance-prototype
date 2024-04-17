@@ -19,31 +19,34 @@ module.exports = router => {
 
        // Mat & SMP1
        req.session.data['mat-provided'] = 'Yes';
-       req.session.data['mat-date-signed'] = '15 April 2023';
+       req.session.data['mat-date-signed'] = '25 February 2024';
        req.session.data['mat-certificate-number'] = '5658710';
        req.session.data['mat-midwife-pin'] = '1987621';
-       req.session.data['mat-date-verified'] = '5 July 2023';
+       req.session.data['mat-date-verified'] = '22 April 2024';
        req.session.data['mat-verified-by'] = 'Jean Grey';
        req.session.data['smp1-provided'] = 'Yes';
-       req.session.data['smp1-employer'] = 'ASDA LTD';
-       req.session.data['smp1-date-signed'] = '15 June 2023';
+       req.session.data['smp1-employer'] = 'ARGOS';
+       req.session.data['smp1-date-signed'] = '15 June 2024';
        req.session.data['smp1-verified-by'] = 'Jean Grey';
-       req.session.data['smp1-date-verified'] = '5 July 2023';
+       req.session.data['smp1-date-verified'] = '22 April 2024';
 
 
 
 
       // Claimant information
-      req.session.data['claimant-name'] = 'Lucinda Davies';
-      req.session.data['claimant-nino'] = 'XX123456X';
-      req.session.data['claimant-dob'] = '25 October 1989';
-      req.session.data['claimant-postcode'] = 'NE5 8KR';
-      req.session.data['claimant-address'] = null;
-      req.session.data['claimant-contact-number'] = '07847 171740';
+      req.session.data['claimant-name'] = 'Amira Radcliff';
+      req.session.data['claimant-nino'] = 'XY123456Y';
+      req.session.data['claimant-dob'] = '15 September 1996';
+      req.session.data['claimant-postcode'] = 'SW7 3CP';
+      req.session.data['claimant-address'] = '34 Fairburn Way';
+      req.session.data['claimant-address2'] = 'Chelsea';
+      req.session.data['claimant-address3'] = 'London';
+      req.session.data['claimant-contact-number'] = '07895467510';
+      req.session.data['claimant-email'] = 'a.radcliff26@gmail.com';
 
       // Bank details
       req.session.data['name-on-account'] = 'Lucinda Davies';
-      req.session.data['sort-code'] = '12-34-56';
+      req.session.data['sort-code'] = '11-11-11';
       req.session.data['account-number'] = '*****5678';
       req.session.data['building-society'] = '';
       req.session.data['payment-frequency'] = 'Every 4 weeks';
@@ -54,27 +57,27 @@ module.exports = router => {
       req.session.data['ma-claim-creation-date'] = '5 July 2023';
       req.session.data['ma-claim-decision-date'] = '5 July 2023';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '10 July 2023';
-      req.session.data['ma-map-end'] = '7 April 2024';
+      req.session.data['ma-map-start'] = '3 April 2024';
+      req.session.data['ma-map-end'] = '31 December 2024';
 
       // Test period dates
-      req.session.data['ma-baby-due-date'] = '15 August 2023';
+      req.session.data['ma-baby-due-date'] = '10 May 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
-      req.session.data['ma-test-period-first-day'] = '8 May 2022';
-      req.session.data['ma-test-period-last-day'] = '12 August 2023';
-      req.session.data['ma-test-period-week-fifteen'] = '30 April 2023';
+      req.session.data['ma-test-period-first-day'] = '29 January 2023';
+      req.session.data['ma-test-period-last-day'] = '4 May 2024';
+      req.session.data['ma-test-period-week-fifteen'] = '21 January 2024';
 
       // Maternity Allowance period dates
-      req.session.data['ma-map-claim-date-received'] = '1 July 2023';
-      req.session.data['ma-map-expected-week-of-confinement'] = '13 August 2023';
-      req.session.data['ma-week-eleventh'] = '20 May 2023';
-      req.session.data['ma-week-fourth'] = '16 July 2023';
-      req.session.data['ma-start-date-requested'] = '10 July 2023';
+      req.session.data['ma-map-claim-date-received'] = '3 April 2024';
+      req.session.data['ma-map-expected-week-of-confinement'] = '5 May 2024';
+      req.session.data['ma-week-eleventh'] = '18 February 2024';
+      req.session.data['ma-week-fourth'] = '7 April 2024';
+      req.session.data['ma-start-date-requested'] = '3 April 2024';
       req.session.data['ma-start-date-requested-status'] = 'Allowed';
       req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
 
       // Date Last Worked
-      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '30 June 2023';
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 April 2024';
       req.session.data['ma-map-claimant-stopped-work-reason'] = 'Maternity Leave';
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null; //// ******
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None';
@@ -87,9 +90,9 @@ module.exports = router => {
       req.session.data['ma-employment-agency-employment-start-date'] = null;
       req.session.data['ma-employment-agency-status'] = null;
       req.session.data['ma-employment-test'] = 'Met';
-      req.session.data['ma-employer-1'] = 'ASDA LTD';
-      req.session.data['ma-employer-1-start'] = '12 January 2023';
-      req.session.data['ma-employer-1-end'] = '16 September 2023';
+      req.session.data['ma-employer-1'] = 'ARGOS';
+      req.session.data['ma-employer-1-start'] = '21 March 2022';
+      req.session.data['ma-employer-1-end'] = 'Ongoing';
       req.session.data['ma-employer-1-end-update'] = '16 November 2022';
       req.session.data['ma-employer-2'] = 'ARGOS';
       req.session.data['ma-employer-2-start'] = '14 September 2022';
@@ -101,19 +104,19 @@ module.exports = router => {
       req.session.data['ma-week-1'] = '27 March 2022';
       req.session.data['ma-week-2'] = '3 April 2022';
       req.session.data['ma-week-3'] = '10 April 2022';
-      req.session.data['ma-week-4'] = '17 April 2022';
-      req.session.data['ma-week-5'] = '24 April 2022';
-      req.session.data['ma-week-6'] = '1 May 2022';
-      req.session.data['ma-week-7'] = '8 May 2022';
-      req.session.data['ma-week-8'] = '15 May 2022';
-      req.session.data['ma-week-9'] = '22 May 2022';
-      req.session.data['ma-week-10'] = '29 May 2022';
-      req.session.data['ma-week-11'] = '5 June 2022';
-      req.session.data['ma-week-12'] = '12 June 2022';
-      req.session.data['ma-week-13'] = '19 June 2022';
-      req.session.data['ma-week-14'] = '19 June 2022';
-      req.session.data['ma-week-15'] = '19 June 2022';
-      req.session.data['ma-week-16'] = '19 June 2022';
+      req.session.data['ma-week-4'] = '29 January 2023';
+      req.session.data['ma-week-5'] = '5 February 2023';
+      req.session.data['ma-week-6'] = '12 February 2023';
+      req.session.data['ma-week-7'] = '19 February 2023';
+      req.session.data['ma-week-8'] = '26 February 2023';
+      req.session.data['ma-week-9'] = '5 March 2023';
+      req.session.data['ma-week-10'] = '12 March 2023';
+      req.session.data['ma-week-11'] = '19 March 2023';
+      req.session.data['ma-week-12'] = '26 March 2023';
+      req.session.data['ma-week-13'] = '2 April 2023';
+      req.session.data['ma-week-14v2'] = '9 April 2023';
+      req.session.data['ma-week-15v2'] = '16 April 2023';
+      req.session.data['ma-week-16v2'] = '23 April 2023';
 
 
             // Highest earning weeks - iteration 29
@@ -132,35 +135,35 @@ module.exports = router => {
             req.session.data['ma-week-13-2'] = '12 March 2023';
             req.session.data['ma-week-14-2'] = '19 March 2023';
             req.session.data['ma-week-15-2'] = '26 March 2023';
-            req.session.data['ma-week-16-2'] = '2 April 2023';
+            req.session.data['ma-week-16-2'] = '9 April 2023';
 
-      req.session.data['ma-week-1-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-2-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-3-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-4-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-5-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-6-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-7-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-8-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-9-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-10-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-11-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-12-employer-1-amount'] = 400.00;
-      req.session.data['ma-week-13-employer-1-amount'] = 400.00;
+      req.session.data['ma-week-1-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-2-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-3-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-4-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-5-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-6-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-7-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-8-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-9-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-10-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-11-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-12-employer-1-amount'] = 315.00;
+      req.session.data['ma-week-13-employer-1-amount'] = 315.00;
 
-      req.session.data['ma-week-1-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-2-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-3-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-4-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-5-employer-2-amount'] = 60.00;
-      req.session.data['ma-week-6-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-7-employer-2-amount'] = 55.00;
-      req.session.data['ma-week-8-employer-2-amount'] = 55.00;
-      req.session.data['ma-week-9-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-10-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-11-employer-2-amount'] = 52.50;
-      req.session.data['ma-week-12-employer-2-amount'] = 55.00;
-      req.session.data['ma-week-13-employer-2-amount'] = 55.00;
+      req.session.data['ma-week-1-employer-2-amount'] = 0;
+      req.session.data['ma-week-2-employer-2-amount'] = 0;
+      req.session.data['ma-week-3-employer-2-amount'] = 0;
+      req.session.data['ma-week-4-employer-2-amount'] = 0;
+      req.session.data['ma-week-5-employer-2-amount'] = 0;
+      req.session.data['ma-week-6-employer-2-amount'] = 0;
+      req.session.data['ma-week-7-employer-2-amount'] = 0;
+      req.session.data['ma-week-8-employer-2-amount'] = 0;
+      req.session.data['ma-week-9-employer-2-amount'] = 0;
+      req.session.data['ma-week-10-employer-2-amount'] = 0;
+      req.session.data['ma-week-11-employer-2-amount'] = 0;
+      req.session.data['ma-week-12-employer-2-amount'] = 0;
+      req.session.data['ma-week-13-employer-2-amount'] = 0;
 
       req.session.data['ma-week-1-total-amount'] = req.session.data['ma-week-1-employer-1-amount'] + req.session.data['ma-week-1-employer-2-amount'];
       req.session.data['ma-week-2-total-amount'] = req.session.data['ma-week-2-employer-1-amount'] + req.session.data['ma-week-2-employer-2-amount'];
@@ -225,7 +228,7 @@ module.exports = router => {
 
       // Bank details
       req.session.data['name-on-account'] = 'Keira Ash';
-      req.session.data['sort-code'] = '12-34-56';
+      req.session.data['sort-code'] = '11-11-11';
       req.session.data['account-number'] = '12345678';
       req.session.data['building-society'] = ' ';
       req.session.data['payment-frequency'] = 'Every 4 weeks';
@@ -242,7 +245,7 @@ module.exports = router => {
        req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
        req.session.data['smp1-employer-2'] = 'ARGOS';
        req.session.data['smp1-date-signed'] = '18 June 2023';
-       req.session.data['smp1-date-signed-2'] = '15 June 2023';
+       req.session.data['smp1-date-signed-2'] = '15 June 2024';
        req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
        req.session.data['smp1-date-verified'] = '1 July 2023';
 
@@ -255,8 +258,8 @@ module.exports = router => {
       req.session.data['ma-claim-decision-date'] = '11 October 2023';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '23 June 2023';
-      req.session.data['ma-map-end'] = '21 March 2024';
+      req.session.data['ma-map-start'] = '3 April 2024';
+      req.session.data['ma-map-end'] = '31 December 2024';
       req.session.data['ma-map-end-summary'] = '21 March 2024';
 
       // Test period dates
@@ -330,7 +333,7 @@ module.exports = router => {
                 req.session.data['ma-week-13-2'] = '12 March 2023';
                 req.session.data['ma-week-14-2'] = '19 March 2023';
                 req.session.data['ma-week-15-2'] = '26 March 2023';
-                req.session.data['ma-week-16-2'] = '2 April 2023';
+                req.session.data['ma-week-16-2'] = '23 April 2023';
 
       req.session.data['ma-week-1-employer-1-amount'] = 296.15;
       req.session.data['ma-week-2-employer-1-amount'] = 296.15;
@@ -439,7 +442,7 @@ module.exports = router => {
     req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
     req.session.data['smp1-date-signed'] = '18 June 2023';
     req.session.data['smp1-employer-2'] = 'ARGOS';
-    req.session.data['smp1-date-signed-2'] = '15 June 2023';
+    req.session.data['smp1-date-signed-2'] = '15 June 2024';
     req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
     req.session.data['smp1-date-verified'] = '05 July 2023';
     req.session.data['ma-decision'] = 'Allowed';
@@ -689,6 +692,10 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-31/start-a-claim/confirm-contact-details');
   });
 
+  router.post('/beta-private/iteration-31/start-a-claim/other-proof-details', function (req, res) {
+    res.redirect('/beta-private/iteration-31/start-a-claim/smp1');
+  });
+
   router.post('/beta-private/iteration-31/start-a-claim/claimant-confirm', function (req, res) {
 
     if (req.session.data['claimant-confirm'] == 'yes') {
@@ -796,11 +803,10 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
 
   });
 
-  
-
   router.post('/beta-private/iteration-31/start-a-claim/matb1-details', function (req, res) {
     res.redirect('/beta-private/iteration-31/start-a-claim/smp1');
   });
+
 
   router.post('/beta-private/iteration-31/start-a-claim/smp1', function (req, res) {
 
@@ -818,16 +824,19 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
       if (req.session.data['change'] == true ) {
         req.session.data['change'] = null;
         // No change
-        res.redirect('/beta-private/iteration-31/start-a-claim/employment'); // Goes back to unchanged summary
+        res.redirect('/beta-private/iteration-31/start-a-claim/smp1-dispute'); // Goes back to unchanged summary
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-31/start-a-claim/employment');
+        res.redirect('/beta-private/iteration-31/start-a-claim/smp1-dispute');
       }
 
     }
 
   });
+
+
+
 
   router.post('/beta-private/iteration-31/start-a-claim/smp1-details', function (req, res) {
     res.redirect('/beta-private/iteration-31/start-a-claim/employment');
@@ -1150,12 +1159,6 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
     } else {
       res.redirect('/beta-private/iteration-31/find-a-claim/summary/1-three-employers');
     }
-  });
-
-
-
-  router.post('/beta-private/iteration-31/start-a-claim/other-proof-details', function (req, res) {
-    res.redirect('/beta-private/iteration-31/start-a-claim/smp1');
   });
 
   // Payments

@@ -29,9 +29,7 @@
       <dd class="govuk-summary-list__value">
         {{ data['claimant-name'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-       &nbsp;
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -40,9 +38,7 @@
       <dd class="govuk-summary-list__value">
         {{ data['claimant-nino'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-       &nbsp;
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -51,20 +47,16 @@
       <dd class="govuk-summary-list__value">
         {{ data['claimant-dob'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-       &nbsp;
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Address
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['claimant-address'] }}, {{ data['claimant-postcode'] }}
+        {{ data['claimant-address'] }},<br> {{ data['claimant-address2'] }},<br> {{ data['claimant-address3'] }},<br> {{ data['claimant-postcode'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-       &nbsp;
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -73,9 +65,7 @@
       <dd class="govuk-summary-list__value">
         {{ data['claimant-contact-number'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-       &nbsp;
-      </dd>
+
     </div>
   </dl>
   </section>
