@@ -457,7 +457,7 @@ module.exports = router => {
   });
 
   router.post('/beta-private/iteration-31/start-a-claim/more-claimant-information', function (req, res) {
-    res.redirect('/beta-private/iteration-31/start-a-claim/confirm-contact-details');
+    res.redirect('/beta-private/iteration-31/start-a-claim/welsh-preferences');
   });
 
   router.post('/beta-private/iteration-31/start-a-claim/smp1-dispute', function (req, res) {
@@ -689,6 +689,10 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
   });
 
   router.post('/beta-private/iteration-31/start-a-claim/more-claimant-information', function (req, res) {
+    res.redirect('/beta-private/iteration-31/start-a-claim/welsh-preferences');
+  });
+
+  router.post('/beta-private/iteration-31/start-a-claim/welsh-preferences', function (req, res) {
     res.redirect('/beta-private/iteration-31/start-a-claim/confirm-contact-details');
   });
 
@@ -962,7 +966,7 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-31/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes') {
-      res.redirect('/beta-private/iteration-31/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-31/start-a-claim/requested-start-date');
     }
     else {
       res.redirect('/beta-private/iteration-31/start-a-claim/summary/');
@@ -974,7 +978,7 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
   });
 
   router.post('/beta-private/iteration-31/start-a-claim/requested-start-date', function (req, res) {
-    res.redirect('/beta-private/iteration-31/start-a-claim/summary/');
+    res.redirect('/beta-private/iteration-31/find-a-claim/summary/1');
   });
 
     router.post('/beta-private/iteration-31/start-a-claim/claimant-preferences', function (req, res) {
