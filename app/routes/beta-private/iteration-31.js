@@ -26,7 +26,7 @@ module.exports = router => {
        req.session.data['mat-verified-by'] = 'Jean Grey';
        req.session.data['smp1-provided'] = 'Yes';
        req.session.data['smp1-employer'] = 'ARGOS';
-       req.session.data['smp1-date-signed'] = '15 June 2024';
+       req.session.data['smp1-date-signed'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Jean Grey';
        req.session.data['smp1-date-verified'] = '22 April 2024';
 
@@ -245,7 +245,7 @@ module.exports = router => {
        req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
        req.session.data['smp1-employer-2'] = 'ARGOS';
        req.session.data['smp1-date-signed'] = '18 June 2023';
-       req.session.data['smp1-date-signed-2'] = '15 June 2024';
+       req.session.data['smp1-date-signed-2'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
        req.session.data['smp1-date-verified'] = '1 July 2023';
 
@@ -442,7 +442,7 @@ module.exports = router => {
     req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
     req.session.data['smp1-date-signed'] = '18 June 2023';
     req.session.data['smp1-employer-2'] = 'ARGOS';
-    req.session.data['smp1-date-signed-2'] = '15 June 2024';
+    req.session.data['smp1-date-signed-2'] = '1 April 2024';
     req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
     req.session.data['smp1-date-verified'] = '05 July 2023';
     req.session.data['ma-decision'] = 'Allowed';
