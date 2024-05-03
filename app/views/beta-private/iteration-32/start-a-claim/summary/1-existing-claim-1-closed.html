@@ -1,4 +1,8 @@
+<style>
 
+  .govuk-warning-text__icon_Maternity{right: 5px; top: 0px;}
+
+</style>
 {% extends "layout-summary.html" %}
 {% set bodyAttributes = { id: "summary-screen" } %}
 
@@ -6,10 +10,8 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-
   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
-
 
 {% block beforeContent %}
 
@@ -33,9 +35,7 @@
 
   </dl>
   </div>
-  </section> 
-
-
+  </section>
 
 
       {{ govukBackLink({
@@ -48,56 +48,130 @@
   {% block content %}
 
 
-  <div class="govuk-grid-row">
+      <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-one-quarter">
-  
-      <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
-        <nav class="moj-side-navigation" aria-label="Side navigation">
-          <ul class="moj-side-navigation__list">
-            <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-              <a href="2" aria-current="location">Decision and dates</a>
-            </li>
-    
-            <li class="moj-side-navigation__item">
-              <a href="2-employment-and-earnings">Employment and earnings</a>
-            </li>
-    
-            <li class="moj-side-navigation__item">
-              <a href="2-bank-details-and-payments">Bank details and payments</a>
-            </li>
+        <div class="govuk-grid-column-one-quarter">
 
-            <li class="moj-side-navigation__item">
-              <a href="2-evidence">Evidence</a>
-            </li>
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
+                  <a href="1-claim-closed" aria-current="location">Decision and dates</a>
+           
+                    
+        
+                </li>
 
-            <li class="moj-side-navigation__item">
-              <a href="2-claim-history">Claim history</a>
-            </li>
-  
-         
-          </ul>
-        </nav>
-      </nav>
-      <p> 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      
-      </p>
-  
-    </div>
-  
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-claim-closed">Employment and earnings</a>
+                </li>
 
-   
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-claim-closed">Bank details and payments</a>
+                </li>
 
-    <div class="govuk-grid-column-three-quarters">
-              
+                <li class="moj-side-navigation__item ">
+                  <a href="1-evidence-2-employers-claim-closed">Evidence</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-claim-closed">Claim history</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-summary">Change of circumstance</a>
+                </li>
+
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 <section id="decision" class="govuk-!-padding-top-6">
 <h2 class="govuk-heading-m">Decision</h2>
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-0',
+  rows: [
+    {
+      key: {
+        text: "Decision",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        html: govukTag({
+          text: data['ma-decision']
+        })
+      }
+    }, 
+    {
+      key: {
+        text: "Claim status",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        html: govukTag({
+          text: 'Closed' ,
+          classes: "govuk-tag--grey"
+        })
+      }
+    },
+    {
+      key: {
+        text: "Claim created"
+      },
+      value: {
+        text: "05 June 2022"
+      }
+    },
+    {
+      key: {
+        text: "Decision date"
+      },
+      value: {
+        text: "05 June 2022"
+      }
+    },
+    {
+      key: {
+        text: "Rate"
+      },
+      value: {
+        text: data['ma-rate']
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period start date"
+      },
+      value: {
+        text: "09 April 2022"
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period end date"
+      },
+      value: {
+        text: "07 Janurary 2023"
+      }
+    }
+
+    ]
+  })
+}}
+
+<!--<dl class="govuk-summary-list govuk-!-margin-bottom-0">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Decision
@@ -111,14 +185,25 @@
      &nbsp;
     </dd>
   </div>
-  <!--div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">Claim status</dt>
+    <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--grey">Closed
+</strong>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       !!!!!!!!!!!Missing information!!!!!!!!!!!
     </dt>
     <dd class="govuk-summary-list__value">
       !!!!!!!!!!!Employment and earnings!!!!!!!!!!!
     </dd>
-  </div -->
+  </div 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Claim created
@@ -141,28 +226,27 @@
      &nbsp;
     </dd>
   </div>
+  
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Rate from 23 January 2023 to 05 April 2023
+      Rate
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['ma-rate'] }}
+
+      <dd class="govuk-summary-list__actions">
+            
+     
+      
     </dd>
+    </dd>
+    
     <dd class="govuk-summary-list__actions">
      &nbsp;
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Rate from 06 april 2023 to 22 October 2023
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Variable rate at £176.66 per week
-    </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
-  </div>
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Maternity Allowance Period start date
@@ -185,7 +269,7 @@
      &nbsp;
     </dd>
   </div>
-</dl>
+</dl>-->
 </section>
 
 
@@ -200,7 +284,7 @@
         classes: 'govuk-!-width-one-half'
       },
       value: {
-        text: data['ma-baby-due-date']
+        text: "20 June 2022"
       },
       actions: {
         items: [
@@ -217,7 +301,7 @@
         text: "First day of Test Period"
       },
       value: {
-        text: data['ma-test-period-first-day']
+        text: "07 Feburary 2022"
       }
     },
     {
@@ -225,7 +309,7 @@
         text: "Last day of Test Period"
       },
       value: {
-        text: data['ma-test-period-last-day']
+        text: "10 June 2022"
       }
     },
     {
@@ -233,7 +317,7 @@
         text: "15th week before the baby due date"
       },
       value: {
-        text: data['ma-test-period-week-fifteen']
+        text: "06 March 2022"
       }
     }
   ]
@@ -244,7 +328,153 @@
 <section id="map-dates" class="govuk-!-padding-top-9">
 <h2 class="govuk-heading-m">Maternity Allowance Period dates</h2>
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-0',
+  rows: [
+    {
+      key: {
+        text: "Date the claim was received",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "09 April 2022"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Date the claim was received"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date the claimant stopped work	",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "08 April 2022"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Date the claimant stopped work	"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Reason for stopping work",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: data['ma-map-claimant-stopped-work-reason']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Reason for stopping work"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Expected week of confinement"
+      },
+      value: {
+        text: "19 June 2022"
+      }
+    },
+    {
+      key: {
+        text: "Baby's date of birth	",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "20 June 2022"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Baby's date of birth	"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "11th week before the baby due date	"
+      },
+      value: {
+        text: "03 April 2022"
+      }
+    },
+    {
+      key: {
+        text: "4th week before the baby due date"
+      },
+      value: {
+        text: "22 May 2022"
+      }
+    },
+    {
+      key: {
+        text: "Start date requested by the claimant	",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: "09 April 2022"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Start date requested by the claimant"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period rule"
+      },
+      value: {
+        text: data['ma-map-rule']
+      }
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period start date"
+      },
+      value: {
+        text: "09 April 2022" 
+      }
+      
+    },
+    {
+      key: {
+        text: "Maternity Allowance Period end date"
+      },
+      value: {
+        text: "07 Janurary 2023"      }
+    }
+  ]
+}) }}
+
+
+
+<!--<dl class="govuk-summary-list govuk-!-margin-bottom-0">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Date the claim was received
@@ -266,7 +496,7 @@
       {{ data['ma-map-claimant-stopped-work-date-last-worked'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="stopped-work/date-last-worked?change=true">
+      <a class="govuk-link" href="../date-last-worked?change=true">
         Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
       </a>
     </dd>
@@ -279,7 +509,7 @@
       {{ data['ma-map-claimant-stopped-work-reason'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="date-last-worked?change=true">
+      <a class="govuk-link" href="../date-last-worked?change=true">
         Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
       </a>
     </dd>
@@ -380,24 +610,15 @@
       &nbsp;
     </dd>
   </div>
-</dl>
+</dl>-->
 </section>
 
 
 
-<!-- 
-        <form class="form" method="post" novalidate>
+  </div>
+</div>
+</section>
 
-          <input type="hidden" name="answers-checked" value="true">
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-
-        </form>
-
-      </div>
-    </div> -->
-  {% endblock %}
-
-  
+</section>
+{% endblock %}

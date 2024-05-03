@@ -56,6 +56,7 @@ module.exports = router => {
       req.session.data['ma-decision'] = 'Allowed';
       req.session.data['ma-claim-creation-date'] = '5 July 2023';
       req.session.data['ma-claim-decision-date'] = '5 July 2023';
+      req.session.data['ma-claim-decision-date-2'] = '5 October 2023';      
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '3 April 2024';
       req.session.data['ma-map-end'] = '31 December 2024';
@@ -622,7 +623,7 @@ router.post('/employer', function(request, response) {
 
 // *** Reasonable Adjustment ************************************************************************************************************** //
 
-router.post('/require-RA-31', function(request, response) {
+router.post('/require-RA-32', function(request, response) {
 
   var ReasonableAdjustment = request.session.data['ReasonableAdjustment']
   if (ReasonableAdjustment == "Yes"){
@@ -699,12 +700,21 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
   router.post('/beta-private/iteration-32/start-a-claim/claimant-confirm', function (req, res) {
 
     if (req.session.data['claimant-confirm'] == 'yes') {
-      res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
+      res.redirect('/beta-private/iteration-32/start-a-claim/existing_claim_2');
     }
     else {
       res.redirect('/beta-private/iteration-32/start-a-claim/more-claimant-information');
     }
   });
+
+  router.post('/beta-private/iteration-32/start-a-claim/existing_claim_2', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
+  }); 
+
+  router.post('/beta-private/iteration-32/start-a-claim/existing_claim_2_allowed', function (req, res){
+    res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
+  })
+  
 
   router.post('/beta-private/iteration-32/start-a-claim/more-claimant-information', function (req, res) {
     // Has a match been made, in this scenario?
@@ -944,7 +954,11 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked', function (req, res) {
       res.redirect('/beta-private/iteration-32/start-a-claim/chosen-map-date');
-  });
+  }); 
+
+  router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-allowed');
+});
 
   // Removed maternity leave question
   // router.post('/beta-private/iteration-32/start-a-claim/ma-start-date-provided', function (req, res) {
@@ -1205,4 +1219,12 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-32/payments');
   });
 
+// *** Manage claim *** // 
+
+
+
   }
+
+
+
+
