@@ -56,14 +56,16 @@ module.exports = router => {
       req.session.data['ma-decision'] = 'Allowed';
       req.session.data['ma-claim-creation-date'] = '5 July 2023';
       req.session.data['ma-claim-decision-date'] = '5 July 2023';
-      req.session.data['ma-claim-decision-date-2'] = '5 October 2023';      
+      req.session.data['ma-claim-decision-date-2'] = '10 August 2024' //manage claim data//      
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '3 April 2024';
-      req.session.data['ma-map-end'] = '31 December 2024';
+      req.session.data['ma-map-end'] = '31 December 2024'; 
+      req.session.data['displayRate'] = false;
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '10 May 2024';
-      req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
+      req.session.data['ma-baby-birth-date'] = 'Baby not born yet'; 
+      req.session.data['ma-baby-birth-date-2'] = '10 May 2024'; //manage claim data//
       req.session.data['ma-test-period-first-day'] = '29 January 2023';
       req.session.data['ma-test-period-last-day'] = '4 May 2024';
       req.session.data['ma-test-period-week-fifteen'] = '21 January 2024';
@@ -83,7 +85,7 @@ module.exports = router => {
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null; //// ******
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None';
       req.session.data['ma-map-claimant-stopped-work-allowance-start-date'] = null;
-      req.session.data['ma-map-claimant-stopped-work-allowance-end-date'] = null;
+      req.session.data['ma-map-claimant-stopped-work-allowance-end-date'] = null; 
 
       // Employment and earnings
       req.session.data['ma-employment-type'] = 'Employed';
@@ -956,9 +958,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
       res.redirect('/beta-private/iteration-32/start-a-claim/chosen-map-date');
   }); 
 
-  router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-allowed');
-});
+ 
 
   // Removed maternity leave question
   // router.post('/beta-private/iteration-32/start-a-claim/ma-start-date-provided', function (req, res) {
@@ -1129,6 +1129,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     req.session.data['ma-week-11-employer-3-source'] = ' ';
     req.session.data['ma-week-12-employer-3-source'] = ' ';
     req.session.data['ma-week-13-employer-3-source'] = ' ';
+    
 
     req.session.data['ma-week-1-total-amount'] = req.session.data['ma-week-1-employer-1-amount'] + req.session.data['ma-week-1-employer-2-amount'] + req.session.data['ma-week-1-employer-3-amount'];
     req.session.data['ma-week-2-total-amount'] = req.session.data['ma-week-2-employer-1-amount'] + req.session.data['ma-week-2-employer-2-amount'] + req.session.data['ma-week-2-employer-3-amount'];
@@ -1219,12 +1220,48 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-32/payments');
   });
 
-// *** Manage claim *** // 
+ 
+ //  Iteration 32 Manage claim : date-last-worked, reason and MAT date 
 
 
+ //router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req, res) {
+  //res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-allowed');});//
 
-  }
+ 
+  // Route for handling date submission
+ 
+router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
+  req.session.data['dateEntered'] = true;
+  res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage');
+}); 
 
+router.post('/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage', function (req,res) {
+  req.session.data['reasonEntered'] = true;
+  res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage');
+});
+
+router.post('/beta-private/iteration-32/start-a-claim/requested-start-date-manage', function (req,res) {
+  req.session.data['map-date-Entered'] = true;
+  res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage');
+}); 
+
+router.post('/beta-private/iteration-32/start-a-claim/baby-birth-date-manage', function (req,res) {
+  req.session.data['birth-date-Entered'] = true;
+  res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage'); 
+}); 
+ 
+
+//function updateDisplayRate(req) {
+  //if (req.session.data['dateEntered'] === true && req.session.data['reasonEntered'] === true)
+    // {req.session.data['displayRate'] = true;
+//} else {
+  //req.session.data['displayRate'] = false;
+//}
+//}
+ 
+ 
+  
+};
 
 
 
