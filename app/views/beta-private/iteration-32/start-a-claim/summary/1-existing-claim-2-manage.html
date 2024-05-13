@@ -1,4 +1,8 @@
+<style>
 
+  .govuk-warning-text__icon_Maternity{right: 5px; top: 0px;}
+
+</style>
 {% extends "layout-summary.html" %}
 {% set bodyAttributes = { id: "summary-screen" } %}
 
@@ -6,10 +10,8 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-
   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
-
 
 {% block beforeContent %}
 
@@ -33,9 +35,7 @@
 
   </dl>
   </div>
-  </section> 
-
-
+  </section>
 
 
       {{ govukBackLink({
@@ -45,52 +45,69 @@
     {% endblock %}
 
 
-  {% block content %}
+  {% block content %} 
+
+  <!-- Notification banner  -->
 
 
-  <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-one-quarter">
-  
-      <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
-        <nav class="moj-side-navigation" aria-label="Side navigation">
-          <ul class="moj-side-navigation__list">
-            <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-              <a href="2" aria-current="location">Decision and dates</a>
-            </li>
-    
-            <li class="moj-side-navigation__item">
-              <a href="2-employment-and-earnings">Employment and earnings</a>
-            </li>
-    
-            <li class="moj-side-navigation__item">
-              <a href="2-bank-details-and-payments">Bank details and payments</a>
-            </li>
+<!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-            <li class="moj-side-navigation__item">
-              <a href="2-evidence">Evidence</a>
-            </li>
+{{ govukNotificationBanner({
+  text: " Information needed : 'Date the claimant stopped work' "
+}) }} -->
 
-            <li class="moj-side-navigation__item">
-              <a href="2-claim-history">Claim history</a>
-            </li>
-  
-         
-          </ul>
-        </nav>
-      </nav>
-      <p> 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      
-      </p>
-  
-    </div>
-  
+<!-- Notification banner finishes  -->
 
-   
+      <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-three-quarters">
-              
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
+                  <a href="1" aria-current="location">Decision and dates</a>
+           
+                    
+        
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings">Employment and earnings</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments">Bank details and payments</a>
+                </li>
+
+                <li class="moj-side-navigation__item ">
+                  <a href="1-evidence-2-employers">Evidence</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history">Claim history</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences">Preferences</a>
+                </li>
+
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
@@ -102,11 +119,44 @@
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Decision
     </dt>
-    <dd class="govuk-summary-list__value">
-      {{govukTag({
-        text: data['ma-decision']
-      })}}
+    <dd class="govuk-summary-list__value"> 
+
+    <!-- Claim decision -->
+    {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %}  
+    <strong class="govuk-tag govuk-tag">
+    Allowed 
+    </strong>
+    {% else %}
+    <strong class="govuk-tag govuk-tag--grey">
+    Incomplete
+    </strong>
+    {% endif %}
+     </dd> 
+     <!-- Claim decision finishes -->
+ 
+    <dd class="govuk-summary-list__actions">
+     &nbsp;
     </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Claim status
+    </dt>
+    <dd class="govuk-summary-list__value"> 
+
+       <!-- Claim status -->
+       {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
+       <strong class="govuk-tag govuk-tag--green">
+        Active 
+       </strong>
+       {% else %}
+       <strong class="govuk-tag govuk-tag--grey">
+        Inactive 
+       </strong>
+       {% endif %}
+        </dd> 
+        <!-- Claim status finishes -->
+        
     <dd class="govuk-summary-list__actions">
      &nbsp;
     </dd>
@@ -126,64 +176,70 @@
     <dd class="govuk-summary-list__value">
       {{ data['ma-claim-creation-date'] }}
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Decision date
     </dt>
-    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__value"> 
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
+      {{ data['ma-claim-decision-date-2'] }}
+      {% else %} 
       {{ data['ma-claim-decision-date'] }}
+      {% endif %}  
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Rate from 23 January 2023 to 05 April 2023
+      Rate
     </dt>
-    <dd class="govuk-summary-list__value">
+    <!-- Rate -->
+    <dd class="govuk-summary-list__value"> 
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
       {{ data['ma-rate'] }}
+      {% else %} 
+      -
+      {% endif %} 
+
+ 
+      <dd class="govuk-summary-list__actions">
+            
+     <!-- Rate finished  -->
+      
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
     </dd>
+    
+ 
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Rate from 06 april 2023 to 22 October 2023
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Variable rate at £176.66 per week
-    </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
-  </div>
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Maternity Allowance Period start date
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
       {{ data['ma-map-start'] }}
+      {% else %} 
+      -
+      {% endif %} 
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+ 
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Maternity Allowance Period end date
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
       {{ data['ma-map-end'] }}
+      {% else %} 
+      -
+      {% endif %} 
     </dd>
-    <dd class="govuk-summary-list__actions">
-     &nbsp;
-    </dd>
+
   </div>
 </dl>
 </section>
@@ -249,44 +305,71 @@
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Date the claim was received
     </dt>
+
+    <!-- Date the claim condition -->
+    {% if displayRate %}
+    <dd class="govuk-summary-list__value">
+     Add NEW date  
+    </dd>
+    {% else %}
     <dd class="govuk-summary-list__value">
       {{ data['ma-map-claim-date-received'] }}
     </dd>
+    {% endif %}
+     
+    <!-- Date the claim condition finishes  -->
+ 
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../claim-date?change=true">
-        Change<span class="govuk-visually-hidden"> date the claim was received</span>
+      <a class="govuk-link" href="#">
+        Change
+        <span class="govuk-visually-hidden"> date the claim was received</span>
       </a>
     </dd>
   </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Date the claimant stopped work
     </dt>
+   
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-date-last-worked'] }}
+        {% if (data['dateEntered'] == true ) %} 
+        {{ data['ma-map-claimant-stopped-work-date-last-worked'] }}
+        {% else %} 
+        -
+        {% endif %} 
     </dd>
+
+    
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="date-last-worked?change=true">
+      <a class="govuk-link" href="/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage">
         Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
       </a>
     </dd>
   </div>
+
+  
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Reason for stopping work
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if (data['reasonEntered'] == true ) %} 
       {{ data['ma-map-claimant-stopped-work-reason'] }}
+      {% else %} 
+      -
+      {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="date-last-worked?change=true">
+      <a class="govuk-link" href="/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage">
         Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
       </a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Expected week of confinement
+      Expected week of confinement 
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['ma-map-expected-week-of-confinement'] }}
@@ -299,11 +382,15 @@
     <dt class="govuk-summary-list__key">
       Baby's date of birth
     </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['ma-baby-birth-date'] }}
+    <dd class="govuk-summary-list__value"> 
+      {% if (data['birth-date-Entered'] == true ) %} 
+      {{ data['ma-baby-birth-date-2'] }}
+      {% else %} 
+      -
+      {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../baby-born.html?change=true">
+      <a class="govuk-link" href="../baby-birth-date-manage.html?change=true">
         Change<span class="govuk-visually-hidden"> baby birth date</span>
       </a>
     </dd>
@@ -334,15 +421,29 @@
     <dt class="govuk-summary-list__key">
       Start date requested by the claimant
     </dt>
-    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__value"> 
+      {% if (data['map-date-Entered'] == true ) %} 
       {{ data['ma-start-date-requested'] }}
-      {{govukTag({
-        text: data['ma-start-date-requested-status'],
-        classes: "govuk-!-margin-left-2"
-      })}}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
+      {% else %} 
+      -
+      {% endif %}  
+      <!-- Start date status -->
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
+      
+      <strong class="govuk-tag govuk-tag">
+        Allowed
+      </strong>
+      {% elseif data['map-date-Entered'] == true %}
+      <strong class="govuk-tag govuk-tag--grey">
+        Disallowed
+      </strong>
+      {% endif %}
+       </dd> 
+       <!-- Start date status finishes -->
+
+     
+    <dd class="govuk-summary-list__actions ">
+      <a class="govuk-link" href="../requested-start-date-manage.html?change=true">
         Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
       </a>
     </dd>
@@ -363,7 +464,11 @@
       Maternity Allowance Period start date
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
       {{ data['ma-map-start'] }}
+      {% else %} 
+      -
+      {% endif %} 
     </dd>
     <dd class="govuk-summary-list__actions">
       &nbsp;
@@ -374,7 +479,11 @@
       Maternity Allowance Period end date
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if (data['dateEntered'] == true and data['reasonEntered'] == true and data['map-date-Entered'] == true and data ['birth-date-Entered'] == true) %} 
       {{ data['ma-map-end'] }}
+      {% else %} 
+      -
+      {% endif %} 
     </dd>
     <dd class="govuk-summary-list__actions">
       &nbsp;
@@ -385,19 +494,10 @@
 
 
 
-<!-- 
-        <form class="form" method="post" novalidate>
+  </div>
+</div>
+</section>
 
-          <input type="hidden" name="answers-checked" value="true">
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-
-        </form>
-
-      </div>
-    </div> -->
-  {% endblock %}
-
-  
+</section>
+{% endblock %}

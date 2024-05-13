@@ -132,11 +132,23 @@
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Claim status
     </dt>
-    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__value"> 
+
+
+       <!-- Claim status -->
+       {% if displayRate %}
+       <strong class="govuk-tag govuk-tag--green">
+         Allowed
+       </strong>
+       {% else %}
+       <strong class="govuk-tag govuk-tag--grey">
+        Closed 
+       </strong>
+       {% endif %}
+        </dd> 
+        <!-- Claim status finishes -->
    
-      <strong class="govuk-tag govuk-tag--grey">
-        Closed
-      </strong>
+      
    
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -299,7 +311,7 @@
       {{ data['ma-map-claimant-stopped-work-reason'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../date-last-worked?change=true">
+      <a class="govuk-link" href="/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage.html?change=true">
         Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
       </a>
     </dd>
@@ -356,10 +368,21 @@
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['ma-start-date-requested'] }}
+
+      <!-- Start date status -->
+      {% if displayRate %}
+      <strong class="govuk-tag govuk-tag">
+        Allowed
+      </strong>
+      {% else %}
       <strong class="govuk-tag govuk-tag--grey">
         Disallowed
       </strong>
-    </dd>
+      {% endif %}
+       </dd> 
+       <!-- Start date status finishes -->
+
+     
     <dd class="govuk-summary-list__actions ">
       <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
