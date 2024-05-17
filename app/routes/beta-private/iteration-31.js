@@ -25,7 +25,7 @@ module.exports = router => {
        req.session.data['mat-date-verified'] = '22 April 2024';
        req.session.data['mat-verified-by'] = 'Jean Grey';
        req.session.data['smp1-provided'] = 'Yes';
-       req.session.data['smp1-employer'] = 'Asda';
+       req.session.data['smp1-employer'] = 'Argos';
        req.session.data['smp1-date-signed'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Jean Grey';
        req.session.data['smp1-date-verified'] = '22 April 2024';
@@ -90,11 +90,11 @@ module.exports = router => {
       req.session.data['ma-employment-agency-employment-start-date'] = null;
       req.session.data['ma-employment-agency-status'] = null;
       req.session.data['ma-employment-test'] = 'Met';
-      req.session.data['ma-employer-1'] = 'Asda';
+      req.session.data['ma-employer-1'] = 'Argos';
       req.session.data['ma-employer-1-start'] = '21 March 2022';
       req.session.data['ma-employer-1-end'] = 'Ongoing';
       req.session.data['ma-employer-1-end-update'] = '16 November 2022';
-      req.session.data['ma-employer-2'] = 'Asda';
+      req.session.data['ma-employer-2'] = 'Argos';
       req.session.data['ma-employer-2-start'] = '14 September 2022';
       req.session.data['ma-employer-2-end'] = 'Ongoing';
       req.session.data['ma-earnings-test'] = 'Met';
@@ -243,7 +243,7 @@ module.exports = router => {
        req.session.data['mat-date-verified'] = '1 July 2023';
        req.session.data['smp1-provided'] = 'No';
        req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
-       req.session.data['smp1-employer-2'] = 'Asda';
+       req.session.data['smp1-employer-2'] = 'Argos';
        req.session.data['smp1-date-signed'] = '18 June 2023';
        req.session.data['smp1-date-signed-2'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
@@ -296,7 +296,7 @@ module.exports = router => {
       req.session.data['ma-employer-1-start'] = '12 January 2023';
       req.session.data['ma-employer-1-end'] = '16 September 2023';
       req.session.data['ma-employer-1-end-update'] = '16 November 2022';
-      req.session.data['ma-employer-2'] = 'Asda';
+      req.session.data['ma-employer-2'] = 'Argos';
       req.session.data['ma-employer-2-start'] = '14 September 2022';
       req.session.data['ma-employer-2-end'] = 'Ongoing';
       req.session.data['ma-earnings-test'] = 'Met';
@@ -441,7 +441,7 @@ module.exports = router => {
     req.session.data['smp1-provided'] = 'Yes';
     req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
     req.session.data['smp1-date-signed'] = '18 June 2023';
-    req.session.data['smp1-employer-2'] = 'Asda';
+    req.session.data['smp1-employer-2'] = 'Argos';
     req.session.data['smp1-date-signed-2'] = '1 April 2024';
     req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
     req.session.data['smp1-date-verified'] = '05 July 2023';
