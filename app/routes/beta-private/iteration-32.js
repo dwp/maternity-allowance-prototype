@@ -42,7 +42,8 @@ module.exports = router => {
       req.session.data['claimant-address2'] = 'Chelsea';
       req.session.data['claimant-address3'] = 'London';
       req.session.data['claimant-contact-number'] = '07895467510';
-      req.session.data['claimant-email'] = 'a.radcliff26@gmail.com';
+      req.session.data['claimant-email'] = 'a.radcliff26@gmail.com'; 
+      req.session.data['welsh-language-preference'] = 'None';
 
       // Bank details
       req.session.data['name-on-account'] = 'Lucinda Davies';
@@ -212,7 +213,13 @@ module.exports = router => {
       req.session.data['ma-week-10-employer-2-source'] = 'RTI';
       req.session.data['ma-week-11-employer-2-source'] = 'RTI';
       req.session.data['ma-week-12-employer-2-source'] = 'RTI';
-      req.session.data['ma-week-13-employer-2-source'] = 'RTI';
+      req.session.data['ma-week-13-employer-2-source'] = 'RTI'; 
+
+      // Note // 
+      req.session.data['subject1'] = 'MAT B1 unacceptable'; 
+      req.session.data['details1'] = 'Two digits in midwife PIN illegible. Tried multiple combinations but no names on database matched. Sent BM34'; 
+      req.session.data['subject2'] = 'Require agent input '; 
+      req.session.data['details2'] = 'Details require agent input'; 
 
     }
 
@@ -228,6 +235,8 @@ module.exports = router => {
       req.session.data['claimant-postcode'] = 'NE7 9RS';
       req.session.data['claimant-address'] = '86 Pear Tree Grove';
       req.session.data['claimant-contact-number'] = '07847 171740';
+      req.session.data['claimant-email'] = 'k.ash16@gmail.com';
+      req.session.data['welsh-language-preference'] = 'None';
 
       // Bank details
       req.session.data['name-on-account'] = 'Keira Ash';
@@ -244,7 +253,7 @@ module.exports = router => {
        req.session.data['mat-midwife-pin'] = '1987621';
        req.session.data['mat-verified-by'] = 'Serena van der Woodsen';
        req.session.data['mat-date-verified'] = '1 July 2023';
-       req.session.data['smp1-provided'] = 'No';
+       req.session.data['smp1-provided'] = 'Yes'; //Changed for iteration 32 for note only // 
        req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
        req.session.data['smp1-employer-2'] = 'ARGOS';
        req.session.data['smp1-date-signed'] = '18 June 2023';
@@ -410,7 +419,13 @@ module.exports = router => {
       req.session.data['ma-week-10-employer-2-source'] = 'RTI';
       req.session.data['ma-week-11-employer-2-source'] = 'RTI';
       req.session.data['ma-week-12-employer-2-source'] = 'RTI';
-      req.session.data['ma-week-13-employer-2-source'] = 'RTI';
+      req.session.data['ma-week-13-employer-2-source'] = 'RTI'; 
+
+      // Note // 
+      req.session.data['subject1'] = 'MAT B1 unacceptable'; 
+      req.session.data['details1'] = 'Two digits in midwife PIN illegible. Tried multiple combinations but no names on database matched. Sent BM34'; 
+      req.session.data['subject2'] = 'Require agent input '; 
+      req.session.data['details2'] = 'Details require agent input'; 
     }
 
     res.redirect('/beta-private/iteration-32/landing');
@@ -456,12 +471,14 @@ module.exports = router => {
 
   // Payslip start claim
   router.post('/beta-private/iteration-32/start-a-claim/employers/add-employer', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/payslip/frequency');
-  });
+    res.redirect('/beta-private/iteration-32/start-a-claim/payslip/frequency'); 
+  }); 
 
   router.post('/beta-private/iteration-32/start-a-claim/more-claimant-information', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/confirm-contact-details');
-  });
+    res.redirect('/beta-private/iteration-32/start-a-claim/welsh-preferences');
+  }); //new route // 
+
+
 
   router.post('/beta-private/iteration-32/start-a-claim/smp1-dispute', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/employment');
@@ -691,31 +708,38 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-32/payments/prepopulated-account-details');
   });
 
-  router.post('/beta-private/iteration-32/start-a-claim/more-claimant-information', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/confirm-contact-details');
+   router.post('/beta-private/iteration-32/start-a-claim/more-claimant-information', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/welsh-preferences');
   });
 
+  router.post('/beta-private/iteration-32/start-a-claim/welsh-preferences', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/confirm-contact-details');
+  }); 
+
+  router.post('/beta-private/iteration-32/start-a-claim/confirm-contact-details/', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/reasonable-adjustment');
+  });
+  
   router.post('/beta-private/iteration-32/start-a-claim/other-proof-details', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/smp1');
   });
 
   router.post('/beta-private/iteration-32/start-a-claim/claimant-confirm', function (req, res) {
 
-    if (req.session.data['claimant-confirm'] == 'yes') {
+    if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-32/start-a-claim/existing_claim_2');
+    } else if (req.session.data['claimant-confirm'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
+      res.redirect('/beta-private/iteration-32/start-a-claim/existing_claim_2'); 
+    } else if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-2') {
+      res.redirect('/beta-private/iteration-32/start-a-claim/more-claimant-information'); 
+    } else if (req.session.data['claimant-confirm'] == 'no' && req.session.data['scenario'] == 'scenario-2') {
+      res.redirect('/beta-private/iteration-32/start-a-claim/more-claimant-information'); 
     }
-    else {
-      res.redirect('/beta-private/iteration-32/start-a-claim/more-claimant-information');
-    }
-  });
-
-  router.post('/beta-private/iteration-32/start-a-claim/existing_claim_2', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
   }); 
-
-  router.post('/beta-private/iteration-32/start-a-claim/existing_claim_2_allowed', function (req, res){
-    res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
-  })
+ 
+  router.post('/beta-private/iteration-32/start-a-claim/existing_claim_2', function (req, res) {
+    res.redirect('/beta-private/iteration-32/start-a-claim/more-claimant-information');
+  }); 
   
 
   router.post('/beta-private/iteration-32/start-a-claim/more-claimant-information', function (req, res) {
@@ -808,7 +832,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-32/start-a-claim/other-proof-details');
+        res.redirect('/beta-private/iteration-32/start-a-claim/smp1');
       }
 
     }
@@ -974,14 +998,20 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-32/start-a-claim/chosen-map-date');
   });
 
+// Routing for incomplete claim // 
   router.post('/beta-private/iteration-32/start-a-claim/chosen-map-date', function (req, res) {
-    if (req.session.data['ma-date-requested'] == 'yes') {
+    if (req.session.data['ma-date-requested'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/1');
+    } else if(req.session.data['ma-date-requested'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
+      res.redirect('/beta-private/iteration-32/start-a-claim/summary/'); 
+    } else if (req.session.data['ma-date-requested'] == 'yes'&& req.session.data['scenario'] == 'scenario-2') {
+      res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-incomplete'); 
+    } else if (req.session.data['ma-date-requested'] == 'no' && req.session.data['scenario'] == 'scenario-2') {
+      res.redirect('/beta-private/iteration-32/start-a-claim/summary/'); 
     }
-    else {
-      res.redirect('/beta-private/iteration-32/start-a-claim/summary/');
-    }
-  });
+  }); 
+
+  // Routing for incomplete claim finishes  // 
 
   router.post('/beta-private/iteration-32/start-a-claim/confirm-contact-details-none', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
@@ -990,10 +1020,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
   router.post('/beta-private/iteration-32/start-a-claim/requested-start-date', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/summary/');
   });
-
-    router.post('/beta-private/iteration-32/start-a-claim/claimant-preferences', function (req, res) {
-    res.redirect('/beta-private/iteration-32/start-a-claim/confirm-contact-details');
-  });
+ 
 
   router.post('/beta-private/iteration-32/start-a-claim/confirm-contact-details/', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/reasonable-adjustment');
@@ -1023,15 +1050,18 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/');
   });
 
+  // *** Find a claim logic for incomplete claim (Note) *** // 
   router.get('/beta-private/iteration-32/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/1');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-32/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-32/find-a-claim/summary/2-incomplete');
     } else {
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/1');
     }
-  });
+  }); 
+
+  // *** Find a claim lofic for incomplete claim (Note) finish *** // 
 
   router.post('/beta-private/iteration-32/find-a-claim/rti/change', function (req, res) {
 
@@ -1220,16 +1250,39 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-32/payments');
   });
 
- 
- //  Iteration 32 Manage claim : date-last-worked, reason and MAT date 
+ // Note // 
+
+router.post('/beta-private/iteration-32/find-a-claim/summary/1-note', function (req,res) {  
+  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-note-entered'); 
+});  
+
+// Manage claim // 
+
+const urls = { 
+  manageClaim1: '/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-1-closed.html',
+  manageClaim2: '/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage.html' 
+  };
+  
+  router.get('/beta-private/iteration-32/start-a-claim/existing_claim_2', (req, res) => {
+      console.log('user here')
+      res.render('/beta-private/iteration-32/start-a-claim//existing_claim_2', { urls });     
+  });   
 
 
- //router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req, res) {
-  //res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-allowed');});//
-
- 
-  // Route for handling date submission
- 
+  const manageurls = { 
+    manageDate: '/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage.html', 
+    manageReason: '/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage.html', 
+    manageMAT: '/beta-private/iteration-32/start-a-claim/requested-start-date-manage.html ', 
+    manageBirth: '/beta-private/iteration-32/start-a-claim/baby-birth-date-manage.html',     
+     
+    };
+    
+    router.get('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage', (req, res) => {
+        console.log('user here')
+        res.render('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage', { manageurls });     
+    });   
+  
+  
 router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
   req.session.data['dateEntered'] = true;
   res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage');
@@ -1249,6 +1302,19 @@ router.post('/beta-private/iteration-32/start-a-claim/baby-birth-date-manage', f
   req.session.data['birth-date-Entered'] = true;
   res.redirect('/beta-private/iteration-32/start-a-claim/summary/1-existing-claim-2-manage'); 
 }); 
+ 
+
+// Manage claim finishes // 
+
+ 
+ 
+
+
+
+
+
+
+// Note finishes // 
  
 
 //function updateDisplayRate(req) {

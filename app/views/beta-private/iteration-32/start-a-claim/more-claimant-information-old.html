@@ -16,12 +16,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-padding-bottom-0">
-        What are the claimant's contact preferences?
+      <h1 class="govuk-heading-l">
+        Claimant details
       </h1>
-      <div id="passport-issued-hint" class="govuk-hint">
-        Communications will be sent to the claimant's residential address unless you add a correspondence address. You can also do this later.
-      </div>
+
       <form class="form" method="post" novalidate>
 
 
@@ -42,7 +40,7 @@
 
   {{ govukInput({
     label: {
-      html: 'Building and street (optional) <span class="govuk-visually-hidden">line 1 of 2</span>'
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
     },
     id: "address-line-1",
     name: "address-line-1",
@@ -60,7 +58,7 @@
 
   {{ govukInput({
     label: {
-      text: "Town or city (optional)"
+      text: "Town or city"
     },
     classes: "govuk-!-width-two-thirds",
     id: "address-town",
@@ -70,7 +68,7 @@
 
   {{ govukInput({
     label: {
-      text: "Postcode (optional)"
+      text: "Postcode"
     },
     classes: "govuk-input--width-10",
     id: "more-info-postcode",
