@@ -23,24 +23,52 @@
   
     <table class="govuk-table">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Correspondence address</th>
-      <td class="govuk-table__cell"> {{ data['claimant-address'] }},<br> {{ data['claimant-address2'] }},<br> {{ data['claimant-address3'] }},<br> {{ data['claimant-postcode'] }}</td>
+      <th scope="row" class="govuk-table__header">
+        Correspondence address
+      </th>
+      <td class="govuk-table__cell">
+         {{ data['claimant-address'] }},<br> {{ data['claimant-address2'] }},<br> {{ data['claimant-address3'] }},<br> {{ data['claimant-postcode'] }}
+        </td>
       <td class="govuk-table__cell">   <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a></td>
     </tr>
-      <th scope="row" class="govuk-table__header">Telephone number</th>
-      <td class="govuk-table__cell">{{ data['claimant-contact-number'] }}</td>
+
+      <th scope="row" class="govuk-table__header">
+        Telephone number
+      </th>
+      <td class="govuk-table__cell">
+        {{ data['claimant-contact-number'] }}
+      </td>
       <td class="govuk-table__cell">  <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a>--></td>
-    </tr>
+    
+
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Email address</th>
-      <td class="govuk-table__cell">{{ data['claimant-email'] }}</td>
+      <th scope="row" class="govuk-table__header">
+        Email address
+      </th>
+      <td class="govuk-table__cell">
+        {{ data['claimant-email'] }}
+      </td>
       <td class="govuk-table__cell">  <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
-      </a>--></td>
+      </a>-->
+    </td>
+    </tr> 
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        Welsh language preference 
+      </th>
+      <td class="govuk-table__cell">
+        {{ data['welsh-language-preference'] }} 
+      </td>
+      <td class="govuk-table__cell">  <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>-->
+    </td>
     </tr>
 
 

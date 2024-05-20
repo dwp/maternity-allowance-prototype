@@ -57,33 +57,33 @@
           <ul class="moj-side-navigation__list">
             
             <li class="moj-side-navigation__item  ">
-              <a href="1" aria-current="location">Decision and dates</a>
+              <a href="2-incomplete" aria-current="location">Decision and dates</a>
             </li>
     
             <li class="moj-side-navigation__item ">
-              <a href="1-employment-and-earnings">Employment and earnings</a>
+              <a href="1-employment-and-earnings-incomplete-note">Employment and earnings</a>
             </li>
     
             <li class="moj-side-navigation__item">
-              <a href="1-bank-details-and-payments">Bank details and payments</a>
+              <a href="1-bank-details-and-payments-incomplete-note">Bank details and payments</a>
             </li>
 
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="1-evidence">Evidence</a>
+              <a href="1-evidence-2-employers-incomplete-note">Evidence</a>
             </li>
 
             <li class="moj-side-navigation__item">
-              <a href="1-claim-history">Claim history</a>
+              <a href="1-claim-history-incomplete-note">Claim history</a>
             </li>
             
             <li class="moj-side-navigation__item">
-              <a href="1-change-of-circ.html">Change of circumstance</a>
+              <a href="1-change-of-circ-incomplete-note.html">Change of circumstance</a>
             </li>
             <li class="moj-side-navigation__item">
-              <a href="1-preferences.html">Preferences</a>
+              <a href="1-preferences-incomplete-notet">Preferences</a>
             </li>
             <li class="moj-side-navigation__item">
-              <a href="1-note">Note</a>
+              <a href="1-note-entered">Note</a>
             </li>
             
          
@@ -115,20 +115,19 @@
       <p class="govuk-body" style="text-align: right;"><a href="../mat-add.html" class="govuk-link">Change</a></p>
     </div>
   </div>
-
-  <table class="govuk-table">
+  <table class="govuk-table" >    
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Type of proof</th>
-        <td class="govuk-table__cell">Other proof of pregnancy</td>
+        <td class="govuk-table__cell" >-</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Provided by claimant</th>
-        <td class="govuk-table__cell">{{ data['mat-provided'] }}</td>
+        <td class="govuk-table__cell">{{data['mat-provided']}}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Date signed</th>
-        <td class="govuk-table__cell">{{ data['mat-date-signed'] }}</td>
+        <td class="govuk-table__cell">-</td>
       </tr>
       <!--<tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Certificate number</th>
@@ -140,15 +139,15 @@
       </tr>-->
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Name of healthcare provider</th>
-        <td class="govuk-table__cell">Name here</td>
+        <td class="govuk-table__cell">-</td>
       </tr>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Verified by</th>
-        <td class="govuk-table__cell">{{ data['mat-verified-by'] }}</td>
+        <th scope="row" class="govuk-table__header">Recorded by</th>
+        <td class="govuk-table__cell">{{ data['mat-verified-by']}}</td>
       </tr>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Date verified</th>
-        <td class="govuk-table__cell">{{ data['mat-date-verified'] }}</td>
+        <th scope="row" class="govuk-table__header">Date recorded</th>
+        <td class="govuk-table__cell">{{ data['mat-date-verified']}}</td>
       </tr>
 
     </tbody>
@@ -179,11 +178,11 @@
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Provided by claimant</th>
-        <td class="govuk-table__cell">{{ data['smp1-provided'] }}</td>
+        <td class="govuk-table__cell">{{ data [['smp1-provided']]}}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Employer 1</th>
-        <td class="govuk-table__cell"> {{ data['smp1-employer'] }}</td>
+        <td class="govuk-table__cell"> {{ data['smp1-employer-1']}}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Date signed employer 1</th>

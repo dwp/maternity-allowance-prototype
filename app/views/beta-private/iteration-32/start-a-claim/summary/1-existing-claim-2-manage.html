@@ -342,7 +342,7 @@
 
     
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage">
+      <a class="govuk-link" href="{{manageurls.manageDate}}">
         Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
       </a>
     </dd>
@@ -362,7 +362,7 @@
       {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage">
+      <a class="govuk-link" href="{{manageurls.manageReason}}">
         Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
       </a>
     </dd>
@@ -386,11 +386,11 @@
       {% if (data['birth-date-Entered'] == true ) %} 
       {{ data['ma-baby-birth-date-2'] }}
       {% else %} 
-      -
+      {{data['ma-baby-birth-date'] }}
       {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../baby-birth-date-manage.html?change=true">
+      <a class="govuk-link" href="{{manageurls.manageBirth}}">
         Change<span class="govuk-visually-hidden"> baby birth date</span>
       </a>
     </dd>
@@ -443,7 +443,7 @@
 
      
     <dd class="govuk-summary-list__actions ">
-      <a class="govuk-link" href="../requested-start-date-manage.html?change=true">
+      <a class="govuk-link" href="{{manageurls.manageMAT}}">
         Change<span class="govuk-visually-hidden"> start date requested by claimant</span>
       </a>
     </dd>
