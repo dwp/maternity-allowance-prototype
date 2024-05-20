@@ -252,46 +252,46 @@ module.exports = router => {
        req.session.data['mat-certificate-number'] = '5658710';
        req.session.data['mat-midwife-pin'] = '1987621';
        req.session.data['mat-verified-by'] = 'Serena van der Woodsen';
-       req.session.data['mat-date-verified'] = '1 July 2023';
+       req.session.data['mat-date-verified'] = '05 May 2024';
        req.session.data['smp1-provided'] = 'Yes'; //Changed for iteration 32 for note only // 
        req.session.data['smp1-employer-1'] = 'ROBSONS CARE FORUM';
        req.session.data['smp1-employer-2'] = 'ARGOS';
-       req.session.data['smp1-date-signed'] = '18 June 2023';
+       req.session.data['smp1-date-signed'] = '18 February 2024';
        req.session.data['smp1-date-signed-2'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
-       req.session.data['smp1-date-verified'] = '1 July 2023';
+       req.session.data['smp1-date-verified'] = '05 May 2024';
 
 
 
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '11 October 2023';
-      req.session.data['ma-claim-decision-date'] = '11 October 2023';
+      req.session.data['ma-claim-creation-date'] = '05 May 2024';
+      req.session.data['ma-claim-decision-date'] = '05 May 2024';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '3 April 2024';
-      req.session.data['ma-map-end'] = '31 December 2024';
-      req.session.data['ma-map-end-summary'] = '21 March 2024';
+      req.session.data['ma-map-start'] = '20 April 2024';
+      req.session.data['ma-map-end'] = '14 Janurary 2025';
+      req.session.data['ma-map-end-summary'] = '14 Janurary 2025';
 
       // Test period dates
-      req.session.data['ma-baby-due-date'] = '25 July 2023';
+      req.session.data['ma-baby-due-date'] = '10 June 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
-      req.session.data['ma-test-period-first-day'] = '17 April 2022';
-      req.session.data['ma-test-period-last-day'] = '22 July 2023';
-      req.session.data['ma-test-period-week-fifteen'] = '9 April 2023';
+      req.session.data['ma-test-period-first-day'] = '17 April 2023';
+      req.session.data['ma-test-period-last-day'] = '22 September 2023';
+      req.session.data['ma-test-period-week-fifteen'] = '28 February 2024';
 
       // Maternity Allowance period dates
-      req.session.data['ma-map-claim-date-received'] = '10 October 2023';
-      req.session.data['ma-map-expected-week-of-confinement'] = '23 July 2023';
-      req.session.data['ma-week-eleventh'] = '7 May 2023';
-      req.session.data['ma-week-fourth'] = '25 June 2023';
-      req.session.data['ma-start-date-requested'] = '23 June 2023';
+      req.session.data['ma-map-claim-date-received'] = '10 February 2024';
+      req.session.data['ma-map-expected-week-of-confinement'] = '09 June 2024';
+      req.session.data['ma-week-eleventh'] = '14 April 2024';
+      req.session.data['ma-week-fourth'] = '12 May 2024';
+      req.session.data['ma-start-date-requested'] = '20 April 2024';
       req.session.data['ma-start-date-requested-status'] = 'Allowed';
       req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
 
       // Date Last Worked
-      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '20 June 2023';
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '30 April 2024';
       req.session.data['ma-map-claimant-stopped-work-reason'] = 'Maternity leave';
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null;
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = null;
