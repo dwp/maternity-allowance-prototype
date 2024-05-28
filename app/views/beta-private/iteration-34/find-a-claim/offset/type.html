@@ -1,0 +1,86 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "",
+        idPrefix: "mat",
+        name: "mat",
+        fieldset: {
+          legend: {
+            text: "Select the type of offset you would like to add to this claim",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "ESA",
+            text: "Employment and Support Allowance (ESA)"
+          },
+          {
+            value: "CA",
+            text: "Carer's Allowance (CA)"
+          },
+          {
+            value: "CSP",
+            text: "Carer Support Payment (CSP) - Scotland only"
+          },
+          {
+            value: "BB",
+            text: "Bereavement Benefit/Widow's Benefit (BB/WB)"
+          },
+          {
+            value: "IS",
+            text: "Income Support (IS)"
+          },
+          {
+            value: "JSA",
+            text: "Jobseeker's Allowance (JSA)"
+          },
+          {
+            value: "IB",
+            text: "Incapacity Benefit (IB)"
+          },
+          {
+            value: "PC",
+            text: "Pension Credit (PC)"
+          },
+          {
+            value: "SP",
+            text: "State Pension (SP)"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
