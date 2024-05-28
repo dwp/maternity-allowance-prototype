@@ -536,6 +536,30 @@ router.post('/change-answer-33', function(request, response) {
   }
 })
 
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-select-define-radio-reduce', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-previous');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-previous', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-new');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-new', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-effective');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-reduce-days-effective', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-reduce');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-reduce', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-summary');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-of-circ');
+});
+
 router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-select', function (req, res) {
   res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/change-select-define');
 });
@@ -1069,7 +1093,7 @@ router.post('/beta-private/iteration-33/find-a-claim/preferences/contact-options
     if (req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-33/find-a-claim/summary/1');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-33/find-a-claim/summary/2-incomplete');
+      res.redirect('/beta-private/iteration-33/find-a-claim/summary/1');
     } else {
       res.redirect('/beta-private/iteration-33/find-a-claim/summary/1');
     }
