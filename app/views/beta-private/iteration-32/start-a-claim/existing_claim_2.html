@@ -55,7 +55,7 @@
       Baby due date
     </dt>
     <dd class="govuk-summary-list__value">       
-      20 June 2022       
+      {{ data['ma-baby-due-date'] }}      
     </dd>
     <dd class="govuk-summary-list__actions">
      &nbsp;
@@ -67,8 +67,8 @@
       Claim decision 
     </dt>
     <dd class="govuk-summary-list__value">
-      <strong class="govuk-tag govuk-tag">
-      Allowed
+      <strong class="govuk-tag govuk-tag--grey">
+      Incomplete 
       </strong>
     </dd> 
    
@@ -83,7 +83,7 @@
     </dt>
     <dd class="govuk-summary-list__value">
       <strong class="govuk-tag govuk-tag--grey">
-      Closed
+      Inactive 
       </strong>
     </dd> 
    
@@ -98,7 +98,7 @@
       Claim received date
     </dt>
     <dd class="govuk-summary-list__value">
-      09 April 2022      
+      {{ data['ma-map-claim-date-received'] }}     
     </dd>
     <dd class="govuk-summary-list__actions">
      &nbsp;
@@ -134,7 +134,7 @@
       Baby due date
     </dt>
     <dd class="govuk-summary-list__value">       
-      {{ data['ma-baby-due-date'] }}
+      20 June 2022  
     </dd>
     <dd class="govuk-summary-list__actions">
      &nbsp;
@@ -146,8 +146,8 @@
       Claim decision 
     </dt>
     <dd class="govuk-summary-list__value">
-         <strong class="govuk-tag govuk-tag--grey">
-        Incomplete 
+         <strong class="govuk-tag govuk-tag">
+       Allowed
       </strong>
        </dd>
     
@@ -163,7 +163,7 @@
     </dt>
     <dd class="govuk-summary-list__value">
       <strong class="govuk-tag govuk-tag--grey">
-      Inactive 
+      Closed
       </strong>
     </dd> 
    
@@ -179,7 +179,7 @@
       Claim received date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claim-date-received'] }}     
+      09 April 2022     
     </dd>
     <dd class="govuk-summary-list__actions">
      &nbsp;
