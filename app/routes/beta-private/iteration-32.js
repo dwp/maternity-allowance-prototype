@@ -1259,8 +1259,8 @@ router.post('/beta-private/iteration-32/find-a-claim/summary/1-note', function (
 // Manage claim // 
 
 const urls = { 
-  manageClaim1: '/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-closed.html',
-  manageClaim2: '/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage.html' 
+  manageClaim1: '/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage.html',
+  manageClaim2: '/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-closed.html'
   };
   
   router.get('/beta-private/iteration-32/start-a-claim/existing_claim_2', (req, res) => {
@@ -1277,30 +1277,30 @@ const urls = {
      
     };
     
-    router.get('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage', (req, res) => {
+    router.get('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage', (req, res) => {
         console.log('user here')
-        res.render('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage', { manageurls });     
+        res.render('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage', { manageurls });     
     });   
   
   
 router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
   req.session.data['dateEntered'] = true;
-  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage');
+  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage');
 }); 
 
 router.post('/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage', function (req,res) {
   req.session.data['reasonEntered'] = true;
-  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage');
+  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage');
 });
 
 router.post('/beta-private/iteration-32/start-a-claim/requested-start-date-manage', function (req,res) {
   req.session.data['map-date-Entered'] = true;
-  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage');
+  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage');
 }); 
 
 router.post('/beta-private/iteration-32/start-a-claim/baby-birth-date-manage', function (req,res) {
   req.session.data['birth-date-Entered'] = true;
-  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-2-manage'); 
+  res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage'); 
 }); 
  
 
