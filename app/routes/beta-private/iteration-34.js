@@ -725,7 +725,7 @@ router.post('/beta-private/iteration-34/find-a-claim/offset/stop', function (req
 });
 
 router.post('/beta-private/iteration-34/find-a-claim/offset/confirm', function (req, res) {
-  res.redirect('/beta-private/iteration-34/find-a-claim/offset/1-rates');
+  res.redirect('/beta-private/iteration-34/find-a-claim/offset/1-rates-v2');
 });
 
 // *** Preferences ************************************************************************************************************** //

@@ -556,8 +556,12 @@ router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-summary');
 });
 
-router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC', function (req, res) {
-  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-of-circ');
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-stop', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-summary');
+});
+
+router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC-stop', function (req, res) {
+  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-of-circ-v2');
 });
 
 router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-select', function (req, res) {
