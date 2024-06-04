@@ -66,19 +66,16 @@
                   <a href="1-evidence-2-employers">Evidence</a>
                 </li>
 
-                <li class="moj-side-navigation__item">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
                   <a href="1-claim-history">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ.html">Change of circumstance</a>
                 </li>
-
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <li class="moj-side-navigation__item">
                   <a href="1-preferences.html">Preferences</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-rates-v2">Rates and deductions</a>
-                </li>
+
               </ul>
             </nav>
           </nav>
@@ -91,48 +88,53 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Contact details</h2>
-
-            <table class="govuk-table">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Correspondence address</th>
-                <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">25 Park Avenue,</p><p class="govuk-body govuk-!-margin-bottom-2">Newcastle</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE5 8KR</p></td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-                <th scope="row" class="govuk-table__header">Telephone number</th>
-                <td class="govuk-table__cell">07847171740</td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Email address</th>
-                <td class="govuk-table__cell">lucindadavies@gmail.com</td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-          
-          
-          </tbody>
-          </table>
-
-            <a href="#"><button class="govuk-button" data-module="govuk-button">
-              Update contact details
-            </button></a>
-
-
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
-
-            <div class="govuk-hint">
-              There are no reasonable adjustments for this claim.
-            </div>
-
-            <a href="#"><button class="govuk-button" data-module="govuk-button">
-              Add reasonable adjustment
-            </button></a>
-
-            </section>
-</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
+<section id="decision" class="govuk-!-padding-top-6">
+<h2 class="govuk-heading-m">Claim history</h2>
 
+<div class="dwp-timeline">
+
+  <ol class="dwp-timeline__events">
+
+    <li class="dwp-timeline__events--entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim stopped removed</h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+      <p class="govuk-caption-m">5 June 2024</p>
+    </li>
+    <li class="dwp-timeline__events--entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim stopped</h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+      <p class="govuk-caption-m">30 May 2024</p>
+    </li>
+    <li class="dwp-timeline__events--entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim reduced</h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+      <p class="govuk-caption-m">13 May 2024</p>
+    </li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Mike Ehrmantraut</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Hank Schrader</p>
+  <p class="govuk-caption-m">12 March 2024</p>
+</li>
+  </ol>
+  </div>
+
+
+</section>
 {% endblock %}

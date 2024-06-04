@@ -265,7 +265,8 @@ module.exports = router => {
 
 
       // Decision
-      req.session.data['ma-decision'] = 'Allowed';
+      req.session.data['ma-decision'] = 'Incomplete';
+      req.session.data['ma-decision-CoC'] = 'Allowed';
       req.session.data['ma-claim-creation-date'] = '05 May 2024';
       req.session.data['ma-claim-decision-date'] = '05 May 2024';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
@@ -463,7 +464,7 @@ module.exports = router => {
     req.session.data['smp1-date-signed-2'] = '1 April 2024';
     req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
     req.session.data['smp1-date-verified'] = '05 July 2023';
-    req.session.data['ma-decision'] = 'Allowed';
+    req.session.data['ma-decision'] = 'Incomplete';
 
     res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-evidence-2-employers');
   });
@@ -557,11 +558,11 @@ router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confi
 });
 
 router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-stop', function (req, res) {
-  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-summary');
+  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-of-circ');
 });
 
 router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC-stop', function (req, res) {
-  res.redirect('/beta-private/iteration-33/find-a-claim/summary/1-change-of-circ-v2');
+  res.redirect('/beta-private/iteration-33/find-a-claim/change-of-circ/1-change-of-circ-v2');
 });
 
 router.post('/beta-private/iteration-33/find-a-claim/change-of-circ/change-select', function (req, res) {

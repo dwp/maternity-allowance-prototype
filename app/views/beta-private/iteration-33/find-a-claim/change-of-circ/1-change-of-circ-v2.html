@@ -65,25 +65,22 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-evidence-2-employers">Evidence</a>
                 </li>
-
                 <li class="moj-side-navigation__item">
                   <a href="1-claim-history">Claim history</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ.html">Change of circumstance</a>
-                </li>
 
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-preferences.html">Preferences</a>
+                  <a href="1-change-of-circ-v2">Change of circumstance</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-rates-v2">Rates and deductions</a>
+                  <a href="1-preferences.html">Preferences</a>
                 </li>
+
               </ul>
             </nav>
           </nav>
           <p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
           </p>
 
@@ -91,48 +88,71 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Contact details</h2>
-
-            <table class="govuk-table">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Correspondence address</th>
-                <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">25 Park Avenue,</p><p class="govuk-body govuk-!-margin-bottom-2">Newcastle</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE5 8KR</p></td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-                <th scope="row" class="govuk-table__header">Telephone number</th>
-                <td class="govuk-table__cell">07847171740</td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Email address</th>
-                <td class="govuk-table__cell">lucindadavies@gmail.com</td>
-                <td class="govuk-table__cell">  </td>
-              </tr>
-          
-          
-          </tbody>
-          </table>
-
-            <a href="#"><button class="govuk-button" data-module="govuk-button">
-              Update contact details
-            </button></a>
-
-
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
-
-            <div class="govuk-hint">
-              There are no reasonable adjustments for this claim.
-            </div>
-
-            <a href="#"><button class="govuk-button" data-module="govuk-button">
-              Add reasonable adjustment
-            </button></a>
-
-            </section>
-</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
+</section>
 
-{% endblock %}
+
+<section id="Payments overview" class="govuk-!-padding-top-5">
+  <h2 class="govuk-heading-l">Change of circumstance</h2>
+
+  <p>Each change of circumstance creates a new award. The Maternity Allowance Period will include all awards.</p>
+
+  <table class="govuk-table">
+  
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Change type</th>
+        <th scope="col" class="govuk-table__header">Reason</th>
+        <th scope="col" class="govuk-table__header">Date reported</th>
+        <th scope="col" class="govuk-table__header"></th>
+      <!--<th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th></tr>-->
+    </thead>
+
+    <!--<tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        
+        <td class="govuk-table__cell">Stop a claim</td>
+        <td class="govuk-table__cell">Voluntary relinquishment</td>
+      <td class="govuk-table__cell">17 April 2024</td>
+      <td class="govuk-table__cell"><a href="/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-stop">Manage</a> | <a href="/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC-stop">Remove</a></td>
+      <td class="govuk-table__cell">
+
+  <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">Manage<span class="govuk-visually-hidden"> name</span>
+    </a>
+</td></tr>
+      
+      
+</tbody>-->
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        
+        <td class="govuk-table__cell">Reduce a claim</td>
+        <td class="govuk-table__cell">Working more days</td>
+      <td class="govuk-table__cell">13 March 2024</td>
+      <td class="govuk-table__cell"><a href="/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-reduce">Manage</a> | <a href="/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC">Remove</a--></td>
+      <!--<td class="govuk-table__cell">
+
+  <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">Manage<span class="govuk-visually-hidden"> name</span>
+    </a>
+</td>--></tr>
+      
+      
+</tbody>
+  </table>
+   
+
+<a href="/beta-private/iteration-27/find-a-claim/change-of-circ/change-select-radio-resume-v2" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate="">Add change of circumstance
+</a>
+
+    </section>
+
+
+
+
+ 
+
+      </div>
+    </div>
+  {% endblock %}
