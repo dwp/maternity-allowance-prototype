@@ -720,6 +720,7 @@ router.post('/beta-private/iteration-34/find-a-claim/offset/start', function (re
   res.redirect('/beta-private/iteration-34/find-a-claim/offset/stop');
 });
 
+
 router.post('/beta-private/iteration-34/find-a-claim/offset/stop', function (req, res) {
   res.redirect('/beta-private/iteration-34/find-a-claim/offset/confirm');
 });
