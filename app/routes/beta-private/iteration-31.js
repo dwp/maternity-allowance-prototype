@@ -43,6 +43,7 @@ module.exports = router => {
       req.session.data['claimant-address3'] = 'London';
       req.session.data['claimant-contact-number'] = '07895467510';
       req.session.data['claimant-email'] = 'a.radcliff26@gmail.com';
+      req.session.data['welsh-lang'] = 'None';
 
       // Bank details
       req.session.data['name-on-account'] = 'Lucinda Davies';
@@ -681,7 +682,7 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
   // *** Scenario 1 ***************************************************************************************************************** //
 
   router.post('/beta-private/iteration-31/start-a-claim/index', function (req, res) {
-    res.redirect('/beta-private/iteration-31/start-a-claim/claimant-confirm');
+    res.redirect('/beta-private/iteration-31/start-a-claim/more-claimant-information');
   });
 
   router.post('/beta-private/iteration-31/find-a-claim/summary/1-bank-details-and-payments', function (req, res) {
@@ -703,7 +704,7 @@ router.post('/beta-private/iteration-31/find-a-claim/preferences/contact-options
   router.post('/beta-private/iteration-31/start-a-claim/claimant-confirm', function (req, res) {
 
     if (req.session.data['claimant-confirm'] == 'yes') {
-      res.redirect('/beta-private/iteration-31/start-a-claim/claimant-preferences');
+      res.redirect('/beta-private/iteration-31/start-a-claim/more-claimant-information');
     }
     else {
       res.redirect('/beta-private/iteration-31/start-a-claim/more-claimant-information');
