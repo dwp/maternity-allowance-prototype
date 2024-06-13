@@ -22,7 +22,7 @@
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
-        classes: "govuk-radios--inline",
+        
         idPrefix: "mat",
         name: "mat",
         fieldset: {
@@ -40,6 +40,10 @@
           {
             value: "no",
             text: "No"
+          },
+          {
+            value: "notNeeded",
+            text: "SMP 1 form not needed"
           }
         ]
       }) }}
