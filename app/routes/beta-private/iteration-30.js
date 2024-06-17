@@ -456,10 +456,6 @@ module.exports = router => {
     res.redirect('/beta-private/iteration-30/start-a-claim/payslip/frequency');
   });
 
-  router.post('/beta-private/iteration-30/start-a-claim/more-claimant-information', function (req, res) {
-    res.redirect('/beta-private/iteration-30/start-a-claim/confirm-contact-details');
-  });
-
   router.post('/beta-private/iteration-30/start-a-claim/smp1-dispute', function (req, res) {
     res.redirect('/beta-private/iteration-30/start-a-claim/employment');
   });
@@ -681,7 +677,7 @@ router.post('/beta-private/iteration-30/find-a-claim/preferences/contact-options
   // *** Scenario 1 ***************************************************************************************************************** //
 
   router.post('/beta-private/iteration-30/start-a-claim/index', function (req, res) {
-    res.redirect('/beta-private/iteration-30/start-a-claim/claimant-confirm');
+    res.redirect('/beta-private/iteration-30/start-a-claim/more-claimant-information');
   });
 
   router.post('/beta-private/iteration-30/find-a-claim/summary/1-bank-details-and-payments', function (req, res) {
@@ -689,8 +685,13 @@ router.post('/beta-private/iteration-30/find-a-claim/preferences/contact-options
   });
 
   router.post('/beta-private/iteration-30/start-a-claim/more-claimant-information', function (req, res) {
+    res.redirect('/beta-private/iteration-30/start-a-claim/welsh-preferences');
+  });
+
+  router.post('/beta-private/iteration-30/start-a-claim/welsh-preferences', function (req, res) {
     res.redirect('/beta-private/iteration-30/start-a-claim/confirm-contact-details');
   });
+
 
   router.post('/beta-private/iteration-30/start-a-claim/claimant-confirm', function (req, res) {
 
@@ -820,7 +821,7 @@ router.post('/beta-private/iteration-30/find-a-claim/preferences/contact-options
       if (req.session.data['change'] == true ) {
         req.session.data['change'] = null;
         // No change
-        res.redirect('/beta-private/iteration-30/start-a-claim/smp1-dispute'); // Goes back to unchanged summary
+        res.redirect('/beta-private/iteration-30/start-a-claim/employment'); // Goes back to unchanged summary
       }
       else {
         req.session.data['change'] = null;
