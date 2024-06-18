@@ -818,10 +818,8 @@ router.post('/beta-private/iteration-30/find-a-claim/preferences/contact-options
     }
     else {
 
-      if (req.session.data['change'] == true ) {
-        req.session.data['change'] = null;
-        // No change
-        res.redirect('/beta-private/iteration-30/start-a-claim/employment'); // Goes back to unchanged summary
+      if (req.session.data['mat'] == 'notNeeded') {
+        res.redirect('/beta-private/iteration-30/start-a-claim/employment');
       }
       else {
         req.session.data['change'] = null;
