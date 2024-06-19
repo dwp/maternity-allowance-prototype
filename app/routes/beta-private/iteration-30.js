@@ -53,9 +53,9 @@ module.exports = router => {
 
 
       // Decision
-      req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '5 July 2023';
-      req.session.data['ma-claim-decision-date'] = '5 July 2023';
+      req.session.data['ma-decision'] = 'Incomplete';
+      req.session.data['ma-claim-creation-date'] = '3 April 2024';
+      req.session.data['ma-claim-decision-date'] = '3 April 2024';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '3 April 2024';
       req.session.data['ma-map-end'] = '31 December 2024';
@@ -73,7 +73,7 @@ module.exports = router => {
       req.session.data['ma-week-eleventh'] = '18 February 2024';
       req.session.data['ma-week-fourth'] = '7 April 2024';
       req.session.data['ma-start-date-requested'] = '3 April 2024';
-      req.session.data['ma-start-date-requested-status'] = 'Allowed';
+      req.session.data['ma-start-date-requested-status'] = 'Incomplete';
       req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
 
       // Date Last Worked
@@ -253,7 +253,7 @@ module.exports = router => {
 
 
       // Decision
-      req.session.data['ma-decision'] = 'Allowed';
+      req.session.data['ma-decision'] = 'Incomplete';
       req.session.data['ma-claim-creation-date'] = '11 October 2023';
       req.session.data['ma-claim-decision-date'] = '11 October 2023';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
@@ -275,7 +275,7 @@ module.exports = router => {
       req.session.data['ma-week-eleventh'] = '7 May 2023';
       req.session.data['ma-week-fourth'] = '25 June 2023';
       req.session.data['ma-start-date-requested'] = '23 June 2023';
-      req.session.data['ma-start-date-requested-status'] = 'Allowed';
+      req.session.data['ma-start-date-requested-status'] = 'Incomplete';
       req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
 
       // Date Last Worked
@@ -422,7 +422,7 @@ module.exports = router => {
     req.session.data['mat-certificate-number'] = '1520156';
     req.session.data['mat-midwife-pin'] = '163002';
     req.session.data['mat-verified-by'] = 'Serena van der Woodsen';
-    req.session.data['mat-date-verified'] = '05 July 2023';
+    req.session.data['mat-date-verified'] = '3 April 2024';
 
     res.redirect('/beta-private/iteration-30/find-a-claim/summary/1-evidence-matb1');
   });
@@ -445,7 +445,7 @@ module.exports = router => {
     req.session.data['smp1-date-signed-2'] = '15 June 2023';
     req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
     req.session.data['smp1-date-verified'] = '05 July 2023';
-    req.session.data['ma-decision'] = 'Allowed';
+    req.session.data['ma-decision'] = 'Incomplete';
 
     res.redirect('/beta-private/iteration-30/find-a-claim/summary/1-evidence-2-employers');
   });
