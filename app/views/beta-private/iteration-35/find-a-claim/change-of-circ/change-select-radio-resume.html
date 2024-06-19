@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/change-type27" method="post">
+
+        {{ govukRadios({
+          name: "changeType27",
+          value: data['changeType27'],
+          fieldset: {
+            legend: {
+              text: "Select the change of circumstance you want to add to this claim",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "stop-resume",
+              text: "Stop a claim"
+            },
+            {
+              value: "reduce-resume",
+              text: "Reduce a claim"
+            },
+            {
+              value: "restart-resume",
+              text: "Restart a claim"
+            }
+
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
