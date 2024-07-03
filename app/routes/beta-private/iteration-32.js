@@ -1011,7 +1011,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     }
   }); 
 
-  // Routing for incomplete claim finishes  // 
+  // Routing for incomplete claim finishes // 
 
   router.post('/beta-private/iteration-32/start-a-claim/confirm-contact-details-none', function (req, res) {
     res.redirect('/beta-private/iteration-32/start-a-claim/claimant-preferences');
@@ -1050,7 +1050,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/');
   });
 
-  // *** Find a claim logic for incomplete claim (Note) *** // 
+  // *** Find a claim logic for incomplete claim (Note) Iteration 32 *** // 
   router.get('/beta-private/iteration-32/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-32/find-a-claim/summary/1');
@@ -1061,7 +1061,7 @@ router.post('/beta-private/iteration-32/find-a-claim/preferences/contact-options
     }
   }); 
 
-  // *** Find a claim lofic for incomplete claim (Note) finish *** // 
+  // *** Find a claim lofic for incomplete claim (Note) finish Iteration 32 *** // 
 
   router.post('/beta-private/iteration-32/find-a-claim/rti/change', function (req, res) {
 
@@ -1256,7 +1256,7 @@ router.post('/beta-private/iteration-32/find-a-claim/summary/1-note', function (
   res.redirect('/beta-private/iteration-32/find-a-claim/summary/1-note-entered'); 
 });  
 
-// Manage claim // 
+// Manage claim Iteration 32 // 
 
 const urls = { 
   manageClaim1: '/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage.html',
@@ -1269,7 +1269,7 @@ const urls = {
   });   
 
 
-  const manageurls = { 
+const manageurls = { 
     manageDate: '/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage.html', 
     manageReason: '/beta-private/iteration-32/start-a-claim/stopped-work/reason-manage.html', 
     manageMAT: '/beta-private/iteration-32/start-a-claim/requested-start-date-manage.html ', 
@@ -1277,10 +1277,10 @@ const urls = {
      
     };
     
-    router.get('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage', (req, res) => {
+router.get('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage', (req, res) => {
         console.log('user here')
         res.render('/beta-private/iteration-32/find-a-claim/summary/1-existing-claim-1-manage', { manageurls });     
-    });   
+});   
   
   
 router.post('/beta-private/iteration-32/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
@@ -1304,7 +1304,8 @@ router.post('/beta-private/iteration-32/start-a-claim/baby-birth-date-manage', f
 }); 
  
 
-// Manage claim finishes // 
+// Manage claim finishes Iteration 32 // 
+
 
  
  
