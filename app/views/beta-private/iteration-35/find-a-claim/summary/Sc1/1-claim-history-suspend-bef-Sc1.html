@@ -52,33 +52,30 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1" aria-current="location">Decision and dates</a>
+                  <a href="1-suspend-bef-Sc1.html" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-suspend-bef-Sc1.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-suspend-bef-Sc1.html">Bank details and payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-2-employers">Evidence</a>
+                  <a href="1-evidence-suspend-bef-Sc1.html">Evidence</a>
                 </li>
 
-                <li class="moj-side-navigation__item">
-                  <a href="1-claim-history">Claim history</a>
-                </li>
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-change-of-circ.html">Change of circumstance</a>
-                </li>
-
-                <li class="moj-side-navigation__item">
-                  <a href="1-preferences.html">Preferences</a>
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
+                  <a href="1-claim-history-suspend-bef-Sc1.html">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-note">Note</a>
+                  <a href="1-change-of-circ-suspend-bef-Sc1.html">Change of circumstance</a>
                 </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-suspend-bef-Sc1.html">Preferences</a>
+                </li>
+           
 
               </ul>
             </nav>
@@ -92,21 +89,45 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Change of circumstance</h2>
-
-            <div class="govuk-hint">
-              There are no reported changes for this claim.
-            </div>
-
-            <a href="../change-of-circ/change-select-radio-v4"><button class="govuk-button" data-module="govuk-button">
-              Add change of circumstance
-            </button></a>
-
-            </section>
-</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
+<section id="decision" class="govuk-!-padding-top-6">
+<h2 class="govuk-heading-m">Claim history</h2>
 
+<div class="dwp-timeline">
+
+  <ol class="dwp-timeline__events">
+
+  <li class="dwp-timeline__events--entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision changed</h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
+    <p class="govuk-caption-m">05 May 2024</p>
+</li>
+
+
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+  <p class="govuk-caption-m">05 May 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
+  <p class="govuk-caption-m">05 May 2024</p>
+</li>
+
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Mike Ehrmantraut</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Hank Schrader</p>
+  <p class="govuk-caption-m">12 March 2024</p>
+</li>
+  </ol>
+  </div>
+
+
+</section>
 {% endblock %}

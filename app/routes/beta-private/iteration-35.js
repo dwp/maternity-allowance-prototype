@@ -271,8 +271,8 @@ module.exports = router => {
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '01 May 2024';
-      req.session.data['ma-map-end'] = '14 Janurary 2025';
-      req.session.data['ma-map-end-summary'] = '14 Janurary 2025';
+      req.session.data['ma-map-end'] = '31 December 2024';
+      req.session.data['ma-map-end-summary'] = '31 December 2024';
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '10 June 2024';
@@ -522,6 +522,48 @@ module.exports = router => {
 
 // *** Change of Circs ************************************************************************************************************** //
 
+router.post('/change-answer-35', function(request, response) {
+
+  var country = request.session.data['change-type-35']
+  if (country == "claimStop"){
+      response.redirect("/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-define-radio-v2")
+  }
+  else if (country == "claimRestart"){
+    response.redirect("/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-define-radio-resume")
+} 
+ else {
+      response.redirect("/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-define-radio-reduce")
+  }
+})
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-define-radio-reduce', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-previous');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-previous', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-new');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-new', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-effective');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-reduce-days-effective', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confirm-answers-reduce');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confirm-answers-reduce', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-change-summary');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confirm-answers-stop', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-change-of-circ');
+});
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/remove-CoC-stop', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/1-change-of-circ-v2');
+});
+
 router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-select', function (req, res) {
   res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-define');
 });
@@ -565,8 +607,28 @@ router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-MA-en
 
 router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confirm-answers-resume', function (req, res) {
   res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-change-summary-resume');
+}); 
+
+router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confirm-answers-resume', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-change-summary-resume');
 });
 
+
+//Suspend payments Sc1 Iteration 35// 
+
+
+
+router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-radio-Sc1', function (req, res) {
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-bank-details-and-payments-suspend-aft-Sc1');
+    }); 
+
+router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-unsuspend-radio-Sc1', function (req, res) {
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-bank-details-and-payments-suspend-res-Sc1');
+}); 
+ 
+ 
+
+  // Suspend payments Sc1 Iteration 35 finishes // 
 
 
 // *** Unallocated earnings ************************************************************************************************************** //
@@ -1050,18 +1112,18 @@ router.post('/beta-private/iteration-35/find-a-claim/preferences/contact-options
       res.redirect('/beta-private/iteration-35/find-a-claim/summary/');
   });
 
-  // *** Find a claim logic for incomplete claim (Note) *** // 
+  // *** Find a claim logic for incomplete claim (Iteration 32 - Note) - Changed to Suspend payments (Iteration 35) *** //  
   router.get('/beta-private/iteration-35/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-35/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-suspend-bef-Sc1');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-35/find-a-claim/summary/2-incomplete');
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-suspend-bef-Sc2');
     } else {
-      res.redirect('/beta-private/iteration-35/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-suspend-bef-Sc1');
     }
   }); 
 
-  // *** Find a claim lofic for incomplete claim (Note) finish *** // 
+  // *** Find a claim Logic for incomplete claim (Note) and Suspend payments finish *** // 
 
   router.post('/beta-private/iteration-35/find-a-claim/rti/change', function (req, res) {
 
@@ -1206,7 +1268,7 @@ router.post('/beta-private/iteration-35/find-a-claim/preferences/contact-options
     }
   });
 
-  // Payments
+  // Payments 
 
   router.post('/beta-private/iteration-35/start-a-claim/summary/2', function (req, res) {
     res.redirect('/beta-private/iteration-35/payments/');
@@ -1214,7 +1276,9 @@ router.post('/beta-private/iteration-35/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-35/payments/', function (req, res) {
     res.redirect('/beta-private/iteration-35/payments/summary');
-  });
+  }); 
+
+  //*** Logic control data display ***//
 
   router.post('/beta-private/iteration-35/payments/payment-frequency', function (req, res) {
     if (req.session.data['payment-frequency'] == '2-weeks') {
@@ -1224,6 +1288,8 @@ router.post('/beta-private/iteration-35/find-a-claim/preferences/contact-options
     }
     res.redirect('/beta-private/iteration-35/start-a-claim/summary/2-bank-details-and-payments');
   });
+ 
+  //***Logic control data display finishes ***// 
 
   router.post('/beta-private/iteration-35/payments/summary', function (req, res) {
     if (req.session.data['ma-payment-details-conf'] == 'yes') {
@@ -1248,15 +1314,19 @@ router.post('/beta-private/iteration-35/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-35/start-a-claim/summary/2-rti-changed', function (req, res) {
     res.redirect('/beta-private/iteration-35/payments');
+  }); 
+
+  router.post('/beta-private/iteration-35/payments/prepopulated-account-details', function (req, res) {
+    res.redirect('/beta-private/iteration-35/payments/prepopulated-payment-frequency');
   });
 
- // Note // 
+ // Note Iteration 32 // 
 
 router.post('/beta-private/iteration-35/find-a-claim/summary/1-note', function (req,res) {  
   res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-note-entered'); 
 });  
 
-// Manage claim // 
+// Manage claim Iteration 32 // 
 
 const urls = { 
   manageClaim1: '/beta-private/iteration-35/find-a-claim/summary/1-existing-claim-1-manage.html',
@@ -1281,8 +1351,49 @@ const urls = {
         console.log('user here')
         res.render('/beta-private/iteration-35/find-a-claim/summary/1-existing-claim-1-manage', { manageurls });     
     });   
+
+  // Suspend payments control in change of circ Iteration 35 // 
   
-  
+  const changeurls = { 
+      suspendPayments: '/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-radio-v4.html',  
+      resumePayments: '/beta-private/iteration-35/find-a-claim/change-of-circ/remove-suspend-CoC-Sc2.html',  
+      changePayments: '/beta-private/iteration-35/find-a-claim/change-of-circ/payment-suspend-manage.html',          
+      };
+      
+      router.get('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-bef-Sc2', (req, res) => {
+          console.log('user here')
+          res.render('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-bef-Sc2', { changeurls });     
+      });    
+
+      router.get('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-aft-Sc2', (req, res) => {
+        console.log('user here')
+        res.render('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-aft-Sc2', { changeurls });     
+    });    
+
+      router.get('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-res-Sc2', (req, res) => {
+      console.log('user here')
+      res.render('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-res-Sc2', { changeurls });     
+  });    
+
+
+  router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-select-radio-v4', function (req,res) {     
+    res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/payment-suspend-reason-radio-Sc2');
+  }); 
+
+  router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/payment-suspend-reason-radio-Sc2', function (req,res) {     
+    res.redirect('/beta-private/iteration-35/find-a-claim/change-of-circ/payment-suspend-manage');
+  }); 
+
+  router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/payment-suspend-manage', function (req,res) {     
+    res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-aft-Sc2');
+  });  
+
+  router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/remove-suspend-CoC-Sc2', function (req,res) {     
+    res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc2/1-change-of-circ-suspend-res-Sc2');
+  }); 
+
+ // Suspend payments control in change of circ Iteration 35 finishes // 
+
 router.post('/beta-private/iteration-35/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
   req.session.data['dateEntered'] = true;
   res.redirect('/beta-private/iteration-35/find-a-claim/summary/1-existing-claim-1-manage');
@@ -1304,7 +1415,7 @@ router.post('/beta-private/iteration-35/start-a-claim/baby-birth-date-manage', f
 }); 
  
 
-// Manage claim finishes // 
+// Manage claim finishes Iteration 32 // 
 
  
  
