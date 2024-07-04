@@ -630,6 +630,53 @@ router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/overlap-
   res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/1-overlays-deductions');
 });
 
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/remove-overlap', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/removed-deduction/1-overlays-deductions');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/confirm', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/1-overlays-deductions');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/amount', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/start');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/start', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/confirm');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/confirm', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/1-overlays-deductions');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/remove-ereferral', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/removed-deduction/1-overlays-deductions');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/type', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/amount');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/amount', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/start');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/start', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/stop');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/stop', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/confirm');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/confirm', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/1-overlays-deductions');
+});
+
+router.post('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/remove-deduction', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/removed/1-overlays-deductions');
+});
 // *** Payment Override ************************************************************************************************************** //
 
 router.post('/beta-private/iteration-36/find-a-claim/payment-override/employment-start', function (req, res) {
