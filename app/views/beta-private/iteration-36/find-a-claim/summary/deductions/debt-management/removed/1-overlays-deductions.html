@@ -103,14 +103,39 @@
 
             <h2 class="govuk-heading-s" id="employment-and-earnings">Overlapping benefits</h2>
 
-            <div class="govuk-hint">
-              There are no reported overlapping benefits for this claim.
-            </div>
-
+            <table class="govuk-table">
+  
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Benefit name</th>
+                  <th scope="col" class="govuk-table__header">Total offset</th>
+                  <th scope="col" class="govuk-table__header">Start date</th>
+                  <th scope="col" class="govuk-table__header">End date</th>
+                <th scope="col" class="govuk-table__header"></th></tr>
+              </thead>
+          
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell">Employment and Support Allowance</td>
+                  <td class="govuk-table__cell">£80.00</td>
+                <td class="govuk-table__cell">26 June 2024</td>
+                <td class="govuk-table__cell">21 August 2024</td>
+                <!--<td class="govuk-table__cell"><a href="/beta-private/iteration-36/find-a-claim/summary/deductions/overlap-confirm">Manage</a><br><a href="/beta-private/iteration-36/find-a-claim/summary/deductions/remove-overlap">Remove</a></td>
+                <!--<td class="govuk-table__cell">
+          
+            <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">Manage<span class="govuk-visually-hidden"> name</span>
+              </a>
+          </td>--></tr>
+                
+                
+          </tbody>
+          
+    
+            </table>
             <a href="../summary/deductions/overlap-type"><button class="govuk-button" data-module="govuk-button">
               Add overlapping benefit
             </button></a>
-
             </section>
 
             <section id="employment-and-earnings" class="govuk-!-padding-top-6">
@@ -118,9 +143,36 @@
   
               <h2 class="govuk-heading-s" id="employment-and-earnings">Deductions</h2>
   
-              <div class="govuk-hint">
-                There are no reported deductions for this claim.
-              </div>
+              <table class="govuk-table">
+  
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Deduction type</th>
+                    <th scope="col" class="govuk-table__header">Total offset</th>
+                    <th scope="col" class="govuk-table__header">Start date</th>
+                    <th scope="col" class="govuk-table__header">End date</th>
+                  <th scope="col" class="govuk-table__header"></th></tr>
+                </thead>
+            
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell">Debt management</td>
+                    <td class="govuk-table__cell">£90.00</td>
+                  <td class="govuk-table__cell">26 June 2024</td>
+                  <td class="govuk-table__cell">21 August 2024</td>
+                  <!--<td class="govuk-table__cell"><a href="/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/confirm">Manage</a><br><a href="/beta-private/iteration-36/find-a-claim/summary/deductions/debt-management/remove-deduction">Remove</a></td>
+                  <!--<td class="govuk-table__cell">
+            
+              <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">Manage<span class="govuk-visually-hidden"> name</span>
+                </a>
+            </td>--></tr>
+                  
+                  
+            </tbody>
+            
+      
+              </table>
   
               <a href="../change-of-circ/change-select-radio-v2"><button class="govuk-button" data-module="govuk-button">
                 Add deduction
@@ -137,7 +189,7 @@
                   There are no e-referrals for this claim.
                 </div>
     
-                <a href="/beta-private/iteration-36/find-a-claim/summary/deductions/ereferral/amount"><button class="govuk-button" data-module="govuk-button">
+                <a href="../summary/referral/amount"><button class="govuk-button" data-module="govuk-button">
                   Add e-referral
                 </button></a>
     
