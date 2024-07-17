@@ -271,23 +271,23 @@ module.exports = router => {
       req.session.data['ma-claim-decision-date'] = '05 May 2024';
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '15 May 2024';
-      req.session.data['ma-map-end'] = '28 Janurary 2025';
-      req.session.data['ma-map-end-summary'] = '28 Janurary 2025';
+      req.session.data['ma-map-start'] = '16 May 2024';
+      req.session.data['ma-map-end'] = '29 Janurary 2025';
+      req.session.data['ma-map-end-summary'] = '29 Janurary 2025';
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '10 June 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
-      req.session.data['ma-test-period-first-day'] = '17 April 2023';
-      req.session.data['ma-test-period-last-day'] = '22 September 2023';
-      req.session.data['ma-test-period-week-fifteen'] = '28 February 2024';
+      req.session.data['ma-test-period-first-day'] = '05 March 2023';
+      req.session.data['ma-test-period-last-day'] = '08 June 2024';
+      req.session.data['ma-test-period-week-fifteen'] = '25 February 2024';
 
       // Maternity Allowance period dates
       req.session.data['ma-map-claim-date-received'] = '10 February 2024';
       req.session.data['ma-map-expected-week-of-confinement'] = '09 June 2024';
       req.session.data['ma-week-eleventh'] = '14 April 2024';
       req.session.data['ma-week-fourth'] = '12 May 2024';
-      req.session.data['ma-start-date-requested'] = '14 May 2024';
+      req.session.data['ma-start-date-requested'] = '15 May 2024';
       req.session.data['ma-start-date-requested-status'] = 'Disallowed';
       req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
 
