@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      
+      
+<section id="decision" class="govuk-!-margin-bottom-6">
+  <h1 class="govuk-heading-l">Change of circumstance details</h1>
+  
+    <table class="govuk-table">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Change type</th>
+      <td class="govuk-table__cell">Reduce claim</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="../change-of-circ/change-select-radio.html">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Reason</th>
+     
+      <td class="govuk-table__cell">Working fewer days</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="../change-of-circ/change-select-radio.html">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Old number of days worked</th>
+      <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">New number of days worked</th>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date effective from</th>
+      <td class="govuk-table__cell">21 March 2024</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date reported</th>
+      <td class="govuk-table__cell">13 March 2024</td>
+      <td class="govuk-table__cell"> </td>
+    </tr>
+
+</tbody>
+</table>
+
+  
+  </section>
+
+  <form class="form" method="post" novalidate>
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
