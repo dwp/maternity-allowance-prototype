@@ -17,11 +17,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/employer" method="post">
+      <form class="form" action="/employer2" method="post">
 
         {{ govukRadios({
-          name: "employed",
-          value: data['employed'],
+          name: "employed2",
+          value: data['employed2'],
           fieldset: {
             legend: {
               text: "Is the claimant still with the employer?",
@@ -42,9 +42,9 @@
           ]
         }) }}
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
+        <a href="/beta-private/iteration-36/find-a-claim/payment-override/employment-start"><button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button></a>
 
       </form>
 
