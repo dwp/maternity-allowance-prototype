@@ -66,23 +66,22 @@
                   <a href="1-evidence-2-employers">Evidence</a>
                 </li>
 
-                <li class="moj-side-navigation__item">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
                   <a href="1-claim-history">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ.html">Change of circumstance</a>
                 </li>
-
                 <li class="moj-side-navigation__item">
                   <a href="1-preferences.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-note">Notes</a>
                 </li>
-                <li class="moj-side-navigation__item  moj-side-navigation__item--active">
+                <li class="moj-side-navigation__item">
                   <a href="1-overlays-deductions">Overlaps and deductions</a>
                 </li>
-                
+
               </ul>
             </nav>
           </nav>
@@ -95,79 +94,62 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-            <h2 class="govuk-heading-m" id="employment-and-earnings">Overlaps and deductions</h2>
-            </section>
-
-          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-
-            <h2 class="govuk-heading-s" id="employment-and-earnings">Overlapping benefits</h2>
-
-            <table class="govuk-table">
-  
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Benefit name</th>
-                  <th scope="col" class="govuk-table__header">Weekly offset</th>
-                  <th scope="col" class="govuk-table__header">Start date</th>
-                  <th scope="col" class="govuk-table__header">End date</th>
-                <th scope="col" class="govuk-table__header"></th></tr>
-              </thead>
-          
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  
-                  <td class="govuk-table__cell">Employment and Support Allowance</td>
-                  <td class="govuk-table__cell">£30.00</td>
-                <td class="govuk-table__cell">24 July 2024</td>
-                <td class="govuk-table__cell">30 July 2024</td>
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--grey">
-                    Ended
-                  </strong>
-                 </td>
-                
-                
-          </tbody>
-          
-    
-            </table>
-            <a href="../summary/deductions/overlap-type"><button class="govuk-button" data-module="govuk-button">
-              Add overlapping benefit
-            </button></a>
-            </section>
-
-            <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-            
-  
-              <h2 class="govuk-heading-s" id="employment-and-earnings">Deductions</h2>
-  
-              <div class="govuk-hint">
-                There are no reported deductions for this claim.
-              </div>
-  
-              <a href="../debt-management/type"><button class="govuk-button" data-module="govuk-button">
-                Add deduction
-              </button></a>
-  
-              </section>
-
-              <section id="employment-and-earnings" class="govuk-!-padding-top-6">
-            
-  
-                <h2 class="govuk-heading-s" id="employment-and-earnings">E-referral</h2>
-    
-                <div class="govuk-hint">
-                  There are no reported e-referrals for this claim.
-                </div>
-    
-                <a href="../ereferral/amount"><button class="govuk-button" data-module="govuk-button">
-                  Add e-referral
-                </button></a>
-    
-                </section>
-</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
+<section id="decision" class="govuk-!-padding-top-6">
+<h2 class="govuk-heading-m">Claim history</h2>
 
+<div class="dwp-timeline">
+
+  <ol class="dwp-timeline__events">
+
+    <li class="dwp-timeline__events--entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">E-referral removed</h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
+      <p class="govuk-caption-m">4 July April 2024</p>
+  </li>
+
+
+  <li class="dwp-timeline__events--entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Overlap deduction removed</h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
+    <p class="govuk-caption-m">4 July April 2024</p>
+</li>
+
+  <li class="dwp-timeline__events--entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Overlap deduction added</h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gustavo Fring</p>
+    <p class="govuk-caption-m">4 July April 2024</p>
+</li>
+
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Bank details added</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Tuco Salamanca</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Decision made</h2>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim created</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Mike Ehrmantraut</p>
+  <p class="govuk-caption-m">22 April 2024</p>
+</li>
+<li class="dwp-timeline__events--entry">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Claim received</h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">by Hank Schrader</p>
+  <p class="govuk-caption-m">12 March 2024</p>
+</li>
+  </ol>
+  </div>
+
+
+</section>
 {% endblock %}
