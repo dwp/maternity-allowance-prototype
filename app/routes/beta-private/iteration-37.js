@@ -280,7 +280,7 @@ module.exports = router => {
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
       req.session.data['ma-test-period-first-day'] = '05 March 2023';
       req.session.data['ma-test-period-last-day'] = '08 June 2024';
-      req.session.data['ma-test-period-week-fifteen'] = '25 February 2024';
+      req.session.data['ma-test-period-week-fifteen'] = '24 March 2024';
 
       // Maternity Allowance period dates
       req.session.data['ma-map-claim-date-received'] = '10 February 2024';
