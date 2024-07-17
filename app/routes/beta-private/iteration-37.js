@@ -272,8 +272,8 @@ module.exports = router => {
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '16 May 2024';
-      req.session.data['ma-map-end'] = '29 Janurary 2025';
-      req.session.data['ma-map-end-summary'] = '29 Janurary 2025';
+      req.session.data['ma-map-end'] = '29 January 2025';
+      req.session.data['ma-map-end-summary'] = '29 January 2025';
 
       // Test period dates
       req.session.data['ma-baby-due-date'] = '10 June 2024';
@@ -289,7 +289,7 @@ module.exports = router => {
       req.session.data['ma-week-fourth'] = '12 May 2024';
       req.session.data['ma-start-date-requested'] = '15 May 2024';
       req.session.data['ma-start-date-requested-status'] = 'Disallowed';
-      req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
+      req.session.data['ma-map-rule'] = 'Non flexible Maternity Allowance Period';
 
       // Date Last Worked
       req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '14 May 2024';
