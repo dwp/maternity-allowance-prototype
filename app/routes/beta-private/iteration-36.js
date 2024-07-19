@@ -568,6 +568,10 @@ router.post('/beta-private/iteration-36/find-a-claim/change-of-circ/change-confi
   res.redirect('/beta-private/iteration-36/find-a-claim/summary/1-change-summary-resume');
 });
 
+router.post('/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-type', function (req, res) {
+  res.redirect('/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-days-previous');
+});
+
 router.post('/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-days-previous', function (req, res) {
   res.redirect('/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-days-new');
 });
@@ -598,7 +602,7 @@ router.post('/change-answer36', function(request, response) {
     response.redirect("/beta-private/iteration-36/find-a-claim/change-of-circ/change-select-define-radio-resume")
 } 
  else {
-      response.redirect("/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-days-previous")
+      response.redirect("/beta-private/iteration-36/find-a-claim/change-of-circ/change-reduce-type")
   }
 })
 
