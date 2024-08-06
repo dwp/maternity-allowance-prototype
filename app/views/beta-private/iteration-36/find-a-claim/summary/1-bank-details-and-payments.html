@@ -11,26 +11,19 @@
 
 {% block beforeContent %}
 
-<section class="dwp-key-details-bar" aria-label="Key details">
-  <div class="dwp-key-details-bar__key-details">
-  <dl class="dwp-key-details-bar__top-block">
-      <dt class="govuk-visually-hidden">Name:</dt>
-      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
-      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
-      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
-      <dt class="govuk-visually-hidden">Claim status:</dt>
-
+<section class="dwp-quick-reference" aria-label="Case information">
+  <dl class="dwp-quick-reference__block">
+      <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-quick-reference__primary">Jane Doe</dd>
+      <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">National Insurance number:</dt>
+      <dd class="dwp-quick-reference__secondary">QQ 12 34 56 X</dd>
+      <dt class="dwp-quick-reference__label">Claim status:</dt>
+      <dd class="dwp-quick-reference__status">
+      <strong class="govuk-tag govuk-tag--green">
+          Active
+      </strong>
+      </dd>
   </dl>
-  <dl class="dwp-key-details-bar__bottom-block">
-      <dt>Date of birth:</dt>
-      <dd>{{ data['claimant-dob'] }}</dd>
-      <dt>Postcode:</dt>
-      <dd>{{ data['claimant-postcode'] }}</dd>
-      <dt>UK telephone number:</dt>
-      <dd>{{ data['claimant-contact-number'] }}</dd>
-
-  </dl>
-  </div>
   </section>
 
 
@@ -54,13 +47,15 @@
                 <li class="moj-side-navigation__item">
                   <a href="1" aria-current="location">Decision and dates</a>
                 </li>
-
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences.html">Claimant details</a>
+                </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-employment-and-earnings">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-bank-details-and-payments">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments">Payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-evidence-2-employers">Evidence</a>
@@ -72,9 +67,7 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ.html">Change of circumstance</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-preferences.html">Preferences</a>
-                </li>
+        
                 <li class="moj-side-navigation__item">
                   <a href="1-note">Notes</a>
                 </li>

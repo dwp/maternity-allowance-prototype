@@ -932,7 +932,7 @@ router.post('/beta-private/iteration-36/find-a-claim/preferences/contact-options
       }
       else {
         req.session.data['change'] = null;
-        res.redirect('/beta-private/iteration-36/start-a-claim/smp1');
+        res.redirect('/beta-private/iteration-36/start-a-claim/other-proof-details');
       }
 
     }
