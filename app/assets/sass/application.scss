@@ -217,7 +217,7 @@
 
 
 
-$dwp-quick-reference-font-colour: govuk-colour("black") !default;
+$dwp-quick-reference-font-colour: govuk-colour("white") !default;
 
 $dwp-quick-reference-alt-font-colour: govuk-colour("white") !default;
 $dwp-quick-reference-alt-bg-colour: $govuk-brand-colour !default;
@@ -316,6 +316,12 @@ $dwp-quick-reference-label-breakpoint: 400px !default;
       }
     }
   }
+}
+
+
+.dwp-quick-reference__block {
+  background-color: #1d70b8;
+    padding: 10px;
 }
 
 
