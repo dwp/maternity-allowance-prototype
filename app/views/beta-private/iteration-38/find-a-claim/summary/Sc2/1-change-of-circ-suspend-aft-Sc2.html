@@ -1,0 +1,136 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+<section class="dwp-key-details-bar" aria-label="Key details">
+  <div class="dwp-key-details-bar__key-details">
+  <dl class="dwp-key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
+      <dt class="govuk-visually-hidden">Claim status:</dt>
+
+  </dl>
+  <dl class="dwp-key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>{{ data['claimant-dob'] }}</dd>
+      <dt>Postcode:</dt>
+      <dd>{{ data['claimant-postcode'] }}</dd>
+      <dt>UK telephone number:</dt>
+      <dd>{{ data['claimant-contact-number'] }}</dd>
+
+  </dl>
+  </div>
+  </section>
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item">
+                  <a href="1-suspend-aft-Sc2.html" aria-current="location">Decision and dates</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-suspend-aft-Sc2.html">Employment and earnings</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-suspend-aft-Sc2.html">Bank details and payments</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-evidence-suspend-aft-Sc2.html">Evidence</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-suspend-aft-Sc2.html">Claim history</a>
+                </li>
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-change-of-circ-suspend-aft-Sc2.html">Change of circumstance</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-suspend-aft-Sc2.html">Preferences</a>
+                </li>
+ 
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+  <div class="govuk-grid-column-three-quarters"> 
+
+    {% from "govuk/components/table/macro.njk" import govukTable %} 
+  
+     <section id="change-of-circ" class="govuk-!-padding-top-5">
+      <h2 class="govuk-heading-l">Change of circumstance</h2>
+
+            <p>Each change of circumstance creates a new award. The Maternity Allowance Period will include all awards.</p>
+
+            <table class="govuk-table">
+            
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Change type</th>
+                  <th scope="col" class="govuk-table__header">Reason</th>
+                  <th scope="col" class="govuk-table__header">Date effective</th>
+                  <th scope="col" class="govuk-table__header"></th>
+                <!--<th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th></tr>-->
+              </thead>
+          
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell">Payments suspended</td>
+                  <td class="govuk-table__cell">Claim under investigation</td>
+                <td class="govuk-table__cell">24 May 2024</td>
+                <td class="govuk-table__cell"><a href="{{changeurls.changePayments}}">Manage</a> | <a href="{{changeurls.resumePayments}}">Remove</a></td>
+                <!--<td class="govuk-table__cell">
+          
+            <a class="govuk-link" href="../change-of-circ/change-select-define-radio.html">Manage<span class="govuk-visually-hidden"> name</span>
+              </a>
+          </td>--></tr>              
+                
+             </tbody>
+            </table>
+
+            <a href="{{changeurls.suspendPayments}}"><button class="govuk-button" data-module="govuk-button">
+              Add change of circumstance
+            </button></a>
+
+    </section>
+</div>
+</div>
+
+
+{% endblock %}

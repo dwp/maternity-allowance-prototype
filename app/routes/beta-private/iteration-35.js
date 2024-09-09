@@ -23,6 +23,8 @@ module.exports = router => {
        req.session.data['mat-certificate-number'] = '5658710';
        req.session.data['mat-midwife-pin'] = '1987621';
        req.session.data['mat-date-verified'] = '22 April 2024';
+       req.session.data['suspend-payments-date'] = '24 May 2024'; 
+       req.session.data['resume-payments-date'] = '10 June 2024';
        req.session.data['mat-verified-by'] = 'Jean Grey';
        req.session.data['smp1-provided'] = 'Yes';
        req.session.data['smp1-employer'] = 'ARGOS';
@@ -619,14 +621,58 @@ router.post('/beta-private/iteration-35/find-a-claim/change-of-circ/change-confi
 
 
 router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-radio-Sc1', function (req, res) {
-      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-bank-details-and-payments-suspend-aft-Sc1');
-    }); 
+      res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-type-radio-aft-Sc1');
+    });  
 
+ 
+router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-type-radio-aft-Sc1', function (request, response) {
+   var  type = request.session.data['payment-suspend']
+    if (type == "miscellaneous"){
+        response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1")
+    }
+    else if (type == "claim-investigation"){
+      response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1")
+    } 
+    else if (type == "claim-referred"){
+        response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1") 
+    }
+
+  }) 
+
+  router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1', function (req, res) {
+    res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-suspend-aft-Sc1.html');
+  });  
+
+
+  router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-type-radio-res-Sc1', function (request, response) {
+    var  type = request.session.data['payment-suspend']
+     if (type == "miscellaneous"){
+         response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1")
+     }
+     else if (type == "claim-investigation"){
+       response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1")
+     } 
+     else if (type == "claim-referred"){
+         response.redirect("/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1") 
+     }
+ 
+   }) 
+
+router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1', function (req, res) {
+       req.session.textVisited = true;
+       res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1'); 
+     }); 
+
+     
 router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-unsuspend-radio-Sc1', function (req, res) {
       res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-bank-details-and-payments-suspend-res-Sc1');
+});  
+
+router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-note-entered-res-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-note-entered-res-2-notes-Sc1'); 
 }); 
  
- 
+
 
   // Suspend payments Sc1 Iteration 35 finishes // 
 

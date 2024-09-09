@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+
+         {{ govukRadios({
+
+          fieldset: {
+            legend: {
+              text: "This claim is currently disallowed, do you confirm this claim has no known issue and can be allowed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+            hint: {
+              text: "By choosing yes, the claim will be accepted and move to payment"
+            }, 
+
+          items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }      
+
+          ]
+        }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}
