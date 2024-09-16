@@ -1,8 +1,4 @@
-<style>
 
-  .govuk-warning-text__icon_Maternity{right: 5px; top: 0px;}
-
-</style>
 {% extends "layout-summary.html" %}
 {% set bodyAttributes = { id: "summary-screen" } %}
 
@@ -28,7 +24,7 @@
     </strong>
   </dd>
   </dl>
-  </section> 
+  </section>
 
 
       {{ govukBackLink({
@@ -49,7 +45,7 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-decision-incomplete-Sc1.html" aria-current="location">Decision and dates</a>                     
+                  <a href="1-decision-incomplete-Sc1.html" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
@@ -59,94 +55,83 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-bank-details-and-payments-incomplete-Sc1.html">Bank details and payments</a>
                 </li>
-
-                <li class="moj-side-navigation__item ">
+                <li class="moj-side-navigation__item">
                   <a href="1-evidence-incomplete-Sc1.html">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
                   <a href="1-claim-history-incomplete-Sc1.html">Claim history</a>
                 </li>
-
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ-incomplete-Sc1.html">Change of circumstance</a>
                 </li>
-                <li class="moj-side-navigation__item">
+
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
                   <a href="1-preferences-incomplete-Sc1.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-overlays-deductions-incomplete-Sc1.html">Overlaps and deductions</a>
                 </li>
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <li class="moj-side-navigation__item">
                   <a href="1-note">Notes</a>
                 </li>
- 
+
+
 
               </ul>
             </nav>
           </nav>
           <p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
           </p>
 
         </div>
 
-        <form class="form" method="post" novalidate> 
-          {% from "govuk/components/input/macro.njk" import govukInput %}
+        <div class="govuk-grid-column-three-quarters">
 
-        <div class="govuk-grid-column-three-quarters"> 
+          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
 
-          <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="event-name">
-                Note 
-              </label>
-              <div id="with-hint-hint" class="govuk-hint">
-                Do not include personally identifiable information about the claimant, like their medical or credit card details.
-              </div>
-            </h1>
-            <label class="govuk-label govuk-label--xs" for="event-name">
-              Subject
-            </label>
-            <input class="govuk-input" id="event-name" name="eventName" type="text">
-          </div> 
+            <h2 class="govuk-heading-m" id="employment-and-earnings">Contact details</h2>
 
-          <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxwords="300">
-            
-            <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="wordCount" rows="5" aria-describedby="word-count-info"></textarea>
-            <div id="word-count-info" class="govuk-hint govuk-character-count__message">
-              You can enter up to 300 words
+            <table class="govuk-table">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Correspondence address</th>
+                <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">25 Park Avenue,</p><p class="govuk-body govuk-!-margin-bottom-2">Newcastle</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE5 8KR</p></td>
+                <td class="govuk-table__cell">  </td>
+              </tr>
+                <th scope="row" class="govuk-table__header">Telephone number</th>
+                <td class="govuk-table__cell">07847171740</td>
+                <td class="govuk-table__cell">  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Email address</th>
+                <td class="govuk-table__cell">lucindadavies@gmail.com</td>
+                <td class="govuk-table__cell">  </td>
+              </tr>
+          
+          
+          </tbody>
+          </table>
+
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Update contact details
+            </button></a>
+
+
+            <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
+
+            <div class="govuk-hint">
+              There are no reasonable adjustments for this claim.
             </div>
-          </div>
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Add reasonable adjustment
+            </button></a>
 
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-    
-          </div>
-        </form>
-<!-- Timeline  --> 
-
-<div class="govuk-grid-column-three-quarters"> 
- 
-  <label class="govuk-label govuk-label--m" for="event-name">
-    Notes history
-  </label>
-  
-  <div class="govuk-hint">
-    There are no notes for this claim.
-  </div>
-
-  <div class="govuk-!-padding-bottom-2"></div>
-
-
-
-  <!-- Timeline finishes -->
-
+            </section>
 </div>
-</div>
- 
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
 {% endblock %}
