@@ -49,38 +49,39 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-decision-incomplete-Sc1.html" aria-current="location">Decision and dates</a>                     
+                  <a href="1-decision-allowed-Sc1.html" aria-current="location">Decision and dates</a>          
+                            
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-incomplete-Sc1.html">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-allowed-Sc1.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-incomplete-Sc1.html">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-allowed-Sc1.html">Bank details and payments</a>
                 </li>
 
                 <li class="moj-side-navigation__item ">
-                  <a href="1-evidence-incomplete-Sc1.html">Evidence</a>
+                  <a href="1-evidence-allowed-Sc1.html">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-incomplete-Sc1.html">Claim history</a>
+                  <a href="1-claim-history-allowed-Sc1.html">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-incomplete-Sc1.html">Change of circumstance</a>
+                  <a href="1-change-of-circ-allowed-Sc1.html">Change of circumstance</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences-incomplete-Sc1.html">Preferences</a>
+                  <a href="1-preferences-allowed-Sc1.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-incomplete-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-allowed-Sc1.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-note">Notes</a>
+                  <a href="1-note-allowed-Sc1.html">Notes</a>
                 </li>
- 
+
 
               </ul>
             </nav>
@@ -95,58 +96,64 @@
         <form class="form" method="post" novalidate> 
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        <div class="govuk-grid-column-three-quarters"> 
+          <div class="govuk-grid-column-three-quarters"> 
 
-          <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="event-name">
-                Note 
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="event-name">
+                  Note 
+                </label>
+                <div id="with-hint-hint" class="govuk-hint">
+                  Do not include personally identifiable information about the claimant, like their medical or credit card details.
+                </div>
+              </h1>
+              <label class="govuk-label govuk-label--xs" for="event-name">
+                Subject
               </label>
-              <div id="with-hint-hint" class="govuk-hint">
-                Do not include personally identifiable information about the claimant, like their medical or credit card details.
-              </div>
-            </h1>
-            <label class="govuk-label govuk-label--xs" for="event-name">
-              Subject
-            </label>
-            <input class="govuk-input" id="event-name" name="eventName" type="text">
-          </div> 
-
-          <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxwords="300">
-            
-            <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="wordCount" rows="5" aria-describedby="word-count-info"></textarea>
-            <div id="word-count-info" class="govuk-hint govuk-character-count__message">
-              You can enter up to 300 words
-            </div>
-          </div>
-
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-    
-          </div>
-        </form>
-<!-- Timeline  --> 
-
-<div class="govuk-grid-column-three-quarters"> 
- 
-  <label class="govuk-label govuk-label--m" for="event-name">
-    Notes history
-  </label>
+              <input class="govuk-input" id="event-name" name="eventName" type="text">
+            </div> 
   
-  <div class="govuk-hint">
-    There are no notes for this claim.
-  </div>
+            <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxwords="300">
+              
+              <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="wordCount" rows="5" aria-describedby="word-count-info"></textarea>
+              <div id="word-count-info" class="govuk-hint govuk-character-count__message">
+                You can enter up to 300 words
+              </div>
+            </div>
+  
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+      
+            </div>
+          </form>
+  <!-- Timeline  --> 
+  
+  <div class="govuk-grid-column-three-quarters"> 
+   
+    <label class="govuk-label govuk-label--m" for="event-name">
+      Notes history
+    </label>
+    
+    <div class="govuk-hint">
+      There are no notes for this claim.
+    </div>
+  
+    <div class="govuk-!-padding-bottom-2"></div>
+  
+  
+  
+    <!-- Timeline finishes -->
 
-  <div class="govuk-!-padding-bottom-2"></div>
+</div> 
+
+ 
 
 
 
-  <!-- Timeline finishes -->
-
-</div>
+ 
 </div>
  
 {% endblock %}

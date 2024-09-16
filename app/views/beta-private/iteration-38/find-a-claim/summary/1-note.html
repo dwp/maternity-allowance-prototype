@@ -129,28 +129,65 @@
             href: "/beta-private/iteration-32/find-a-claim/summary/1-note-entered"
           }) }}
 
-<!-- Timeline  --> 
+  <!-- Timeline for notes start -->  
 
  
-  <label class="govuk-label govuk-label--m" for="event-name">
-    Notes history
-  </label>
-  
-  <div class="govuk-hint">
-    There are no notes for this claim.
-  </div>
+<label class="govuk-label govuk-label--m" for="event-name">
+  Notes history
+</label>  
 
-  <div class="govuk-!-padding-bottom-2"></div>
+<div class="govuk-!-padding-bottom-2"></div>  
+
+ 
 
 <div class="moj-timeline">   
+ 
+  <div class="moj-timeline__item"> 
+
+    <div class="moj-timeline__header">
+      <!-- <h2 class="moj-timeline__title">{{data['subject1']}}</h2> -->
+      <h2 class="moj-timeline__title">Award payments suspended</h2>
+
+      <p class="moj-timeline__byline">by {{data ['mat-verified-by']}}</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-05-21T13:15:00.000Z">{{data ['suspend-payments-date']}} at 1:15pm</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {{data['wordCount-suspension']}}
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+  
+  <!-- Item 1 finishes  --> 
+
+  
+
+</div> 
+
+ 
+ 
 
  
 
+ 
 
-
-</div>
-
-  <!-- Timeline finishes -->
+ 
+ 
+ 
 
 </div>
  

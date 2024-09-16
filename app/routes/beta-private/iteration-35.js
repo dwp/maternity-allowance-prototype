@@ -57,8 +57,8 @@ module.exports = router => {
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '5 July 2023';
-      req.session.data['ma-claim-decision-date'] = '5 July 2023';
+      req.session.data['ma-claim-creation-date'] = '5 April 2024';
+      req.session.data['ma-claim-decision-date'] = '5 April 2024';
       req.session.data['ma-claim-decision-date-2'] = '10 August 2024' //manage claim data//      
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-map-start'] = '3 April 2024';
