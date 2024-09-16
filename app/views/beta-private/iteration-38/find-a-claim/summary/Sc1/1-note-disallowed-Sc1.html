@@ -24,8 +24,8 @@
   <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
   <dt class="dwp-quick-reference__label">Claim status:</dt>
   <dd class="dwp-quick-reference__status">
-    <strong class="govuk-tag govuk-tag--green">
-      Open 
+    <strong class="govuk-tag govuk-tag--grey">
+      Closed
     </strong>
   </dd>
   </dl>
@@ -54,37 +54,37 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-suspend-res-Sc1.html" aria-current="location">Decision and dates</a>          
+                  <a href="1-decision-disallowed-Sc1.html" aria-current="location">Decision and dates</a>          
                             
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-suspend-res-Sc1.html">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-disallowed-Sc1.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-suspend-res-Sc1.html">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-disallowed-Sc1.html">Bank details and payments</a>
                 </li>
 
                 <li class="moj-side-navigation__item ">
-                  <a href="1-evidence-suspend-res-Sc1.html">Evidence</a>
+                  <a href="1-evidence-disallowed-Sc1.html">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-suspend-res-Sc1.html">Claim history</a>
+                  <a href="1-claim-history-disallowed-Sc1.html">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-suspend-res-Sc1.html">Change of circumstance</a>
+                  <a href="1-change-of-circ-disallowed-Sc1.html">Change of circumstance</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences-suspend-res-Sc1.html">Preferences</a>
+                  <a href="1-preferences-disallowed-Sc1.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-res-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-disallowed-Sc1.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-note-entered-res-Sc1.html">Notes</a>
+                  <a href="1-note-disallowed-Sc1.html">Notes</a>
                 </li>
 
 
@@ -103,7 +103,7 @@
         <form class="form" method="post" novalidate> 
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        <div class="govuk-grid-column-three-quarters"> 
+<div class="govuk-grid-column-three-quarters"> 
 
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
@@ -137,55 +137,35 @@
           </div>
         </form>
  
+ <!-- Timeline  --> 
 
- <!-- Timeline for notes start -->  
  <div class="govuk-grid-column-three-quarters"> 
  
-<label class="govuk-label govuk-label--m" for="event-name">
+ <label class="govuk-label govuk-label--m" for="event-name">
   Notes history
-</label>  
+</label>
 
-<div class="govuk-!-padding-bottom-2"></div>  
+<div class="govuk-hint">
+  There are no notes for this claim.
+</div>
 
-<div class="moj-timeline">   
+<div class="govuk-!-padding-bottom-2"></div>
+
+</div>
+</div>
+
+
+<!-- Timeline finishes -->
+
+
  
-  <div class="moj-timeline__item"> 
+ 
 
-    <div class="moj-timeline__header">
-      <!-- <h2 class="moj-timeline__title">{{data['subject1']}}</h2> -->
-      <h2 class="moj-timeline__title">Award payments suspended</h2>
+ 
 
-      <p class="moj-timeline__byline">by {{data ['mat-verified-by']}}</p>
+ 
 
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-21T13:15:00.000Z">{{data ['suspend-payments-date']}} at 1:15pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <details class="govuk-details govuk-!-margin-bottom-0">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Details
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          {{data['wordCount-suspension']}}
-        </div>
-      </details>
-
-    </div>
-
-  </div>
-  
-  <!-- Item 1 finishes  --> 
-
-  
-
-  </div> 
-
- </div>
+ 
  
 </div>
  

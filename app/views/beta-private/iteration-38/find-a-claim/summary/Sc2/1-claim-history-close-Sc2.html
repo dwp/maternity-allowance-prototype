@@ -19,12 +19,12 @@
   <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
   <dt class="dwp-quick-reference__label">Claim status:</dt>
   <dd class="dwp-quick-reference__status">
-    <strong class="govuk-tag govuk-tag--green">
-      Open 
+    <strong class="govuk-tag govuk-tag--grey">
+     Closed 
     </strong>
   </dd>
   </dl>
-  </section> 
+  </section>
 
 
       {{ govukBackLink({
@@ -45,35 +45,36 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-suspend-res-Sc1.html" aria-current="location">Decision and dates</a>
+                  <a href="1-decision-close-Sc2.html" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-suspend-res-Sc1.html">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-close-Sc2.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-suspend-res-Sc1.html">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-close-Sc2.html">Bank details and payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-suspend-res-Sc1.html">Evidence</a>
+                  <a href="1-evidence-close-Sc2.html">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-                  <a href="1-claim-history-suspend-res-Sc1.html">Claim history</a>
+                  <a href="1-claim-history-close-Sc2.html">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-suspend-res-Sc1.html">Change of circumstance</a>
+                  <a href="1-change-of-circ-close-Sc2.html">Change of circumstance</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences-suspend-res-Sc1.html">Preferences</a>
+                  <a href="1-preferences-close-Sc2.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-res-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-close-Sc2.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-note-entered-res-Sc1.html">Notes</a>
-                </li>              
+                  <a href="1-note">Notes</a>
+                </li>
+         
 
               </ul>
             </nav>
@@ -87,42 +88,38 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
+ <section id="decision" class="govuk-!-padding-top-6">
+ 
 
-<section id="decision" class="govuk-!-padding-top-6">
   <h1 class="govuk-heading-m">Claim history</h1>
-  <div class="dwp-timeline">
-  <ol class="dwp-timeline__items">
-    <li class="dwp-timeline__item">
-      <p class="dwp-timeline__datetime">10 June 2024 at 11:00am</p>
-      <h2 class="dwp-timeline__heading">Payments resumed</h2> 
-      <p class="dwp-timeline__by-line">by Jean Grey</p>
-    </li>
-    <li class="dwp-timeline__item">
-      <p class="dwp-timeline__datetime">24 May 2024 at 10:00am</p>
-      <h2 class="dwp-timeline__heading">Payments suspended</h2> 
-      <p class="dwp-timeline__by-line">by Jean Grey</p>
-    </li>
-    <li class="dwp-timeline__item">
-      <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
-      <h2 class="dwp-timeline__heading">Decision made: Allowed</h2> 
-      <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
-    </li>
-   
-  <li class="dwp-timeline__item">
-    <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
-    <h2 class="dwp-timeline__heading">Claim created</h2>
-    <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
-  </li>
-  <li class="dwp-timeline__item">
-    <p class="dwp-timeline__datetime">3 April 2024 at 9:00am</p>
-    <h2 class="dwp-timeline__heading">Claim received</h2>
-    <p class="dwp-timeline__by-line">by Hank Schrader</p>
-  </li>
-  
-  </ol>
-  </div>
-
-
+<div class="dwp-timeline">
+<ol class="dwp-timeline__items">
+<li class="dwp-timeline__item">
+  <p class="dwp-timeline__datetime">05 May 2024 at 10:00am</p>
+  <h2 class="dwp-timeline__heading">Claim closed</h2>
+  <p class="dwp-timeline__by-line">by System</p>
+</li>
+<li class="dwp-timeline__item">
+  <p class="dwp-timeline__datetime">05 May 2024 at 10:00am</p>
+  <h2 class="dwp-timeline__heading">Decision changed: Disallowed</h2>
+  <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
+</li>
+<li class="dwp-timeline__item">
+  <p class="dwp-timeline__datetime">10 April 2024 at 10:00am</p>
+  <h2 class="dwp-timeline__heading">Decision made: Allowed</h2>
+  <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
+</li>
+<li class="dwp-timeline__item">
+  <p class="dwp-timeline__datetime">10 April 2024 at 9:00am</p>
+  <h2 class="dwp-timeline__heading">Claim created</h2>
+  <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
+</li>
+<li class="dwp-timeline__item">
+  <p class="dwp-timeline__datetime">10 Feburary 2024 at 9:00am</p>
+  <h2 class="dwp-timeline__heading">Claim received</h2>
+  <p class="dwp-timeline__by-line">by Hank Schrader</p>
+</li>
+</ol>
+</div>
 </section>
 {% endblock %}

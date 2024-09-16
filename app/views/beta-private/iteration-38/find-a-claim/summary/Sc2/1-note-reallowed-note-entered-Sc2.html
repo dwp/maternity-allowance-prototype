@@ -14,7 +14,7 @@
   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{% block beforeContent %}
+{% block beforeContent %} 
 
 <section class="dwp-quick-reference dwp-quick-reference--alternative" aria-label="Case information">
   <dl class="dwp-quick-reference__block">
@@ -29,11 +29,7 @@
     </strong>
   </dd>
   </dl>
-  </section>
-
-
-
-
+  </section> 
 
 
       {{ govukBackLink({
@@ -54,37 +50,37 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-suspend-res-Sc1.html" aria-current="location">Decision and dates</a>          
+                  <a href="1-decision-reallowed-Sc2.html" aria-current="location">Decision and dates</a>          
                             
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-suspend-res-Sc1.html">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-reallowed-Sc2.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-suspend-res-Sc1.html">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-reallowed-Sc2.html">Bank details and payments</a>
                 </li>
 
                 <li class="moj-side-navigation__item ">
-                  <a href="1-evidence-suspend-res-Sc1.html">Evidence</a>
+                  <a href="1-evidence-reallowed-Sc2.html">Evidence</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-suspend-res-Sc1.html">Claim history</a>
+                  <a href="1-claim-history-reallowed-Sc2.html">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-suspend-res-Sc1.html">Change of circumstance</a>
+                  <a href="1-change-of-circ-reallowed-Sc2.html">Change of circumstance</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences-suspend-res-Sc1.html">Preferences</a>
+                  <a href="1-preferences-reallowed-Sc2.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-res-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-reallowed-Sc2.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-note-entered-res-Sc1.html">Notes</a>
+                  <a href="1-note-reallowed-note-entered-Sc2.html">Notes</a>
                 </li>
 
 
@@ -97,9 +93,6 @@
           </p>
 
         </div> 
-
-  
-
         <form class="form" method="post" novalidate> 
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -139,7 +132,9 @@
  
 
  <!-- Timeline for notes start -->  
- <div class="govuk-grid-column-three-quarters"> 
+
+ <div class="govuk-grid-column-three-quarters">  
+
  
 <label class="govuk-label govuk-label--m" for="event-name">
   Notes history
@@ -147,20 +142,22 @@
 
 <div class="govuk-!-padding-bottom-2"></div>  
 
-<div class="moj-timeline">   
  
-  <div class="moj-timeline__item"> 
+
+<div class="moj-timeline">   
+
+  <!-- Item 2  -->   <div class="moj-timeline__item"> 
 
     <div class="moj-timeline__header">
       <!-- <h2 class="moj-timeline__title">{{data['subject1']}}</h2> -->
-      <h2 class="moj-timeline__title">Award payments suspended</h2>
+      <h2 class="moj-timeline__title">{{data ['eventName']}}</h2>
 
-      <p class="moj-timeline__byline">by {{data ['mat-verified-by']}}</p>
+      <p class="moj-timeline__byline">by  Mike Ehrmantraut</p>
 
     </div>
 
     <p class="moj-timeline__date">
-      <time datetime="2019-05-21T13:15:00.000Z">{{data ['suspend-payments-date']}} at 1:15pm</time>
+      <time datetime="2019-05-21T13:15:00.000Z">16 July 2024 at 2:15pm</time>
     </p>
 
     <div class="moj-timeline__description">
@@ -171,7 +168,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          {{data['wordCount-suspension']}}
+          {{data['wordCount']}} 
         </div>
       </details>
 
@@ -179,14 +176,42 @@
 
   </div>
   
-  <!-- Item 1 finishes  --> 
+ <!-- Item 2 finishes --> 
+
+   <!-- Item 1  --> 
+   <div class="moj-timeline__item"> 
+
+    <div class="moj-timeline__header"> 
+      <h2 class="moj-timeline__title">Decision changed: Disallowed</h2>
+      <p class="moj-timeline__byline">by Mike Ehrmantraut</p>
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-05-21T13:15:00.000Z">05 May 2024 at 2:15pm</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Not enough details on employment to calculate the test 
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+  
+ <!-- Item 1 finishes --> 
 
   
 
-  </div> 
-
- </div>
- 
+</div>  
+</div>
 </div>
  
 {% endblock %}

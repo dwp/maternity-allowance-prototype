@@ -19,13 +19,14 @@
   <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
   <dt class="dwp-quick-reference__label">Claim status:</dt>
   <dd class="dwp-quick-reference__status">
-    <strong class="govuk-tag govuk-tag--green">
-      Open 
+    <strong class="govuk-tag govuk-tag--grey">
+     Closed 
     </strong>
   </dd>
   </dl>
   </section>
-  
+
+
       {{ govukBackLink({
         text: "Back",
         href: "javascript:history.go(-1)"
@@ -44,35 +45,37 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-suspend-bef-Sc1.html" aria-current="location">Decision and dates</a>
+                  <a href="1-decision-close-Sc2.html" aria-current="location">Decision and dates</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-suspend-bef-Sc1.html">Employment and earnings</a>
+                  <a href="1-employment-and-earnings-close-Sc2.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-suspend-bef-Sc1.html">Bank details and payments</a>
+                  <a href="1-bank-details-and-payments-close-Sc2.html">Bank details and payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-suspend-bef-Sc1.html">Evidence</a>
+                  <a href="1-evidence-close-Sc2.html">Evidence</a>
                 </li>
 
-                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-                  <a href="1-claim-history-suspend-bef-Sc1.html">Claim history</a>
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-close-Sc2.html">Claim history</a>
+                </li>
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-change-of-circ-close-Sc2.html">Change of circumstance</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-close-Sc2.html">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-suspend-bef-Sc1.html">Change of circumstance</a>
-                </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-preferences-suspend-bef-Sc1.html">Preferences</a>
-                </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-bef-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-close-Sc2.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-note">Notes</a>
-                </li>         
+                </li>
+ 
 
               </ul>
             </nav>
@@ -86,33 +89,22 @@
 
         <div class="govuk-grid-column-three-quarters">
 
+          <section id="employment-and-earnings" class="govuk-!-padding-top-6">
+
+            <h2 class="govuk-heading-l" id="employment-and-earnings">Change of circumstance</h2>
+
+            <div class="govuk-hint">
+              There are no reported changes for this claim.
+            </div>
+
+            <a href="{{changeurls.suspendPayments}}"><button class="govuk-button" data-module="govuk-button">
+              Add change of circumstance
+            </button>
+          </a>
+
+            </section>
+</div>
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
-<section id="decision" class="govuk-!-padding-top-6">
- 
-  <h1 class="govuk-heading-m">Claim history</h1>
-  <div class="dwp-timeline">
-  <ol class="dwp-timeline__items">
-    <li class="dwp-timeline__item">
-      <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
-      <h2 class="dwp-timeline__heading">Decision made: Allowed</h2> 
-      <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
-    </li>
-   
-  <li class="dwp-timeline__item">
-    <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
-    <h2 class="dwp-timeline__heading">Claim created</h2>
-    <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
-  </li>
-  <li class="dwp-timeline__item">
-    <p class="dwp-timeline__datetime">3 April 2024 at 9:00am</p>
-    <h2 class="dwp-timeline__heading">Claim received</h2>
-    <p class="dwp-timeline__by-line">by Hank Schrader</p>
-  </li>
-  
-  </ol>
-  </div> 
 
-
-</section>
 {% endblock %}
