@@ -643,6 +643,10 @@ router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend
     res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-suspend-aft-Sc1.html');
   });  
 
+  router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1', function (req, res) {
+    res.redirect('/beta-private/iteration-35/find-a-claim/summary/Sc1/1-suspend-aft-Sc1.html');
+  });  
+
 
   router.post('/beta-private/iteration-35/find-a-claim/summary/Sc1/payment-suspend-type-radio-res-Sc1', function (request, response) {
     var  type = request.session.data['payment-suspend']

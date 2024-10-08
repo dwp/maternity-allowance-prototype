@@ -65,15 +65,10 @@
 
   <form class="form" method="post" novalidate>
     {% from "govuk/components/button/macro.njk" import govukButton %} 
-
-    <div class="govuk-button-group"> 
-      <a href="../Sc1/1-suspend-aft-Sc1.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Continue 
-      </a>
-
-      <a href="../Sc1/payment-unsuspend-radio-Sc1.html" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="gov-button" formnovalidate>Resume payments
-      </a> 
-    </div>
-
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue 
+    </button>
+    
     </form>
 
   </div>

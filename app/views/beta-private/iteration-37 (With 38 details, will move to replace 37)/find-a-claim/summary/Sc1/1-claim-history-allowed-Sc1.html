@@ -1,0 +1,117 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+<section class="dwp-quick-reference dwp-quick-reference--alternative" aria-label="Case information">
+  <dl class="dwp-quick-reference__block">
+  <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+  <dd class="dwp-quick-reference__primary">{{ data['claimant-name'] }}</dd>
+  <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">National Insurance number:</dt>
+  <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
+  <dt class="dwp-quick-reference__label">Claim status:</dt>
+  <dd class="dwp-quick-reference__status">
+    <strong class="govuk-tag govuk-tag--green">
+      Open 
+    </strong>
+  </dd>
+  </dl>
+  </section>
+  
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item">
+                  <a href="1-decision-allowed-Sc1.html" aria-current="location">Decision and dates</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-allowed-Sc1.html">Employment and earnings</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-allowed-Sc1.html">Bank details and payments</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-evidence-allowed-Sc1.html">Evidence</a>
+                </li>
+
+                <li class="moj-side-navigation__item moj-side-navigation__item--active ">
+                  <a href="1-claim-history-allowed-Sc1.html">Claim history</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ-allowed-Sc1.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-allowed-Sc1.html">Preferences</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-overlays-deductions-allowed-Sc1.html">Overlaps and deductions</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-note-allowed-Sc1.html">Notes</a>
+                </li>        
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="decision" class="govuk-!-padding-top-6">
+ 
+  <h1 class="govuk-heading-m">Claim history</h1>
+  <div class="dwp-timeline">
+  <ol class="dwp-timeline__items">
+    <li class="dwp-timeline__item">
+      <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
+      <h2 class="dwp-timeline__heading">Decision made: Allowed</h2>
+      <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
+    </li>   
+  <li class="dwp-timeline__item">
+    <p class="dwp-timeline__datetime">5 April 2024 at 9:00am</p>
+    <h2 class="dwp-timeline__heading">Claim created</h2>
+    <p class="dwp-timeline__by-line">by Mike Ehrmantraut</p>
+  </li>
+  <li class="dwp-timeline__item">
+    <p class="dwp-timeline__datetime">3 April 2024 at 9:00am</p>
+    <h2 class="dwp-timeline__heading">Claim received</h2>
+    <p class="dwp-timeline__by-line">by Hank Schrader</p>
+  </li>
+  
+  </ol>
+  </div>
+
+</section>
+{% endblock %}
