@@ -99,7 +99,27 @@
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
-<section id="decision" class="govuk-!-padding-top-6">
+<section id="decision" class="govuk-!-padding-top-6"> 
+
+   <!-- Decision note -->
+
+<div class="govuk-notification-banner" role="region"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Important
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <p class="govuk-notification-banner__heading">
+    This claim is closed, to change the decision, please re-open the claim.      
+  </p>
+</div>
+</div>
+
+<!-- Decision note finished  --> 
+
   <h2 class="govuk-heading-m">Decision</h2>
   
   <dl class="govuk-summary-list govuk-!-margin-bottom-0">
@@ -350,7 +370,7 @@
       {{ data['ma-start-date-requested'] }}
       {{govukTag({
         text: data['ma-start-date-requested-status'],
-        classes: "govuk-!-margin-left-2"
+        classes: "govuk-tag--grey"
       })}}
     </dd>
     <dd class="govuk-summary-list__actions ">
