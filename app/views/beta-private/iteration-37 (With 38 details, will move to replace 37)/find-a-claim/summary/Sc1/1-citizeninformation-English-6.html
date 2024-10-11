@@ -1,4 +1,4 @@
- 
+
 {% extends "layout-summary.html" %}
 {% set bodyAttributes = { id: "summary-screen" } %}
 
@@ -50,15 +50,13 @@
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
                   <a href="1-preferences-allowed-Sc1.html">Citizen information</a>
                 </li>
-
-                <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-allowed-Sc1.html">Payments</a>
-                </li> 
                 <li class="moj-side-navigation__item">
                   <a href="1-employment-and-earnings-allowed-Sc1.html">Employment and earnings</a>
                 </li>
 
-
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-allowed-Sc1.html">Payments</a>
+                </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-evidence-allowed-Sc1.html">Evidence</a>
                 </li> 
@@ -113,6 +111,10 @@
              <td class="govuk-table__cell">{{ data['claimant-dob']}}</td>
            </tr> 
 
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date of death</th>
+            <td class="govuk-table__cell">24 June 2024</td>
+          </tr> 
  
 
            </tbody>

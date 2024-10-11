@@ -45,31 +45,34 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item">
-                  <a href="1-decision-allowed-Sc1.html" aria-current="location">Decision and dates</a>
+                  <a href="1-suspend-aft-Sc1.html" aria-current="location">Decision and dates</a>
                 </li>
+
                 <li class="moj-side-navigation__item">
-                  <a href="1-preferences-allowed-Sc1.html">Citizen information</a>
+                  <a href="1-employment-and-earnings-suspend-aft-Sc1.html">Employment and earnings</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-allowed-Sc1.html">Employment and earnings</a>
-                </li>
+
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-bank-details-and-payments-allowed-Sc1.html">Payments</a>
+                  <a href="1-bank-details-and-payments-suspend-aft-Sc1.html">Bank details and payments</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-evidence-allowed-Sc1.html">Evidence</a>
-                </li>
-                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-allowed-Sc1.html">Change of circumstance</a>
-                </li> 
-                <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-allowed-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-evidence-suspend-aft-Sc1.html">Evidence</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-allowed-Sc1.html">Claim history</a>
-                </li>                
+                  <a href="1-claim-history-suspend-aft-Sc1.html">Claim history</a>
+                </li>
+
                 <li class="moj-side-navigation__item">
-                  <a href="1-note-allowed-Sc1.html">Notes</a>
+                  <a href="1-change-of-circ-suspend-aft-Sc1.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-suspend-aft-Sc1.html">Preferences</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-overlays-deductions-aft-Sc1.html">Overlaps and deductions</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-note-entered-aft-Sc1.html">Notes</a>
                 </li>
            
 
@@ -84,6 +87,46 @@
         </div>
 
         <div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+<section id="bank-details" class="govuk-!-padding-top-6">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Bank details</caption>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Name on the account</th>
+        <td class="govuk-table__cell">{{ data['claimant-name'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Sort code</th>
+        <td class="govuk-table__cell">{{ data['sort-code'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Account number</th>
+        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <form class="form" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    {{ govukButton({
+      text: "Edit bank details"
+    }) }}
+
+  </form>
+</section>
+ 
+
+
+
+
 
 
 <section id="Payments overview">
@@ -119,13 +162,24 @@
         <!-- <strong class="govuk-tag govuk-tag--yellow"> -->
         <!-- Suspended -->
       <!-- </strong></td> -->
-      <td class="govuk-table__cell">        
+      <td class="govuk-table__cell">
+
+        
       </td>
       <td class="govuk-table__cell"> 
  
      </td>
     </tr>
-
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment frequency</th>
+      <td class="govuk-table__cell">{{ data['payment-frequency'] }}</td>
+      <td class="govuk-table__cell"> </td>
+      <td class="govuk-table__cell">  
+      <a class="govuk-link" href="/beta-private/iteration-35/payments/payment-frequency">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </td>
+    </tr>
 
 </tbody>
 </table>
@@ -157,12 +211,40 @@
   </tbody>
 </table>
 
-    </section>
+    </section> 
 
-  <!-- Button label is different after suspension-->
+ <!-- Manage suspension --> 
 
-    <a href="../Sc1/payment-suspend-manage-res-Sc1.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Manage suspension  
-    </a>
+ <section id="Payments overview" class="govuk-!-padding-top-5">
+  <h2 class="govuk-heading-m">Suspension of payments details</h2> 
+
+  <table class="govuk-table">
+  
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Suspension type</th>
+ 
+        <th scope="col" class="govuk-table__header">Date reported</th>
+        <th scope="col" class="govuk-table__header"></th>
+      <!--<th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th></tr>-->
+    </tr>
+  </thead>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">        
+        <td class="govuk-table__cell">Claim under investigation</td>
+ 
+      <td class="govuk-table__cell">24 May 2024</td>
+      <td class="govuk-table__cell"><a href="/beta-private/iteration-33/find-a-claim/change-of-circ/change-confirm-answers-stop">Manage</a> | <a href="/beta-private/iteration-33/find-a-claim/change-of-circ/remove-CoC-stop">Resume payments</a></td>
+ </tr>
+            
+</tbody>
+ 
+</table>
+   
+</section>
+
+<!-- Manage suspension finishes  -->
   
 
   <section id="payments" class="govuk-!-padding-top-9">
@@ -189,8 +271,8 @@
           £689.92
         </dd>
         <dd class="govuk-summary-list__actions">
-          <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+          <strong class="govuk-tag govuk-tag--green">
+            Issued
           </strong>
         </dd>
       </div>
@@ -203,7 +285,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -216,7 +298,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -229,7 +311,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -242,7 +324,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -255,7 +337,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -268,7 +350,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -281,7 +363,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -294,7 +376,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>
@@ -307,7 +389,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <strong class="govuk-tag govuk-tag--yellow">
-            Pending
+            Suspended
           </strong>
         </dd>
       </div>

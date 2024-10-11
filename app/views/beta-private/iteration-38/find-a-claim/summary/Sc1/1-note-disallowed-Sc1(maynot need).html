@@ -84,7 +84,7 @@
                   <a href="1-overlays-deductions-disallowed-Sc1.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-note-disallowed-note-entered-Sc1.html">Notes</a>
+                  <a href="1-note-disallowed-Sc1.html">Notes</a>
                 </li>
 
 
@@ -98,10 +98,12 @@
 
         </div> 
 
+  
+
         <form class="form" method="post" novalidate> 
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        <div class="govuk-grid-column-three-quarters"> 
+<div class="govuk-grid-column-three-quarters"> 
 
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
@@ -135,52 +137,36 @@
           </div>
         </form>
  
-
- <!-- Timeline for notes start -->  
+ <!-- Timeline  --> 
 
  <div class="govuk-grid-column-three-quarters"> 
-
-<label class="govuk-label govuk-label--m" for="event-name">
+ 
+ <label class="govuk-label govuk-label--m" for="event-name">
   Notes history
-</label>  
+</label>
 
-<div class="govuk-!-padding-bottom-2"></div>   
+<div class="govuk-hint">
+  There are no notes for this claim.
+</div>
 
-<div class="moj-timeline">   
-
-  <!-- Item 1  -->   <div class="moj-timeline__item"> 
-
-    <div class="moj-timeline__header"> 
-      <h2 class="moj-timeline__title">{{data ['eventName']}}</h2>
-      <p class="moj-timeline__byline">by Mike Ehrmantraut</p>
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-21T13:15:00.000Z">10 May 2024 at 2:15pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <details class="govuk-details govuk-!-margin-bottom-0">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Details
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          {{data['wordCount']}} 
-        </div>
-      </details>
-
-    </div>
-
-  </div>
-  
- <!-- Item 1 finishes --> 
-
-  
+<div class="govuk-!-padding-bottom-2"></div>
 
 </div>
-</div> 
+</div>
+
+
+<!-- Timeline finishes -->
+
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
 </div>
  
 {% endblock %}

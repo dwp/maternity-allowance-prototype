@@ -23,8 +23,8 @@
   <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
   <dt class="dwp-quick-reference__label">Claim status:</dt>
   <dd class="dwp-quick-reference__status">
-    <strong class="govuk-tag govuk-tag--grey">
-      Closed 
+    <strong class="govuk-tag govuk-tag--green">
+      Open 
     </strong>
   </dd>
   </dl>
@@ -49,38 +49,33 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
               <ul class="moj-side-navigation__list">
                 <li class="moj-side-navigation__item moj-side-navigation__item--active ">
-                  <a href="1-decision-disallowed-Sc1.html" aria-current="location">Decision and dates</a>
-
-                </li> 
-                
-                <li class="moj-side-navigation__item">
-                  <a href="1-preferences-disallowed-Sc1.html">Citizen information</a>
+                  <a href="1-decision-incomplete-Sc1.html" aria-current="location">Decision and dates</a>                    
                 </li>
-
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-disallowed-Sc1.html">Payments</a>
+                  <a href="1-preferences-incomplete-Sc1.html">Citizen information</a>
                 </li>
-
                 <li class="moj-side-navigation__item">
-                  <a href="1-employment-and-earnings-disallowed-Sc1.html">Employment and earnings</a>
+                  <a href="1-bank-details-and-payments-incomplete-Sc1.html">Payments</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-incomplete-Sc1.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item ">
-                  <a href="1-evidence-disallowed-Sc1.html">Evidence</a>
+                  <a href="1-evidence-incomplete-Sc1.html">Evidence</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ-incomplete-Sc1.html">Change of circumstance</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-disallowed-Sc1.html">Change of circumstance</a>
-                </li>
-
-                <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-disallowed-Sc1.html">Overlaps and deductions</a>
+                  <a href="1-overlays-deductions-incomplete-Sc1.html">Overlaps and deductions</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-disallowed-Sc1.html">Claim history</a>
+                  <a href="1-change-of-circ-incomplete-Sc1.html">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-note-disallowed-Sc1.html">Notes</a>
+                  <a href="1-note">Notes</a>
                 </li>
             
 
@@ -95,30 +90,16 @@
 
         </div>
 
-        <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-column-three-quarters"> 
+
+
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 <section id="decision" class="govuk-!-padding-top-6"> 
 
-   <!-- Decision note -->
+ 
 
-<div class="govuk-notification-banner" role="region"
-aria-labelledby="govuk-notification-banner-title"
-data-module="govuk-notification-banner">
-<div class="govuk-notification-banner__header">
-  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-    Important
-  </h2>
-</div>
-<div class="govuk-notification-banner__content">
-  <p class="govuk-notification-banner__heading">
-    This claim is closed, to change the decision, please re-open the claim.      
-  </p>
-</div>
-</div>
-
-<!-- Decision note finished  --> 
 
   <h2 class="govuk-heading-m">Decision</h2>
   
@@ -129,12 +110,14 @@ data-module="govuk-notification-banner">
       </dt>
       <dd class="govuk-summary-list__value">
         {{govukTag({
-          text: data['ma-decision-disallow'],
+          text: data['ma-decision-incomplete'],
           classes: "govuk-tag--grey"
         })}}
       </dd>
       <dd class="govuk-summary-list__actions">
- 
+        <a class="govuk-link" href="./claim-decision-01-radio-start.html?change=true">
+          Make decision<span class="govuk-visually-hidden">claim-decision</span>
+        </a>
       </dd>
   
   <!-- Require changes on the decision -->
@@ -144,15 +127,15 @@ data-module="govuk-notification-banner">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
         Claim status
       </dt>
-      <dd class="govuk-summary-list__value">     
-        <strong class="govuk-tag govuk-tag--grey">
-           Closed
-        </strong>     
+      <dd class="govuk-summary-list__value">
+     
+        <strong class="govuk-tag govuk-tag--green">
+           Open
+        </strong>
+     
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="./claim-reopen-01-radio.html?change=true">
-          Re-open<span class="govuk-visually-hidden">re-open-claim</span>
-        </a>
+       &nbsp;
       </dd>
     </div>
   <!--div class="govuk-summary-list__row">
@@ -177,7 +160,7 @@ data-module="govuk-notification-banner">
       Decision date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-claim-decision-date-2'] }}
+      To be decided 
     </dd>
 
   </div>
@@ -213,7 +196,7 @@ data-module="govuk-notification-banner">
       Maternity Allowance Period end date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-end-disallowed'] }}
+      {{ data['ma-map-end'] }}
     </dd>
 
   </div>
@@ -370,7 +353,7 @@ data-module="govuk-notification-banner">
       {{ data['ma-start-date-requested'] }}
       {{govukTag({
         text: data['ma-start-date-requested-status'],
-        classes: "govuk-tag--grey"
+        classes: "govuk-!-margin-left-2"
       })}}
     </dd>
     <dd class="govuk-summary-list__actions ">
@@ -406,7 +389,7 @@ data-module="govuk-notification-banner">
       Maternity Allowance Period end date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-end-disallowed'] }}
+      {{ data['ma-map-end'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       &nbsp;
