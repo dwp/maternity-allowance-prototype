@@ -48,29 +48,30 @@
                 <li class="moj-side-navigation__item">
                   <a href="1-decision-disallowed-Sc1.html" aria-current="location">Decision and dates</a>
                 </li>
-
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences-disallowed-Sc1.html">Citizen information</a>
+                </li>
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-bank-details-and-payments-disallowed-Sc1.html">Payments</a>
+                </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-employment-and-earnings-disallowed-Sc1.html">Employment and earnings</a>
                 </li>
 
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-bank-details-and-payments-disallowed-Sc1.html">Bank details and payments</a>
-                </li>
+
                 <li class="moj-side-navigation__item">
                   <a href="1-evidence-disallowed-Sc1.html">Evidence</a>
-                </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-claim-history-disallowed-Sc1.html">Claim history</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
                   <a href="1-change-of-circ-disallowed-Sc1.html">Change of circumstance</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-preferences-disallowed-Sc1.html">Preferences</a>
-                </li>
+
                 <li class="moj-side-navigation__item">
                   <a href="1-overlays-deductions-disallowed-Sc1.html">Overlaps and deductions</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-disallowed-Sc1.html">Claim history</a>
                 </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-note-disallowed-Sc1.html">Notes</a>
@@ -89,41 +90,8 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-<section id="bank-details" class="govuk-!-padding-top-6">
-  <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--m">Bank details</caption>
-
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Name on the account</th>
-        <td class="govuk-table__cell">{{ data['claimant-name'] }}</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Sort code</th>
-        <td class="govuk-table__cell">{{ data['sort-code'] }}</td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Account number</th>
-        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
-      </tr>
-
-
-    </tbody>
-  </table>
-
-  <form class="form" method="post" novalidate>
-
-    <input type="hidden" name="answers-checked" value="true">
-
-    {{ govukButton({
-      text: "Edit bank details"
-    }) }}
-
-  </form>
-</section>
-</section>
+ 
+ 
 
 
 
