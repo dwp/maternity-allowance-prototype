@@ -1143,7 +1143,7 @@ router.post('/beta-private/iteration-38/start-a-claim/stopped-work/date-last-wor
   });
 
   router.post('/beta-private/iteration-38/start-a-claim/requested-start-date', function (req, res) {
-    res.redirect('/beta-private/iteration-38/find-a-claim/summary/');
+    res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
   });
  
 
@@ -1158,30 +1158,27 @@ router.post('/beta-private/iteration-38/start-a-claim/stopped-work/date-last-wor
   // *** Find a claim new logic // 
     // *** Find a claim logic for incomplete claim (Iteration 32 - Note) : Changed to Suspend payments (Iteration 35) - Changed to claim decisions (Iteration 38) **//   
 
-  router.get('/beta-private/iteration-38/find-a-claim/summary/', function (req, res) {
+  router.get('/beta-private/iteration-38/find-a-claim/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
+      res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
     } else if (req.session.data['scenario'] == 'scenario-2') {
       res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc2/1-decision-close-Sc2');
     } else {
-      res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
+      res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
     }
   }); 
 
       // *** Find a claim Logic for incomplete claim (Note) and Suspend payments finish *** // 
 
-  // *** Find a claim *** //
+  // *** Find a claim *** // Is it needed anymore ? 
 
-  router.post('/beta-private/iteration-38/find-a-claim/', function (req, res) {
-    res.redirect('/beta-private/iteration-38/find-a-claim/summary');
-  });
+  // router.post('/beta-private/iteration-38/find-a-claim/', function (req, res) {
+      // res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
+  //  });
 
-  router.post('/beta-private/iteration-38/find-a-claim/select-claim', function (req, res) {
-      res.redirect('/beta-private/iteration-38/find-a-claim/summary/');
-  });
-
-
- 
+  // router.post('/beta-private/iteration-38/find-a-claim/select-claim', function (req, res) {
+      // res.redirect('/beta-private/iteration-38/find-a-claim/summary/');
+  // }); // Unused page 
 
   router.post('/beta-private/iteration-38/find-a-claim/rti/change', function (req, res) {
 
@@ -1433,8 +1430,12 @@ router.post('/beta-private/iteration-38/find-a-claim/summary/Sc1/claim-decision-
 });  
 
 router.post('/beta-private/iteration-38/find-a-claim/summary/Sc1/claim-decision-02-radio-adjust', function (req, res) {
-  res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-disallowed-Sc1');
+  res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/claim-decision-disallow-reason-text-Sc1');
 });  
+
+router.post('/beta-private/iteration-38/find-a-claim/summary/Sc1/claim-decision-disallow-reason-text-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-disallowed-Sc1');
+});   
 
 router.post('/beta-private/iteration-38/find-a-claim/summary/Sc2/claim-reopen-01-radio', function (req, res) {
   res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc2/1-decision-reopened-Sc2');
