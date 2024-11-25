@@ -59,40 +59,44 @@ module.exports = router => {
       req.session.data['ma-decision'] = 'Allowed';
       req.session.data['ma-decision-await'] = 'Need decision';
       req.session.data['ma-decision-disallow'] = 'Disallowed';
-      req.session.data['ma-claim-creation-date'] = '5 April 2024';
-      req.session.data['ma-claim-decision-date'] = '5 April 2024';
-      req.session.data['ma-claim-decision-date-2'] = '10 May 2024' //manage claim data and change decision//      
+      req.session.data['ma-claim-creation-date'] = '5 July 2024';
+      req.session.data['ma-claim-decision-date'] = '5 August 2024';
+      req.session.data['ma-claim-decision-date-2'] = '10 November 2024' //manage claim data and change decision//      
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['deduction'] = '£80.00';
-      req.session.data['ma-map-start'] = '3 April 2024';
-      req.session.data['ma-map-end'] = '31 December 2024'; 
-      req.session.data['ma-map-end-disallowed'] = '30 April 2024'; //For claim changed to disallow Iteration 38// 
+      req.session.data['ma-map-start'] = '1 September 2024';
+      req.session.data['ma-map-end'] = '1 June 2025'; 
+      req.session.data['ma-map-end-disallowed'] = '10 November 2024'; //For claim changed to disallow Iteration 38// 
       req.session.data['displayRate'] = false;
 
       // Test period dates
-      req.session.data['ma-baby-due-date'] = '10 May 2024';
+      req.session.data['ma-baby-due-date'] = '2 October 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet'; 
-      req.session.data['ma-baby-birth-date-2'] = '10 May 2024'; //manage claim data//
-      req.session.data['ma-test-period-first-day'] = '29 January 2023';
-      req.session.data['ma-test-period-last-day'] = '4 May 2024';
-      req.session.data['ma-test-period-week-fifteen'] = '21 January 2024';
+      req.session.data['ma-baby-birth-date-2'] = '2 October 2024'; //manage claim data//
+      req.session.data['ma-test-period-first-day'] = '25 June 2023';
+      req.session.data['ma-test-period-last-day'] = '28 September 2024';
+      req.session.data['ma-test-period-week-fifteen'] = '16 June 2024';
 
       // Maternity Allowance period dates
-      req.session.data['ma-map-claim-date-received'] = '3 April 2024';
-      req.session.data['ma-map-expected-week-of-confinement'] = '5 May 2024';
-      req.session.data['ma-week-eleventh'] = '18 February 2024';
-      req.session.data['ma-week-fourth'] = '7 April 2024';
-      req.session.data['ma-start-date-requested'] = '3 April 2024';
-      req.session.data['ma-start-date-requested-status'] = 'Allowed';
-      req.session.data['ma-map-rule'] = 'Flexible Maternity Allowance Period';
+      req.session.data['ma-map-claim-date-received'] = '3 June 2024';
+      req.session.data['ma-map-expected-week-of-confinement'] = '29 September 2024';
+      req.session.data['ma-week-eleventh'] = '14 July 2024';
+      req.session.data['ma-week-fourth'] = '1 September 2024';
+      req.session.data['ma-start-date-requested'] = '31 August 2024';
+      req.session.data['ma-start-date-requested-status'] = 'Disallowed';
+      req.session.data['ma-map-rule'] = 'Non-Felxible Maternity Allowance Period';
 
       // Date Last Worked
-      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 April 2024';
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 September 2024';
       req.session.data['ma-map-claimant-stopped-work-reason'] = 'Sick leave (Pregnancy related)';
-      req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null; //// ******
-      req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None';
+      req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = 'yes'; //// ******
+      req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None'; //Re-write for Iteration 27 needed, should change to SSP 
       req.session.data['ma-map-claimant-stopped-work-allowance-start-date'] = null;
       req.session.data['ma-map-claimant-stopped-work-allowance-end-date'] = null; 
+
+       // Sick leave 
+      req.session.data['ma-map-claimant-stopped-work-sick-leave-start-date'] = '20 August 2024';
+      req.session.data['ma-map-claimant-stopped-work-sick-leave-end-date'] = '2 September 2024';
 
       // Employment and earnings
       req.session.data['ma-employment-type'] = 'Employed';
@@ -265,7 +269,7 @@ module.exports = router => {
        req.session.data['smp1-date-signed'] = '18 February 2024';
        req.session.data['smp1-date-signed-2'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Serena van der Woodsen';
-       req.session.data['smp1-date-verified'] = '05 May 2024';
+       req.session.data['smp1-date-verified'] = '5 May 2024';
 
 
 
@@ -280,7 +284,7 @@ module.exports = router => {
       req.session.data['ma-claim-decision-date-3'] = '16 July 2024'; //Re-allowed (3)// 
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '03 April 2024';
+      req.session.data['ma-map-start'] = '3 April 2024';
       req.session.data['ma-map-end-1'] = '30 April 2024';
       req.session.data['ma-map-end-2'] = '29 January 2025'; 
       req.session.data['ma-map-end-reallowed'] = '31 March 2025'; //For claim changed to allow Iteration 38// 
@@ -289,13 +293,13 @@ module.exports = router => {
       // Test period dates
       req.session.data['ma-baby-due-date'] = '25 July 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
-      req.session.data['ma-test-period-first-day'] = '05 March 2023';
-      req.session.data['ma-test-period-last-day'] = '08 June 2024';
+      req.session.data['ma-test-period-first-day'] = '5 March 2023';
+      req.session.data['ma-test-period-last-day'] = '8 June 2024';
       req.session.data['ma-test-period-week-fifteen'] = '24 March 2024';
 
       // Maternity Allowance period dates
       req.session.data['ma-map-claim-date-received'] = '10 February 2024';
-      req.session.data['ma-map-expected-week-of-confinement'] = '09 June 2024';
+      req.session.data['ma-map-expected-week-of-confinement'] = '9 June 2024';
       req.session.data['ma-week-eleventh'] = '14 April 2024';
       req.session.data['ma-week-fourth'] = '12 May 2024';
       req.session.data['ma-start-date-requested'] = '25 March 2024';
