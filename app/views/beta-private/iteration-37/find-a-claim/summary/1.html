@@ -84,12 +84,8 @@
                   <a href="1-preferences">Preferences</a>
                 </li>
                 <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions">Overlaps and deductions</a>
+                  <a href="1-note">Note</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-note">Notes</a>
-                </li>
- 
 
 
               </ul>
@@ -285,7 +281,6 @@
         Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
       </a>
     </dd>
-    
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -300,19 +295,6 @@
       </a>
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      First whole day of absence due to sickness
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['ma-start-date-requested'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
-        Change<span class="govuk-visually-hidden">date-of-whole-day-absence</span>
-      </a>
-    </dd>
-  </div>  
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Expected week of confinement
@@ -365,9 +347,10 @@
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['ma-start-date-requested'] }}
-      <strong class="govuk-tag govuk-tag--grey">
-        Disallowed
-      </strong>
+      {{govukTag({
+        text: data['ma-start-date-requested-status'],
+        classes: "govuk-!-margin-left-2"
+      })}}
     </dd>
     <dd class="govuk-summary-list__actions ">
       <a class="govuk-link" href="#">

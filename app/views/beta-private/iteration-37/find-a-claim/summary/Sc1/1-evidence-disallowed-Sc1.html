@@ -1,0 +1,198 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+{% block beforeContent %}
+
+<section class="dwp-quick-reference dwp-quick-reference--alternative" aria-label="Case information">
+  <dl class="dwp-quick-reference__block">
+  <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+  <dd class="dwp-quick-reference__primary">{{ data['claimant-name'] }}</dd>
+  <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">National Insurance number:</dt>
+  <dd class="dwp-quick-reference__secondary">{{ data['claimant-nino'] }}</dd>
+  <dt class="dwp-quick-reference__label">Claim status:</dt>
+  <dd class="dwp-quick-reference__status">
+    <strong class="govuk-tag govuk-tag--grey">
+      Closed
+    </strong>
+  </dd>
+  </dl>
+  </section> 
+
+
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+
+      <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+        <nav class="moj-side-navigation" aria-label="Side navigation">
+          <ul class="moj-side-navigation__list">
+
+            <li class="moj-side-navigation__item  ">
+              <a href="1-decision-disallowed-Sc1.html" aria-current="location">Decision and dates</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-preferences-disallowed-Sc1.html">Citizen information</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-bank-details-and-payments-disallowed-Sc1.html">Payments</a>
+            </li>
+
+            <li class="moj-side-navigation__item ">
+              <a href="1-employment-and-earnings-disallowed-Sc1.html">Employment and earnings</a>
+            </li>
+
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="1-evidence-disallowed-Sc1.html">Evidence</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-change-of-circ-disallowed-Sc1.html">Change of circumstance</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-overlays-deductions-disallowed-Sc1.html">Overlaps and deductions</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-claim-history-disallowed-Sc1.html">Claim history</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="1-note-disallowed-Sc1.html">Notes</a>
+            </li>
+
+          </ul>
+        </nav>
+      </nav>
+      <p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </p>
+
+    </div>
+
+
+
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+<section id="bank-details" class="govuk-!-padding-top-6">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h3 class="govuk-heading-m">MAT B1 certificate</h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body" style="text-align: right;"><a href="../mat-add.html" class="govuk-link">Change</a></p>
+    </div>
+  </div>
+
+  <table class="govuk-table">
+
+
+
+
+
+
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Provided by claimant</th>
+        <td class="govuk-table__cell">{{ data['mat-provided'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Verified by</th>
+        <td class="govuk-table__cell">{{ data['mat-verified-by'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Date verified</th>
+        <td class="govuk-table__cell">{{ data['mat-date-verified'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <a href="../mat-add.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Add new MAT B1
+  </a>
+
+  <form class="form" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+
+  </form>
+
+</section>
+
+<section id="bank-details" class="govuk-!-padding-top-6">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h3 class="govuk-heading-m">SMP 1  </h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body" style="text-align: right;"><a href="../smp1-add.html" class="govuk-link">Change</a></p>
+    </div>
+  </div>
+  <table class="govuk-table">
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Provided by claimant</th>
+        <td class="govuk-table__cell">{{ data['smp1-provided'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Verified by</th>
+        <td class="govuk-table__cell">{{ data['smp1-verified-by'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Date verified</th>
+        <td class="govuk-table__cell">{{ data['smp1-date-verified'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <a href="../smp1-add.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Add new SMP 1
+  </a>
+
+  <form class="form" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+
+  </form>
+  </div>
+</div>
+
+</section>
+
+
+</section>
+{% endblock %}

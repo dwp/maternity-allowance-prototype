@@ -57,7 +57,7 @@ module.exports = router => {
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-decision-incomplete'] = 'Incomplete';
+      req.session.data['ma-decision-await'] = 'Need decision';
       req.session.data['ma-decision-disallow'] = 'Disallowed';
       req.session.data['ma-claim-creation-date'] = '5 April 2024';
       req.session.data['ma-claim-decision-date'] = '5 April 2024';
@@ -1126,7 +1126,7 @@ router.post('/beta-private/iteration-38/start-a-claim/stopped-work/date-last-wor
 // Routing for incomplete claim - changed for manage claim decision Iteration 38 // 
   router.post('/beta-private/iteration-38/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-38/find-a-claim/summary/1-decision-incomplete-Sc1');
+      res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
     } else if(req.session.data['ma-date-requested'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-38/start-a-claim/summary/'); 
     } else if (req.session.data['ma-date-requested'] == 'yes'&& req.session.data['scenario'] == 'scenario-2') {
@@ -1158,7 +1158,18 @@ router.post('/beta-private/iteration-38/start-a-claim/stopped-work/date-last-wor
   // *** Find a claim new logic // 
     // *** Find a claim logic for incomplete claim (Iteration 32 - Note) : Changed to Suspend payments (Iteration 35) - Changed to claim decisions (Iteration 38) **//   
 
-  router.get('/beta-private/iteration-38/find-a-claim/', function (req, res) {
+    router.get('/beta-private/iteration-38/start-a-claim/summary/', function (req, res) {
+    }); 
+
+    router.post('/beta-private/iteration-38/find-a-claim/', function (req, res) {
+      res.redirect('/beta-private/iteration-38/find-a-claim/summary');
+    });  
+
+    router.post('/beta-private/iteration-38/find-a-claim/select-claim', function (req, res) {
+      res.redirect('/beta-private/iteration-38/find-a-claim/summary/');
+  });
+  
+    router.get('/beta-private/iteration-38/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
     } else if (req.session.data['scenario'] == 'scenario-2') {
@@ -1170,15 +1181,15 @@ router.post('/beta-private/iteration-38/start-a-claim/stopped-work/date-last-wor
 
       // *** Find a claim Logic for incomplete claim (Note) and Suspend payments finish *** // 
 
-  // *** Find a claim *** // Is it needed anymore ? 
+  // *** Find a claim *** //  
 
-  // router.post('/beta-private/iteration-38/find-a-claim/', function (req, res) {
-      // res.redirect('/beta-private/iteration-38/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
-  //  });
+
 
   // router.post('/beta-private/iteration-38/find-a-claim/select-claim', function (req, res) {
       // res.redirect('/beta-private/iteration-38/find-a-claim/summary/');
   // }); // Unused page 
+
+
 
   router.post('/beta-private/iteration-38/find-a-claim/rti/change', function (req, res) {
 
