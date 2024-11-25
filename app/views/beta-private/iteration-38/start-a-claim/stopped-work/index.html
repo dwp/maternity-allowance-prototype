@@ -1,4 +1,4 @@
-classes: "govuk-radios--inline",
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -14,46 +14,59 @@ classes: "govuk-radios--inline",
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+<form class="form" method="post" novalidate>
 
-      <form class="form" method="post" novalidate>
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %} 
 
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+    <!-- value: data['i5stopWorkReasonAnswer'], and this  action="/i5-stop-work-reason" use later --> 
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "stopped-work",
-        name: "stopped-work",
-        fieldset: {
-          legend: {
-            text: "Has the claimant stopped work?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+  {{ govukRadios({
+    name: "stopped-work",
+    name: "stopped-work", 
+  
+    
+    fieldset: {
+      legend: {
+        text: "Has the claimant stopped work to have their baby or for another reason?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {
+        value: "mat",
+        text: "Maternity leave"
+      },
+      {
+        value: "sick",
+        text: "Sick leave"
+      },
+      {
+        value: "ended",
+        text: "Ended work (for example, quit or made redundant)"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "Claimant has not stopped work yet"
+      }
+    ]
+  }) }}
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
+  
 
-      </form>
 
-    </div>
-  </div>
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div></div>
 {% endblock %}
