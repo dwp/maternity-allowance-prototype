@@ -23,6 +23,8 @@ module.exports = router => {
        req.session.data['mat-certificate-number'] = '5658710';
        req.session.data['mat-midwife-pin'] = '1987621';
        req.session.data['mat-date-verified'] = '22 April 2024';
+       req.session.data['suspend-payments-date'] = '24 May 2024'; 
+       req.session.data['resume-payments-date'] = '10 June 2024';
        req.session.data['mat-verified-by'] = 'Jean Grey';
        req.session.data['smp1-provided'] = 'Yes';
        req.session.data['smp1-employer'] = 'ARGOS';
@@ -55,13 +57,16 @@ module.exports = router => {
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '5 July 2023';
-      req.session.data['ma-claim-decision-date'] = '5 July 2023';
-      req.session.data['ma-claim-decision-date-2'] = '10 August 2024' //manage claim data//      
+      req.session.data['ma-decision-await'] = 'Need decision';
+      req.session.data['ma-decision-disallow'] = 'Disallowed';
+      req.session.data['ma-claim-creation-date'] = '5 April 2024';
+      req.session.data['ma-claim-decision-date'] = '5 April 2024';
+      req.session.data['ma-claim-decision-date-2'] = '10 May 2024' //manage claim data and change decision//      
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['deduction'] = '£80.00';
       req.session.data['ma-map-start'] = '3 April 2024';
       req.session.data['ma-map-end'] = '31 December 2024'; 
+      req.session.data['ma-map-end-disallowed'] = '30 April 2024'; //For claim changed to disallow Iteration 38// 
       req.session.data['displayRate'] = false;
 
       // Test period dates
@@ -83,7 +88,7 @@ module.exports = router => {
 
       // Date Last Worked
       req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 April 2024';
-      req.session.data['ma-map-claimant-stopped-work-reason'] = 'Maternity Leave';
+      req.session.data['ma-map-claimant-stopped-work-reason'] = 'Sick leave (Pregnancy related)';
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null; //// ******
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None';
       req.session.data['ma-map-claimant-stopped-work-allowance-start-date'] = null;
@@ -267,16 +272,22 @@ module.exports = router => {
 
       // Decision
       req.session.data['ma-decision'] = 'Allowed';
-      req.session.data['ma-claim-creation-date'] = '05 May 2024';
-      req.session.data['ma-claim-decision-date'] = '05 May 2024';
+      req.session.data['ma-decision-incomplete'] = 'Incomplete';
+      req.session.data['ma-decision-disallow'] = 'Disallowed';
+      req.session.data['ma-claim-creation-date'] = '10 April 2024';
+      req.session.data['ma-claim-decision-date'] = '10 April 2024'; //Allowed (1)//
+      req.session.data['ma-claim-decision-date-2'] = '5 May 2024'; //Disallowed (2)// 
+      req.session.data['ma-claim-decision-date-3'] = '16 July 2024'; //Re-allowed (3)// 
       req.session.data['ma-rate'] = 'Standard rate at £172.48 per week';
       req.session.data['ma-rate-2'] = 'Standard rate at £172.48 per week';
-      req.session.data['ma-map-start'] = '16 May 2024';
-      req.session.data['ma-map-end'] = '29 January 2025';
+      req.session.data['ma-map-start'] = '03 April 2024';
+      req.session.data['ma-map-end-1'] = '30 April 2024';
+      req.session.data['ma-map-end-2'] = '29 January 2025'; 
+      req.session.data['ma-map-end-reallowed'] = '31 March 2025'; //For claim changed to allow Iteration 38// 
       req.session.data['ma-map-end-summary'] = '29 January 2025';
 
       // Test period dates
-      req.session.data['ma-baby-due-date'] = '10 June 2024';
+      req.session.data['ma-baby-due-date'] = '25 July 2024';
       req.session.data['ma-baby-birth-date'] = 'Baby not born yet';
       req.session.data['ma-test-period-first-day'] = '05 March 2023';
       req.session.data['ma-test-period-last-day'] = '08 June 2024';
@@ -287,12 +298,12 @@ module.exports = router => {
       req.session.data['ma-map-expected-week-of-confinement'] = '09 June 2024';
       req.session.data['ma-week-eleventh'] = '14 April 2024';
       req.session.data['ma-week-fourth'] = '12 May 2024';
-      req.session.data['ma-start-date-requested'] = '15 May 2024';
+      req.session.data['ma-start-date-requested'] = '25 March 2024';
       req.session.data['ma-start-date-requested-status'] = 'Disallowed';
       req.session.data['ma-map-rule'] = 'Non flexible Maternity Allowance Period';
 
       // Date Last Worked
-      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '14 May 2024';
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '24 March 2024';
       req.session.data['ma-map-claimant-stopped-work-reason'] = 'Sick leave';
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = null;
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = null;
@@ -569,6 +580,66 @@ router.post('/beta-private/iteration-37/find-a-claim/change-of-circ/change-confi
 });
 
 
+//Suspend payments Sc1 Iteration 35// 
+
+
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-radio-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-type-radio-aft-Sc1');
+});  
+
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-type-radio-aft-Sc1', function (request, response) {
+var  type = request.session.data['payment-suspend']
+if (type == "miscellaneous"){
+    response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1")
+}
+else if (type == "claim-investigation"){
+  response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1")
+} 
+else if (type == "claim-referred"){
+    response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1") 
+}
+
+}) 
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-aft-Sc1', function (req, res) {
+res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-suspend-aft-Sc1.html');
+});  
+
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-type-radio-res-Sc1', function (request, response) {
+var  type = request.session.data['payment-suspend']
+ if (type == "miscellaneous"){
+     response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1")
+ }
+ else if (type == "claim-investigation"){
+   response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1")
+ } 
+ else if (type == "claim-referred"){
+     response.redirect("/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1") 
+ }
+
+}) 
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-reason-text-Sc1', function (req, res) {
+   req.session.textVisited = true;
+   res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-suspend-manage-res-Sc1'); 
+ }); 
+
+ 
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/payment-unsuspend-radio-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-bank-details-and-payments-suspend-res-Sc1');
+});  
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-note-entered-res-Sc1', function (req, res) {
+res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-note-entered-res-2-notes-Sc1'); 
+}); 
+
+
+
+// Suspend payments Sc1 Iteration 35 finishes // 
+
 
 // *** Unallocated earnings ************************************************************************************************************** //
 
@@ -606,6 +677,15 @@ router.post('/beta-private/iteration-37/find-a-claim/summary/reallocated/reassig
 
 router.post('/beta-private/iteration-37/find-a-claim/summary/reallocated/reassigned-confirm-answers', function (req, res) {
   res.redirect('/beta-private/iteration-37/find-a-claim/summary/reallocated/1');
+});
+
+//*** Deicsion change Iteration 38  Scenario 1 - Note - Routing ***/ 
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-note-disallowed-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-note-disallowed-note-entered-Sc1');
+}); 
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc2/1-note-reallowed-Sc2', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc2/1-note-reallowed-note-entered-Sc2');
 });
 
 // *** Overlaps and Deductions ************************************************************************************************************** //
@@ -673,7 +753,8 @@ router.post('/require-RA-37', function(request, response) {
   } else {
       response.redirect("/beta-private/iteration-37/start-a-claim/claim-date")
   }
-})
+}) 
+
 
 router.post('/beta-private/iteration-37/start-a-claim/reasonable-adjustment-type', function (req, res) {
   res.redirect('/beta-private/iteration-37/start-a-claim/reasonable-adjustment-written-type');
@@ -747,19 +828,23 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-37/start-a-claim/smp1');
   });
 
+// Routing to bypass "existing claim page" to do the whole claim for iteration 38 only SPECIAL // 
+
   router.post('/beta-private/iteration-37/start-a-claim/claimant-confirm', function (req, res) {
 
-    if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
+    if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-2') {
       res.redirect('/beta-private/iteration-37/start-a-claim/existing_claim_2');
-    } else if (req.session.data['claimant-confirm'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/existing_claim_2'); 
-    } else if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/more-claimant-information'); 
     } else if (req.session.data['claimant-confirm'] == 'no' && req.session.data['scenario'] == 'scenario-2') {
+      res.redirect('/beta-private/iteration-37/start-a-claim/existing_claim_2'); 
+    } else if (req.session.data['claimant-confirm'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
+      res.redirect('/beta-private/iteration-37/start-a-claim/more-claimant-information'); 
+    } else if (req.session.data['claimant-confirm'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-37/start-a-claim/more-claimant-information'); 
     }
   }); 
  
+  // For Iteration 38 only // 
+
   router.post('/beta-private/iteration-37/start-a-claim/existing_claim_2', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/more-claimant-information');
   }); 
@@ -895,8 +980,6 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
   });
 
 
-
-
   router.post('/beta-private/iteration-37/start-a-claim/smp1-details', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/employment');
   });
@@ -916,7 +999,9 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
     else {
       res.redirect('/beta-private/iteration-37/start-a-claim/mat');
     }
-  });
+  }); 
+
+
 
   router.post('/beta-private/iteration-37/start-a-claim/employment/', function (req, res) {
     if (req.session.data['employment-type'] == 'agency') {
@@ -950,66 +1035,60 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
   });
 
   router.post('/beta-private/iteration-37/start-a-claim/employment/agency-employment-end-date', function (req, res) {
-    res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date');
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/', function (req, res) {
-    if (req.session.data['stopped-work'] == 'yes') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/reason');
-    }
-    else {
-      // For Private Beta testing for Iteration 4, we will set the change scenario
-      // session data to 'true' as they say 'no' to, if they've started work
-      // so that when they click change on the summary, the next time they run through this screen
-      // it will return directly to summary after they enter the date on the next screen 'dlw-date'.
-      // req.session.data['change'] = true;
-      res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date');
-    }
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/reason', function (req, res) {
-    if (req.session.data['stopped-work-reason'] == 'sick') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/allowance-type');
-    } else {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
-    }
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/allowance-type', function (req, res) {
-    if (req.session.data['allowance-type'] == 'employment-and-support-allowance') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-start-date');
-    }
-    else {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related');
-    }
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related', function (req, res) {
-    if (req.session.data['allowance-type'] == 'statutory-sick-pay') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date');
-    }
-    else {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
-    }
+    res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date'); 
   }); 
 
-  // app/views/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-sickness-pregancy.html
+      // This WHOLE LOGIC NEED TO Rewrite for sickness ITERTION 37 ITERATION 38//
+
+
+
+
+
+  // router.post('/beta-private/iteration-37/start-a-claim/stopped-work/', function (req, res) {
+    // if (req.session.data['stopped-work-reason'] == 'sick') {
+      // res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related');
+    // } else {
+      // res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related');
+    // }
+  // }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related');
+  });   
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/pregnancy-related', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-first-day');
+  }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-first-day', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-ongoing-radio');
+  }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-ongoing-radio', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-finish');
+  }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-finish', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-radio');
+  }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-radio', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-date-radio');
+  }); 
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-date-radio', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date');
+  }); 
 
   router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-start-date', function (req, res) {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
-  });
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked', function (req, res) {
-      res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-sickness-pregancy');
   }); 
 
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-sickness-pregancy', function (req, res) {
-    res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date');
-}); 
+router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked', function (req, res) {
+  res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date'); 
+});  
+
+// need rewrite the logic later to add validation for date-last-worked-sickness-pregancy finish  // 
 
   router.post('/beta-private/iteration-37/start-a-claim/chosen-map-date', function (req, res) {
   res.redirect('/beta-private/iteration-37/start-a-claim/requested-start-date'); 
@@ -1031,10 +1110,10 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
     res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date');
   });
 
-// Routing for incomplete claim // 
+// Routing for incomplete claim - changed for manage claim decision Iteration 38 // 
   router.post('/beta-private/iteration-37/start-a-claim/chosen-map-date', function (req, res) {
     if (req.session.data['ma-date-requested'] == 'yes' && req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
     } else if(req.session.data['ma-date-requested'] == 'no' && req.session.data['scenario'] == 'scenario-1') {
       res.redirect('/beta-private/iteration-37/start-a-claim/summary/'); 
     } else if (req.session.data['ma-date-requested'] == 'yes'&& req.session.data['scenario'] == 'scenario-2') {
@@ -1044,14 +1123,14 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
     }
   }); 
 
-  // Routing for incomplete claim finishes  // 
+  // Routing for incomplete claim finishes and claim deicsion  // 
 
   router.post('/beta-private/iteration-37/start-a-claim/confirm-contact-details-none', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/claimant-preferences');
   });
 
   router.post('/beta-private/iteration-37/start-a-claim/requested-start-date', function (req, res) {
-    res.redirect('/beta-private/iteration-37/start-a-claim/summary/');
+    res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
   });
  
 
@@ -1061,40 +1140,43 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
 
   router.post('/beta-private/iteration-37/start-a-claim/reasonable-adjustment-new', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/claim-date');
-  });
+  }); 
 
-  router.get('/beta-private/iteration-37/start-a-claim/summary/', function (req, res) {
-    if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-37/start-a-claim/summary/2');
-    } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/1');
-    } else {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/1');
-    }
-  });
+  // *** Find a claim new logic // 
+    // *** Find a claim logic for incomplete claim (Iteration 32 - Note) : Changed to Suspend payments (Iteration 35) - Changed to claim decisions (Iteration 38) **//   
 
-  // *** Find a claim *** //
+    router.get('/beta-private/iteration-37/start-a-claim/summary/', function (req, res) {
+    }); 
 
-  router.post('/beta-private/iteration-37/find-a-claim/', function (req, res) {
-    res.redirect('/beta-private/iteration-37/find-a-claim/summary');
-  });
+    router.post('/beta-private/iteration-37/find-a-claim/', function (req, res) {
+      res.redirect('/beta-private/iteration-37/find-a-claim/summary');
+    });  
 
-  router.post('/beta-private/iteration-37/find-a-claim/select-claim', function (req, res) {
+    router.post('/beta-private/iteration-37/find-a-claim/select-claim', function (req, res) {
       res.redirect('/beta-private/iteration-37/find-a-claim/summary/');
   });
-
-  // *** Find a claim logic for incomplete claim (Note) *** // 
-  router.get('/beta-private/iteration-37/find-a-claim/summary/', function (req, res) {
+  
+    router.get('/beta-private/iteration-37/find-a-claim/summary/', function (req, res) {
     if (req.session.data['scenario'] == 'scenario-1') {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
     } else if (req.session.data['scenario'] == 'scenario-2') {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/2-incomplete');
+      res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc2/1-decision-close-Sc2');
     } else {
-      res.redirect('/beta-private/iteration-37/find-a-claim/summary/1');
+      res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1-2');
     }
   }); 
 
-  // *** Find a claim lofic for incomplete claim (Note) finish *** // 
+      // *** Find a claim Logic for incomplete claim (Note) and Suspend payments finish *** // 
+
+  // *** Find a claim *** //  
+
+
+
+  // router.post('/beta-private/iteration-37/find-a-claim/select-claim', function (req, res) {
+      // res.redirect('/beta-private/iteration-37/find-a-claim/summary/');
+  // }); // Unused page 
+
+
 
   router.post('/beta-private/iteration-37/find-a-claim/rti/change', function (req, res) {
 
@@ -1339,6 +1421,27 @@ router.post('/beta-private/iteration-37/start-a-claim/baby-birth-date-manage', f
 
 // Manage claim finishes // 
 
+// Decision on claim // 
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/claim-decision-01-radio-start', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-allowed-Sc1');
+});  
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/claim-decision-02-radio-adjust', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/claim-decision-disallow-reason-text-Sc1');
+});  
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc1/claim-decision-disallow-reason-text-Sc1', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-disallowed-Sc1');
+});   
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc2/claim-reopen-01-radio', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc2/1-decision-reopened-Sc2');
+});  
+
+router.post('/beta-private/iteration-37/find-a-claim/summary/Sc2/claim-decision-02-radio-reallow', function (req, res) {
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc2/1-decision-reallowed-Sc2');
+});  
  
  
 

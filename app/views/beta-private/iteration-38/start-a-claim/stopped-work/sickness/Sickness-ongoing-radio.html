@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+
+      <form class="form" method="post" novalidate>
+
+ 
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="claim-decision">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Is the reported sickness ongoing ? 
+                </h1>
+              </legend>
+              <div id="claimDecision-hint" class="govuk-hint">
+                A sickness end date is required before Maternity Allowance can start. You can add this later. 
+              </div>
+
+              <div class="govuk-!-padding-bottom-3"></div> 
+              <!-- Spacing  -->
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="claimDecision-1" name="claimDecision-1" type="radio" value="allowed" aria-describedby="claim-decision-item-1-hint">
+                  <label class="govuk-label govuk-radios__label" for="claimDecision-1">
+                     Yes
+                  </label>
+                  <div id="claim-decision-item-1-hint" class="govuk-hint govuk-radios__hint">
+                    
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="claimDecision-2" name="claimDecision-2" type="radio" value="disallowed" aria-describedby="claim-decision-item-2-hint">
+                  <label class="govuk-label govuk-radios__label" for="claimDecision-2">
+                    No 
+                  </label>
+                  <div id="claim-decision-item-2-hint" class="govuk-hint govuk-radios__hint">
+                    
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+ 
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+    
+          </form>
+ 
+      
+
+    </div>
+  </div>
+
+{% endblock %}
