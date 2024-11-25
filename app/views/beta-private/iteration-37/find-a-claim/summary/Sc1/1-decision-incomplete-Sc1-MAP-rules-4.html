@@ -127,13 +127,13 @@ data-module="govuk-notification-banner">
       </dt>
       <dd class="govuk-summary-list__value">
         {{govukTag({
-          text: data['ma-decision-await'],
-          classes: "govuk-tag--purple"
+          text: data['ma-decision-incomplete'],
+          classes: "govuk-tag--grey"
         })}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="./claim-decision-01-radio-start.html?change=true">
-          Make decision<span class="govuk-visually-hidden">claim-decision</span>
+          Change<span class="govuk-visually-hidden">claim-decision</span>
         </a>
       </dd>
   
@@ -295,7 +295,7 @@ data-module="govuk-notification-banner">
       Date the claimant stopped work
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-date-last-worked']}}
+      Not provided 
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="../date-last-worked?change=true">
@@ -321,7 +321,7 @@ data-module="govuk-notification-banner">
       First whole day of absence due to sickness
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-sick-leave-start-date'] }}
+      {{ data['ma-start-date-requested'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
@@ -334,7 +334,7 @@ data-module="govuk-notification-banner">
       Last day of absence due to sickness
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-sick-leave-end-date'] }}
+      On going 
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
@@ -347,7 +347,7 @@ data-module="govuk-notification-banner">
       Statutory sick pay end date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-sick-leave-end-date'] }}
+      {{ data['ma-start-date-requested'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
@@ -411,6 +411,7 @@ data-module="govuk-notification-banner">
         text: "Disallowed",
         classes: "govuk-tag--grey" 
       })}}
+
       
     </dd>
     <dd class="govuk-summary-list__actions ">
@@ -459,5 +460,8 @@ data-module="govuk-notification-banner">
 
   </div>
 </div>
- 
-{% endblock %} 
+</section>
+
+
+</section>
+{% endblock %}
