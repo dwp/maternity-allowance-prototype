@@ -22,7 +22,7 @@ module.exports = router => {
        req.session.data['mat-date-signed'] = '25 February 2024';
        req.session.data['mat-certificate-number'] = '5658710';
        req.session.data['mat-midwife-pin'] = '1987621';
-       req.session.data['mat-date-verified'] = '22 April 2024';
+       req.session.data['mat-date-verified'] = '22 July 2024';
        req.session.data['suspend-payments-date'] = '24 May 2024'; 
        req.session.data['resume-payments-date'] = '10 June 2024';
        req.session.data['mat-verified-by'] = 'Jean Grey';
@@ -30,7 +30,7 @@ module.exports = router => {
        req.session.data['smp1-employer'] = 'ARGOS';
        req.session.data['smp1-date-signed'] = '1 April 2024';
        req.session.data['smp1-verified-by'] = 'Jean Grey';
-       req.session.data['smp1-date-verified'] = '22 April 2024';
+       req.session.data['smp1-date-verified'] = '22 July 2024';
 
 
 
@@ -84,10 +84,11 @@ module.exports = router => {
       req.session.data['ma-week-fourth'] = '1 September 2024';
       req.session.data['ma-start-date-requested'] = '31 August 2024';
       req.session.data['ma-start-date-requested-status'] = 'Disallowed';
-      req.session.data['ma-map-rule'] = 'Non-Felxible Maternity Allowance Period';
+      req.session.data['ma-map-rule'] = 'Non-Flexible Maternity Allowance Period';
 
       // Date Last Worked
-      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 September 2024';
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked'] = '2 September 2024'; 
+      req.session.data['ma-map-claimant-stopped-work-date-last-worked-2'] = '31 August 2024';
       req.session.data['ma-map-claimant-stopped-work-reason'] = 'Sick leave (Pregnancy related)';
       req.session.data['ma-map-claimant-stopped-work-pregnancy-related'] = 'yes'; //// ******
       req.session.data['ma-map-claimant-stopped-work-allowance-type'] = 'None'; //Re-write for Iteration 27 needed, should change to SSP 
@@ -96,7 +97,8 @@ module.exports = router => {
 
        // Sick leave 
       req.session.data['ma-map-claimant-stopped-work-sick-leave-start-date'] = '20 August 2024';
-      req.session.data['ma-map-claimant-stopped-work-sick-leave-end-date'] = '2 September 2024';
+      req.session.data['ma-map-claimant-stopped-work-sick-leave-end-date'] = '2 September 2024'; 
+      req.session.data['ma-map-claimant-stopped-work-sick-leave-end-date-2'] = '31 August 2024';
 
       // Employment and earnings
       req.session.data['ma-employment-type'] = 'Employed';
@@ -1081,13 +1083,9 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
   }); 
 
   router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-date-radio', function (req, res) {
-    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date');
-  }); 
-
-  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date', function (req, res) {
     res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
   }); 
-
+ 
 router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked', function (req, res) {
   res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date'); 
 });  
@@ -1400,6 +1398,7 @@ const urls = {
         console.log('user here')
         res.render('/beta-private/iteration-37/find-a-claim/summary/1-existing-claim-1-manage', { manageurls });     
     });   
+
   
   
 router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-manage', function (req,res) {
@@ -1421,6 +1420,35 @@ router.post('/beta-private/iteration-37/start-a-claim/baby-birth-date-manage', f
   req.session.data['birth-date-Entered'] = true;
   res.redirect('/beta-private/iteration-37/find-a-claim/summary/1-existing-claim-1-manage'); 
 }); 
+
+// Adjusting Last day of work and Statuory sick pay iteration 37 // 
+
+const sickleaveurls = { 
+  manageLDW: '/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-manage-2.html',  
+  manageSSP: '/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date-manage.html',   
+  manageSickLeaveFinish: '/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-finish-manage.html',  
+  };  
+
+  router.get('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1', (req, res) => {
+      console.log('user here')
+      res.render('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1', { sickleaveurls });     
+  });  
+
+router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-manage-2', function (req,res) {
+  req.session.data['dateEntered2'] = true;
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
+}); 
+
+router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/benefit-end-date-manage', function (req,res) {
+  req.session.data['sspEntered'] = true;
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
+}); 
+ 
+router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/date-sickness-pregnancy-finish-manage', function (req,res) {
+  req.session.data['sickleaveEntered'] = true;
+  res.redirect('/beta-private/iteration-37/find-a-claim/summary/Sc1/1-decision-incomplete-Sc1');
+});  
+// Adjust Last day of work and Statuory sick pay iteration 37 finishes // 
  
 
 // Manage claim finishes // 
@@ -1448,14 +1476,9 @@ router.post('/beta-private/iteration-37/find-a-claim/summary/Sc2/claim-decision-
 });  
  
  
-
-
-
-
-
-
 // Note finishes // 
- 
+
+
 
 //function updateDisplayRate(req) {
   //if (req.session.data['dateEntered'] === true && req.session.data['reasonEntered'] === true)

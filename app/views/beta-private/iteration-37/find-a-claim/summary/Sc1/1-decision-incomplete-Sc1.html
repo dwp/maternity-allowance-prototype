@@ -229,7 +229,7 @@ data-module="govuk-notification-banner">
     {
       key: {
         text: "Baby due date",
-        classes: 'govuk-!-width-one-half'
+        classes: 'govuk-!-width'
       },
       value: {
         text: data['ma-baby-due-date']
@@ -278,10 +278,10 @@ data-module="govuk-notification-banner">
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-0">
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
       Date the claim was received
     </dt>
-    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__value govuk-!-width-one-half">
       {{ data['ma-map-claim-date-received'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -293,34 +293,42 @@ data-module="govuk-notification-banner">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Date the claimant stopped work
-    </dt>
+    </dt> 
+
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-date-last-worked']}}
+      {% if (data['dateEntered2'] == true ) %} 
+      {{ data['ma-map-claimant-stopped-work-date-last-worked-2'] }}
+      {% else %} 
+       - 
+      {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../date-last-worked?change=true">
+      <a class="govuk-link" href="{{sickleaveurls.manageLDW}}">
         Change<span class="govuk-visually-hidden"> date the claimant stopped work</span>
       </a>
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
+
+
+  <div class="govuk-summary-list__row"> 
     <dt class="govuk-summary-list__key">
       Reason for stopping work
     </dt>
     <dd class="govuk-summary-list__value">
        Sick leave (Pregnancy related)
-    </dd>
+    </dd>  
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="../date-last-worked?change=true">
         Change<span class="govuk-visually-hidden"> the reason the claimant stopped work</span>
       </a>
     </dd>
   </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       First whole day of absence due to sickness
     </dt>
-    <dd class="govuk-summary-list__value">
+    <dd class="govuk-summary-list__value"> 
       {{ data['ma-map-claimant-stopped-work-sick-leave-start-date'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -329,29 +337,39 @@ data-module="govuk-notification-banner">
       </a>
     </dd>
   </div> 
+
    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Last day of absence due to sickness
     </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-sick-leave-end-date'] }}
+      <dd class="govuk-summary-list__value">
+        {% if (data['sickleaveEntered'] == true ) %} 
+        {{ data['ma-map-claimant-stopped-work-sick-leave-end-date-2'] }}
+        {% else %} 
+        {{ data['ma-map-claimant-stopped-work-sick-leave-end-date'] }}
+        {% endif %}   
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
+      <a class="govuk-link" href="{{sickleaveurls.manageSickLeaveFinish}}" >
         Change<span class="govuk-visually-hidden">lastdate-of-whole-day-absence</span>
       </a>
     </dd>
   </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Statutory sick pay end date
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ma-map-claimant-stopped-work-sick-leave-end-date'] }}
+      {% if (data['sspEntered'] == true ) %} 
+      {{ data['ma-map-claimant-stopped-work-sick-leave-end-date-2'] }}
+      {% else %} 
+      -
+      {% endif %}  
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="../date-last-worked-sickness-pregancy-manage?change=true">
-        Change<span class="govuk-visually-hidden">lastdate-of-whole-day-absence</span>
+      <a class="govuk-link" href="{{sickleaveurls.manageSSP}}">
+        Change<span class="govuk-visually-hidden">statutory-sick-pay-end-date</span>
       </a>
     </dd>
   </div>
