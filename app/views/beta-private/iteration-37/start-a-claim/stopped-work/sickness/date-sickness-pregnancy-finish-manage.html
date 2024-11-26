@@ -22,11 +22,11 @@
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "requested-start-date-manage",
-          namePrefix: "requested-start-date-manage",
+          id: "whole-day-sickeness",
+          namePrefix: "whole-day-sickeness",
           fieldset: {
             legend: {
-              text: "When does the claimant want their Maternity Allowance payments to start?",
+              text: "When was the claimant's last day of absence?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
