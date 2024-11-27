@@ -78,7 +78,7 @@ module.exports = router => {
       req.session.data['ma-test-period-week-fifteen'] = '16 June 2024';
 
       // Maternity Allowance period dates
-      req.session.data['ma-map-claim-date-received'] = '3 June 2024';
+      req.session.data['ma-map-claim-date-received'] = '30 June 2024';
       req.session.data['ma-map-expected-week-of-confinement'] = '29 September 2024';
       req.session.data['ma-week-eleventh'] = '14 July 2024';
       req.session.data['ma-week-fourth'] = '1 September 2024';
