@@ -48,30 +48,35 @@
                   <a href="1-decision-reopened-Sc2.html" aria-current="location">Decision and dates</a>
                 </li>
 
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-preferences-reopened-Sc2.html">Claimant information</a>
+                </li> 
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-bank-details-and-payments-reopened-Sc2.html">Payments</a>
+                </li>
+
                 <li class="moj-side-navigation__item">
                   <a href="1-employment-and-earnings-reopened-Sc2.html">Employment and earnings</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
-                  <a href="1-bank-details-and-payments-reopened-Sc2.html">Bank details and payments</a>
-                </li>
-                <li class="moj-side-navigation__item">
                   <a href="1-evidence-reopened-Sc2.html">Evidence</a>
+                </li> 
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ-reopened-Sc2.html">Change of circumstance</a>
+                </li>
+
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-overlays-deductions-reopened-Sc2.html">Overlaps and deductions</a>
                 </li>
 
                 <li class="moj-side-navigation__item">
                   <a href="1-claim-history-reopened-Sc2.html">Claim history</a>
                 </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-change-of-circ-reopened-Sc2.html">Change of circumstance</a>
-                </li>
 
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                  <a href="1-preferences-reopened-Sc2.html">Preferences</a>
-                </li>
-                <li class="moj-side-navigation__item">
-                  <a href="1-overlays-deductions-reopened-Sc2.html">Overlaps and deductions</a>
-                </li>
                 <li class="moj-side-navigation__item">
                   <a href="1-note-reopened-Sc2.html">Notes</a>
                 </li>
@@ -89,6 +94,33 @@
 
         <div class="govuk-grid-column-three-quarters">
 
+                    <!-- Date of birth --> 
+        
+ 
+
+                    <section id="bank-details" class="govuk-!-padding-top-6">
+                      <table class="govuk-table">
+                         <caption class="govuk-table__caption govuk-table__caption--m">Claimant details</caption>
+          
+                     <tbody class="govuk-table__body">
+                       <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Name</th>
+                       <td class="govuk-table__cell">{{ data['claimant-name'] }}</td>
+                       </tr> 
+                       
+                       <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Date of birth</th>
+                       <td class="govuk-table__cell">{{ data['claimant-dob']}}</td>
+                     </tr> 
+          
+           
+          
+                     </tbody>
+                    </table>
+                    </section> 
+
+                    <!-- contact-preference-details --> 
+
           <section id="employment-and-earnings" class="govuk-!-padding-top-6">
 
             <h2 class="govuk-heading-m" id="employment-and-earnings">Contact details</h2>
@@ -96,7 +128,7 @@
             <table class="govuk-table">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Correspondence address</th>
-                <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">25 Park Avenue,</p><p class="govuk-body govuk-!-margin-bottom-2">Newcastle</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE5 8KR</p></td>
+                <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-2">86 Pear Tree Grove,Chelsea,</p><p class="govuk-body govuk-!-margin-bottom-2">London</p><p<p class="govuk-body govuk-!-margin-bottom-2">NE7 9RS</p></td>
                 <td class="govuk-table__cell">  </td>
               </tr>
                 <th scope="row" class="govuk-table__header">Telephone number</th>
@@ -105,7 +137,7 @@
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Email address</th>
-                <td class="govuk-table__cell">lucindadavies@gmail.com</td>
+                <td class="govuk-table__cell">k.ash16@gmail.com</td>
                 <td class="govuk-table__cell">  </td>
               </tr>
           
@@ -115,7 +147,61 @@
 
             <a href="#"><button class="govuk-button" data-module="govuk-button">
               Update contact details
-            </button></a>
+            </button></a> 
+
+                      <!-- Bank details  -->            
+
+         <section id="bank-details" class="govuk-!-padding-top-6">
+          <table class="govuk-table">
+             <caption class="govuk-table__caption govuk-table__caption--m">Bank details</caption>
+
+         <tbody class="govuk-table__body">
+           <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">Name on the account</th>
+           <td class="govuk-table__cell">{{ data['claimant-name'] }}</td>
+           </tr> 
+           
+           <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">Sort code</th>
+           <td class="govuk-table__cell">{{ data['sort-code'] }}</td>
+         </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Account number</th>
+      <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+    </tr>
+
+     </tbody>
+   </table> 
+
+<form class="form" method="post" novalidate>
+
+  <input type="hidden" name="answers-checked" value="true">
+
+  {{ govukButton({
+    text: "Edit bank details"
+  }) }}
+
+</form>
+</section>  
+
+    <!-- Residency details  -->
+
+    <section id="residency-details" class="govuk-!-padding-top-6">
+
+      <h2 class="govuk-heading-m" id="residency-details">Residency details</h2>
+
+      <div class="govuk-hint">
+        The correspondence address maybe different from the residential address. You can edit the residency details at any time. 
+      </div>
+
+      <a href="#"><button class="govuk-button" data-module="govuk-button">
+        Manage residency details 
+      </button></a>
+
+</section> 
+
+  <!-- Reasonable adjustments -->
 
 
             <h2 class="govuk-heading-m" id="employment-and-earnings">Reasonable adjustments</h2>
@@ -130,7 +216,7 @@
 
             </section>
 </div>
-{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/table/macro.njk" import govukTable %} 
 
 
 {% endblock %}
