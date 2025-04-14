@@ -1083,12 +1083,14 @@ router.post('/beta-private/iteration-37/find-a-claim/preferences/contact-options
   }); 
 
   router.post('/beta-private/iteration-37/start-a-claim/stopped-work/sickness/Sickness-stationary-paid-date-radio', function (req, res) {
-    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked');
-  }); 
- 
-router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked', function (req, res) {
-  res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date'); 
-});  
+    res.redirect('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-radio'); 
+  });  
+
+  router.post('/beta-private/iteration-37/start-a-claim/stopped-work/date-last-worked-radio', function (req, res) {
+    res.redirect('/beta-private/iteration-37/start-a-claim/chosen-map-date'); 
+  });   
+
+
 
 // need rewrite the logic later to add validation for date-last-worked-sickness-pregancy finish  // 
 
