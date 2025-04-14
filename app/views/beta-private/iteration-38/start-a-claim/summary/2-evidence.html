@@ -82,14 +82,17 @@
       </p>
   
     </div>
+    </div>
   
 
    
 
-    <div class="govuk-grid-column-three-quarters">
+<div class="govuk-grid-column-three-quarters">
               
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/table/macro.njk" import govukTable %} 
+
+<!-- Evidence 1 -->
 
 <section id="bank-details" class="govuk-!-padding-top-6">
 
@@ -103,12 +106,6 @@
   </div>
 
   <table class="govuk-table">
-
-
-    
-   
-
-
     
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
@@ -145,10 +142,11 @@
 
     <input type="hidden" name="answers-checked" value="true">
 
-
   </form>
 
 </section>
+
+<!-- Evidence 2  -->
 
 <section id="bank-details" class="govuk-!-padding-top-6">
   <div class="govuk-grid-row">
@@ -191,18 +189,60 @@
   </a>
 
   <form class="form" method="post" novalidate>
-
     <input type="hidden" name="answers-checked" value="true">
-
-
   </form>
+
+  </section> 
+
+  <!-- Evidence 3-->
+
+<section id="bank-details" class="govuk-!-padding-top-6">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h3 class="govuk-heading-m">SMP 1</h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body" style="text-align: right;"><a href="" class="govuk-link">Change</a></p>
+    </div>
   </div>
-</div>
+  <table class="govuk-table">
 
-</section>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Provided by claimant</th>
+        <td class="govuk-table__cell">{{ data['smp1-provided'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Employer</th>
+        <td class="govuk-table__cell">{{ data['smp1-employer'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Date signed</th>
+        <td class="govuk-table__cell">{{ data['smp1-date-signed'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Verified by</th>
+        <td class="govuk-table__cell">{{ data['smp1-verified-by'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Date verified</th>
+        <td class="govuk-table__cell">{{ data['smp1-date-verified'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <a href="" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Add new SMP 1 
+  </a>
+
+  <form class="form" method="post" novalidate>
+    <input type="hidden" name="answers-checked" value="true">
+  </form>
+
+  </section>
 
 
-</section>
 {% endblock %}
 
-  
+  </div>
