@@ -12,9 +12,9 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "3.7.2",
     "govuk-frontend": "5.14.0",
-    "govuk-prototype-kit": "13.18.1",
     "jquery": "3.7.1",
     "moment": "2.29.4",
-    "notifications-node-client": "8.2.1"
+    "notifications-node-client": "8.2.1",
+    "@dwp-govuk/govuk-prototype-kit": "latest"
   }
 }
