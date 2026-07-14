@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--h1 class="govuk-heading-l">Maternity Allowance start date</h1-->
+
+      <form class="form" method="post">
+
+        {{ govukRadios({
+          name: "ReasonableAdjustment",
+          value: data['ReasonableAdjustment'],
+          fieldset: {
+            legend: {
+              text: "Select if the claimant needs Welsh language communications
+              ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "letters",
+              text: "Welsh language letters"
+            },
+            {
+              value: "phone",
+              text: "Welsh language phone calls"
+            },
+            {
+              value: "both",
+              text: "Welsh language letters and phone calls"
+            },
+            {
+              value: "none",
+              text: "None"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}

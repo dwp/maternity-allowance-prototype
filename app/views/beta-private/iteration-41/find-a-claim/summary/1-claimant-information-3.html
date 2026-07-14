@@ -1,0 +1,177 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+<section class="dwp-quick-reference" aria-label="Case information">
+  <dl class="dwp-quick-reference__block">
+      <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-quick-reference__primary" style="color:white;">Keira Ash</dd>
+      <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" style="color:white;">National Insurance number:</dt>
+      <dd class="dwp-quick-reference__secondary" style="color:white;">ZZ 12 34 56 Z</dd>
+
+  </dl>
+  </section>
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item">
+                  <a href="1-3" aria-current="location">Decision and dates</a>
+                </li>
+  <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-claimant-information-3">Claimant information</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings-nics-3">Employment and earnings</a>
+                </li>
+
+              
+                <!--<li class="moj-side-navigation__item">
+                  <a href="1-evidence-2-employers-2">Evidence</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history-2">Claim history</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ-2">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="/beta-private/iteration-26/find-a-claim/preferences/1-preferences-adjustment">Preferences</a>
+                </li>-->
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+<section id="bank-details" class="govuk-!-padding-top-6">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Claimant details</caption>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half">Name</th>
+        <td class="govuk-table__cell ">Kiera Ash</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half">Date of birth</th>
+        <td class="govuk-table__cell">{{ data['claimant-dob'] }}</td>
+      </tr>
+
+      <!--<tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Account number</th>
+        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+      </tr>-->
+
+
+    </tbody>
+  </table>
+
+  <!--<form class="form" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    {{ govukButton({
+      text: "Edit bank details"
+    }) }}
+
+  </form>-->
+</section>
+</section>
+
+
+<section id="Payments overview" class="govuk-!-padding-top-9">
+
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Contact details</caption>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half">Correspondence address</th>
+        <td class="govuk-table__cell">{{ data['claimant-address'] }}<br>{{ data['claimant-address2'] }}<br>{{ data['claimant-address3'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half">Telephone number</th>
+        <td class="govuk-table__cell">{{ data['claimant-contact-number'] }}</td>
+      </tr>
+       <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half">Email address</th>
+        <td class="govuk-table__cell">k.ash@gmail.com</td>
+      </tr>
+
+      <!--<tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Account number</th>
+        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+      </tr>-->
+
+
+    </tbody>
+  </table>
+
+
+
+    </section>
+<section id="Payments overview" class="govuk-!-padding-top-9"></section>
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Bank details</caption>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half"">Name on the account</th>
+        <td class="govuk-table__cell">Keira Ash</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half"">Sort code</th>
+        <td class="govuk-table__cell">{{ data['sort-code'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-half"">Account number</th>
+        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+
+ 
+
+
+      </div>
+    </div>
+  {% endblock %}

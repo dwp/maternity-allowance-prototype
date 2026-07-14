@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      
+      
+<section id="decision" class="govuk-!-margin-bottom-6">
+  <h1 class="govuk-heading-l">Reasonable adjustment details</h1>
+  
+
+  <table class="govuk-table">
+
+    <th scope="row" class="govuk-table__header">Type of communication</th>
+    <td class="govuk-table__cell">Written communications    </td>
+    <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/contact-options-type.html">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a></td>
+  </tr>
+
+    <th scope="row" class="govuk-table__header">How should we contact you</th>
+    <td class="govuk-table__cell">Large print</td>
+    <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/font-size.html">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a></td>
+  </tr>
+
+  <th scope="row" class="govuk-table__header">Required font size</th>
+  <td class="govuk-table__cell">18</td>
+  <td class="govuk-table__cell">   <a class="govuk-link" href="../preferences/font-size.html">
+    Change<span class="govuk-visually-hidden"> name</span>
+  </a></td>
+</tr>
+
+</tbody>
+</table>
+
+  
+  </section>
+
+  <form class="form" method="post" novalidate>
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

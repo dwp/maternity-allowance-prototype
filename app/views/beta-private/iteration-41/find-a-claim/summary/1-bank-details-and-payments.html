@@ -1,0 +1,381 @@
+
+{% extends "layout-summary.html" %}
+{% set bodyAttributes = { id: "summary-screen" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+<section class="dwp-key-details-bar" aria-label="Key details">
+  <div class="dwp-key-details-bar__key-details">
+  <dl class="dwp-key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__primary">{{ data['claimant-name'] }}</dd>
+      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+      <dd class="dwp-key-details-bar__secondary">{{ data['claimant-nino'] }}</dd>
+      <dt class="govuk-visually-hidden">Claim status:</dt>
+
+  </dl>
+  <dl class="dwp-key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>{{ data['claimant-dob'] }}</dd>
+      <dt>Postcode:</dt>
+      <dd>{{ data['claimant-postcode'] }}</dd>
+      <dt>UK telephone number:</dt>
+      <dd>{{ data['claimant-contact-number'] }}</dd>
+
+  </dl>
+  </div>
+  </section>
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+    {% endblock %}
+
+
+  {% block content %}
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-quarter">
+
+          <nav class="dwp-sub-navigation govuk-!-margin-top-0" aria-label="Sub navigation">
+            <nav class="moj-side-navigation" aria-label="Side navigation">
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item">
+                  <a href="1" aria-current="location">Decision and dates</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-employment-and-earnings">Employment and earnings</a>
+                </li>
+
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="1-bank-details-and-payments">Bank details and payments</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-evidence-2-employers">Evidence</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-claim-history">Claim history</a>
+                </li>
+
+                <li class="moj-side-navigation__item">
+                  <a href="1-change-of-circ.html">Change of circumstance</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-preferences.html">Preferences</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="1-note">Note</a>
+                </li>
+           
+
+              </ul>
+            </nav>
+          </nav>
+          <p>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+<section id="bank-details" class="govuk-!-padding-top-6">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Bank details</caption>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Name on the account</th>
+        <td class="govuk-table__cell">{{ data['claimant-name'] }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Sort code</th>
+        <td class="govuk-table__cell">{{ data['sort-code'] }}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Account number</th>
+        <td class="govuk-table__cell">{{ data['account-number'] }}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <form class="form" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    {{ govukButton({
+      text: "Edit bank details"
+    }) }}
+
+  </form>
+</section>
+</section>
+
+
+
+
+
+
+<section id="Payments overview">
+  <h2 class="govuk-heading-m">Payments overview</h2>
+
+  <!--<table class="govuk-table">
+
+      
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <div class="govuk-warning-text govuk-body govuk-!-margin-bottom-0">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning.</span>
+          There are unassigned earnings. <p>Manage unassigned earnings to calculate payments</p>
+        </strong>
+      </div></th>
+      <td class="govuk-table__cell">&nbsp;</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="/beta-private/iteration-29/find-a-claim/unallocated/unallocated-earnings">
+        Manage<span class="govuk-visually-hidden"> manage unassigned earnings</span>
+      </a></td>
+    </tr>
+  
+  
+  </table>-->
+
+
+
+  <table class="govuk-table">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Estimated total</th>
+      <td class="govuk-table__cell">£6726.72</td>
+      <td class="govuk-table__cell"> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment frequency</th>
+      <td class="govuk-table__cell">{{ data['payment-frequency'] }}</td>
+      <td class="govuk-table__cell">   <a class="govuk-link" href="/beta-private/iteration-19/payments/payment-frequency">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a></td>
+    </tr>
+
+</tbody>
+</table>
+
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Period start date</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Period end date</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First payment</th>
+      <td class="govuk-table__cell">3 April 2024</td>
+      <td class="govuk-table__cell">30 April 2024</td>
+      <td class="govuk-table__cell">£689.92</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Last payment</th>
+      <td class="govuk-table__cell">12 December 2024</td>
+      <td class="govuk-table__cell">31 December 2024</td>
+      <td class="govuk-table__cell">£517.44</td>
+    </tr>
+
+  </tbody>
+</table>
+
+    </section>
+
+
+
+
+  <section id="payments" class="govuk-!-padding-top-9">
+    <h2 class="govuk-heading-m">Maternity Allowance payments</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong>Amount</strong>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong>Status</strong>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          1 May 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          29 May 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          26 June 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          24 July 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          21 August 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          18 September 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        16 October 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          13 November 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          11 December 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £689.92
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+         31 December 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £517.44
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>
+      <!--<div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          10 April 2024
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £197.12
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Pending
+          </strong>
+        </dd>
+      </div>-->
+
+      </div>
+
+      </dl>
+
+
+    </section>
+
+
+      </div>
+    </div>
+  {% endblock %}

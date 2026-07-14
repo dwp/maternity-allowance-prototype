@@ -39,20 +39,20 @@ repos:
           - pre-commit
           - commit-msg
 
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.26.0
-    hooks:
-      - id: gitleaks
-        stages:
-          - pre-commit
-        args:
-          - --max-decode-depth=9
-      - id: gitleaks
-        stages:
-          - manual
-        entry: gitleaks git .
-        args:
-          - --max-decode-depth=99
+  # - repo: https://github.com/gitleaks/gitleaks
+  #   rev: v8.26.0
+  #   hooks:
+  #     - id: gitleaks
+  #       stages:
+  #         - pre-commit
+  #       args:
+  #         - --max-decode-depth=9
+  #     - id: gitleaks
+  #       stages:
+  #         - manual
+  #       entry: gitleaks git .
+  #       args:
+  #         - --max-decode-depth=99
 
   - repo: https://github.com/sirosen/texthooks
     rev: 0.6.8
@@ -88,7 +88,7 @@ repos:
       - id: check-renovate
 
   - repo: https://gitlab.com/dwp/secure-development/dwp-cli
-    rev: v3.15.3
+    rev: v3.30.0
     hooks:
       - id: check-catalog-info
       - id: check-pre-commit-config

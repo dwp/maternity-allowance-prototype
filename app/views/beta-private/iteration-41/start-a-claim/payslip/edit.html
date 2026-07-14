@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Which employer needs to add or edit payslips? 
+              </h1>
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              If you need to add a payslip for a new employer, return to the claim summary and select  <a href="../employers/add-employer.html" class="govuk-link">Add employer</a>.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  ROBSONS CARE FORUM
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  GRAINGERS WHOLESALE LTD
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <a href="../payslip/summary.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button" formnovalidate>Add or edit payslips
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
